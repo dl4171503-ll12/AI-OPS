@@ -16,3 +16,11 @@ dist-guardian/
 
 # Research PDFs are large binary downloads; keep the markdown reports in git
 docs/research/pdfs/
+
+# 教材 PDF / 模型文件 / 私有材料：因版权与体积原因不入库
+materials/*.pdf
+materials/**/*.pdf
+models/
+*.7z
+*.zip
+
