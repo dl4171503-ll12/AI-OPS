@@ -1,0 +1,42 @@
+import assert from 'node:assert/strict';
+import {build} from 'esbuild';
+import {createServer} from 'node:http';
+import {mkdtemp,readFile,writeFile} from 'node:fs/promises';
+import os from 'node:os';import path from 'node:path';import {pathToFileURL} from 'node:url';
+const temp=await mkdtemp(path.join(os.tmpdir(),'ops-guardian-qa-'));
+await build({entryPoints:['vite-plugins/guardian-service.ts'],outfile:path.join(temp,'service.mjs'),bundle:true,platform:'node',format:'esm'});
+await build({entryPoints:['src/lib/admission.ts'],outfile:path.join(temp,'admission.mjs'),bundle:true,platform:'node',format:'esm'});
+const {createGuardianService}=await import(pathToFileURL(path.join(temp,'service.mjs'))),{admissionTasks}=await import(pathToFileURL(path.join(temp,'admission.mjs')));
+const dataFile=path.join(temp,'db.json');const service=createGuardianService({dataFile,verifyStudent:async token=>{if(token!=='qa-student-token')throw Error();return {id:'verified-student-uid',phone:'+8613800000001'};}});
+const server=createServer((req,res)=>service(req,res,()=>{res.statusCode=404;res.end();}));await new Promise(r=>server.listen(0,'127.0.0.1',r));const base='http://127.0.0.1:'+server.address().port;
+let cookie='',count=0;const check=(v,label)=>{assert.ok(v,label);count++;console.log('PASS',label);};
+async function request(action,body={},student=false,otherCookie=cookie){const r=await fetch(base+'/api/'+(student?'student-link/':'guardian/')+action,{method:'POST',headers:{Origin:base,'X-OPS-Guardian':'1','Content-Type':'application/json',...(student?{Authorization:'Bearer qa-student-token'}:{Cookie:otherCookie})},body:JSON.stringify(body)});const data=await r.json();return {status:r.status,data,cookie:r.headers.get('set-cookie')?.split(';')[0]};}
+try{
+ check((await request('me')).status===401,'未登录不能查看学情');
+ const denied=await fetch(base+'/api/guardian/me',{method:'POST',headers:{Origin:'http://evil.example','X-OPS-Guardian':'1'},body:'{}'});check(denied.status===403,'拒绝跨站请求');
+ check((await request('code',{},true)).status===409,'未完成测评同步不能生成绑定码');
+ const tasks=admissionTasks(3),at=new Date().toISOString(),admission={version:2,bankVersion:3,examId:crypto.randomUUID(),gradeYear:3,answers:Object.fromEntries(tasks.map(t=>[t.id,{value:t.expected||t.options[0],reasoning:'比较条件得出这个结论',confidence:'sure',durationMs:2000,enteredAt:at,firstAnsweredAt:at,savedAt:at,revisions:[],steps:[],strokes:[]}])),completedAt:at,adjustments:[]};
+ const snapshot={studentId:'local-student-id',name:'服务验证同学',gradeYear:3,admission,plans:{},practices:[],mastery:[],badges:[],studyDays:1,wrongBook:[],initialControl:{}};
+ check((await request('sync',{snapshot,active:true},true)).status===200,'验证身份后允许同步完整测评');
+ const code=(await request('code',{},true)).data.code;check(code.length===12,'生成12位一次性绑定码');
+ const reg=await request('register',{username:'qa_parent_1',password:'qa-password-only-123'});cookie=reg.cookie;check(reg.status===200&&Boolean(cookie),'独立家长注册并签发会话');
+ check((await request('me')).data.binding===null,'未绑定不返回其他学生记录');
+ check((await request('bind',{phone:'13800000001',code:'BAD'})).status===400,'知道手机号但无正确绑定码不能绑定');
+ check((await request('bind',{phone:'13800000002',code})).status===400,'绑定码与手机号必须匹配');
+ check((await request('bind',{phone:'13800000001',code,relation:'母亲'})).status===200,'手机号与学生确认码双向绑定成功');
+ const view=(await request('me')).data;check(view.snapshot.name==='服务验证同学'&&view.binding.relation==='母亲','绑定后只返回当前孩子学情');
+ check(!JSON.stringify(view).includes('qa-student-token')&&!JSON.stringify(view).includes('qa-password'),'家长响应不包含学生凭证或密码');
+ const other=await request('register',{username:'qa_parent_2',password:'qa-other-password-123'});check((await request('bind',{phone:'13800000001',code},false,other.cookie)).status===400,'绑定码使用后不能被第二账号重放');
+ check((await request('me',{},false,other.cookie)).data.binding===null,'第二个家长无法越权查看孩子');
+ check((await request('control',{control:{...view.control,cultureEnabled:true,enableTimeLimit:true,dailyLimitMinutes:10}})).status===200,'家长可保存文化与学习时长管控');
+ check((await request('status',{},true)).data.control.cultureEnabled===true,'学生端读取已生效的家长配置');
+ check((await request('control',{control:{...view.control,enableWindow:true,allowedStart:'10:00',allowedEnd:'10:00'}})).status===400,'拒绝无效可用时段');
+ const testDb=JSON.parse(await readFile(dataFile,'utf8'));const today=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());testDb.students['verified-student-uid'].usage[today]=600;await writeFile(dataFile,JSON.stringify(testDb));check((await request('status',{},true)).data.blocked.includes('上限'),'服务按累计学习时长返回限制状态');
+ check((await request('relation',{relation:'父亲'})).status===200,'关系可更新');
+ check((await request('unbind')).status===200,'可解除当前绑定');
+ check((await request('me')).data.binding===null,'解绑后立即失去学情访问权限');
+ check((await request('status',{},true)).data.control.cultureEnabled===false,'解绑恢复安全默认配置');
+ const disk=await readFile(dataFile,'utf8');check(!disk.includes('qa-password-only-123')&&!disk.includes('qa-student-token')&&!disk.includes(code),'持久化不含密码明文、学生令牌或绑定码明文');
+ check((await request('logout')).status===200&&(await request('me')).status===401,'退出后会话撤销');
+ console.log(JSON.stringify({checks:count}));
+}finally{server.closeAllConnections();await new Promise(r=>server.close(r));}

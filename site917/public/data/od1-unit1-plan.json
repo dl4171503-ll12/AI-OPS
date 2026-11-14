@@ -1,0 +1,95 @@
+{
+  "book": "Oxford Discover 2e Level 1",
+  "unit": 1,
+  "title": "Families and Friends",
+  "bigQuestion": "Who are your family and friends?",
+  "pages": "Student Book pp.7–15；Grammar & Vocabulary WS U1；Phonics WS U1（The Alphabet）；Reading Comprehension WS U1",
+  "unitObjectives": [
+    "掌握家庭词汇 14 个（含 uncle/aunt/cousin/parents/son/daughter）",
+    "会用 verb be 肯定/否定/疑问（am/is/are, isn't/aren't）",
+    "能读短篇并回答细节题（Jake/Mandy/Kim）",
+    "能写 3–5 句介绍家人，拼写本单元高频词",
+    "自然拼读：字母表与首音（m/f/s/c 等）"
+  ],
+  "lessons": [
+    {
+      "id": 1,
+      "title": "Lesson 1 · 词汇 + 自然拼读 + 开口",
+      "objectives": ["说出 8 个核心家庭词", "用 This is my… 介绍家人", "分辨首音 m/f/s"],
+      "pages": "SB p7, p14；Grammar & Vocabulary WS U1 A–B；Phonics WS U1 A–B",
+      "tasks": [
+        { "type": "speaking", "prompt": "Show me your family photo (or imagine it). Introduce 4 people: This is my mother. This is my father...", "core": true },
+        { "type": "grammar", "prompt": "My ___ is a woman. (mother / father)", "expected": "mother", "core": true },
+        { "type": "grammar", "prompt": "My ___ is a man. (mother / father)", "expected": "father", "core": true },
+        { "type": "grammar", "prompt": "My mother's mother is my ___. (grandmother / sister)", "expected": "grandmother", "core": true },
+        { "type": "grammar", "prompt": "My father's father is my ___. (grandfather / brother)", "expected": "grandfather", "core": true },
+        { "type": "grammar", "prompt": "My mother's son is my ___. (brother / sister)", "expected": "brother", "core": false },
+        { "type": "dictation", "script": "mother", "prompt": "Listen and write the word.", "expected": "mother", "core": true },
+        { "type": "dictation", "script": "cousin", "prompt": "Listen and write the word.", "expected": "cousin", "core": true },
+        { "type": "dictation", "script": "parents", "prompt": "Listen and write the word.", "expected": "parents", "core": false },
+        { "type": "grammar", "prompt": "Which sound does 'mother' begin with? (m / n)", "expected": "m", "core": true },
+        { "type": "grammar", "prompt": "Which sound does 'father' begin with? (f / v)", "expected": "f", "core": true },
+        { "type": "grammar", "prompt": "Which sound does 'sister' begin with? (s / z)", "expected": "s", "core": true },
+        { "type": "writing", "prompt": "Write 2 sentences: This is my ... . He/She is ... .", "core": true },
+        { "type": "speaking", "prompt": "Who is in your family? Say 5 people: mother, father, ...", "core": false }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Lesson 2 · 阅读 + 理解",
+      "objectives": ["读短文并找细节", "区分 big/small family", "用 friends play/share 表达"],
+      "pages": "SB pp.9–12；Reading Comprehension WS U1 A–D",
+      "tasks": [
+        { "type": "reading", "passage": "Jake is seven. His family is big. He has two sisters. Mandy is eight. She lives with her grandmother and grandfather. She has one brother. Kim is six. Her family is small. She lives with her mother. Friends play together and share things.", "question": "How old is Jake?", "expected": "seven", "core": true },
+        { "type": "reading", "passage": "Jake is seven. His family is big. He has two sisters. Mandy is eight. She lives with her grandmother and grandfather. She has one brother. Kim is six. Her family is small. She lives with her mother. Friends play together and share things.", "question": "Is Jake's family big or small?", "expected": "big", "core": true },
+        { "type": "reading", "passage": "Jake is seven. His family is big. He has two sisters. Mandy is eight. She lives with her grandmother and grandfather. She has one brother. Kim is six. Her family is small. She lives with her mother. Friends play together and share things.", "question": "Who does Kim live with?", "expected": "her mother", "core": true },
+        { "type": "reading", "passage": "Jake is seven. His family is big. He has two sisters. Mandy is eight. She lives with her grandmother and grandfather. She has one brother. Kim is six. Her family is small. She lives with her mother. Friends play together and share things.", "question": "How old is Mandy?", "expected": "eight", "core": true },
+        { "type": "grammar", "prompt": "True or false: Kim's family is big.", "expected": "false", "core": true },
+        { "type": "grammar", "prompt": "True or false: Friends play together.", "expected": "true", "core": true },
+        { "type": "grammar", "prompt": "Jake has two ___. (sisters / brothers)", "expected": "sisters", "core": true },
+        { "type": "speaking", "prompt": "Tell me about the story: Who has a big family? Who has a small family?", "core": true },
+        { "type": "grammar", "prompt": "Friends play and ___ things. (share / eat)", "expected": "share", "core": false },
+        { "type": "writing", "prompt": "Write 1 sentence about your friend. Use: My friend is ...", "core": true }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Lesson 3 · 语法 Verb Be 专项练习",
+      "objectives": ["am/is/are 肯定句", "否定形式 isn't/aren't/'m not", "一般疑问句 Is/Are...?"],
+      "pages": "SB p13；Grammar & Vocabulary WS U1 C–E；Grammar book Unit 1 练习",
+      "tasks": [
+        { "type": "grammar", "prompt": "I ___ six years old.", "expected": "am", "core": true },
+        { "type": "grammar", "prompt": "She ___ cold.", "expected": "is", "core": true },
+        { "type": "grammar", "prompt": "He ___ young.", "expected": "is", "core": true },
+        { "type": "grammar", "prompt": "We ___ friends.", "expected": "are", "core": true },
+        { "type": "grammar", "prompt": "They ___ sisters.", "expected": "are", "core": true },
+        { "type": "grammar", "prompt": "It ___ big.", "expected": "is", "core": true },
+        { "type": "grammar", "prompt": "They ___ six. They're seven. (negative)", "expected": "aren't", "core": true },
+        { "type": "grammar", "prompt": "I ___ cold. I'm hot. (negative)", "expected": "am not", "core": true },
+        { "type": "grammar", "prompt": "Put in order: family / your / small? / Is", "expected": "Is your family small?", "core": true },
+        { "type": "grammar", "prompt": "Put in order: cousins? / Joe and Ann / Are", "expected": "Are Joe and Ann cousins?", "core": true },
+        { "type": "grammar", "prompt": "Put in order: she / Is / eight years old?", "expected": "Is she eight years old?", "core": true },
+        { "type": "speaking", "prompt": "Ask me 3 questions with Is/Are: Is your family big? Are you eight?", "core": true },
+        { "type": "writing", "prompt": "Write 3 sentences with is/are: My family is ... My friends are ...", "core": false }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Lesson 4 · 写作 + 拼写 + 单元复习",
+      "objectives": ["拼写 5 个家庭词", "写 3–5 句介绍家人", "完成单元小测"],
+      "pages": "SB p15；Writing & Spelling Unit 1；Vocabulary WS U1 B",
+      "tasks": [
+        { "type": "dictation", "script": "family", "prompt": "Listen and write the word.", "expected": "family", "core": true },
+        { "type": "dictation", "script": "grandmother", "prompt": "Listen and write the word.", "expected": "grandmother", "core": true },
+        { "type": "dictation", "script": "grandfather", "prompt": "Listen and write the word.", "expected": "grandfather", "core": true },
+        { "type": "dictation", "script": "daughter", "prompt": "Listen and write the word.", "expected": "daughter", "core": true },
+        { "type": "dictation", "script": "son", "prompt": "Listen and write the word.", "expected": "son", "core": true },
+        { "type": "writing", "prompt": "Write 3–5 sentences about your family. Use: I'm… My family is… I have… My mother is…", "core": true },
+        { "type": "grammar", "prompt": "A sentence starts with a capital letter and ends with a ___. (period / comma)", "expected": "period", "core": true },
+        { "type": "grammar", "prompt": "I ___ eight. My family ___ big.", "expected": "am, is", "core": false },
+        { "type": "speaking", "prompt": "Present your family to the class: 3–5 sentences, no reading.", "core": true },
+        { "type": "reading", "passage": "Kim is six. Her family is small. She lives with her mother. Friends play together and share things.", "question": "Who is six?", "expected": "kim", "core": true }
+      ]
+    }
+  ]
+}

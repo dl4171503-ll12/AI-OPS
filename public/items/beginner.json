@@ -1,0 +1,586 @@
+{
+  "level": "beginner",
+  "cefr": "A1",
+  "grade": "小学 1–3 年级",
+  "items": {
+    "vocab": [
+      {
+        "id": "b-v1",
+        "tier": 1,
+        "sentence": "I have a red ___.",
+        "options": [
+          "ball",
+          "kite",
+          "doll"
+        ],
+        "answer": "ball",
+        "clue": "它是圆的，可以用脚踢，也可以用手拍着玩",
+        "focus": "玩具名词词义"
+      },
+      {
+        "id": "b-v2",
+        "tier": 1,
+        "sentence": "My mother is a ___.",
+        "options": [
+          "farmer",
+          "teacher",
+          "driver"
+        ],
+        "answer": "teacher",
+        "clue": "她在学校里给学生上课",
+        "focus": "职业名词词义"
+      },
+      {
+        "id": "b-v3",
+        "tier": 1,
+        "sentence": "We eat ___ at twelve o'clock.",
+        "options": [
+          "breakfast",
+          "dinner",
+          "lunch"
+        ],
+        "answer": "lunch",
+        "clue": "中午十二点吃的那顿饭",
+        "focus": "三餐名词词义"
+      },
+      {
+        "id": "b-v4",
+        "tier": 1,
+        "sentence": "It is very ___ today.",
+        "options": [
+          "hot",
+          "cold",
+          "wet"
+        ],
+        "answer": "hot",
+        "clue": "天气很热、太阳很大，想吃冰的东西",
+        "focus": "天气形容词词义"
+      },
+      {
+        "id": "b-v5",
+        "tier": 2,
+        "sentence": "I have two ___ in my bag.",
+        "options": [
+          "pens",
+          "books",
+          "apples"
+        ],
+        "answer": "books",
+        "clue": "一页一页地读，里面有故事和图画",
+        "focus": "复数名词词义"
+      },
+      {
+        "id": "b-v6",
+        "tier": 2,
+        "sentence": "Please open the ___ because it is hot.",
+        "options": [
+          "door",
+          "box",
+          "window"
+        ],
+        "answer": "window",
+        "clue": "房间墙上装了玻璃的地方，打开以后风可以进来",
+        "focus": "房间名词词义"
+      },
+      {
+        "id": "b-v7",
+        "tier": 2,
+        "sentence": "I am ___, so I want water.",
+        "options": [
+          "thirsty",
+          "hungry",
+          "sleepy"
+        ],
+        "answer": "thirsty",
+        "clue": "很想喝水的感觉",
+        "focus": "感受形容词词义"
+      },
+      {
+        "id": "b-v8",
+        "tier": 2,
+        "sentence": "We read books in the ___.",
+        "options": [
+          "playground",
+          "library",
+          "canteen"
+        ],
+        "answer": "library",
+        "clue": "学校里有很多书架、可以安静看书的地方",
+        "focus": "校园场所词义"
+      },
+      {
+        "id": "b-v9",
+        "tier": 3,
+        "sentence": "Look at the traffic ___ before you cross.",
+        "options": [
+          "signs",
+          "cars",
+          "lights"
+        ],
+        "answer": "lights",
+        "clue": "路口上一红一绿、告诉人什么时候可以走的灯",
+        "focus": "固定搭配 traffic lights"
+      },
+      {
+        "id": "b-v10",
+        "tier": 3,
+        "sentence": "I need some ___ for my pen.",
+        "options": [
+          "ink",
+          "paper",
+          "water"
+        ],
+        "answer": "ink",
+        "clue": "钢笔里面用的、写字时会流出来的液体",
+        "focus": "功能词义（ink）"
+      },
+      {
+        "id": "b-v11",
+        "tier": 3,
+        "sentence": "This question is too ___ for me.",
+        "options": [
+          "long",
+          "hard",
+          "short"
+        ],
+        "answer": "hard",
+        "clue": "意思是'难'，不容易回答",
+        "focus": "一词多义 hard（硬/难）"
+      },
+      {
+        "id": "b-v12",
+        "tier": 3,
+        "sentence": "I ___ a big bird in the tree.",
+        "options": [
+          "watch",
+          "look",
+          "see"
+        ],
+        "answer": "see",
+        "clue": "意思是'看见、发现了'，不是一直盯着看",
+        "focus": "近义词辨析 see/watch/look"
+      }
+    ],
+    "grammar": [
+      {
+        "id": "b-g1",
+        "tier": 1,
+        "sentence": "She ___ a student.",
+        "options": [
+          "is",
+          "are",
+          "am"
+        ],
+        "answer": "is",
+        "focus": "be 动词"
+      },
+      {
+        "id": "b-g2",
+        "tier": 1,
+        "sentence": "I ___ two cats.",
+        "options": [
+          "has",
+          "have",
+          "am"
+        ],
+        "answer": "have",
+        "focus": "have/has"
+      },
+      {
+        "id": "b-g3",
+        "tier": 1,
+        "sentence": "___ are my friends.",
+        "options": [
+          "He",
+          "She",
+          "They"
+        ],
+        "answer": "They",
+        "focus": "人称代词+be 一致"
+      },
+      {
+        "id": "b-g4",
+        "tier": 2,
+        "sentence": "My brother ___ football every day.",
+        "options": [
+          "plays",
+          "play",
+          "playing"
+        ],
+        "answer": "plays",
+        "focus": "一般现在时三单"
+      },
+      {
+        "id": "b-g5",
+        "tier": 2,
+        "sentence": "There ___ some milk in the cup.",
+        "options": [
+          "are",
+          "is",
+          "be"
+        ],
+        "answer": "is",
+        "focus": "there be 就近一致"
+      },
+      {
+        "id": "b-g6",
+        "tier": 2,
+        "sentence": "Look! The boys ___ in the park.",
+        "options": [
+          "running",
+          "run",
+          "are running"
+        ],
+        "answer": "are running",
+        "focus": "现在进行时"
+      },
+      {
+        "id": "b-g7",
+        "tier": 3,
+        "sentence": "She ___ like fish, but she likes meat.",
+        "options": [
+          "doesn't",
+          "don't",
+          "isn't"
+        ],
+        "answer": "doesn't",
+        "focus": "三单否定"
+      },
+      {
+        "id": "b-g8",
+        "tier": 3,
+        "sentence": "___ there any apples on the table?",
+        "options": [
+          "Is",
+          "Are",
+          "Do"
+        ],
+        "answer": "Are",
+        "focus": "there be 疑问句"
+      },
+      {
+        "id": "b-g9",
+        "tier": 3,
+        "sentence": "___ you like apples?",
+        "options": [
+          "Does",
+          "Are",
+          "Do"
+        ],
+        "answer": "Do",
+        "focus": "一般疑问句助动词"
+      }
+    ],
+    "listening": [
+      {
+        "id": "b-l1",
+        "tier": 1,
+        "script": "Hello! My name is Tom. I have a small dog. His name is Max.",
+        "questions": [
+          {
+            "q": "What is the boy's name?",
+            "options": [
+              "Tom",
+              "Sam",
+              "Max"
+            ],
+            "answer": "Tom"
+          },
+          {
+            "q": "What animal does Tom have?",
+            "options": [
+              "A cat",
+              "A dog",
+              "A bird"
+            ],
+            "answer": "A dog"
+          }
+        ]
+      },
+      {
+        "id": "b-l2",
+        "tier": 1,
+        "script": "Hi, I am Mia. I have a red bag and two books. The bag is on my desk.",
+        "questions": [
+          {
+            "q": "What colour is Mia's bag?",
+            "options": [
+              "Blue",
+              "Green",
+              "Red"
+            ],
+            "answer": "Red"
+          },
+          {
+            "q": "How many books does Mia have?",
+            "options": [
+              "Two",
+              "One",
+              "Three"
+            ],
+            "answer": "Two"
+          }
+        ]
+      },
+      {
+        "id": "b-l3",
+        "tier": 2,
+        "script": "Good morning. My name is Lily. I get up at seven. I go to school by bus. I have milk and bread for breakfast.",
+        "questions": [
+          {
+            "q": "What time does Lily get up?",
+            "options": [
+              "At six",
+              "At seven",
+              "At eight"
+            ],
+            "answer": "At seven"
+          },
+          {
+            "q": "How does Lily go to school?",
+            "options": [
+              "By car",
+              "On foot",
+              "By bus"
+            ],
+            "answer": "By bus"
+          }
+        ]
+      },
+      {
+        "id": "b-l4",
+        "tier": 2,
+        "script": "Hello, I'm Ben. On Saturday I play football with my friends. In the evening we eat noodles at my home. I like Saturdays.",
+        "questions": [
+          {
+            "q": "What does Ben play on Saturday?",
+            "options": [
+              "Football",
+              "Basketball",
+              "Tennis"
+            ],
+            "answer": "Football"
+          },
+          {
+            "q": "What does Ben eat in the evening?",
+            "options": [
+              "Rice",
+              "Noodles",
+              "Bread"
+            ],
+            "answer": "Noodles"
+          }
+        ]
+      },
+      {
+        "id": "b-l5",
+        "tier": 3,
+        "script": "Hi, I'm Anna. I have a new bike, but I don't ride it to school. My school is very near, so I walk with my sister every morning. I ride my bike in the park on Sundays.",
+        "questions": [
+          {
+            "q": "How does Anna go to school?",
+            "options": [
+              "By bike",
+              "By bus",
+              "On foot"
+            ],
+            "answer": "On foot"
+          },
+          {
+            "q": "When does Anna ride her bike?",
+            "options": [
+              "On Sundays",
+              "On Mondays",
+              "Every morning"
+            ],
+            "answer": "On Sundays"
+          }
+        ]
+      },
+      {
+        "id": "b-l6",
+        "tier": 3,
+        "script": "Hello, my name is David. There are five people in my family: my father, my mother, my two sisters and me. My father is a cook, and he makes food for us every evening.",
+        "questions": [
+          {
+            "q": "How many people are there in David's family?",
+            "options": [
+              "Four",
+              "Five",
+              "Six"
+            ],
+            "answer": "Five"
+          },
+          {
+            "q": "What does David's father do?",
+            "options": [
+              "A teacher",
+              "A driver",
+              "A cook"
+            ],
+            "answer": "A cook"
+          }
+        ]
+      }
+    ],
+    "reading": [
+      {
+        "id": "b-r1",
+        "tier": 2,
+        "source": "Aesop, Fables（《狮子与老鼠》，公有领域，改编）",
+        "passage": "A big lion is sleeping. A little mouse runs over his face. The lion wakes up and catches the mouse. 'Please let me go,' says the mouse. 'One day I can help you.' The lion laughs, but he lets the mouse go. Two days later, the mouse sees the lion in a net. He bites the net with his small teeth, and the lion is free.",
+        "questions": [
+          {
+            "q": "What is the lion doing at the start of the story?",
+            "options": [
+              "Sleeping",
+              "Eating",
+              "Running"
+            ],
+            "answer": "Sleeping"
+          },
+          {
+            "q": "Why does the lion laugh?",
+            "options": [
+              "The mouse tells a funny story.",
+              "He thinks a mouse cannot help him.",
+              "He wants to eat the mouse."
+            ],
+            "answer": "He thinks a mouse cannot help him."
+          },
+          {
+            "q": "In the story, 'free' means ___.",
+            "options": [
+              "in the water",
+              "very tired",
+              "out of the net"
+            ],
+            "answer": "out of the net"
+          },
+          {
+            "q": "What is the best title for the story?",
+            "options": [
+              "The Lion and the Mouse",
+              "The Big Net",
+              "A Funny Day"
+            ],
+            "answer": "The Lion and the Mouse"
+          }
+        ]
+      },
+      {
+        "id": "b-r2",
+        "tier": 3,
+        "source": "Aesop, Fables（《蚂蚁与蚱蜢》，公有领域，改编）",
+        "passage": "It is summer. A grasshopper sings and plays all day. An ant works hard and puts food in her house. 'Come and play with me,' says the grasshopper. 'No, I am busy,' says the ant. 'Winter is coming.' Cold winter comes. The grasshopper has no food and no house. He goes to the ant's house. 'Please give me some food,' he says. The ant gives him bread, but she says, 'Work and play at the right time.'",
+        "questions": [
+          {
+            "q": "What does the ant do in summer?",
+            "options": [
+              "She sings all day.",
+              "She works and saves food.",
+              "She sleeps in the sun."
+            ],
+            "answer": "She works and saves food."
+          },
+          {
+            "q": "Why does the grasshopper go to the ant's house?",
+            "options": [
+              "He wants to sing.",
+              "He wants a new house.",
+              "He needs food."
+            ],
+            "answer": "He needs food."
+          },
+          {
+            "q": "In the story, 'busy' means ___.",
+            "options": [
+              "working a lot",
+              "feeling cold",
+              "singing well"
+            ],
+            "answer": "working a lot"
+          },
+          {
+            "q": "What does the story teach us?",
+            "options": [
+              "Singing is bad.",
+              "Work before you play.",
+              "Ants make good bread."
+            ],
+            "answer": "Work before you play."
+          }
+        ]
+      }
+    ],
+    "speaking": [
+      {
+        "id": "b-s1",
+        "tier": 1,
+        "prompt": "Introduce yourself in two sentences.",
+        "minWords": 12,
+        "targets": [
+          "name",
+          "like"
+        ]
+      },
+      {
+        "id": "b-s2",
+        "tier": 1,
+        "prompt": "Say the names of three colours you can see in your classroom.",
+        "minWords": 10,
+        "targets": [
+          "colours",
+          "classroom"
+        ]
+      },
+      {
+        "id": "b-s3",
+        "tier": 2,
+        "prompt": "Describe your family in three sentences: who they are and what they like.",
+        "minWords": 20,
+        "targets": [
+          "family",
+          "like"
+        ]
+      },
+      {
+        "id": "b-s4",
+        "tier": 3,
+        "prompt": "Open your school bag. Say what is in it in two sentences, using 'there is' and 'there are'.",
+        "minWords": 25,
+        "targets": [
+          "there is",
+          "there are",
+          "school bag"
+        ]
+      }
+    ],
+    "writing": [
+      {
+        "id": "b-w1",
+        "tier": 1,
+        "prompt": "Write two sentences about your family.",
+        "minWords": 15
+      },
+      {
+        "id": "b-w2",
+        "tier": 1,
+        "prompt": "Write two sentences about your favourite food and say why you like it.",
+        "minWords": 15
+      },
+      {
+        "id": "b-w3",
+        "tier": 2,
+        "prompt": "Write three sentences about your school day. Say what time you get up and what you do in the morning.",
+        "minWords": 20
+      },
+      {
+        "id": "b-w4",
+        "tier": 3,
+        "prompt": "Write four sentences about your best friend. Use the words 'and', 'but' and 'because'.",
+        "minWords": 30
+      }
+    ]
+  }
+}

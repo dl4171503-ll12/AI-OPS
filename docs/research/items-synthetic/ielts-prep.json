@@ -1,0 +1,570 @@
+{
+  "level": "ielts-prep",
+  "cefr": "B1",
+  "grade": "初一 – 初三",
+  "synthetic": true,
+  "items": {
+    "vocab": [
+      {
+        "id": "ielts-prep-v1",
+        "tier": 1,
+        "sentence": "Synthetic vocabulary item 1: choose the word.",
+        "options": [
+          "alpha",
+          "beta",
+          "gamma"
+        ],
+        "answer": "alpha",
+        "focus": "synthetic"
+      },
+      {
+        "id": "ielts-prep-v2",
+        "tier": 1,
+        "sentence": "Synthetic vocabulary item 2: choose the word.",
+        "options": [
+          "alpha",
+          "beta",
+          "gamma"
+        ],
+        "answer": "alpha",
+        "focus": "synthetic"
+      },
+      {
+        "id": "ielts-prep-v3",
+        "tier": 1,
+        "sentence": "Synthetic vocabulary item 3: choose the word.",
+        "options": [
+          "alpha",
+          "beta",
+          "gamma"
+        ],
+        "answer": "alpha",
+        "focus": "synthetic"
+      },
+      {
+        "id": "ielts-prep-v4",
+        "tier": 1,
+        "sentence": "Synthetic vocabulary item 4: choose the word.",
+        "options": [
+          "alpha",
+          "beta",
+          "gamma"
+        ],
+        "answer": "alpha",
+        "focus": "synthetic"
+      },
+      {
+        "id": "ielts-prep-v5",
+        "tier": 2,
+        "sentence": "Synthetic vocabulary item 5: choose the word.",
+        "options": [
+          "alpha",
+          "beta",
+          "gamma"
+        ],
+        "answer": "alpha",
+        "focus": "synthetic"
+      },
+      {
+        "id": "ielts-prep-v6",
+        "tier": 2,
+        "sentence": "Synthetic vocabulary item 6: choose the word.",
+        "options": [
+          "alpha",
+          "beta",
+          "gamma"
+        ],
+        "answer": "alpha",
+        "focus": "synthetic"
+      },
+      {
+        "id": "ielts-prep-v7",
+        "tier": 2,
+        "sentence": "Synthetic vocabulary item 7: choose the word.",
+        "options": [
+          "alpha",
+          "beta",
+          "gamma"
+        ],
+        "answer": "alpha",
+        "focus": "synthetic"
+      },
+      {
+        "id": "ielts-prep-v8",
+        "tier": 2,
+        "sentence": "Synthetic vocabulary item 8: choose the word.",
+        "options": [
+          "alpha",
+          "beta",
+          "gamma"
+        ],
+        "answer": "alpha",
+        "focus": "synthetic"
+      },
+      {
+        "id": "ielts-prep-v9",
+        "tier": 3,
+        "sentence": "Synthetic vocabulary item 9: choose the word.",
+        "options": [
+          "alpha",
+          "beta",
+          "gamma"
+        ],
+        "answer": "alpha",
+        "focus": "synthetic"
+      },
+      {
+        "id": "ielts-prep-v10",
+        "tier": 3,
+        "sentence": "Synthetic vocabulary item 10: choose the word.",
+        "options": [
+          "alpha",
+          "beta",
+          "gamma"
+        ],
+        "answer": "alpha",
+        "focus": "synthetic"
+      },
+      {
+        "id": "ielts-prep-v11",
+        "tier": 3,
+        "sentence": "Synthetic vocabulary item 11: choose the word.",
+        "options": [
+          "alpha",
+          "beta",
+          "gamma"
+        ],
+        "answer": "alpha",
+        "focus": "synthetic"
+      },
+      {
+        "id": "ielts-prep-v12",
+        "tier": 3,
+        "sentence": "Synthetic vocabulary item 12: choose the word.",
+        "options": [
+          "alpha",
+          "beta",
+          "gamma"
+        ],
+        "answer": "alpha",
+        "focus": "synthetic"
+      }
+    ],
+    "grammar": [
+      {
+        "id": "ielts-prep-g1",
+        "tier": 1,
+        "sentence": "Synthetic grammar item 1: ___ .",
+        "options": [
+          "is",
+          "are",
+          "am"
+        ],
+        "answer": "is",
+        "focus": "synthetic"
+      },
+      {
+        "id": "ielts-prep-g2",
+        "tier": 1,
+        "sentence": "Synthetic grammar item 2: ___ .",
+        "options": [
+          "is",
+          "are",
+          "am"
+        ],
+        "answer": "is",
+        "focus": "synthetic"
+      },
+      {
+        "id": "ielts-prep-g3",
+        "tier": 1,
+        "sentence": "Synthetic grammar item 3: ___ .",
+        "options": [
+          "is",
+          "are",
+          "am"
+        ],
+        "answer": "is",
+        "focus": "synthetic"
+      },
+      {
+        "id": "ielts-prep-g4",
+        "tier": 2,
+        "sentence": "Synthetic grammar item 4: ___ .",
+        "options": [
+          "is",
+          "are",
+          "am"
+        ],
+        "answer": "is",
+        "focus": "synthetic"
+      },
+      {
+        "id": "ielts-prep-g5",
+        "tier": 2,
+        "sentence": "Synthetic grammar item 5: ___ .",
+        "options": [
+          "is",
+          "are",
+          "am"
+        ],
+        "answer": "is",
+        "focus": "synthetic"
+      },
+      {
+        "id": "ielts-prep-g6",
+        "tier": 2,
+        "sentence": "Synthetic grammar item 6: ___ .",
+        "options": [
+          "is",
+          "are",
+          "am"
+        ],
+        "answer": "is",
+        "focus": "synthetic"
+      },
+      {
+        "id": "ielts-prep-g7",
+        "tier": 3,
+        "sentence": "Synthetic grammar item 7: ___ .",
+        "options": [
+          "is",
+          "are",
+          "am"
+        ],
+        "answer": "is",
+        "focus": "synthetic"
+      },
+      {
+        "id": "ielts-prep-g8",
+        "tier": 3,
+        "sentence": "Synthetic grammar item 8: ___ .",
+        "options": [
+          "is",
+          "are",
+          "am"
+        ],
+        "answer": "is",
+        "focus": "synthetic"
+      },
+      {
+        "id": "ielts-prep-g9",
+        "tier": 3,
+        "sentence": "Synthetic grammar item 9: ___ .",
+        "options": [
+          "is",
+          "are",
+          "am"
+        ],
+        "answer": "is",
+        "focus": "synthetic"
+      }
+    ],
+    "listening": [
+      {
+        "id": "ielts-prep-l1",
+        "tier": 1,
+        "script": "Synthetic listening script 1. This is a placeholder for UI testing.",
+        "questions": [
+          {
+            "q": "Synthetic listening Q1.1",
+            "options": [
+              "A",
+              "B",
+              "C"
+            ],
+            "answer": "A"
+          },
+          {
+            "q": "Synthetic listening Q1.2",
+            "options": [
+              "A",
+              "B",
+              "C"
+            ],
+            "answer": "B"
+          }
+        ]
+      },
+      {
+        "id": "ielts-prep-l2",
+        "tier": 1,
+        "script": "Synthetic listening script 2. This is a placeholder for UI testing.",
+        "questions": [
+          {
+            "q": "Synthetic listening Q2.1",
+            "options": [
+              "A",
+              "B",
+              "C"
+            ],
+            "answer": "A"
+          },
+          {
+            "q": "Synthetic listening Q2.2",
+            "options": [
+              "A",
+              "B",
+              "C"
+            ],
+            "answer": "B"
+          }
+        ]
+      },
+      {
+        "id": "ielts-prep-l3",
+        "tier": 2,
+        "script": "Synthetic listening script 3. This is a placeholder for UI testing.",
+        "questions": [
+          {
+            "q": "Synthetic listening Q3.1",
+            "options": [
+              "A",
+              "B",
+              "C"
+            ],
+            "answer": "A"
+          },
+          {
+            "q": "Synthetic listening Q3.2",
+            "options": [
+              "A",
+              "B",
+              "C"
+            ],
+            "answer": "B"
+          }
+        ]
+      },
+      {
+        "id": "ielts-prep-l4",
+        "tier": 2,
+        "script": "Synthetic listening script 4. This is a placeholder for UI testing.",
+        "questions": [
+          {
+            "q": "Synthetic listening Q4.1",
+            "options": [
+              "A",
+              "B",
+              "C"
+            ],
+            "answer": "A"
+          },
+          {
+            "q": "Synthetic listening Q4.2",
+            "options": [
+              "A",
+              "B",
+              "C"
+            ],
+            "answer": "B"
+          }
+        ]
+      },
+      {
+        "id": "ielts-prep-l5",
+        "tier": 3,
+        "script": "Synthetic listening script 5. This is a placeholder for UI testing.",
+        "questions": [
+          {
+            "q": "Synthetic listening Q5.1",
+            "options": [
+              "A",
+              "B",
+              "C"
+            ],
+            "answer": "A"
+          },
+          {
+            "q": "Synthetic listening Q5.2",
+            "options": [
+              "A",
+              "B",
+              "C"
+            ],
+            "answer": "B"
+          }
+        ]
+      },
+      {
+        "id": "ielts-prep-l6",
+        "tier": 3,
+        "script": "Synthetic listening script 6. This is a placeholder for UI testing.",
+        "questions": [
+          {
+            "q": "Synthetic listening Q6.1",
+            "options": [
+              "A",
+              "B",
+              "C"
+            ],
+            "answer": "A"
+          },
+          {
+            "q": "Synthetic listening Q6.2",
+            "options": [
+              "A",
+              "B",
+              "C"
+            ],
+            "answer": "B"
+          }
+        ]
+      }
+    ],
+    "reading": [
+      {
+        "id": "ielts-prep-r1",
+        "tier": 1,
+        "source": "synthetic placeholder",
+        "passage": "Synthetic reading passage 1. Placeholder text for UI testing only.",
+        "questions": [
+          {
+            "q": "Synthetic reading Q1.1",
+            "options": [
+              "A",
+              "B",
+              "C"
+            ],
+            "answer": "A"
+          },
+          {
+            "q": "Synthetic reading Q1.2",
+            "options": [
+              "A",
+              "B",
+              "C"
+            ],
+            "answer": "A"
+          },
+          {
+            "q": "Synthetic reading Q1.3",
+            "options": [
+              "A",
+              "B",
+              "C"
+            ],
+            "answer": "A"
+          },
+          {
+            "q": "Synthetic reading Q1.4",
+            "options": [
+              "A",
+              "B",
+              "C"
+            ],
+            "answer": "A"
+          }
+        ]
+      },
+      {
+        "id": "ielts-prep-r2",
+        "tier": 2,
+        "source": "synthetic placeholder",
+        "passage": "Synthetic reading passage 2. Placeholder text for UI testing only.",
+        "questions": [
+          {
+            "q": "Synthetic reading Q2.1",
+            "options": [
+              "A",
+              "B",
+              "C"
+            ],
+            "answer": "A"
+          },
+          {
+            "q": "Synthetic reading Q2.2",
+            "options": [
+              "A",
+              "B",
+              "C"
+            ],
+            "answer": "A"
+          },
+          {
+            "q": "Synthetic reading Q2.3",
+            "options": [
+              "A",
+              "B",
+              "C"
+            ],
+            "answer": "A"
+          },
+          {
+            "q": "Synthetic reading Q2.4",
+            "options": [
+              "A",
+              "B",
+              "C"
+            ],
+            "answer": "A"
+          }
+        ]
+      }
+    ],
+    "speaking": [
+      {
+        "id": "ielts-prep-s1",
+        "tier": 1,
+        "prompt": "Synthetic speaking prompt 1.",
+        "minWords": 20,
+        "targets": [
+          "because"
+        ]
+      },
+      {
+        "id": "ielts-prep-s2",
+        "tier": 1,
+        "prompt": "Synthetic speaking prompt 2.",
+        "minWords": 20,
+        "targets": [
+          "because"
+        ]
+      },
+      {
+        "id": "ielts-prep-s3",
+        "tier": 2,
+        "prompt": "Synthetic speaking prompt 3.",
+        "minWords": 20,
+        "targets": [
+          "because"
+        ]
+      },
+      {
+        "id": "ielts-prep-s4",
+        "tier": 3,
+        "prompt": "Synthetic speaking prompt 4.",
+        "minWords": 20,
+        "targets": [
+          "because"
+        ]
+      }
+    ],
+    "writing": [
+      {
+        "id": "ielts-prep-w1",
+        "tier": 1,
+        "prompt": "Synthetic writing prompt 1. (20+ words)",
+        "minWords": 20
+      },
+      {
+        "id": "ielts-prep-w2",
+        "tier": 1,
+        "prompt": "Synthetic writing prompt 2. (20+ words)",
+        "minWords": 20
+      },
+      {
+        "id": "ielts-prep-w3",
+        "tier": 2,
+        "prompt": "Synthetic writing prompt 3. (20+ words)",
+        "minWords": 20
+      },
+      {
+        "id": "ielts-prep-w4",
+        "tier": 3,
+        "prompt": "Synthetic writing prompt 4. (20+ words)",
+        "minWords": 20
+      }
+    ]
+  }
+}

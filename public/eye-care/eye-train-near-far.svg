@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#EAF4FF"/>
+      <stop offset="100%" stop-color="#F7FBFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="400" fill="url(#sky)"/>
+  <text x="320" y="42" text-anchor="middle" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#1F4E3A">&#30524;&#29699;&#35757;&#32451; &#183; &#36828;&#36817;&#20132;&#26367;</text>
+  <text x="320" y="68" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#5A7A6A">&#20808;&#30475;&#36817;&#22788;&#25351;&#23576; 5 &#31186;&#65292;&#20877;&#26395;&#21521;&#36828;&#22788;&#30446;&#26631; 5 &#31186;&#65292;&#20132;&#26367; 8 &#27425;</text>
+  <g transform="translate(150,220)">
+    <rect x="-70" y="-90" width="140" height="180" rx="14" fill="#FFF8E8" stroke="#E8C98A" stroke-width="2"/>
+    <text text-anchor="middle" y="-55" font-family="Microsoft YaHei, sans-serif" font-size="16" font-weight="700" fill="#8A6A20">&#36817;&#22788;</text>
+    <circle cy="10" r="36" fill="#FFE6C8" stroke="#E2B48A" stroke-width="2"/>
+    <text text-anchor="middle" y="18" font-size="22" fill="#8A6A20">1</text>
+    <text text-anchor="middle" y="70" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#6A5A30">&#30475;&#25351;&#23576;</text>
+  </g>
+  <text x="320" y="220" text-anchor="middle" font-size="28" fill="#3D9B6E">&#8644;</text>
+  <g transform="translate(490,220)">
+    <rect x="-70" y="-90" width="140" height="180" rx="14" fill="#EAF7EF" stroke="#8BC9A4" stroke-width="2"/>
+    <text text-anchor="middle" y="-55" font-family="Microsoft YaHei, sans-serif" font-size="16" font-weight="700" fill="#2B6B4A">&#36828;&#22788;</text>
+    <circle cy="0" r="28" fill="#FFE08A" stroke="#E0B040" stroke-width="2"/>
+    <circle cy="-4" r="10" fill="#3D9B6E"/>
+    <text text-anchor="middle" y="70" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#2B6B4A">&#26395;&#31383;&#22806;&#32511;&#26893;</text>
+  </g>
+  <text x="320" y="360" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="14" fill="#4A6A5A">&#25918;&#26494;&#30690;&#29366;&#32928; &#183; &#32531;&#35299;&#36817;&#36317;&#31163;&#29992;&#30524;&#30130;&#21171;</text>
+</svg>

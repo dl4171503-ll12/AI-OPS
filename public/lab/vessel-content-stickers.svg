@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" role="img">
+  <title>vessel-content-stickers</title>
+  <rect width="720" height="420" fill="#F0FDF4"/>
+  <text x="360" y="36" text-anchor="middle" font-size="18" font-weight="700" fill="#166534">Vessel fill stickers</text>
+  <g id="sticker-liquid" transform="translate(40,70)"><rect x="0" y="40" width="56" height="70" fill="#7dd3fc" opacity="0.85"/><path d="M0 20 H56 V110 Q28 122 0 110 Z" fill="none" stroke="#64748b" stroke-width="3"/><text x="28" y="150" text-anchor="middle" font-size="12" fill="#334155">liquid</text></g>
+  <g id="sticker-powder" transform="translate(130,70)"><rect x="4" y="70" width="48" height="40" fill="#57534e"/><path d="M0 20 H56 V110 Q28 122 0 110 Z" fill="none" stroke="#64748b" stroke-width="3"/><text x="28" y="150" text-anchor="middle" font-size="12" fill="#334155">powder</text></g>
+  <g id="sticker-metal" transform="translate(220,70)"><ellipse cx="28" cy="100" rx="14" ry="7" fill="#c0c0c0" stroke="#475569"/><path d="M0 20 H56 V110 Q28 122 0 110 Z" fill="none" stroke="#64748b" stroke-width="3"/><text x="28" y="150" text-anchor="middle" font-size="12" fill="#334155">metal</text></g>
+  <g id="sticker-crystal" transform="translate(310,70)"><rect x="4" y="75" width="48" height="35" fill="#38bdf8" opacity="0.75"/><path d="M0 20 H56 V110 Q28 122 0 110 Z" fill="none" stroke="#64748b" stroke-width="3"/><text x="28" y="150" text-anchor="middle" font-size="12" fill="#334155">crystal</text></g>
+  <g id="sticker-gas" transform="translate(400,70)"><rect x="0" y="40" width="56" height="70" fill="#bae6fd" opacity="0.35"/><circle cx="18" cy="70" r="5" fill="#fff" opacity="0.6"/><path d="M0 20 H56 V110 Q28 122 0 110 Z" fill="none" stroke="#64748b" stroke-width="3"/><text x="28" y="150" text-anchor="middle" font-size="12" fill="#334155">gas</text></g>
+  <g id="sticker-oil" transform="translate(490,70)"><rect x="0" y="40" width="56" height="28" fill="#fde047"/><rect x="0" y="68" width="56" height="42" fill="#7dd3fc" opacity="0.55"/><path d="M0 20 H56 V110 Q28 122 0 110 Z" fill="none" stroke="#64748b" stroke-width="3"/><text x="28" y="150" text-anchor="middle" font-size="12" fill="#334155">oil</text></g>
+  <g id="sticker-indicator" transform="translate(580,70)"><rect x="0" y="40" width="56" height="70" fill="#fce7f3" opacity="0.75"/><path d="M0 20 H56 V110 Q28 122 0 110 Z" fill="none" stroke="#64748b" stroke-width="3"/><text x="28" y="150" text-anchor="middle" font-size="12" fill="#334155">indicator</text></g>
+  <text x="360" y="250" text-anchor="middle" font-size="14" fill="#166534">Drag material near vessel to auto-fill</text>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F0F8F4"/>
+      <stop offset="100%" stop-color="#FAFFFC"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="400" fill="url(#sky)"/>
+  <text x="320" y="42" text-anchor="middle" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#1F4E3A">&#30524;&#29699;&#35757;&#32451; &#183; &#39034;&#26102;&#38024;&#32469;&#22280;</text>
+  <text x="320" y="68" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#5A7A6A">&#30524;&#29699;&#27839;&#22823;&#22280;&#24930;&#24930;&#36716;&#19968;&#22280;&#65292;&#20877;&#36870;&#26102;&#38024;&#36716;&#19968;&#22280;&#65292;&#21508;&#20570; 5 &#27425;</text>
+  <g transform="translate(220,220)">
+    <circle r="95" fill="none" stroke="#7BC89A" stroke-width="4" stroke-dasharray="10 8"/>
+    <circle cx="0" cy="-95" r="10" fill="#3D9B6E"/>
+    <circle cx="67" cy="-67" r="8" fill="#5BB37F"/>
+    <circle cx="95" cy="0" r="8" fill="#5BB37F"/>
+    <circle cx="67" cy="67" r="8" fill="#5BB37F"/>
+    <circle cx="0" cy="95" r="8" fill="#5BB37F"/>
+    <circle cx="-67" cy="67" r="8" fill="#5BB37F"/>
+    <circle cx="-95" cy="0" r="8" fill="#5BB37F"/>
+    <circle cx="-67" cy="-67" r="8" fill="#5BB37F"/>
+    <ellipse cx="0" cy="0" rx="36" ry="22" fill="#fff" stroke="#5A4A3A" stroke-width="3"/>
+    <circle cx="6" cy="0" r="8" fill="#2A2A2A"/>
+  </g>
+  <g transform="translate(460,200)">
+    <rect x="-90" y="-70" width="180" height="150" rx="16" fill="#fff" stroke="#CDE8D6" stroke-width="2"/>
+    <text text-anchor="middle" y="-40" font-family="Microsoft YaHei, sans-serif" font-size="15" font-weight="700" fill="#2B6B4A">&#36319;&#20570;&#25552;&#31034;</text>
+    <text text-anchor="middle" y="-10" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#456">1. &#22836;&#19981;&#35201;&#21160;</text>
+    <text text-anchor="middle" y="18" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#456">2. &#30524;&#29699;&#30011;&#22823;&#22280;</text>
+    <text text-anchor="middle" y="46" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#456">3. &#36895;&#24230;&#35201;&#24930;</text>
+    <text text-anchor="middle" y="74" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#456">4. &#36716;&#23436;&#30462;&#30462;&#30524;</text>
+  </g>
+</svg>

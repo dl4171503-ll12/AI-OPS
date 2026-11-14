@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F3F0FF"/>
+      <stop offset="100%" stop-color="#FAF9FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="400" fill="url(#sky)"/>
+  <text x="320" y="42" text-anchor="middle" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#1F4E3A">&#30524;&#29699;&#35757;&#32451; &#183; &#30011;&#8734;&#23383;</text>
+  <text x="320" y="68" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#5A7A6A">&#30524;&#29699;&#27839;&#27178;&#36148;&#30340; 8 &#23383;&#24930;&#36895;&#28388;&#21160;&#65292;&#27491;&#21453;&#21508; 5 &#22280;&#21518;&#38381;&#30524;&#20241;&#24687;</text>
+  <g transform="translate(320,210)">
+    <path d="M-110 0 C-110 -70 -40 -70 0 0 C40 70 110 70 110 0 C110 -70 40 -70 0 0 C-40 70 -110 70 -110 0" fill="none" stroke="#7B8FE8" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="-110" cy="0" r="9" fill="#4A5FC1"/>
+    <circle cx="110" cy="0" r="9" fill="#7B8FE8"/>
+    <circle cx="0" cy="0" r="7" fill="#3D9B6E"/>
+    <ellipse cx="0" cy="0" rx="28" ry="16" fill="#fff" stroke="#5A4A3A" stroke-width="2"/>
+    <circle cx="4" cy="0" r="6" fill="#2A2A2A"/>
+  </g>
+  <text x="320" y="340" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="14" fill="#4A5568">&#21160;&#20316;&#24133;&#24230;&#22823;&#19968;&#28857; &#183; &#33410;&#22865;&#25918;&#24930; &#183; &#24863;&#35266;&#36731;&#26494;&#21363;&#21487;</text>
+  <text x="320" y="368" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#6A7A8A">&#23436;&#25104;&#21518;&#26395;&#21521;&#31383;&#22806;&#36828;&#22788; 10 &#31186;</text>
+</svg>

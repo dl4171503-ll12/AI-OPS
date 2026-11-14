@@ -1,0 +1,1610 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="light" />
+<title>AI 一人学校 · 竞品全景与英语测评竞争力可视化报告（2026-11-10）</title>
+<style>
+  :root{
+    --bg:#f1f5f9; --paper:#ffffff; --ink:#0f172a; --muted:#64748b; --line:#e2e8f0;
+    --brand:#0f766e; --brand2:#115e59; --deep:#123a44; --info:#0891b2;
+    --ok:#059669; --warn:#b45309; --bad:#b91c1c; --radius:20px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth; scroll-padding-top:76px}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Source Han Sans SC",
+      system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:15px; line-height:1.78; -webkit-font-smoothing:antialiased;
+    font-variant-numeric:tabular-nums;
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding:20px 16px 64px}
+  a{color:var(--brand);text-decoration:none}
+  a:hover{text-decoration:underline}
+  h1,h2,h3,h4{margin:0;line-height:1.35;font-weight:700}
+  p{margin:8px 0}
+  ul,ol{margin:8px 0;padding-left:1.35em}
+  li{margin:4px 0}
+  .muted{color:var(--muted)}
+  .small{font-size:13px;line-height:1.7}
+  .tiny{font-size:11.5px;line-height:1.6}
+
+  /* ---------- top nav ---------- */
+  .topnav{
+    position:sticky; top:0; z-index:40; background:rgba(241,245,249,.92);
+    backdrop-filter:blur(10px); border-bottom:1px solid var(--line);
+  }
+  .topnav .inner{max-width:1120px;margin:0 auto;padding:8px 16px;display:flex;gap:8px;align-items:center;overflow-x:auto}
+  .topnav .brandtag{font-size:12px;color:var(--deep);font-weight:700;white-space:nowrap;letter-spacing:.02em}
+  .topnav a{
+    font-size:12.5px;color:#334155;padding:5px 10px;border-radius:999px;
+    border:1px solid transparent;white-space:nowrap;
+  }
+  .topnav a:hover{background:#fff;border-color:var(--line);text-decoration:none}
+  .topnav a.active{background:var(--brand);color:#fff}
+  .topnav .spacer{flex:1}
+  .print-btn{
+    font:inherit;font-size:12.5px;padding:6px 12px;border-radius:999px;cursor:pointer;
+    border:1px solid var(--brand);background:#fff;color:var(--brand);white-space:nowrap;
+  }
+  .print-btn:hover{background:var(--brand);color:#fff}
+
+  /* ---------- cards & sections ---------- */
+  .card{background:var(--paper);border-radius:var(--radius);padding:24px 28px;margin-top:18px;box-shadow:0 2px 12px rgba(15,23,42,.05);border:1px solid rgba(226,232,240,.9)}
+  .card > h2{font-size:22px;letter-spacing:-.01em}
+  .sec-kicker{font-size:12px;letter-spacing:.16em;color:var(--brand);font-weight:700;text-transform:uppercase;margin-bottom:6px}
+  .sec-sub{color:var(--muted);font-size:13.5px;margin:6px 0 0}
+  .hr{height:1px;background:var(--line);margin:18px 0;border:0}
+
+  /* ---------- hero ---------- */
+  .hero{
+    background:linear-gradient(135deg,#123a44 0%,#17525d 55%,#1d6a6a 100%);
+    color:#fff;border-radius:26px;padding:36px 34px 30px;margin-top:18px;
+    box-shadow:0 16px 40px rgba(18,58,68,.22);position:relative;overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;right:-70px;top:-70px;width:300px;height:300px;border-radius:50%;
+    background:radial-gradient(circle,rgba(45,212,191,.28),rgba(45,212,191,0) 68%);
+  }
+  .hero .kicker{font-size:12px;letter-spacing:.2em;color:#a7d7cf;font-weight:700}
+  .hero h1{font-size:clamp(24px,3.4vw,36px);margin:10px 0 6px;letter-spacing:-.01em}
+  .hero .subline{color:#cfeae5;font-size:14.5px;max-width:860px}
+  .hero .concl{
+    margin:18px 0 0;background:rgba(255,255,255,.1);border-left:4px solid #2dd4bf;
+    border-radius:0 12px 12px 0;padding:14px 18px;font-size:15px;line-height:1.8;color:#f0fdfa;max-width:900px;
+  }
+  .hero .concl b{color:#fff}
+  .metaline{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .metaline span{font-size:12px;color:#d7eeea;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);padding:4px 10px;border-radius:999px}
+  .statstrip{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:20px}
+  .stat{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:10px 12px}
+  .stat b{display:block;font-size:22px;color:#fff;line-height:1.2}
+  .stat span{font-size:11.5px;color:#bfe3dd}
+
+  /* ---------- chips ---------- */
+  .chip{display:inline-flex;align-items:center;gap:3px;font-size:11px;line-height:1;padding:3px 7px;border-radius:999px;border:1px solid;vertical-align:middle;white-space:nowrap;font-weight:600}
+  .chip-ok{color:#065f46;background:#ecfdf5;border-color:#a7f3d0}
+  .chip-owned{color:#92400e;background:#fffbeb;border-color:#fde68a}
+  .chip-second{color:#9a3412;background:#fff7ed;border-color:#fed7aa}
+  .chip-none{color:#991b1b;background:#fef2f2;border-color:#fecaca}
+  .chip-plan{color:#1e40af;background:#eff6ff;border-color:#bfdbfe}
+  .chip-est{color:#475569;background:#f1f5f9;border-color:#cbd5e1}
+  .src{font-size:11px;color:var(--muted);white-space:nowrap}
+
+  /* ---------- grids ---------- */
+  .grid{display:grid;gap:14px}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g5{grid-template-columns:repeat(5,1fr)}
+
+  /* ---------- summary cards ---------- */
+  .point{border:1px solid var(--line);border-radius:16px;padding:14px 16px;background:linear-gradient(180deg,#fff, #fbfdfd);position:relative}
+  .point .no{font-size:11px;font-weight:700;color:var(--brand);letter-spacing:.08em}
+  .point h4{font-size:14.5px;margin:2px 0 6px}
+  .point p{font-size:13px;color:#334155;margin:4px 0 8px;line-height:1.72}
+  .point .tagrow{display:flex;flex-wrap:wrap;gap:5px}
+
+  /* ---------- 三问速答 ---------- */
+  .qcard{border-radius:16px;padding:16px 18px;border:1px solid var(--line);background:#fff}
+  .qcard .qn{font-size:12px;font-weight:800;color:var(--brand);letter-spacing:.06em}
+  .qcard h4{font-size:15px;margin:4px 0 8px}
+  .qcard p{font-size:13.2px;margin:0;color:#334155}
+  .qcard.a{border-top:4px solid #0f766e}
+  .qcard.b{border-top:4px solid #0891b2}
+  .qcard.c{border-top:4px solid #b45309}
+
+  /* ---------- figures ---------- */
+  .fig{margin-top:22px;border:1px solid var(--line);border-radius:18px;background:#fff;overflow:hidden}
+  .fig-head{padding:16px 20px 12px;border-bottom:1px dashed var(--line);background:linear-gradient(180deg,#fbfdfd,#fff)}
+  .fig-head .fno{font-size:11.5px;font-weight:800;letter-spacing:.14em;color:var(--brand)}
+  .fig-head h3{font-size:18px;margin:3px 0 4px}
+  .fig-head p{font-size:12.5px;color:var(--muted);margin:0}
+  .fig-body{padding:18px 20px 8px}
+  .fig-meta{border-top:1px dashed var(--line);padding:12px 20px 16px;font-size:12px;color:#475569;background:#fbfdfd;line-height:1.75}
+  .fig-meta b{color:#334155}
+  .fig-legend{display:flex;flex-wrap:wrap;gap:10px 16px;margin:2px 0 14px;font-size:12px;color:#475569}
+  .fig-legend .li{display:inline-flex;align-items:center;gap:6px}
+  .sw{width:13px;height:13px;border-radius:4px;display:inline-block;border:1px solid rgba(15,23,42,.12)}
+
+  /* ---------- chart 1: log bar ---------- */
+  .barchart{display:flex;flex-direction:column;gap:7px}
+  .bc-head,.bc-row{display:grid;grid-template-columns:minmax(170px,32%) 1fr;gap:12px;align-items:center}
+  .bc-head{font-size:11px;color:var(--muted);margin-bottom:2px}
+  .bc-axis{position:relative;height:20px}
+  .bc-axis .tick{position:absolute;transform:translateX(-50%);font-size:10.5px;color:#64748b;bottom:0;white-space:nowrap}
+  .bc-axis .tick:last-child{transform:translateX(-100%)}
+  .bc-label{font-size:13px;line-height:1.35}
+  .bc-label .nm{font-weight:600;display:block}
+  .bc-label .vl{font-size:11.5px;color:#475569;display:flex;gap:5px;align-items:center;flex-wrap:wrap;margin-top:1px}
+  .bc-track{
+    position:relative;height:30px;border-radius:8px;
+    background-color:#f8fafc;
+    background-image:repeating-linear-gradient(to right,#e5ebf1 0 1px,transparent 1px 20%);
+  }
+  .bc-bar{position:absolute;top:8px;height:14px;border-radius:0 7px 7px 0;background:var(--brand)}
+  .bc-bar.hw{background:#475569}
+  .bc-bar.school{background:var(--deep)}
+  .bc-bar.us{background:rgba(15,118,110,.15);border:2px dashed var(--brand);height:14px;border-radius:7px;top:7px}
+  .bc-bar.band{background:repeating-linear-gradient(45deg,rgba(255,255,255,.28) 0 4px,transparent 4px 9px),var(--brand)}
+  .bc-bar.band.hw{background:repeating-linear-gradient(45deg,rgba(255,255,255,.28) 0 4px,transparent 4px 9px),#475569}
+  .bc-bar.band.school{background:repeating-linear-gradient(45deg,rgba(255,255,255,.28) 0 4px,transparent 4px 9px),var(--deep)}
+  .bc-free{position:absolute;left:0;top:4px;right:0;bottom:4px;border:1px dashed #94a3b8;border-radius:7px;display:flex;align-items:center;padding-left:8px;font-size:11px;color:#64748b;background:repeating-linear-gradient(45deg,#f8fafc 0 6px,#eef2f7 6px 12px)}
+
+  /* ---------- chart 2: heatmap ---------- */
+  .hm-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px}
+  table.hm{border-collapse:separate;border-spacing:0;width:100%;min-width:700px;font-size:12.5px}
+  table.hm th,table.hm td{border-bottom:1px solid #eef2f7;border-right:1px solid #f1f5f9}
+  table.hm thead th{background:#f8fafc;color:#334155;font-size:11.5px;font-weight:700;text-align:center;padding:9px 6px;line-height:1.3;position:sticky;top:0;z-index:2}
+  table.hm thead th:first-child{text-align:left;padding-left:12px}
+  table.hm tbody th{background:#fff;text-align:left;font-weight:600;padding:8px 12px;white-space:nowrap;font-size:12.5px;position:sticky;left:0;z-index:1}
+  table.hm tbody th .cat{display:block;font-size:10.5px;color:#94a3b8;font-weight:500}
+  table.hm td.hm-cell{width:62px;min-width:52px;height:38px;text-align:center;vertical-align:middle;font-weight:700;position:relative;cursor:default}
+  table.hm tr.usrow th{background:#f0fdfa;color:var(--brand2)}
+  table.hm tr.usrow td.hm-cell{outline:1px solid rgba(15,118,110,.35);outline-offset:-1px}
+  .hm-0{background:#eef2f6;color:#94a3b8}
+  .hm-1{background:#d7f0ea;color:#0f3f3a}
+  .hm-2{background:#a7ded4;color:#0b3b36}
+  .hm-3{background:#4fb3a6;color:#fff}
+  .hm-4{background:#0f766e;color:#fff}
+  .hm-u{background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.62) 0 3px,rgba(255,255,255,0) 3px 7px)}
+  .hm-x{background-color:#eef2f6!important;color:#94a3b8!important;background-image:repeating-linear-gradient(45deg,rgba(148,163,184,.35) 0 3px,transparent 3px 7px)}
+  .hm-cell .qm{position:absolute;top:1px;right:3px;font-size:9px;font-weight:700;color:#7c2d12;opacity:.85}
+  .hm-cell.hl{box-shadow:inset 0 0 0 2px #f59e0b}
+  .hm-scale{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin:10px 0 4px;font-size:12px;color:#475569}
+  .hm-scale .sw{width:18px;height:18px;border-radius:5px}
+  .rubric{width:100%;border-collapse:collapse;font-size:12.2px}
+  .rubric th,.rubric td{border-bottom:1px solid #eef2f7;padding:7px 9px;text-align:left;vertical-align:top}
+  .rubric th{background:#f8fafc;color:#334155;font-size:11.5px}
+  details.rubric-box{margin-top:12px;border:1px solid var(--line);border-radius:12px;padding:10px 14px;background:#fbfdfd}
+  details.rubric-box summary{cursor:pointer;font-size:12.5px;font-weight:700;color:var(--brand2)}
+  details.rubric-box[open] summary{margin-bottom:8px}
+
+  /* ---------- chart 3: scatter ---------- */
+  .scatter-wrap{overflow-x:auto}
+  .scatter-wrap svg{display:block;min-width:640px;width:100%;height:auto}
+  .pt-label{font-size:11px;fill:#334155;font-weight:600}
+  .pt-label.us{fill:#b45309}
+  .axis-title{font-size:11.5px;fill:#475569;font-weight:600}
+  .tick-label{font-size:10.5px;fill:#94a3b8}
+  .quad-label{font-size:11px;fill:#cbd5e1;font-weight:700;letter-spacing:.08em}
+
+  /* ---------- chart 4: stars ---------- */
+  .stars{display:flex;flex-direction:column;gap:8px}
+  .star-row{display:grid;grid-template-columns:minmax(150px,44%) 1fr;gap:10px;align-items:center}
+  .star-row .nm{font-size:12.5px;font-weight:600;line-height:1.35}
+  .star-row .nm .sub{display:block;font-weight:400;font-size:10.5px;color:#94a3b8}
+  .star-track{position:relative;height:24px;border-radius:6px;background-color:#f8fafc;background-image:repeating-linear-gradient(to right,#e5ebf1 0 1px,transparent 1px 33.333%)}
+  .star-bar{position:absolute;left:0;top:5px;height:14px;border-radius:0 7px 7px 0;background:linear-gradient(90deg,#0f766e,#2dd4bf)}
+  .star-axis{display:grid;grid-template-columns:minmax(150px,44%) 1fr;gap:10px;font-size:10.5px;color:#94a3b8}
+  .star-axis .ticks{display:flex;justify-content:space-between;padding-right:2px}
+  .badge{display:inline-block;font-size:10px;font-weight:700;color:#065f46;background:#d1fae5;border:1px solid #6ee7b7;border-radius:6px;padding:1px 5px;margin-left:4px;vertical-align:middle}
+  .vs-table{width:100%;border-collapse:collapse;font-size:12.5px}
+  .vs-table th,.vs-table td{border-bottom:1px solid #eef2f7;padding:9px 10px;text-align:left;vertical-align:top}
+  .vs-table th{background:#fff7ed;color:#7c2d12;font-size:11.5px}
+  .vs-table tr:last-child td{border-bottom:0}
+  .dual{display:grid;grid-template-columns:1.05fr .95fr;gap:18px}
+
+  /* ---------- chart 5: timeline ---------- */
+  .tl{position:relative;margin-top:6px}
+  .tl-year{display:flex;align-items:center;gap:10px;margin:18px 0 10px;font-weight:800;color:var(--deep);font-size:15px}
+  .tl-year::after{content:"";flex:1;height:1px;background:var(--line)}
+  .tl-items{position:relative;padding-left:22px}
+  .tl-items::before{content:"";position:absolute;left:6px;top:4px;bottom:4px;width:2px;background:linear-gradient(180deg,#0f766e,#99f6e4)}
+  .tl-item{position:relative;margin:0 0 12px}
+  .tl-item::before{content:"";position:absolute;left:-20px;top:6px;width:11px;height:11px;border-radius:50%;background:#fff;border:2.5px solid var(--brand)}
+  .tl-item.hi::before{background:var(--brand)}
+  .tl-item .tl-date{font-size:11.5px;font-weight:800;color:var(--brand2);letter-spacing:.02em}
+  .tl-item .tl-body{font-size:13px;line-height:1.7;color:#334155;margin-top:1px}
+  .tl-item .tl-body b{color:#0f172a}
+  .tl-item .tagrow{margin-top:3px}
+
+  /* ---------- tables ---------- */
+  .tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;margin-top:12px}
+  table.data{border-collapse:separate;border-spacing:0;width:100%;min-width:620px;font-size:12.5px}
+  table.data th,table.data td{border-bottom:1px solid #eef2f7;padding:9px 11px;text-align:left;vertical-align:top}
+  table.data thead th{background:#f8fafc;font-size:11.5px;color:#334155;position:sticky;top:0}
+  table.data tbody tr:nth-child(even){background:#fbfdfd}
+  table.data tbody tr:last-child td{border-bottom:0}
+  table.risk{min-width:760px}
+  table.risk td:first-child{font-weight:700;color:var(--brand2);white-space:nowrap}
+
+  /* ---------- three questions ---------- */
+  .cat-block{border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:#fff}
+  .cat-block h4{font-size:14.5px;margin-bottom:6px}
+  .cat-block .co{border-left:3px solid #0f766e;padding-left:10px;font-size:13px;margin:6px 0;color:#334155}
+  .cat-block .cs{border-left:3px solid #d97706;padding-left:10px;font-size:13px;margin:6px 0;color:#334155}
+  .callout{border-radius:14px;padding:14px 16px;font-size:13.2px;line-height:1.75;border:1px solid}
+  .callout.warn{background:#fffbeb;border-color:#fde68a;color:#78350f}
+  .callout.info{background:#f0fdfa;border-color:#99f6e4;color:#115e59}
+  .callout.bad{background:#fef2f2;border-color:#fecaca;color:#7f1d1d}
+
+  /* ---------- sources ---------- */
+  .filter{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 6px}
+  .filter button{font:inherit;font-size:12px;padding:5px 12px;border-radius:999px;border:1px solid var(--line);background:#fff;color:#334155;cursor:pointer}
+  .filter button.on{background:var(--brand);color:#fff;border-color:var(--brand)}
+  table.src-tbl{border-collapse:separate;border-spacing:0;width:100%;min-width:640px;font-size:12px}
+  table.src-tbl th,table.src-tbl td{border-bottom:1px solid #eef2f7;padding:7px 9px;text-align:left;vertical-align:top}
+  table.src-tbl thead th{background:#f8fafc;font-size:11px;color:#334155}
+  table.src-tbl td.u{word-break:break-all;font-size:11px;color:#64748b;font-family:ui-monospace,"Cascadia Mono",Consolas,monospace}
+  table.src-tbl tr[hidden]{display:none}
+
+  /* ---------- footer ---------- */
+  .footer{margin-top:22px;background:var(--deep);color:#cfe9e5;border-radius:22px;padding:24px 28px;font-size:12.5px;line-height:1.85}
+  .footer h3{color:#fff;font-size:16px;margin-bottom:8px}
+  .footer a{color:#7dd3c8}
+  .footer .cols{display:grid;grid-template-columns:1.2fr 1fr;gap:20px;margin-top:10px}
+  .footer .legend3{display:flex;flex-direction:column;gap:5px}
+  .footer .legend3 span{font-size:12px}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:900px){
+    .g3{grid-template-columns:1fr}
+    .dual{grid-template-columns:1fr}
+    .statstrip{grid-template-columns:repeat(2,1fr)}
+    .footer .cols{grid-template-columns:1fr}
+    .card{padding:20px 18px;border-radius:16px}
+    .hero{padding:26px 20px 22px;border-radius:20px}
+    .hero h1{font-size:25px}
+  }
+  @media (max-width:720px){
+    .g2,.g5{grid-template-columns:1fr}
+    .bc-head,.bc-row{grid-template-columns:1fr;gap:4px}
+    .bc-head .bc-axis{height:18px}
+    .bc-row{gap:2px;padding-bottom:4px;border-bottom:1px dashed #eef2f7}
+    .bc-track{height:26px}
+    .star-row,.star-axis{grid-template-columns:1fr;gap:2px}
+    .statstrip{grid-template-columns:1fr 1fr}
+    .topnav .brandtag{display:none}
+  }
+
+  /* ---------- print ---------- */
+  @page{size:A4;margin:11mm}
+  @media print{
+    html{scroll-padding-top:0}
+    body{background:#fff;font-size:10.5pt;line-height:1.6;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .wrap{max-width:none;padding:0}
+    .topnav,.print-btn,.filter,.no-print{display:none!important}
+    .card,.fig,.hero{box-shadow:none;border-radius:10px}
+    .card{border:1px solid #cbd5e1;padding:14px 16px;margin-top:10px;break-inside:auto}
+    .hero{background:#123a44!important;color:#fff!important;border-radius:10px;padding:16px 18px}
+    .hero h1{font-size:20pt}
+    .hero .concl{background:rgba(255,255,255,.12)!important;color:#f0fdfa!important}
+    .fig,.cat-block,.callout,.qcard{break-inside:avoid}
+    .fig-head h3{font-size:12.5pt}
+    table.data,table.hm,table.src-tbl{font-size:8.6pt}
+    table.data th,table.data td{padding:4px 6px}
+    table.hm td.hm-cell{height:26px;width:44px}
+    .hm-wrap,.tbl-wrap,.scatter-wrap{overflow:visible}
+    .scatter-wrap svg{min-width:0}
+    .footer{background:#123a44!important;color:#d7eeea!important}
+    .no-print,.topnav,.print-btn{display:none!important}
+    a{color:#0f766e}
+    details.rubric-box{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="topnav no-print" id="topnav">
+  <div class="inner">
+    <span class="brandtag">AI 一人学校 · 竞品可视化</span>
+    <a href="#cover">封面</a>
+    <a href="#summary">摘要</a>
+    <a href="#fig1">图1 定价</a>
+    <a href="#fig2">图2 能力矩阵</a>
+    <a href="#fig3">图3 定位</a>
+    <a href="#fig4">图4 我们 vs 竞品</a>
+    <a href="#fig5">图5 时间线</a>
+    <a href="#q">三问</a>
+    <a href="#english">英语测评</a>
+    <a href="#risks">风险</a>
+    <a href="#sources">来源</a>
+    <span class="spacer"></span>
+    <button class="print-btn" id="printBtn" type="button">打印 / 存 PDF</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- ==================== 封面 ==================== -->
+  <header class="hero" id="cover">
+    <div class="kicker">竞品研究 · 可视化报告 · 内部使用</div>
+    <h1>AI 一人学校 · 竞品全景与英语测评竞争力可视化报告</h1>
+    <p class="subline">本报告全部内容整理自两份已完成研究：<b>《04_竞品报告_v1》（29 家竞品矩阵）</b> 与 <b>《05_英语测评竞品报告_v1》（19 行测评对比）</b>；标准锚点参考《01_英语中文_资料汇编》中的 CEFR / 义务教育课标 2022 / 剑桥 / IELTS / CSE 官方来源。所有数字均可回查来源清单，报告标注为 🔶/❌ 的，本页同样保留标记，不升级为确定事实。</p>
+    <div class="concl">
+      <b>一句话结论：</b>市场正在从「AI 家教（工具）」转向「AI 学校（组织）」，但这个转向目前只有 Alpha School（线下、高学费）和洋葱学园（多智能体、1.3 亿学生）真正跑出了形态；我们的「6 学科老师 + 校长 + 上报确认 + 本地优先」占的是同一块地，但<b>内容、分发、证据</b>三座山都没翻过去。
+      <span class="src">〔04 §1 一句话结论〕</span>
+    </div>
+    <div class="metaline">
+      <span>完成日期 2026-11-10</span>
+      <span>信息截止 2026-11-10</span>
+      <span>基于 04 / 05 两份研究</span>
+      <span>汇率按 ≈7.1 折算（估算）</span>
+      <span>离线单文件 · 无外部依赖</span>
+    </div>
+    <div class="statstrip">
+      <div class="stat"><b>29</b><span>04 报告竞品矩阵</span></div>
+      <div class="stat"><b>19</b><span>05 测评对比行（18 家 + 我们）</span></div>
+      <div class="stat"><b>5</b><span>核心图表（全内联 SVG/CSS）</span></div>
+      <div class="stat"><b>45</b><span>来源记录（含 URL）</span></div>
+      <div class="stat"><b>12</b><span>风险清单 R1–R12</span></div>
+    </div>
+  </header>
+
+  <!-- ==================== 摘要 ==================== -->
+  <section class="card" id="summary">
+    <div class="sec-kicker">01 · Summary</div>
+    <h2>一页摘要：十条核心判断</h2>
+    <p class="sec-sub">每条均取自 04 报告 §1（已压缩，数字与证据级别保持原样）。标签含义见页脚「证据分级说明」。</p>
+
+    <div class="grid g2" style="margin-top:16px">
+      <div class="point">
+        <div class="no">判断 01</div>
+        <h4>「AI 讲题」已是红海，且正在被证伪一半</h4>
+        <p>PISA 2025（91 国、约 76 万名学生）数据显示：用 AI 代替自己做作业的学生科学成绩平均低约 <b>20 分</b>（≈落后一年）；每周 1–2 次「用 AI 帮我学」与不用者持平；只有被要求评估 AI 输出的高频使用者小幅领先（<b>+13 分</b>）。结论：AI 的价值不在「给答案」，在「逼学生自己产出」。</p>
+        <div class="tagrow"><span class="chip chip-owned">⚠️ 转述 PBLWorks/OECD</span><span class="src">04 §1-1；来源 #19/#20</span></div>
+      </div>
+
+      <div class="point">
+        <div class="no">判断 02</div>
+        <h4>大厂已把 AI 家教的边际成本打到地板</h4>
+        <p>Duolingo 2026 Q3：营收 <b>3.09 亿美元（+14%）</b>、DAU <b>6490 万（+29%）</b>、付费订阅 <b>1310 万（+14%）</b>；Lily 视频通话单次成本已降到上线初期的 1/10 以下，并从 Max 层下放到 Super 层。</p>
+        <div class="tagrow"><span class="chip chip-ok">✅ 一手/官方</span><span class="src">04 §1-2；来源 #5/#6</span></div>
+      </div>
+
+      <div class="point">
+        <div class="no">判断 03</div>
+        <h4>结构化记忆 &gt; 原始对话记录</h4>
+        <p>可汗学院用 <b>1500 万条</b> tutoring 线程做 20 项实验：喂「近期答题历史摘要」下一题正确率 <b>+3.4%</b>，喂「未掌握的前置技能」<b>+2.7%</b>（合计 <b>+6.1%</b>）；把完整会话记录转成<b>纯文本</b>、并纳入该技能<b>近 24 小时所有线程</b>，认知投入 <b>+5.09%</b>（99.4% 胜率）——但把原始 JSON 日志原样喂进去几乎无效。这是对 MQTT 桥设计最直接的一记提醒。</p>
+        <div class="tagrow"><span class="chip chip-ok">✅ 原文核对</span><span class="src">04 §3.1；来源 #1</span></div>
+      </div>
+
+      <div class="point">
+        <div class="no">判断 04</div>
+        <h4>「AI 学校」在线化极难</h4>
+        <p>Alpha School 已开到 <b>40+ 校区</b>、学费 <b>1 万–7.5 万美元/年</b>（奥斯汀 4 万）；但家庭版 Alpha Anywhere 在 2026 年 9 月的官网 FAQ 里显示「报名暂停至 2026 年底」，且<b>无公开定价</b>。</p>
+        <div class="tagrow"><span class="chip chip-second">🔶 第三方逐条核对官网</span><span class="src">04 §1-4/§3.2；来源 #8</span></div>
+      </div>
+
+      <div class="point">
+        <div class="no">判断 05</div>
+        <h4>国内真正的付费层是硬件，不是软件</h4>
+        <p>2026 Q2 中国学习平板出货 <b>103 万台（+36.6%）</b>，上半年 <b>220 万台（+37.2%）</b>；2026 Q1 线上份额：作业帮 <b>31.6%</b>、学而思 <b>24.6%</b>、讯飞 <b>13.5%</b>、小猿 <b>9.4%</b>；<b>2–3K</b> 价位段吃掉 <b>50.3%</b>。</p>
+        <div class="tagrow"><span class="chip chip-ok">✅ IDC / AVC</span><span class="src">04 §1-5/§3.6；来源 #31/#32</span></div>
+      </div>
+
+      <div class="point">
+        <div class="no">判断 06</div>
+        <h4>「多 AI 角色」不再是我们的独家</h4>
+        <p>洋葱学园在 2026 世界数字教育大会展示的「AI 智能学伴」是<b>六智能体协同</b>（自学大师／私人助教／思维教练／规划导师／自律伙伴／情感树洞），已累计服务 <b>1.3 亿学生、400 万教师、130 余国</b>。</p>
+        <div class="tagrow"><span class="chip chip-ok">✅ 官方/媒体</span><span class="src">04 §1-6/§3.5；来源 #35</span></div>
+      </div>
+
+      <div class="point">
+        <div class="no">判断 07</div>
+        <h4>国内 AI 原生 App 的胜负手是母体流量</h4>
+        <p>2026 年 9 月：小猿 AI <b>2351 万 MAU</b>、豆包爱学 <b>2128 万 MAU（+143%）</b>；豆包主 App 同期 <b>4.19 亿 MAU</b>（QuestMobile 2026-09 口径；月狐 2026-03 口径为 6.9 亿，两家差异须标源）。2026 年 1 月豆包爱学进入主 App 核心入口。</p>
+        <div class="tagrow"><span class="chip chip-ok">✅ QuestMobile 转述</span><span class="src">04 §1-7/§3.7；来源 #37/#38</span></div>
+      </div>
+
+      <div class="point">
+        <div class="no">判断 08</div>
+        <h4>政策是顺风，也是门槛</h4>
+        <p>教育部等五部门《「人工智能+教育」行动计划》（教科信〔2026〕1 号，<b>2026-04-02</b> 印发）明确到 2030 年建「智能学伴」「学生数字档案」「动态优化学习路径」。顺风：品类被国家认证；门槛：备案、算法、未成年人保护、内容审核都会变成硬成本。</p>
+        <div class="tagrow"><span class="chip chip-ok">✅ 全文</span><span class="src">04 §1-8；来源 #26</span></div>
+      </div>
+
+      <div class="point">
+        <div class="no">判断 09</div>
+        <h4>纯 AI 家教的定价锚已出现，且很低</h4>
+        <p>Synthesis Tutor：<b>$29/月或 $119/年</b>（≈¥845/年，按 ≈7.1 折算的估算），覆盖 K–5 数学、<b>3.5 万家庭</b>；带真人辅导的 Live 档 <b>$480/月</b>。我们的定价必须落在这条锚线附近，而不是跟学习机 2–3K 比。</p>
+        <div class="tagrow"><span class="chip chip-ok">✅ 官网</span><span class="chip chip-est">≈ 折算估算</span><span class="src">04 §1-9；来源 #12</span></div>
+      </div>
+
+      <div class="point">
+        <div class="no">判断 10</div>
+        <h4>真正差异化是「组织形态 + 数据主权 + 价格结构」</h4>
+        <p>6 栋楼＝6 个老师、教案上报校长确认、数据本地存档、PC/平板零硬件成本——这四件事拼在一起，目前没有一家同时做到。但它<b>只能换来 12–18 个月的时间窗，换不来护城河</b>。</p>
+        <div class="tagrow"><span class="chip chip-owned">⚠️ 本项目判断</span><span class="src">04 §1-10/§7.1</span></div>
+      </div>
+    </div>
+
+    <div class="grid g3" style="margin-top:18px">
+      <div class="qcard a">
+        <div class="qn">三问速答 (a)</div>
+        <h4>竞品的优势与颠覆性在哪？</h4>
+        <p>优势集中在「内容资产化、习惯货币化、时间重构、标准准入、入口垄断」五条；颠覆性不在 AI 更聪明，而在它们各自重构了成本结构或分发路径。<a href="#q">→ 展开</a></p>
+      </div>
+      <div class="qcard b">
+        <div class="qn">三问速答 (b)</div>
+        <h4>我们能颠覆多少？</h4>
+        <p>能颠覆的是「学校形态 + 数据主权」这段窄缝（3 件事）；短期打不过的是内容、证据、发音声学、分发、硬件（5 件事）。12–18 个月窗口，不是护城河。<a href="#q-b">→ 展开</a></p>
+      </div>
+      <div class="qcard c">
+        <div class="qn">三问速答 (c)</div>
+        <h4>该吸取什么？</h4>
+        <p>P0 六件事两周内落地（结构化记忆、两个北极星指标、延迟预算、PBL 三件套、AI 关闭时间、心理危机 SOP）；P1 定价 ¥399–699/年；P2 30–50 人前后测公开。<a href="#q-c">→ 展开</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 图 1 ==================== -->
+  <section class="card" id="fig1">
+    <div class="sec-kicker">02 · 图 1</div>
+    <h2>定价 / 成本对比：谁在收钱、按什么单位收</h2>
+    <p class="sec-sub">同一张对数刻度上比较「家庭/机构的钱以什么单位流出」。单位不一致（年费 / 每次 / 一次性硬件）时，条上直接标注单位，不做换算合并。</p>
+
+    <div class="fig">
+      <div class="fig-head">
+        <div class="fno">图 1 / FIG.1</div>
+        <h3>价格锚点：从 ¥0 到 ¥53 万/年，跨 5 个数量级</h3>
+        <p>横轴：人民币元（对数刻度 log₁₀，5 个十倍区间）；汇率按 ≈7.1 折算为估算值。</p>
+      </div>
+      <div class="fig-body">
+        <div class="fig-legend">
+          <span class="li"><i class="sw" style="background:#0f766e"></i>订阅 / 测评（按年或按次）</span>
+          <span class="li"><i class="sw" style="background:#475569"></i>硬件一次性买断</span>
+          <span class="li"><i class="sw" style="background:#123a44"></i>线下学费（按学年）</span>
+          <span class="li"><i class="sw" style="background:rgba(15,118,110,.15);border:2px dashed #0f766e"></i>我们的建议定价（未上线）</span>
+          <span class="li"><i class="sw" style="background:repeating-linear-gradient(45deg,#0f766e 0 3px,#5cbfb2 3px 7px)"></i>区间（低–高）</span>
+        </div>
+
+        <div class="barchart" role="img" aria-label="定价对比条形图：横轴为人民币元对数刻度，含豆包爱学免费、Amira 8/20 美元每生每年、Khanmigo 44 美元每年、我们建议 399-699 元每年、DET 65 美元每次、Synthesis 119 美元每年、流利说 1996 元每年、学习机 2000-3000 元一次性、Alpha School 1 万-7.5 万美元每年">
+          <div class="bc-head">
+            <div>项目 <span class="muted">（数字 = 报告原始值）</span></div>
+            <div class="bc-axis" aria-hidden="true">
+              <span class="tick" style="left:0%">¥10</span>
+              <span class="tick" style="left:20%">¥100</span>
+              <span class="tick" style="left:40%">¥1,000</span>
+              <span class="tick" style="left:60%">¥1万</span>
+              <span class="tick" style="left:80%">¥10万</span>
+              <span class="tick" style="left:100%">¥100万</span>
+            </div>
+          </div>
+
+          <div class="bc-row">
+            <div class="bc-label"><span class="nm">豆包爱学（App）</span><span class="vl">¥0 · 免费为主<span class="chip chip-ok">✅ 矩阵#26</span></span></div>
+            <div class="bc-track"><span class="bc-free">¥0 · 免费为主（母体导流，不在此对数刻度上）</span></div>
+          </div>
+
+          <div class="bc-row">
+            <div class="bc-label"><span class="nm">Amira 评测套件</span><span class="vl">$8/生/年 ≈ ¥57<span class="chip chip-ok">✅ NCII</span><span class="chip chip-est">≈折算</span></span></div>
+            <div class="bc-track"><span class="bc-bar" style="left:0;width:15.09%"></span></div>
+          </div>
+
+          <div class="bc-row">
+            <div class="bc-label"><span class="nm">Amira 全量套件</span><span class="vl">$20/生/年 ≈ ¥142<span class="chip chip-ok">✅ NCII</span><span class="chip chip-est">≈折算</span></span></div>
+            <div class="bc-track"><span class="bc-bar" style="left:0;width:23.05%"></span></div>
+          </div>
+
+          <div class="bc-row">
+            <div class="bc-label"><span class="nm">Khanmigo 家庭版</span><span class="vl">$44/年 ≈ ¥312<span class="chip chip-ok">✅ 官网</span><span class="chip chip-est">≈折算</span></span></div>
+            <div class="bc-track"><span class="bc-bar" style="left:0;width:29.89%"></span></div>
+          </div>
+
+          <div class="bc-row">
+            <div class="bc-label"><span class="nm">我们 · 建议定价</span><span class="vl">¥399–699/年（建议）<span class="chip chip-plan">建议 · 未上线</span></span></div>
+            <div class="bc-track"><span class="bc-bar us" style="left:32.02%;width:4.87%"></span></div>
+          </div>
+
+          <div class="bc-row">
+            <div class="bc-label"><span class="nm">Duolingo English Test</span><span class="vl">$65/次 ≈ ¥462<span class="chip chip-second">🔶 第三方口径</span><span class="chip chip-est">≈折算</span></span></div>
+            <div class="bc-track"><span class="bc-bar" style="left:0;width:33.28%"></span></div>
+          </div>
+
+          <div class="bc-row">
+            <div class="bc-label"><span class="nm">Synthesis Tutor</span><span class="vl">$119/年 ≈ ¥845<span class="chip chip-ok">✅ 官网</span><span class="chip chip-est">≈折算</span></span></div>
+            <div class="bc-track"><span class="bc-bar" style="left:0;width:38.54%"></span></div>
+          </div>
+
+          <div class="bc-row">
+            <div class="bc-label"><span class="nm">流利说 优选套餐</span><span class="vl">¥1,996/年<span class="chip chip-second">🔶 第三方渠道页</span></span></div>
+            <div class="bc-track"><span class="bc-bar" style="left:0;width:46.00%"></span></div>
+          </div>
+
+          <div class="bc-row">
+            <div class="bc-label"><span class="nm">学习机 2–3K 主力段</span><span class="vl">¥2,000–3,000 · 一次性<br /><span class="muted">占 2026Q1 线上销量 50.3%</span><span class="chip chip-ok">✅ AVC</span></span></div>
+            <div class="bc-track"><span class="bc-bar band hw" style="left:46.02%;width:3.52%"></span></div>
+          </div>
+
+          <div class="bc-row">
+            <div class="bc-label"><span class="nm">Alpha School 学费区间</span><span class="vl">$1万–7.5万/年 ≈ ¥7.1万–53.25万<span class="chip chip-ok">✅ 第三方核对官网</span></span></div>
+            <div class="bc-track"><span class="bc-bar band school" style="left:77.03%;width:17.50%"></span></div>
+          </div>
+
+          <div class="bc-row">
+            <div class="bc-label"><span class="nm">Alpha · 奥斯汀校区</span><span class="vl">$4万/年 ≈ ¥28.4万<span class="chip chip-ok">✅ 第三方核对官网</span></span></div>
+            <div class="bc-track"><span class="bc-bar school" style="left:0;width:89.07%"></span></div>
+          </div>
+        </div>
+
+        <div class="callout info small" style="margin:16px 0 10px">
+          <b>不画的三个价格：</b>① Duolingo Super / Max 的公开标价本轮<b>未查到</b> ❌，故不给数值；② Alpha 家庭版 Anywhere 官网显示<b>报名暂停至 2026 年底且未公布价格</b> 🔶；③ 讯飞/学而思学习机<b>具体机型价格</b>报告未收录 ❌，只采用「2–3K 主力段」这一市场级数据 ✅。
+        </div>
+      </div>
+      <div class="fig-meta">
+        <b>数据来源：</b>04 报告 §5.1 四种收费结构、§2 竞品矩阵、§3.2（Alpha 学费）、§1-9（Synthesis）；05 报告 §2、§3.3（Amira NCII 档案 $8/$20）、§3.8、§4.5（DET $65、流利说 ¥1099/¥1996、讯飞硬件）、来源 #9/#14/#16/#32。<br />
+        <b>可信度：</b>✅ = 官方/一手或第三方逐条核对；🔶 = 二手报道或第三方销售页；<span class="chip chip-plan">建议</span> = 我们尚未上线的定价方案，不是事实；<b>所有美元→人民币为 ≈7.1 折算的估算值</b>（04 §2 说明），不应作为对外报价。<br />
+        <b>读图提示：</b>Amira 的 $8/生/年（≈¥57）是 05 报告给出的「评测成本天花板」参照（05 §4.5）；Synthesis 的 ¥845/年 是报告认定的 C 端纯 AI 私教价格锚（04 §1-9）。我们的定价必须落在这条锚线附近，而不是跟 2–3K 学习机比。
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 图 2 ==================== -->
+  <section class="card" id="fig2">
+    <div class="sec-kicker">03 · 图 2</div>
+    <h2>能力维度热力矩阵：14 个代表 × 7 个维度</h2>
+    <p class="sec-sub">0–4 分为「报告文本证据」的定性映射，不是测量结果；分值可逐格回查到 04/05 的具体章节（锚点与判定记录见矩阵下方）。斜纹 = 报告中标注 🔶 或 ❌ 的格子，<b>不升级为确定事实</b>。</p>
+
+    <div class="fig">
+      <div class="fig-head">
+        <div class="fno">图 2 / FIG.2</div>
+        <h3>能力热力矩阵：AI 本地化与音素级发音，是两张完全不同的牌</h3>
+        <p>行 = 产品（14 行，含我们）；列 = 7 个维度；色深 = 0（无可，浅灰）→ 4（很强，深青）。</p>
+      </div>
+      <div class="fig-body">
+        <div class="hm-wrap">
+          <table class="hm">
+            <thead>
+              <tr>
+                <th scope="col">产品（代表）</th>
+                <th scope="col">自适应<br />深度</th>
+                <th scope="col">发音<br />评分</th>
+                <th scope="col">PBL<br />深度</th>
+                <th scope="col">AI 角色<br />数量</th>
+                <th scope="col">家长<br />报告</th>
+                <th scope="col">数据<br />本地化</th>
+                <th scope="col">价格<br />友好</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Alpha School<span class="cat">AI 原生学校 · 线下</span></th>
+                <td class="hm-cell hm-3" data-r="1" data-c="1">3</td>
+                <td class="hm-cell hm-0" data-r="1" data-c="2">0</td>
+                <td class="hm-cell hm-2" data-r="1" data-c="3">2</td>
+                <td class="hm-cell hm-1" data-r="1" data-c="4">1</td>
+                <td class="hm-cell hm-2" data-r="1" data-c="5">2</td>
+                <td class="hm-cell hm-x" data-r="1" data-c="6">?</td>
+                <td class="hm-cell hm-0" data-r="1" data-c="7">0</td>
+              </tr>
+              <tr>
+                <th scope="row">Khanmigo<span class="cat">AI 家教 · 平台内</span></th>
+                <td class="hm-cell hm-3" data-r="2" data-c="1">3</td>
+                <td class="hm-cell hm-0" data-r="2" data-c="2">0</td>
+                <td class="hm-cell hm-1" data-r="2" data-c="3">1</td>
+                <td class="hm-cell hm-1" data-r="2" data-c="4">1</td>
+                <td class="hm-cell hm-2" data-r="2" data-c="5">2</td>
+                <td class="hm-cell hm-0" data-r="2" data-c="6">0</td>
+                <td class="hm-cell hm-3" data-r="2" data-c="7">3</td>
+              </tr>
+              <tr>
+                <th scope="row">Duolingo（App/Max）<span class="cat">习惯 / 游戏化</span></th>
+                <td class="hm-cell hm-2" data-r="3" data-c="1">2</td>
+                <td class="hm-cell hm-2 hm-u" data-r="3" data-c="2">2<span class="qm">?</span></td>
+                <td class="hm-cell hm-0" data-r="3" data-c="3">0</td>
+                <td class="hm-cell hm-1" data-r="3" data-c="4">1</td>
+                <td class="hm-cell hm-1" data-r="3" data-c="5">1</td>
+                <td class="hm-cell hm-0" data-r="3" data-c="6">0</td>
+                <td class="hm-cell hm-2 hm-u" data-r="3" data-c="7">2<span class="qm">?</span></td>
+              </tr>
+              <tr>
+                <th scope="row">DET<span class="cat">测评基础设施</span></th>
+                <td class="hm-cell hm-3" data-r="4" data-c="1">3</td>
+                <td class="hm-cell hm-3" data-r="4" data-c="2">3</td>
+                <td class="hm-cell hm-0" data-r="4" data-c="3">0</td>
+                <td class="hm-cell hm-0" data-r="4" data-c="4">0</td>
+                <td class="hm-cell hm-2" data-r="4" data-c="5">2</td>
+                <td class="hm-cell hm-0" data-r="4" data-c="6">0</td>
+                <td class="hm-cell hm-2 hm-u" data-r="4" data-c="7">2<span class="qm">?</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Amira Learning<span class="cat">测评基础设施</span></th>
+                <td class="hm-cell hm-3" data-r="5" data-c="1">3</td>
+                <td class="hm-cell hm-3" data-r="5" data-c="2">3</td>
+                <td class="hm-cell hm-0" data-r="5" data-c="3">0</td>
+                <td class="hm-cell hm-1" data-r="5" data-c="4">1</td>
+                <td class="hm-cell hm-1" data-r="5" data-c="5">1</td>
+                <td class="hm-cell hm-0" data-r="5" data-c="6">0</td>
+                <td class="hm-cell hm-4" data-r="5" data-c="7">4</td>
+              </tr>
+              <tr>
+                <th scope="row">讯飞 AI 学习机 / E听说<span class="cat">硬件 + 内容</span></th>
+                <td class="hm-cell hm-4" data-r="6" data-c="1">4</td>
+                <td class="hm-cell hm-4" data-r="6" data-c="2">4</td>
+                <td class="hm-cell hm-0" data-r="6" data-c="3">0</td>
+                <td class="hm-cell hm-1" data-r="6" data-c="4">1</td>
+                <td class="hm-cell hm-3" data-r="6" data-c="5">3</td>
+                <td class="hm-cell hm-0" data-r="6" data-c="6">0</td>
+                <td class="hm-cell hm-1" data-r="6" data-c="7">1</td>
+              </tr>
+              <tr>
+                <th scope="row">学而思学习机<span class="cat">硬件 + 内容</span></th>
+                <td class="hm-cell hm-4" data-r="7" data-c="1">4</td>
+                <td class="hm-cell hm-2" data-r="7" data-c="2">2</td>
+                <td class="hm-cell hm-1" data-r="7" data-c="3">1</td>
+                <td class="hm-cell hm-1" data-r="7" data-c="4">1</td>
+                <td class="hm-cell hm-3" data-r="7" data-c="5">3</td>
+                <td class="hm-cell hm-0" data-r="7" data-c="6">0</td>
+                <td class="hm-cell hm-1" data-r="7" data-c="7">1</td>
+              </tr>
+              <tr>
+                <th scope="row">作业帮学习机<span class="cat">硬件 + 内容</span></th>
+                <td class="hm-cell hm-4" data-r="8" data-c="1">4</td>
+                <td class="hm-cell hm-x" data-r="8" data-c="2">?</td>
+                <td class="hm-cell hm-0" data-r="8" data-c="3">0</td>
+                <td class="hm-cell hm-1" data-r="8" data-c="4">1</td>
+                <td class="hm-cell hm-3" data-r="8" data-c="5">3</td>
+                <td class="hm-cell hm-0" data-r="8" data-c="6">0</td>
+                <td class="hm-cell hm-1" data-r="8" data-c="7">1</td>
+              </tr>
+              <tr>
+                <th scope="row">松鼠 AI<span class="cat">智适应</span></th>
+                <td class="hm-cell hm-4" data-r="9" data-c="1">4</td>
+                <td class="hm-cell hm-x" data-r="9" data-c="2">?</td>
+                <td class="hm-cell hm-0" data-r="9" data-c="3">0</td>
+                <td class="hm-cell hm-1" data-r="9" data-c="4">1</td>
+                <td class="hm-cell hm-2" data-r="9" data-c="5">2</td>
+                <td class="hm-cell hm-0" data-r="9" data-c="6">0</td>
+                <td class="hm-cell hm-1 hm-u" data-r="9" data-c="7">1<span class="qm">?</span></td>
+              </tr>
+              <tr>
+                <th scope="row">洋葱学园<span class="cat">多智能体</span></th>
+                <td class="hm-cell hm-3 hm-u" data-r="10" data-c="1">3<span class="qm">?</span></td>
+                <td class="hm-cell hm-x" data-r="10" data-c="2">?</td>
+                <td class="hm-cell hm-2" data-r="10" data-c="3">2</td>
+                <td class="hm-cell hm-4" data-r="10" data-c="4">4</td>
+                <td class="hm-cell hm-2" data-r="10" data-c="5">2</td>
+                <td class="hm-cell hm-0" data-r="10" data-c="6">0</td>
+                <td class="hm-cell hm-4" data-r="10" data-c="7">4</td>
+              </tr>
+              <tr>
+                <th scope="row">豆包爱学<span class="cat">流量入口</span></th>
+                <td class="hm-cell hm-2" data-r="11" data-c="1">2</td>
+                <td class="hm-cell hm-2 hm-u" data-r="11" data-c="2">2<span class="qm">?</span></td>
+                <td class="hm-cell hm-0" data-r="11" data-c="3">0</td>
+                <td class="hm-cell hm-1" data-r="11" data-c="4">1</td>
+                <td class="hm-cell hm-2" data-r="11" data-c="5">2</td>
+                <td class="hm-cell hm-0" data-r="11" data-c="6">0</td>
+                <td class="hm-cell hm-4" data-r="11" data-c="7">4</td>
+              </tr>
+              <tr>
+                <th scope="row">Synthesis Tutor<span class="cat">AI 家教 · 家庭</span></th>
+                <td class="hm-cell hm-2" data-r="12" data-c="1">2</td>
+                <td class="hm-cell hm-0" data-r="12" data-c="2">0</td>
+                <td class="hm-cell hm-2" data-r="12" data-c="3">2</td>
+                <td class="hm-cell hm-1" data-r="12" data-c="4">1</td>
+                <td class="hm-cell hm-2" data-r="12" data-c="5">2</td>
+                <td class="hm-cell hm-0" data-r="12" data-c="6">0</td>
+                <td class="hm-cell hm-2" data-r="12" data-c="7">2</td>
+              </tr>
+              <tr>
+                <th scope="row">ELSA / SpeechAce<span class="cat">评测基础设施 · API</span></th>
+                <td class="hm-cell hm-0" data-r="13" data-c="1">0</td>
+                <td class="hm-cell hm-4" data-r="13" data-c="2">4</td>
+                <td class="hm-cell hm-0" data-r="13" data-c="3">0</td>
+                <td class="hm-cell hm-0" data-r="13" data-c="4">0</td>
+                <td class="hm-cell hm-0" data-r="13" data-c="5">0</td>
+                <td class="hm-cell hm-0" data-r="13" data-c="6">0</td>
+                <td class="hm-cell hm-2 hm-u" data-r="13" data-c="7">2<span class="qm">?</span></td>
+              </tr>
+              <tr class="usrow">
+                <th scope="row">AI 一人学校（我们）<span class="cat">本项目 · 目标定位</span></th>
+                <td class="hm-cell hm-1" data-r="14" data-c="1">1</td>
+                <td class="hm-cell hm-1" data-r="14" data-c="2">1</td>
+                <td class="hm-cell hm-1" data-r="14" data-c="3">1</td>
+                <td class="hm-cell hm-4" data-r="14" data-c="4">4</td>
+                <td class="hm-cell hm-3" data-r="14" data-c="5">3</td>
+                <td class="hm-cell hm-3" data-r="14" data-c="6">3</td>
+                <td class="hm-cell hm-3 hm-u" data-r="14" data-c="7">3<span class="qm">?</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="hm-scale">
+          <span class="li"><i class="sw hm-0"></i>0 无可</span>
+          <span class="li"><i class="sw hm-1"></i>1 弱</span>
+          <span class="li"><i class="sw hm-2"></i>2 中</span>
+          <span class="li"><i class="sw hm-3"></i>3 强</span>
+          <span class="li"><i class="sw hm-4"></i>4 很强</span>
+          <span class="li"><i class="sw hm-1 hm-u"></i>2<sup>?</sup> = 🔶 二手/推断（数字仅暂定）</span>
+          <span class="li"><i class="sw hm-x"></i>? = ❌ 报告未查到 / 未覆盖</span>
+        </div>
+
+        <details class="rubric-box" open>
+          <summary>评分锚点（0→4 的判定规则，逐维度可回查）</summary>
+          <table class="rubric">
+            <thead><tr><th style="width:15%">维度</th><th style="width:62%">0 → 4 的锚点定义</th><th style="width:23%">主要依据</th></tr></thead>
+            <tbody>
+              <tr><td><b>自适应深度</b></td><td>0 无自适应证据；1 固定题组/规则阶梯（无难度参数、无等值）；2 内容推荐级个性化（不参与教学决策）；3 掌握式/自适应练习 + 结构化记忆；4 智适应引擎（步骤级知识图谱、多模态诊断、跨学段溯源）。</td><td>04 §2 矩阵「AI 深度」列；05 §4.3 算法对比；讯飞「测-学-练」</td></tr>
+              <tr><td><b>发音评分</b></td><td>0 不覆盖口语或无发音评分；1 有口语任务但<b>发音不计分</b>；2 跟读/转写级即时反馈（非音素）；3 专用评测模型或 ASR 朗读自动评分；4 音素级声学评测，并用于正式考试。</td><td>05 §4.1 三条技术路线；§2 矩阵</td></tr>
+              <tr><td><b>PBL 深度</b></td><td>0 无；1 活动式（项目只是练习）；2 有项目但无真实受众闭环；3 有真实受众但无当众答辩（本表无产品达到）；4 完整 PBL：原创作品 + 真实受众 + 当场答辩为主结构。</td><td>04 §2 评级说明（◎/○/△/—）；§3.4 PBLWorks 三条标准</td></tr>
+              <tr><td><b>AI 角色数量</b></td><td>0 无独立 AI 角色；1 单助手；2 2–3 个；3 4–5 个；4 6 个及以上且有分工。</td><td>04 §3.5（洋葱六智能体）；§7.1（我们的 6 科 + 校长 + 心理）</td></tr>
+              <tr><td><b>家长报告</b></td><td>0 无家长端；1 通知/单次成绩；2 数据看板或成绩单（无建议）；3 数据 + 干预/下一步建议；4 叙事化周报 + 可执行建议 + 相对位置。</td><td>04 §2「家长端」列；§8.2-8；05 §4.4</td></tr>
+              <tr><td><b>数据本地化</b></td><td>0 全云；1 云为主 + 本地缓存；2 本地存档但回传范围不明；3 本地优先 + 部分回传（分级授权）；4 完全本地、无回传。</td><td>04 §7.1「数据主权」；§5.1；Khanmigo FERPA/COPPA</td></tr>
+              <tr><td><b>价格友好</b></td><td>按家庭年支出（硬件一次性按 3 年摊）：4 免费或 ≤¥200/年；3 ¥200–700/年；2 ¥700–2,500/年；1 ¥2,000–3,500 一次性硬件；0 ≥¥10,000/年。</td><td>04 §5.1/§5.2；05 §4.5；图 1 同源数据</td></tr>
+            </tbody>
+          </table>
+        </details>
+
+        <details class="rubric-box">
+          <summary>关键判定记录（12 条样例，防止「拍脑袋」）</summary>
+          <ul class="small" style="margin:6px 0 2px">
+            <li><b>我们 · 自适应 = 1</b>：4 档规则阶梯（起点=年级，通过升档/未通过降档），<b>每档仅 1 题、无难度参数、无等值</b> → 05 §4.3 明确写「短期不可能上 IRT」。</li>
+            <li><b>我们 · 发音 = 1</b>：有口语题，但用浏览器 ASR 转写 + 文本四维，<b>发音维度不计分</b> → 05 §2 末行、§4.1；代码里 `pronunciationNote` 已诚实标注。</li>
+            <li><b>我们 · 数据本地化 = 3</b>：本地存档 + 部分回传（04 §7.1 ★★），不是 4，因为回传仍需授权（风控 R10）。</li>
+            <li><b>我们 · PBL = 1</b>：04 §7.1 自评「PBL 闭环 ★」= 尚未实现「真实受众 + 当众答辩」；04 §9 定位图把我们画在右上，是<b>目标位</b>，不是已实现。</li>
+            <li><b>讯飞 · 发音 = 4</b>：音素级评测、逐词标注，<b>已大规模用于全国中高考英语听说正式评分</b> → 05 §3.8；年评测 67 亿次。</li>
+            <li><b>讯飞 · 自适应 = 4</b>：「测-学-练」闭环 + 跨学段追根溯源 + 本地化考情 → 04 §3.6。</li>
+            <li><b>Amira · 价格 = 4</b>：$8/生/年（评测套件），是学区采购价，<b>家庭不可直接购买</b> → 05 §2/§3.3（NCII）。</li>
+            <li><b>DET · 自适应 = 3 / 发音 = 3</b>：IRT 自适应 + AI 评分特征含 fluency &amp; pronunciation，但公开资料未到音素级 → 05 §2、§4.1。</li>
+            <li><b>DET · 价格 = 2<sup>?</sup></b>：$65/次为<b>第三方口径</b>（🔶），且是单次高风险考试、非年费 → 05 §4.5。</li>
+            <li><b>Alpha · PBL = 2 / 价格 = 0</b>：下午工作坊/项目但无受众闭环（○）；学费 $1万–7.5万/年 → 04 §3.2。</li>
+            <li><b>洋葱 · AI 角色 = 4</b>：六智能体协同（自学大师/私人助教/思维教练/规划导师/自律伙伴/情感树洞）→ 04 §3.5。</li>
+            <li><b>豆包爱学 · 价格 = 4</b>：免费为主、母体导流（04 矩阵#26）；<b>发音 2<sup>?</sup></b>：有「口语陪练」✅，但评测能力未经核实 → 04 §3.7。</li>
+          </ul>
+        </details>
+      </div>
+      <div class="fig-meta">
+        <b>数据来源：</b>04 报告 §2（29 家全景矩阵：AI 深度/ PBL 程度/ 家长端/ 数据策略/ 商业模式）、§3.1–§3.8、§5.1、§7.1；05 报告 §2（19 行测评矩阵）、§3.1–§3.9、§4.1、§4.3、§4.5；价格行与图 1 同源。<br />
+        <b>可信度：</b>✅ = 报告已核原文；🔶 = 二手/推断（图中以斜纹 + <sup>?</sup> 标出）；❌ = 未查到（以灰底 ? 标出）。<b>本矩阵分值全部是定性映射，不是测量结果，不得对外当作评分使用。</b>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 图 3 ==================== -->
+  <section class="card" id="fig3">
+    <div class="sec-kicker">04 · 图 3</div>
+    <h2>定位散点图：右上角那个空位，为什么一直空着</h2>
+    <p class="sec-sub">横轴＝个性化 / 自适应程度；纵轴＝AI 承担教学的比例。坐标是<b>定性判断</b>（0–100 分档），依据 04 §7.1 逐维度打分与 §9 定位图，不是测量值。</p>
+
+    <div class="fig">
+      <div class="fig-head">
+        <div class="fno">图 3 / FIG.3</div>
+        <h3>「高个性化 × 高 AI 教学占比」目前只有目标位，没有已实现者</h3>
+        <p>点 = 报告中的定性位置；★ = 我们的目标位（非现状）；虚线 = 象限分界。</p>
+      </div>
+      <div class="fig-body">
+        <div class="scatter-wrap">
+          <svg viewBox="0 0 760 500" role="img" aria-label="定位散点图：横轴为个性化自适应程度0到100，纵轴为AI承担教学比例0到100。我们AI一人学校位于右上目标位，Alpha School 与 Khanmigo 在中上，DET 与 Amira 在右侧偏下，松鼠AI、学而思、讯飞在中右，豆包爱学在左下方，Duolingo 在左下偏中。">
+            <rect x="0" y="0" width="760" height="500" fill="#ffffff"></rect>
+
+            <g stroke="#eef2f7" stroke-width="1">
+              <line x1="235" y1="40" x2="235" y2="440"></line>
+              <line x1="400" y1="40" x2="400" y2="440"></line>
+              <line x1="565" y1="40" x2="565" y2="440"></line>
+              <line x1="70" y1="340" x2="730" y2="340"></line>
+              <line x1="70" y1="240" x2="730" y2="240"></line>
+              <line x1="70" y1="140" x2="730" y2="140"></line>
+            </g>
+
+            <line x1="400" y1="40" x2="400" y2="440" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="6 6"></line>
+            <line x1="70" y1="240" x2="730" y2="240" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="6 6"></line>
+
+            <line x1="70" y1="440" x2="730" y2="440" stroke="#94a3b8" stroke-width="1.5"></line>
+            <line x1="70" y1="440" x2="70" y2="40" stroke="#94a3b8" stroke-width="1.5"></line>
+
+            <g class="tick-label" text-anchor="middle">
+              <text x="70" y="456">0</text>
+              <text x="235" y="456">25</text>
+              <text x="400" y="456">50</text>
+              <text x="565" y="456">75</text>
+              <text x="730" y="456">100</text>
+            </g>
+            <g class="tick-label" text-anchor="end">
+              <text x="60" y="444">0</text>
+              <text x="60" y="344">25</text>
+              <text x="60" y="244">50</text>
+              <text x="60" y="144">75</text>
+              <text x="60" y="44">100</text>
+            </g>
+
+            <text x="78" y="66" class="quad-label">方法 / 项目派</text>
+            <text x="724" y="66" class="quad-label" text-anchor="end">AI 学校 · 目标空位</text>
+            <text x="78" y="430" class="quad-label">工具 / 入口派</text>
+            <text x="724" y="430" class="quad-label" text-anchor="end">内容 / 智适应派</text>
+
+            <g>
+              <circle cx="532" cy="180" r="7" fill="#123a44"></circle>
+              <text x="544" y="176" class="pt-label">Alpha School（线下）</text>
+
+              <circle cx="479.2" cy="220" r="7" fill="#0f766e"></circle>
+              <text x="491.2" y="216" class="pt-label">Khanmigo</text>
+
+              <circle cx="598" cy="220" r="7" fill="#7c3aed"></circle>
+              <text x="610" y="216" class="pt-label">松鼠 AI</text>
+
+              <circle cx="466" cy="200" r="7" fill="#0f766e"></circle>
+              <text x="454" y="196" class="pt-label" text-anchor="end">洋葱学园</text>
+
+              <circle cx="532" cy="260" r="7" fill="#7c3aed"></circle>
+              <text x="544" y="276" class="pt-label">学而思学习机</text>
+
+              <circle cx="518.8" cy="272" r="7" fill="#7c3aed"></circle>
+              <text x="506.8" y="288" class="pt-label" text-anchor="end">讯飞学习机</text>
+
+              <circle cx="505.6" cy="240" r="7" fill="#0f766e"></circle>
+              <text x="493.6" y="256" class="pt-label" text-anchor="end">Synthesis</text>
+
+              <circle cx="584.8" cy="320" r="7" fill="#0891b2"></circle>
+              <text x="596.8" y="316" class="pt-label">DET</text>
+
+              <circle cx="545.2" cy="300" r="7" fill="#0891b2"></circle>
+              <text x="533.2" y="296" class="pt-label" text-anchor="end">Amira</text>
+
+              <circle cx="367" cy="340" r="7" fill="#d97706"></circle>
+              <text x="379" y="336" class="pt-label">Duolingo（App/Max）</text>
+
+              <circle cx="334" cy="320" r="7" fill="#db2777"></circle>
+              <text x="346" y="316" class="pt-label">豆包爱学</text>
+            </g>
+
+            <g>
+              <circle cx="611.2" cy="128" r="16" fill="none" stroke="#0f766e" stroke-width="1.5" stroke-dasharray="4 4"></circle>
+              <text x="611.2" y="136" text-anchor="middle" font-size="22" fill="#0f766e">★</text>
+              <text x="595" y="96" class="pt-label us" text-anchor="end">我们（目标位）</text>
+              <text x="595" y="110" class="pt-label us" text-anchor="end">AI 一人学校</text>
+            </g>
+
+            <text x="400" y="480" text-anchor="middle" class="axis-title">个性化 / 自适应程度（定性打分 0–100，非测量值）</text>
+            <text x="24" y="240" text-anchor="middle" class="axis-title" transform="rotate(-90 24 240)">AI 承担教学的比例（定性 %）</text>
+          </svg>
+        </div>
+
+        <div class="fig-legend">
+          <span class="li"><i class="sw" style="background:#123a44"></i>AI 原生学校</span>
+          <span class="li"><i class="sw" style="background:#0f766e"></i>AI 家教 / 多智能体</span>
+          <span class="li"><i class="sw" style="background:#7c3aed"></i>内容 + 智适应</span>
+          <span class="li"><i class="sw" style="background:#0891b2"></i>测评基础设施</span>
+          <span class="li"><i class="sw" style="background:#d97706"></i>习惯 / 游戏化</span>
+          <span class="li"><i class="sw" style="background:#db2777"></i>流量入口</span>
+          <span class="li"><span style="color:#0f766e;font-size:14px">★</span> 我们（目标位，非现状）</span>
+        </div>
+
+        <div class="callout warn small" style="margin:12px 0 10px">
+          <b>为什么把我们画成「目标位」而不是现状：</b>04 §9 定位图明确把「AI 一人学校」放在右上象限，但 04 §7.1 同时自评「PBL 闭环 ★」「自适应已无优势」，05 §4.3 又指出我们的自适应只是 4 档规则阶梯。**右上角是我们要去的地方，不是我们已经站的地方。**如果对外宣称已在右上，就是本轮最不应该犯的错。
+        </div>
+      </div>
+      <div class="fig-meta">
+        <b>数据来源：</b>04 报告 §7.1 逐维度评分表（★★★/★★/★/☆）、§9 定位图与读图结论、§3.1–§3.8 各产品能力描述；05 报告 §4.2、§4.3（DET/Amira 自适应 vs 我们）。<br />
+        <b>可信度：</b>⚠️ <b>全部坐标为定性判断</b>，由报告文本映射而来，不是测量值、也不是任何第三方评测分数；不同人对同一产品的打分可能明显不同，甚至互相矛盾。图只用于表达「相对位置与空位」，不用于对外引用具体坐标。<br />
+        <b>读图结论（引 04 §9）：</b>右上象限目前<b>只有我们打算去</b>——Alpha 在左上（高 PBL、AI 参与度其实中等），洋葱/松鼠在右下（高 AI、低 PBL）。这个空位是真实的，但它空着的原因也很真实：<b>难做、难证、难卖</b>。
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 图 4 ==================== -->
+  <section class="card" id="fig4">
+    <div class="sec-kicker">05 · 图 4</div>
+    <h2>我们 vs 竞品：3 件真正更强的事，5 件短期打不过的事</h2>
+    <p class="sec-sub">左列是我们自己的强项（04 §7.1 星级，右上角标注 §7.2 认定的「真正能颠覆的三件事」）；右列是报告明确要求「不要自欺」的五件事，并附对手证据与我们的对策。</p>
+
+    <div class="fig">
+      <div class="fig-head">
+        <div class="fno">图 4 / FIG.4</div>
+        <h3>优势要具体到「哪一件事更便宜、更可审计」，劣势要附对手的真实体量</h3>
+        <p>左侧单位：04 §7.1 的星级（★=持平，★★=有结构性优势但需验证，★★★=明显更强）；右侧为清单，不设条形（量纲不同，见图注）。</p>
+      </div>
+      <div class="fig-body">
+        <div class="dual">
+          <div>
+            <h4 style="font-size:14px;margin:0 0 10px">我们更强 / 不输的 6 个维度（含 §7.2「三件事」）</h4>
+            <div class="stars">
+              <div class="star-row">
+                <div class="nm">组织形态与心智模型<span class="badge">§7.2</span><span class="sub">「一人一所学校」：校长 → 6 科老师 → 上报确认</span></div>
+                <div class="star-track"><span class="star-bar" style="width:100%"></span></div>
+              </div>
+              <div class="star-row">
+                <div class="nm">教学质量闸门（上报确认）<span class="badge">§7.2</span><span class="sub">下级教案须上级确认，是全行业没有的显式闸门</span></div>
+                <div class="star-track"><span class="star-bar" style="width:66.67%"></span></div>
+              </div>
+              <div class="star-row">
+                <div class="nm">数据主权（本地存档 + 部分回传）<span class="badge">§7.2</span><span class="sub">竞品几乎全云；本地优先对中产家长有真实吸引力</span></div>
+                <div class="star-track"><span class="star-bar" style="width:66.67%"></span></div>
+              </div>
+              <div class="star-row">
+                <div class="nm">价格结构（零硬件成本）<span class="sub">可定 ¥399–699/年，无硬件成本</span></div>
+                <div class="star-track"><span class="star-bar" style="width:66.67%"></span></div>
+              </div>
+              <div class="star-row">
+                <div class="nm">多 AI 角色协同<span class="sub">6 科 + 校长 + 心理；但洋葱六智能体已在 1.3 亿学生规模运行</span></div>
+                <div class="star-track"><span class="star-bar" style="width:33.33%"></span></div>
+              </div>
+              <div class="star-row">
+                <div class="nm">PBL 闭环<span class="sub">尚未实现「真实受众 + 当众答辩」，04 §7.1 自评 ★</span></div>
+                <div class="star-track"><span class="star-bar" style="width:33.33%"></span></div>
+              </div>
+            </div>
+            <div class="star-axis">
+              <div></div>
+              <div class="ticks"><span>0</span><span>★ 持平</span><span>★★ 结构优势</span><span>★★★ 明显更强</span></div>
+            </div>
+            <p class="tiny muted" style="margin-top:10px">右上角三个维度即 04 §7.2「真正能颠覆的三件事」的落点：①把「课时」从产品里删掉（组织形态）；②把教学决策交给校长 AI、但把否决权留给规则（上报确认）；③把「数据不出门」变成卖点（数据主权）。</p>
+          </div>
+
+          <div>
+            <h4 style="font-size:14px;margin:0 0 10px;color:#7c2d12">短期真的打不过的 5 件事（不要自欺）</h4>
+            <div style="border:1px solid var(--line);border-radius:14px;overflow:hidden">
+              <table class="vs-table">
+                <thead>
+                  <tr><th style="width:24%">打不过的事</th><th style="width:43%">对手证据（报告数字）</th><th style="width:33%">我们的对策</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><b>内容体量</b></td>
+                    <td>学而思：课程 <b>1600 万分钟</b>、真题 <b>85 万套</b>、题目 <b>7 亿道</b>；松鼠 AI：<b>200 亿条</b>学习行为数据<span class="chip chip-ok">✅</span></td>
+                    <td>窄而深：先英语单科打透，「第 0 层模板 + 生成」（04 §7.3-1）</td>
+                  </tr>
+                  <tr>
+                    <td><b>效果证据</b></td>
+                    <td>Khanmigo：<b>1500 万条</b>线程、20 项 A/B；PISA 2025：<b>91 国约 76 万</b>学生<span class="chip chip-ok">✅</span></td>
+                    <td>30–50 人 8 周前后测，公开方法与局限，哪怕「无显著提升」也发（04 §8.3-12）</td>
+                  </tr>
+                  <tr>
+                    <td><b>发音声学评测</b></td>
+                    <td>讯飞：音素级 + <b>中高考正式评分</b>，年评测 <b>67 亿次</b>；微软：音素级 AccuracyScore + NBestPhonemes<span class="chip chip-ok">✅</span></td>
+                    <td>接云端评测 API（05 P1-1），先用 30 条录音做一致性与成本测试</td>
+                  </tr>
+                  <tr>
+                    <td><b>渠道获客</b></td>
+                    <td>豆包 <b>4.19 亿 MAU</b> 漏斗；学习机线下门店（IDC：头部厂商加大线下渠道）<span class="chip chip-ok">✅</span></td>
+                    <td>三条窄门：免费家长报告 / 教师机构白牌 / 学校课后服务（04 §8.2-10）</td>
+                  </tr>
+                  <tr>
+                    <td><b>硬件生态</b></td>
+                    <td>2026Q2 学习平板出货 <b>103 万台</b>；2–3K 段占 <b>50.3%</b>；讯飞覆盖 <b>5 万多所</b>学校<span class="chip chip-ok">✅</span></td>
+                    <td>只做白牌合作，不自研（04 §8.3-15）</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="tiny muted" style="margin-top:8px"><b>为什么右列不画条形：</b>五件事的量纲分别是「分钟 / 线程 / 次 / MAU / 台」，强行画在同一根轴上会制造「学而思 1600 万 &gt; 讯飞 67 亿」这类错误比较；数字直接并列比条长更诚实。</p>
+          </div>
+        </div>
+      </div>
+      <div class="fig-meta">
+        <b>数据来源：</b>左侧星级与理由 = 04 §7.1 逐维度评分表；「三件事」= 04 §7.2；右侧 = 04 §7.3 五条 + 05 §5 差距 #1（发音声学），数字见 04 §3.1/§3.5/§3.6/§3.7、05 §3.8/§4.1。<br />
+        <b>可信度：</b>星级是<b>报告编者的定性判断</b>（⚠️），不是测量；右侧对手数字为 ✅ 一手/官方来源（学而思/松鼠/豆包/讯飞/IDC/AVC）。<b>「打不过」是诚实的战略判断，不是能力描述。</b>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 图 5 ==================== -->
+  <section class="card" id="fig5">
+    <div class="sec-kicker">06 · 图 5</div>
+    <h2>2025–2026 时间线：政策、发布、财报与「暂停报名」</h2>
+    <p class="sec-sub">按 04 §4「最新动态」表（22 行，同日期事件合并后 21 个节点）重建，并补入 §3.2 的 Alpha Anywhere 暂停信号。所有日期为报告原文日期；标 🔶 的为标题级或二手核实。</p>
+
+    <div class="fig">
+      <div class="fig-head">
+        <div class="fno">图 5 / FIG.5</div>
+        <h3>21 个关键节点：从「AI 家教红海」走到「AI 学校形态之争」</h3>
+        <p>时间轴自上而下；实心圆点 = 直接改变竞争格局的节点，空心 = 背景/政策节点。</p>
+      </div>
+      <div class="fig-body">
+        <div class="tl">
+          <div class="tl-year">2025</div>
+          <div class="tl-items">
+            <div class="tl-item">
+              <div class="tl-date">2025-04 · 政策</div>
+              <div class="tl-body">美国白宫总统行政令《Advancing Artificial Intelligence Education for American Youth》。<span class="src">🔶 标题与日期已核实，正文未完整抓取</span></div>
+            </div>
+            <div class="tl-item hi">
+              <div class="tl-date">2025-05-07 · 发布</div>
+              <div class="tl-body"><b>学而思</b>发布 P/S/T 三系列学习机：九章 + DeepSeek 双核，内容 <b>1600 万分钟 / 85 万套真题 / 7 亿题</b>。<span class="src">✅ 央广网</span></div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-date">2025-07-16 · 发布</div>
+              <div class="tl-body"><b>作业帮</b>学习机 P50 发布，主打「AI 超级老师」+ 1–2 周个性化计划。<span class="src">✅ 央广网/新华网</span></div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-date">2025-09 · 市场数据</div>
+              <div class="tl-body">IDC：2025Q2 中国学习平板 <b>154 万台（+44.6%）</b>，CR5 = <b>82.3%</b>。<span class="src">✅ IT之家/IDC</span></div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-date">2025-10-14 · 平台化</div>
+              <div class="tl-body"><b>Khan Academy</b> 重做 Districts 平台，Khanmigo 深度嵌入学习平台，2026 学年全区推广。<span class="src">✅ THE Journal</span></div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-date">2025-12 · 政策</div>
+              <div class="tl-body">美国白宫第三次 AI 教育特别工作组会议（教师与家长）。<span class="src">✅ 标题级</span></div>
+            </div>
+          </div>
+
+          <div class="tl-year">2026</div>
+          <div class="tl-items">
+            <div class="tl-item">
+              <div class="tl-date">2026-02-28 · 发布</div>
+              <div class="tl-body"><b>科大讯飞</b> T90 Pro / T90 Lite：精准学再进化（跨学段追根溯源、初中语文精准学）。其语音评测已用于全国中高考英语听说<b>正式评分</b>（05 §3.8）。厂商自述：同章节查漏补缺「时间 -64%、学会率 3.1 倍」。<span class="chip chip-owned">⚠️ 自述</span></div>
+            </div>
+            <div class="tl-item hi">
+              <div class="tl-date">2026-03 · 财报 / 转向</div>
+              <div class="tl-body"><b>Duolingo</b>：2025 全年预订额 <b>10.1 亿美元</b>、DAU &gt;5000 万、EBITDA 率 29.5%；<b>2026 指引下调</b>，Lily 从 Max 下放到 Super。<span class="src">✅ SmartHey</span></div>
+            </div>
+            <div class="tl-item hi">
+              <div class="tl-date">2026-04-02 · 政策</div>
+              <div class="tl-body">教育部等五部门《「人工智能+教育」行动计划》（教科信〔2026〕1 号）印发：2030 年建「智能学伴 / 学生数字档案 / 动态优化学习路径」。<span class="src">✅ 全文</span></div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-date">2026-04-21 · 市场数据</div>
+              <div class="tl-body">奥维睿沃：26Q1 线上学习平板 <b>85 万台（-8%）</b>、零售额 26 亿元（-12%）；份额 作业帮 <b>31.6%</b> / 学而思 24.6% / 讯飞 13.5% / 小猿 9.4%；<b>2–3K 段占 50.3%</b>。<span class="src">✅ AVC/搜狐</span></div>
+            </div>
+            <div class="tl-item hi">
+              <div class="tl-date">2026-05-06 · 证据</div>
+              <div class="tl-body"><b>Khan Academy</b> 公布 20 项 A/B 实验：结构化学习历史 +3.4%、前置缺口 +2.7%，合计下一题正确率 <b>+6.1%</b>；原始 JSON 日志几乎无效。<span class="src">✅ 官方博客</span></div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-date">2026-05-11~13 · 发布</div>
+              <div class="tl-body"><b>洋葱学园</b>在世界数字教育大会展示六智能体「AI 智能学伴」：<b>1.3 亿学生 / 400 万教师 / 130 余国</b>。<span class="src">✅ 光明网</span></div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-date">2026-06 / 2026-08 · 资本</div>
+              <div class="tl-body"><b>松鼠 AI</b>：招商证券签约任港股保荐机构、中信证券任全球协调人；<b>153 项</b>发明专利。<span class="src">✅ pedaily</span></div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-date">2026-08-08 · 市场数据</div>
+              <div class="tl-body">IDC：2026Q2 学习平板 <b>103 万台（+36.6%）</b>；H1 <b>220 万台（+37.2%）</b>；小度 G 系列居整体第一，15 寸+ 大屏占 16.5%。<span class="src">✅ uSMART/IDC</span></div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-date">2026-09-04 · 财报</div>
+              <div class="tl-body"><b>高途</b> 2026Q2 收入 <b>16.7 亿元（+20.2%）</b>，连续 13 季增长；战略词是「Scale with AI」——用 AI 改成本结构，不把 AI 当产品卖。<span class="src">✅ 21 世纪经济报道</span></div>
+            </div>
+            <div class="tl-item hi">
+              <div class="tl-date">2026-09 · 反向信号</div>
+              <div class="tl-body"><b>Alpha School</b> 家庭版 Alpha Anywhere：官网 FAQ 显示<b>报名暂停至 2026 年底，且未公布价格</b>。对比 04 §3.2：线下已开到 <b>40+ 校区</b>、学费 1 万–7.5 万美元/年（奥斯汀 4 万）——<b>扩张（线下）与暂停（纯软件家庭版）同时存在</b>。<span class="src">🔶 第三方逐条核对官网（2026-09-22）</span></div>
+            </div>
+            <div class="tl-item hi">
+              <div class="tl-date">2026-10-13 · 证据 / 数据</div>
+              <div class="tl-body"><b>PISA 2025</b>（OECD）：AI 代做作业者科学成绩低约 <b>20 分</b>；同日 <b>松鼠 AI</b> 公布累计 <b>4300 万用户、200 亿条</b>学习行为数据。<span class="src">✅ OECD / ✅ 环球网</span></div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-date">2026-10 · 准入</div>
+              <div class="tl-body"><b>IXL</b> 获佛州教育厅批准 Takeoff by IXL 全州采用；官网自称覆盖全美 1/3 学生、190 国、80+ 语言。<span class="src">✅ ixl.com</span></div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-date">2026-11-01 · 方法论</div>
+              <div class="tl-body"><b>PBLWorks</b> CEO 撰文：AI 无法替学生做的三条标准——<b>原创作品、真实受众、当场答辩</b>。<span class="src">✅ pblworks.org</span></div>
+            </div>
+            <div class="tl-item hi">
+              <div class="tl-date">2026-11-04 · 财报</div>
+              <div class="tl-body"><b>Duolingo</b> 2026Q3：营收 <b>3.09 亿美元（+14%）</b>、DAU <b>6490 万（+29%）</b>、订阅 <b>1310 万（+14%）</b>，全年营收指引 12.21 亿美元。<span class="src">✅ Yonhap Infomax</span></div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-date">2026-11 · 流量</div>
+              <div class="tl-body">QuestMobile 2026-09：小猿 AI <b>2351 万 MAU</b>、豆包爱学 <b>2128 万（+143%）</b>；豆包主 App <b>4.19 亿 MAU</b>。<span class="src">✅ 36氪/c114 转述</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fig-meta">
+        <b>数据来源：</b>04 报告 §4「最新动态（2025–2026）」表（22 行，合并后 21 个节点）及 §3.1–§3.7 正文；日期与机构见附录 A 来源 #1/#5/#6/#8/#19/#20/#26–#38。<br />
+        <b>可信度：</b>✅ = 报告已核原文或官方发布；🔶 = 二手/标题级核实（白宫行政令、Alpha Anywhere 暂停）；⚠️ = 厂商自述（讯飞 -64% / 3.1 倍）。<b>无一项为本文作者推测。</b>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 三问 ==================== -->
+  <section class="card" id="q">
+    <div class="sec-kicker">07 · 三问正文</div>
+    <h2>(a) 竞品的优势与颠覆性到底在哪？</h2>
+    <p class="sec-sub">把 04 报告矩阵里的 29 家竞品归成 5 类，逐类回答「优势 / 颠覆性 / 软肋」。每家 2–3 句，句末附来源编号与章节。</p>
+
+    <div class="grid g2" style="margin-top:14px">
+      <div class="cat-block">
+        <h4>3.1 内容与教研型（学而思 / 作业帮 / 讯飞 / 步步高 / 松鼠 AI）</h4>
+        <p class="co"><b>优势：</b>内容体量 + 校内同步 + 线下渠道。学而思 2025-05 起 P/S/T 三系列学习机，九章 + DeepSeek 双核，课程 <b>1600 万分钟</b>、真题 <b>85 万套</b>、题目 <b>7 亿道</b>；作业帮覆盖 <b>295 个教材版本</b>；讯飞宣称覆盖 <b>5 万多所学校、83 个示范区</b>，能按地区考情差 20%–30% 做本地化；松鼠 AI 累计 <b>4300 万用户、200 亿条</b>学习行为数据。2026Q1 线上份额三强合计近 70%（31.6% / 24.6% / 13.5%）。<span class="src">〔04 §3.5、§3.6；来源 #27/#29/#33/#32〕</span></p>
+        <p class="cs"><b>颠覆性：</b>传统网校的边际成本是「再招一个老师」，它们的边际成本是「再录一节课 / 再标一道题」。这直接摧毁了「用人教人」的规模逻辑——也就是我们主张要打破的那件事。<b>必须承认：他们已经用另一种方式打破了它。</b></p>
+        <p class="muted small"><b>软肋：</b>全部围绕「提分」，AI 老师仍是答题与批改的延伸，不是教学决策的主体（04 §6.1）。</p>
+      </div>
+
+      <div class="cat-block">
+        <h4>3.2 习惯与游戏化型（Duolingo / Prodigy / ABCmouse / 洪恩·叫叫·伴鱼）</h4>
+        <p class="co"><b>优势：</b>留存工程 + 付费漏斗。Duolingo 2026Q3：DAU <b>6490 万</b>、付费订阅 <b>1310 万</b>、营收 3.09 亿美元；连续天数、排行榜、拟人化角色（Lily）制造情绪关系。<span class="src">〔04 §3.1、§1-2；来源 #5/#6〕</span></p>
+        <p class="cs"><b>颠覆性：</b>把「学习」重新定义为「每日可完成的小动作」。它证明了一个残酷事实：<b>家长愿意为「孩子每天主动打开」付费，胜过为「教得更好」付费。</b>低龄段的洪恩/叫叫/伴鱼用同一套逻辑（低价年费 + 家长社群 + 内容 IP）。</p>
+        <p class="muted small"><b>软肋：</b>深度不足（学完难迁移到考试与真实任务）；AI 功能正在快速贬值——Lily 从 Max 下放到 Super、2026 指引下调（04 §6.2）。</p>
+      </div>
+
+      <div class="cat-block">
+        <h4>3.3 AI 原生学校型（Alpha / 2 Hour Learning、Sora、Primer）</h4>
+        <p class="co"><b>优势：</b>重构日程表。Alpha 上午约 2 小时自适应软件做核心学科、下午 4 小时工作坊（演讲/创业/领导力/财商）+ 户外，成人不叫老师叫 Guide；<b>40+ 校区</b>、学费 <b>1 万–7.5 万美元/年</b>（奥斯汀 4 万），结果口径 MAP 前 1–2%（⚠️自述）。Sora 全在线 6–12 年级、学费 <b>$17,900/年</b>、师生比 9:1、12 周 expedition 公开展示；Primer 家长实付 <b>$0–6,752/年</b>（依赖州奖学金/ESA）。<span class="src">〔04 §3.2、§1-4；来源 #8〕</span></p>
+        <p class="cs"><b>颠覆性：</b>它<b>否定了「课时」这个计量单位</b>。一旦家长接受「每天 2 小时就够」，所有以课时计费的网校商业模式都要被重估——这才是真正把「用人教人」打碎的那一刀。</p>
+        <p class="muted small"><b>软肋：</b>贵、线下、不可复制；家庭版 Alpha Anywhere 报名暂停至 2026 年底且无公开定价，说明<b>纯软件的家庭版 AI 学校，商业模型还没跑通</b>（04 §6.3）。</p>
+      </div>
+
+      <div class="cat-block">
+        <h4>3.4 测量与基础设施型（IXL / Amira / ST Math / Renaissance）</h4>
+        <p class="co"><b>优势：</b>标准与准入。IXL 自称覆盖全美 1/3 学生、190 国、80+ 语言，2026-09 佛州教育厅批准 Takeoff by IXL 全州采用；Amira 被马里兰州批准为<b>通用筛查工具</b>，评测套件 <b>$8/生/年</b>、全量 $20/生/年；i-Ready / AR / Lexile 的「分级 + 换算」让「你孩子相当于几年级」有了可辩护依据。<span class="src">〔04 §3.3；05 §3.3/§3.6；来源 #13/#14/#9〕</span></p>
+        <p class="cs"><b>颠覆性：</b>它们把<b>「什么是学会了」标准化了</b>。一旦进入州级采购目录，替换成本极高——护城河不是 AI，是「测量标准 + 采购目录 + 教师工作流」。</p>
+        <p class="muted small"><b>软肋：</b>慢、重、面向机构，对家庭端体验几乎无感（04 §6.4）。<b>我们短期完全打不过这一层，也没有必要打</b>——我们不做「给学区卖的测评」，只做「给家庭用的学校」。</p>
+      </div>
+
+      <div class="cat-block">
+        <h4>3.5 流量入口型（豆包爱学 / 夸克 / 小猿 AI）</h4>
+        <p class="co"><b>优势：</b>母体流量 + 免费 + 多模态。豆包爱学 9 个月做到 <b>2128 万 MAU（+143%）</b>，靠的是豆包主 App <b>4.19 亿 MAU</b> 的漏斗；夸克以搜索入口做到 <b>1.6 亿 MAU</b>；小猿 AI <b>2351 万 MAU</b>。<span class="src">〔04 §3.7、§1-7；来源 #37/#38〕</span></p>
+        <p class="cs"><b>颠覆性：</b><b>分发即颠覆。</b>它让「打开一个 AI 就能问」变成零成本——不需要赢教学法，只需要赢「第一次打开」。</p>
+        <p class="muted small"><b>软肋：</b>留存与深度弱、教学治理为零（没有课程、没有进度、没有家长报告闭环）、监管压力最大（04 §6.5）。<b>这是我们最打不过的一层，短期内也不该正面对抗。</b></p>
+      </div>
+
+      <div class="cat-block" style="background:#f0fdfa;border-color:#99f6e4">
+        <h4>一句话总结 (a)</h4>
+        <p class="small" style="margin:6px 0">竞品的颠覆性分别在 <b>内容资产化</b>（学而思/松鼠）、<b>习惯货币化</b>（Duolingo）、<b>时间重构</b>（Alpha）、<b>标准准入</b>（IXL/Amira）、<b>入口垄断</b>（豆包/夸克）。<b>没有任何一家同时握有「教学决策 + 原创作品 + 家长信任 + 低价格」四件事</b>——这就是 04 §6.5 的原话，也是我们唯一干净的缝隙。</p>
+        <p class="small" style="margin:6px 0"><b>最该警惕的一刀：</b>不是大厂的模型能力，而是 Duolingo 的「AI 功能迅速商品化」——连它都无法靠 AI 功能维持溢价（Lily 下放、2026 指引低于市场预期）。<b>付费理由必须回到「结果」和「关系」，而不是「我们有 AI」。</b></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" id="q-b">
+    <div class="sec-kicker">07 · 三问正文</div>
+    <h2>(b) 我们能比它颠覆多少？优势在哪、缺点在哪（诚实版）</h2>
+
+    <h3 style="font-size:17px;margin-top:8px">我们能颠覆的三件事（04 §7.2）</h3>
+    <div class="grid g3" style="margin-top:10px">
+      <div class="callout info">
+        <b>① 把「课时」从产品里删掉。</b><br />我们的界面里没有「今天上了 2 节课」，只有「今天完成了什么、做出了什么」。这与 Alpha 的「2 小时」同向，但<b>我们不需要家长付 4 万美元</b>。这是对「学而思式网校」最直接的一刀。
+      </div>
+      <div class="callout info">
+        <b>② 把教学决策交给校长 AI，但把否决权留给规则。</b><br />「上报确认」= 一个便宜、可审计的「AI 教研组长」。Khanmigo 的 <b>+6.1%</b> 证明「结构化历史 + 前置缺口」是有效输入，而校长 AI 天然是这些信号的汇聚点——<b>竞品要改造得动整个数据模型</b>。前提：必须异步批处理，只有三类事件触发上报（学习计划变更 / 新知识点首讲 / 风险信号），否则会拖垮延迟与成本（04 §8.2-11）。
+      </div>
+      <div class="callout info">
+        <b>③ 把「数据不出门」变成卖点而不是成本。</b><br />初期本地存档本是「云端太贵」的权宜之计，但它恰好是 2026 年家长最敏感的点（PISA 数据、《「人工智能+教育」行动计划》都在强调安全与伦理）。<b>把约束翻译成价值，是我们最便宜的一次品牌升级</b>——但回传必须分级授权（风险 R10）。
+      </div>
+    </div>
+
+    <h3 style="font-size:17px;margin-top:20px">短期真的打不过的五件事（见 图 4 右列）</h3>
+    <div class="callout bad">
+      内容质量 · 分发 · 证据 · 发音声学评测 · 硬件生态。<b>不要自欺：</b>没有 1600 万分钟、没有 85 万套真题、没有任何一份可公开的效果报告、没有音素级发音评测、没有一台自己的硬件。对策只能是「窄而深」+「先攒证据」+「不做硬件」——任何一条破例，都会退化成「更小号的学而思」（04 §7.3、§5.2）。
+    </div>
+
+    <h3 style="font-size:17px;margin-top:20px">三条必须承认的边界</h3>
+    <div class="grid g3" style="margin-top:10px">
+      <div class="cat-block">
+        <h4>边界一：12–18 个月，不是护城河</h4>
+        <p class="small">「6 科老师 + 校长 + 上报 + 本地优先」这四件事拼在一起，目前没有一家同时做到；但它只能换来 12–18 个月的时间窗，换不来护城河（04 §1-10）。窗口一过，大厂补一个「校长 AI」只是产品迭代。</p>
+      </div>
+      <div class="cat-block">
+        <h4>边界二：高中段叙事会失效</h4>
+        <p class="small">「一个人一所学校」在低龄段是极强的情感产品，但在高中段会迅速失效：高中生要的是效率、真题、分数、志愿，不是「学校和老师」。必须把 6–18 岁改成三段式：<b>低龄卖情感与习惯、中龄卖能力与方法、高龄卖效率与结果</b>（04 §7.4）。</p>
+      </div>
+      <div class="cat-block">
+        <h4>边界三：合规是产品级生死</h4>
+        <p class="small">生成式 AI 服务备案、未成年人个人信息、算法备案、心理危机干预——任何一件出事都是产品级死亡。我们目前只有「密文存储 + 家长端不看对话」的设计，<b>没有 SOP、没有人工兜底、没有资质路径</b>（04 §7.3-4、风险 R5）。</p>
+      </div>
+    </div>
+
+    <div class="callout warn" style="margin-top:16px">
+      <b>结论（一句话）：</b>我们能颠覆的是「<b>学校形态 + 数据主权</b>」这段窄缝，颠覆不了「内容、证据、分发」。真正能赢的方式在 04 §9 已经写死：<b>把「难做」变壁垒、把「难证」变先发证据、把「难卖」变极低价格 + 家长报告获客。</b>
+    </div>
+  </section>
+
+  <section class="card" id="q-c">
+    <div class="sec-kicker">07 · 三问正文</div>
+    <h2>(c) 我们应该吸取它什么（可执行清单，15 条）</h2>
+    <p class="sec-sub">排序原则：P0 = 未来 2–4 周、直接决定英语单科能否打通；P1 = 4–8 周、决定留存与付费；P2 = 季度级、决定能不能融资 / 活下去。每条都附「怎么做算完成」。</p>
+
+    <h3 style="font-size:16px;margin-top:14px;color:var(--brand2)">P0 · 两周内必须落地（6 条）</h3>
+    <div class="tbl-wrap">
+      <table class="data">
+        <thead><tr><th style="width:6%">#</th><th style="width:22%">动作</th><th style="width:46%">具体怎么做</th><th style="width:26%">验收（怎么算完成）</th></tr></thead>
+        <tbody>
+          <tr><td>P0-1</td><td><b>【技术】MQTT 桥 payload 从「消息」改成「结构化记忆」</b></td><td>定义 schema：<code>{studentId, kpCode, mastery(0-100), prereqGaps[], errorCause, lastOutcome, affectValence, latencyMs, updatedAt}</code>；<b>明确禁止</b>跨 AI 传递原始对话文本。依据：Khanmigo 20 项实验——结构化历史 +3.4%、前置缺口 +2.7%，原始 JSON 日志无效果。</td><td>校长 AI 能仅凭该 schema 复述「某学生这周卡在哪 3 个前置知识点」，不需要读聊天记录。</td></tr>
+          <tr><td>P0-2</td><td><b>【指标】两个北极星指标 + 最小 A/B 框架</b></td><td>指标一：<b>下一题正确率</b>（同技能、下一次练习、无 AI 帮助）；指标二：<b>认知投入度</b>（每次交互至少 active）。记录 <code>sessionId / kpCode / withHelp / nextItemCorrect / turns / studentTokenRatio</code>。</td><td>英语练习页能按版本分组出报表。</td></tr>
+          <tr><td>P0-3</td><td><b>【体验】把延迟预算写进验收标准</b></td><td>现状「&lt;10 秒」太松；改为 <b>p50 ≤ 3s、p95 ≤ 8s</b>，并用 Khanmigo 三招：更快的模型（分级路由）、更短的输出（≤120 字 + 一个追问）、前置预检查。</td><td>本地压测 100 次 p95 达标；不达标自动降级到模板回复。</td></tr>
+          <tr><td>P0-4</td><td><b>【PBL】英语单元改用「作品 + 受众 + 答辩」三件套</b></td><td>每单元 1 个<b>原创作品</b>（60 秒英文 vlog/播客）、1 个<b>真实受众</b>（家长/同学/班级墙）、1 次<b>当场答辩</b>（AI 追问 3 个「为什么这么写」）。依据 PBLWorks 2026-11-01 三条 AI-proof 标准。</td><td>英语第 1 单元能走完「录音 → 发布 → 被追问 3 题 → 生成评价」。</td></tr>
+          <tr><td>P0-5</td><td><b>【教学】每天插入一段「AI 关闭」时间</b></td><td>对抗 PISA 2025 的 −20 分效应：每天至少 1 个「AI 不给答案」的思考任务；每周 1 个「找出 AI 的错误」任务（PISA：这类训练对高频使用者 +13 分）。</td><td>学生端有「独立思考模式」开关，且该模式作答被单独统计。</td></tr>
+          <tr><td>P0-6</td><td><b>【安全】心理老师上线前必须有危机 SOP</b></td><td>情绪词库分级（自伤/家暴/严重焦虑）→ 触发即走「人工兜底 + 家长告知（分级）」；家长端只显示 valence 趋势与标签；<b>任何情况下不得由 LLM 独立处理危机</b>。</td><td>模拟 10 条危机文本，100% 触发人工路径，0 条只由 AI 回复。</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="font-size:16px;margin-top:20px;color:var(--brand2)">P1 · 4–8 周（5 条）</h3>
+    <div class="tbl-wrap">
+      <table class="data">
+        <thead><tr><th style="width:6%">#</th><th style="width:22%">动作</th><th style="width:46%">具体怎么做</th><th style="width:26%">验收</th></tr></thead>
+        <tbody>
+          <tr><td>P1-7</td><td><b>【定价】锚定 ¥399–699/年，做三层漏斗</b></td><td>免费层：入学测评 + 1 个学科体验 + 1 份家长报告（获客）；标准层 <b>¥399/年</b>：6 科 + 家长周报；家庭层 <b>¥699/年</b>：多孩 + 作品集 + 学期报告。对标 Synthesis ¥845/年、Khanmigo ¥310/年、学习机 ¥2,000–3,500。<b>不做硬件、不做投放。</b></td><td>三层价格在支付页可配置，且免费层不锁报告。</td></tr>
+          <tr><td>P1-8</td><td><b>【家长端】周报 = 3 个数字 + 1 个故事 + 1 个建议</b></td><td>一屏、图 ≤3 张、正文 ≤200 字。数字：本周有效学习分钟、掌握知识点数、下一题正确率变化；故事：孩子做出了什么；建议：一句可执行的话。</td><td>家长端周报单屏可读完，且每个数字可点回证据。</td></tr>
+          <tr><td>P1-9</td><td><b>【内容】第 0 层模板只做两个版本，宁窄勿宽</b></td><td>PEP 英语 3–6 年级 + 人教版数学 3–6 年级；LLM 生成 + <b>人工抽检 20%</b> + 去重哈希 + 错题回流。</td><td>每知识点 ≥5 题、解析含错因标签、抽检准确率 ≥95% 才允许上线。</td></tr>
+          <tr><td>P1-10</td><td><b>【增长】放弃买量，走三条窄门</b></td><td>① 家长端免费报告当获客物（可分享、带水印）；② 教师/机构白牌（把「6 栋楼」做成可换皮的学校版）；③ 学校课后服务（政策窗口：《人工智能+教育行动计划》提出融入课后服务、研学实践）。</td><td>3 个月内拿到 20 个真实家庭 + 2 个机构/学校试点，不看 DAU。</td></tr>
+          <tr><td>P1-11</td><td><b>【架构】把「上报确认」改成异步批处理</b></td><td>只有三类事件触发上报：学习计划变更、新知识点首讲、风险信号（情绪/连续错误）。校长 AI 夜间批处理，返回「批准/修改/驳回 + 理由」，写回 <code>TeachingScript</code>。</td><td>单次上报平均 token 成本 &lt; 前台对话的 1/5；审批意见可被老师 AI 引用。</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="font-size:16px;margin-top:20px;color:var(--brand2)">P2 · 季度级（4 条）</h3>
+    <div class="tbl-wrap">
+      <table class="data">
+        <thead><tr><th style="width:6%">#</th><th style="width:22%">动作</th><th style="width:46%">具体怎么做</th><th style="width:26%">验收</th></tr></thead>
+        <tbody>
+          <tr><td>P2-12</td><td><b>【证据】30–50 人前后测，并公开方法</b></td><td>英语听/说/读/写四维，8 周，前后测 + 对照（同校同年级不用产品的班级，或自身延迟对照）。<b>哪怕「没显著提升」也要发</b>——Khan Academy 2026 年的公信力来自「敢发无效结果」。</td><td>一份 3 页报告（方法/样本/结果/局限），官网可下载。</td></tr>
+          <tr><td>P2-13</td><td><b>【工程】模型分级路由 + 成本看板</b></td><td>简单任务小模型、复杂任务大模型、批处理离线队列；每学生每月推理成本打到 <b>¥10–15</b> 以内。</td><td>后台能按学生/学科看 token 与成本，超阈值自动降级。</td></tr>
+          <tr><td>P2-14</td><td><b>【合规】三张证照路径画出来</b></td><td>生成式 AI 服务备案（面向境内公众提供服务）、未成年人个人信息保护合规、算法备案；心理相关功能是否需额外资质，必须咨询专业机构。</td><td>一页合规路线图 + 责任人 + 时间表，写入 <code>docs/</code>（不含本报告）。</td></tr>
+          <tr><td>P2-15</td><td><b>【硬件】只做「白牌合作」，不自研</b></td><td>与学习机厂商/ODM 谈预装或联名；把「一人学校」做成平板上的一个模式，而不是一台平板。</td><td>至少 1 家厂商进入商务谈判。</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tiny muted" style="margin-top:10px">注：编号沿用 04 报告 §8 的序号（P0-1~6 / P1-7~11 / P2-12~15），便于与原文逐条对照。</p>
+  </section>
+
+  <!-- ==================== 英语测评专章 ==================== -->
+  <section class="card" id="english">
+    <div class="sec-kicker">08 · 英语测评专章（来自 05 报告）</div>
+    <h2>我们的测评：报告层中上，评分层入门，证据层为零</h2>
+    <p class="sec-sub">本专章全部结论来自 05 报告对 <code>src/lib/english-assessment.ts</code>（847 行）与 <code>src/pages/EnglishExamPage.tsx</code>（约 600 行）的逐行阅读，不是设计设想。</p>
+
+    <div class="callout warn" style="margin-top:12px">
+      <b>一句话结论（05 §1）：</b>我们的英语测评在「分档结论的可解释性 + 家长可读性」上是竞品里少见的，但在「口语到底怎么给分」这一件事上，我们处在这条产业链的<b>最底端</b>——用的是浏览器转写文本 + 规则打分；而这条产业链的头部（讯飞 / 微软 / SpeechAce）用的是音素级声学模型，且已大规模用于中高考正式评分。
+    </div>
+
+    <div class="grid g2" style="margin-top:14px">
+      <div class="cat-block">
+        <h4>8.1 四条必须记住的判断</h4>
+        <p class="small" style="margin:6px 0"><b>① 口语评分的分野不是「AI vs 人」，而是「有没有声学信号」。</b>微软 Pronunciation Assessment 的准确度分由音素级汇总；讯飞英文句子/篇章给「准确度 + 流畅度 + 完整度」，并已用于全国中高考英语听说<b>正式评分</b>、提供音素级逐词标注。我们的 Web Speech API 只能拿转写文本 → <b>发音维度在原理上不可测</b>，这不是「没做完」，是「路线不同」。</p>
+        <p class="small" style="margin:6px 0"><b>② 「没有发音分」作为入学分档器可接受，作为考试提分工具是硬伤。</b>北京中考英语 100 分里有 <b>40 分</b>是听说机考，四题型含<b>短文朗读、听后转述</b>——本质就是发音与流利度。一旦要卖「中考提分」，无发音分立刻变成致命缺陷。</p>
+        <p class="small" style="margin:6px 0"><b>③ DET 用 IRT + 计算机自适应；我们是 4 档阶梯。</b>DET 每题难度参与计分、不同考生拿不同题组仍可比；我们只有 4 个档位 × 每档 1 题，<b>分辨率 4 级、无难度参数、无等值</b>。差距不在算法，在「题目参数与样本校准」还没开始。</p>
+        <p class="small" style="margin:6px 0"><b>④ 我们真正的差异点只有一个，且很值钱：</b>把「测评」和「四步引导教学法」接在一起。竞品测评几乎都止于「报告」，下一步动作靠人；我们的报告直接产出 <code>nextSteps</code>（如「每天 3 分钟先说后写，固定三句式」）——<b>前提是处方要更具体、可验证</b>。</p>
+      </div>
+      <div class="cat-block" style="background:#fef2f2;border-color:#fecaca">
+        <h4 style="color:#7f1d1d">8.2 最危险的漏洞（不是「没有发音分」）</h4>
+        <p class="small" style="margin:6px 0"><b>是「转写会抹平发音错误」。</b>通用 ASR 的目标是「听出你想说什么」，不是「听出你怎么发音」。孩子把 <b>think</b> 读成 <b>sink</b>，ASR 可能仍转写为 think（语言模型纠错）→ 我们的文本规则给满分。</p>
+        <p class="small" style="margin:6px 0">这会造成系统性的「<b>发音越差越不容易被发现</b>」的假象。微软为此专门使用<b>区别于通用 STT 的评测模型</b>并返回 <b>NBestPhonemes</b>（同音候选置信度），就是在解决这件事。</p>
+        <p class="small" style="margin:6px 0"><b>⚠️ 我们目前没有任何检测手段</b>（05 §1-3、§4.1）。这是本报告里最应该立刻修的一条。</p>
+      </div>
+    </div>
+
+    <h3 style="font-size:17px;margin-top:22px">8.3 四家头部在「英语测评」上的三栏对比</h3>
+    <div class="tbl-wrap">
+      <table class="data" style="min-width:760px">
+        <thead><tr><th style="width:13%">产品</th><th style="width:31%">① 做得好（该借鉴）</th><th style="width:28%">② 缺陷（不如我们 / 或我们打不过）</th><th style="width:28%">③ 颠覆性</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><b>Duolingo English Test (DET)</b><br /><span class="tiny muted">$65/次 🔶</span></td>
+            <td>分数结构公开且自洽：4 单项 + 4 整合分项（Conversation = S+L 的平均），总分 = 四项单项平均后按 5 分取整；IRT 让不同题组可比；区分「规则评分」与「模型评分」——能规则化的绝不上模型。</td>
+            <td>它是一张「入场券」，不是「教学方案」：出分即结束，没有「下一步 12 周怎么练」；无「学校治理」层；<b>$65 一次 + 重考冷却</b>，对 6–12 岁家庭是高风险考试，不是日常体检。</td>
+            <td>它证明了<b>「AI 可以把高风险语言考试的成本砍到 1/4」</b>（$65 vs TOEFL 约 $245，🔶），并把「自适应 + IRT + 自动化评分」变成行业默认标准。<b>它颠覆的不是教育，是考试产业。</b></td>
+          </tr>
+          <tr>
+            <td><b>Amira Learning</b><br /><span class="tiny muted">$8 / $20 每生每年 ✅</span></td>
+            <td>极致产品化：学生对着屏幕朗读，<b>4 分钟/人</b>，全自动评分；分数体系完整到「可以直接进 IEP」：raw / 标准分 / 百分位 / 年级当量 / IRT / Lexile / 错误分析；价格低到反常识（$8 / $20）。</td>
+            <td>只做阅读（不覆盖说/写）；只服务学校（不面向家庭）；无中文语境（不解决中考听说）。</td>
+            <td>它把「老师一对一监听朗读」这个最贵的动作，做成 <b>$8/年</b> 的边际成本——这是对「AI 老师替代人力」最强的一记证明，也是<b>最强的成本压力</b>：如果我们的口语评测成本高于这个量级，商业模型就站不住。</td>
+          </tr>
+          <tr>
+            <td><b>讯飞 E听说 / 中高考听说机考系统</b><br /><span class="tiny muted">硬件/校内采购</span></td>
+            <td>技术已进入正式考试：音素级评测、逐词标注；截至 2026-06 在 <b>38000 所学校</b>深度应用、累计用户 <b>2846 万</b>、年评测 <b>67 亿次</b>；11 类异常检测（乱说/咳嗽/唱歌…）+ <code>is_rejected</code>；附带作文批改。</td>
+            <td>它是「考试训练器」：驱动逻辑是提分，不是理解孩子；硬件/校内绑定（2–3K 起）；报告是给老师和家长看的分数，不是给孩子看的目标。</td>
+            <td>它把「口语考试」从一个需要考官现场打分的环节，变成全年 <b>67 亿次</b>的算力调用，摧毁了「英语口语只能靠外教」的成本结构。<b>对我们而言，它既是技术天花板，也是最快的合作/采购候选</b>（补发音分最快的路径就是买它或同级服务）。</td>
+          </tr>
+          <tr>
+            <td><b>ELSA Speak / SpeechAce</b><br /><span class="tiny muted">API / 订阅</span></td>
+            <td>SpeechAce 把「分档换算」做成 API：scripted / spontaneous 双模式，含 pronunciation / fluency / lexical stress / intonation；官方给 IELTS / CEFR / PTE / TOEIC 对照表（例：IELTS 5.5 ↔ CEFR A2+ ↔ Speechace 58–63）。</td>
+            <td>它们是「零件」不是「整车」：没有课程、没有学情档案、没有家长报告。<b>对我们不是竞品，是供应商。</b></td>
+            <td>把「发音打分」从学术能力变成<b>一个 API 调用</b>。这意味着我们补发音分<b>不需要自研模型，只需要钱和一次集成决策</b>。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="font-size:17px;margin-top:22px">8.4 我们测评的 6 条差距（从 05 §5 的 13 条中选最关键的）</h3>
+    <div class="tbl-wrap">
+      <table class="data" style="min-width:720px">
+        <thead><tr><th style="width:5%">#</th><th style="width:22%">差距</th><th style="width:12%">性质</th><th style="width:31%">根因 / 证据</th><th style="width:20%">影响</th><th style="width:10%">修复成本</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td><b>无发音声学评分</b></td><td><span class="chip chip-none">硬伤 · 考试</span></td><td>代码与页面均标注「浏览器无法做声学评分」；产业侧微软/讯飞/SpeechAce 均为音素级。</td><td>不能卖「中考听说提分」；口语报告缺最关键一维。</td><td>中（接 API）</td></tr>
+          <tr><td>2</td><td><b>ASR 归一化抹平发音错误</b></td><td><span class="chip chip-none">硬伤 · 隐蔽</span></td><td>通用 ASR 以「听懂」为目标；微软专门用评测专用模型 + NBestPhonemes。</td><td>可能「发音差反而得高分」，报告失真。</td><td>中（换专用评测）</td></tr>
+          <tr><td>3</td><td><b>每档仅 1 题</b></td><td><span class="chip chip-owned">高 · 信度</span></td><td><code>nextBandForSkill</code> 每档取 1 题（<code>itemsFor(skill,band)[0]</code>）。</td><td>单题判定噪声大，同一学生两次测试可能不同档。</td><td>低（加题）</td></tr>
+          <tr><td>4</td><td><b>规则阶梯非统计模型</b></td><td><span class="chip chip-owned">高 · 分辨率</span></td><td>只有 4 档、无难度参数、无等值；IRT 需要 b/a 参数 + 大样本校准 + 等值设计。</td><td>无法给「档内差异」，无法跨版本比较。</td><td>高（需校准数据）</td></tr>
+          <tr><td>5</td><td><b>无「相对位置」</b></td><td><span class="chip chip-second">中</span></td><td>报告无 percentile；行业共性＝绝对分 + 相对位置两套都给。</td><td>家长少一个最想要的参照（「同龄人什么水平」）。</td><td>低（先给同年级常见档）</td></tr>
+          <tr><td>6</td><td><b>无效果证据</b></td><td><span class="chip chip-owned">高 · 长期</span></td><td>无信度/效度研究，无与教师人工评分的相关性数据。</td><td>无法说服学校/机构，续费只能靠情绪。</td><td>高（需样本）</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tiny muted" style="margin-top:8px">05 报告原文还有：阈值无标准参照、Overall 取 MIN（短板决定）、口语规则可被「碰词」刷分、雅思区间估计基于 4 题平均、Safari/iOS 无 Web Speech API、无异常作答检测、无难度参数与题库深度等 7 条，完整列表见 05 §5。</p>
+
+    <div class="grid g2" style="margin-top:18px">
+      <div class="cat-block">
+        <h4>8.5 可直接照搬的 6 条机制（05 §6 的 12 条中选）</h4>
+        <ul class="small" style="margin:6px 0">
+          <li><b>DET｜单项→整合的算术定义：</b>我们已有三簇，补上公式说明并在报告脚注写明计算方式。</li>
+          <li><b>Amira｜分数体系给全套：</b>绝对分 + 相对位置 + 错误分析；报告加「同年级常见档」与「错因标签」两块。</li>
+          <li><b>微软 PA｜短板优先加权：</b><code>0.4×最低 + 0.2×次低 + 0.2×第三 + 0.2×最高</code>；我们现在的平均分稀释了「一维极差」。</li>
+          <li><b>讯飞｜异常作答检测：</b>静音 &lt;0.5s、词数极低、<code>targets</code> 全未命中 → 标 <code>invalid</code>（讯飞有 11 类）。</li>
+          <li><b>SpeechAce｜官方对照表 + 双模式：</b>scripted + 一道 spontaneous（自由说 60 秒），可测「真实表达」。</li>
+          <li><b>剑桥/新东方｜区间 + 免责：</b>固定话术「档位为区间参考，不构成雅思/剑桥成绩预测」。</li>
+        </ul>
+      </div>
+      <div class="cat-block">
+        <h4>8.6 测评定价与标准锚点</h4>
+        <p class="small" style="margin:6px 0"><b>定价原则：测评免费，处方收钱。</b>入学测评 + 基础报告永久免费（获客物，与家长端报告同源）；深度诊断报告（含发音复核、逐题证据、12 周路径）<b>¥49–99 一次性</b>或含在 <b>¥399/年</b> 订阅内。不要对标 DET $65（那是考试），对标 <b>Amira $8/生/年</b> 的评测成本与 <b>流利说 ¥1,996/年</b> 的家长心理价位（05 §4.5）。</p>
+        <p class="small" style="margin:6px 0"><b>标准锚点（参考 01 报告，仅作标准来源）：</b>四档位 ↔ CEFR A1–B2 ↔ 课标一级/二级/三级 ↔ CSE 1–5 ↔ 剑桥 Starters/Movers→Flyers/A2 Key→B1 Preliminary→B2 First 起点 ↔ 雅思参考区间 4.5–5.0 / 5.0–5.5。<b>这些是「区间对照」，不是官方等值</b>——新东方在 2026 年 KET/PET 指南里也明确写了「不是精确的分数等值关系」（05 §4.2）。</p>
+        <p class="tiny muted" style="margin:6px 0">标准来源：义务教育英语课程标准（2022年版）、CSE（GF 0018–2018）、NEEA《雅思、普思考试与 CSE 对接研究》、CEFR Companion Volume 2020、IELTS 官方 compare 页（均见来源清单第 41–45 条；其中 IELTS↔CEFR 具体区间官方页正文未逐字核到，标 ❌ 不引用）。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 风险 ==================== -->
+  <section class="card" id="risks">
+    <div class="sec-kicker">09 · Risks</div>
+    <h2>风险清单（12 项，来自 04 §10）</h2>
+    <p class="sec-sub">每条风险的缓解动作均可映射到 §8 的具体编号（如 R1→8.2-9、R5→8.3-14、R6→8.1-6）。概率 / 影响为报告编者的判断。</p>
+
+    <div class="tbl-wrap">
+      <table class="data risk">
+        <thead>
+          <tr><th style="width:5%">#</th><th style="width:23%">风险</th><th style="width:7%">概率</th><th style="width:7%">影响</th><th style="width:28%">触发信号（早期预警）</th><th style="width:30%">缓解动作</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>R1</td><td><b>内容质量塌方</b>：AI 生成题目/解析出错，家长一次截图就毁口碑</td><td><span class="chip chip-none">高</span></td><td><span class="chip chip-none">高</span></td><td>抽检准确率 &lt;95%；家长群出现「这题答案错了」</td><td>人工抽检 20%、错题回流、每科设「红线知识点」人工写</td></tr>
+          <tr><td>R2</td><td><b>大厂分发碾压</b>：豆包/夸克/小猿把「AI 学伴」做成免费默认项</td><td><span class="chip chip-none">高</span></td><td><span class="chip chip-none">高</span></td><td>家长问「这个和豆包爱学有什么区别」</td><td>放弃「AI 更强」叙事，只讲「学校 / 组织 / 数据在家」</td></tr>
+          <tr><td>R3</td><td><b>付费意愿不足</b>：纯软件订阅在中国家庭难收钱</td><td><span class="chip chip-second">中高</span></td><td><span class="chip chip-none">高</span></td><td>免费转付费 &lt;5%；家长只愿为硬件付</td><td>¥399 年费 + 家长报告免费获客 + 机构白牌</td></tr>
+          <tr><td>R4</td><td><b>多智能体成本/延迟失控</b>：6 老师 + 校长 + 上报，token 爆炸</td><td><span class="chip chip-second">中</span></td><td><span class="chip chip-none">高</span></td><td>单学生月成本 &gt;¥30；p95 &gt;10s</td><td>分级路由、异步上报、夜间批处理、上下文裁剪</td></tr>
+          <tr><td>R5</td><td><b>合规</b>：生成式 AI 备案、未成年人信息、算法备案缺失</td><td><span class="chip chip-second">中</span></td><td><span class="chip chip-none">极高</span></td><td>应用商店/平台要求补资质；监管问询</td><td>P2-14 合规路线图，先做「境内备案」再谈增长</td></tr>
+          <tr><td>R6</td><td><b>心理老师伦理事故</b>：危机个案处理不当</td><td><span class="chip chip-est">中低</span></td><td><span class="chip chip-none">极高</span></td><td>出现自伤/家暴相关文本但未走人工</td><td>P0-6 危机 SOP + 人工兜底 + 保险</td></tr>
+          <tr><td>R7</td><td><b>「不显示当前进度」反效果</b>：学生失去掌控感，高中生尤其</td><td><span class="chip chip-second">中</span></td><td><span class="chip chip-est">中</span></td><td>高中生周留存 &lt; 低龄段；家长投诉「看不到进度」</td><td>按年龄段分级：低龄隐藏、初中显示「目标+距离」、高中显示完整进度</td></tr>
+          <tr><td>R8</td><td><b>学习效果无证据</b>：口碑靠感觉，复购靠情绪</td><td><span class="chip chip-second">中高</span></td><td><span class="chip chip-none">高</span></td><td>续费 &lt;30%；无一份可公开的效果报告</td><td>P2-12 前后测，8 周出报告</td></tr>
+          <tr><td>R9</td><td><b>英语单科窄化</b>：赛道已被 Duolingo/Speak/斑马/小猿占满</td><td><span class="chip chip-second">中</span></td><td><span class="chip chip-est">中</span></td><td>英语获客成本 &gt;¥300/人</td><td>英语只做「听说读写四维一体 + 中考听说机考」这一窄口</td></tr>
+          <tr><td>R10</td><td><b>数据蒸馏与本地优先冲突</b>：回传需授权，家长敏感</td><td><span class="chip chip-second">中</span></td><td><span class="chip chip-none">高</span></td><td>家长拒绝「数据回传」比例 &gt;30%</td><td>分级授权（匿名统计/脱敏特征/原始数据），默认最小回传</td></tr>
+          <tr><td>R11</td><td><b>小团队交付风险</b>：6 科 × 3 学段 × 3 教材版本 = 内容地狱</td><td><span class="chip chip-second">中高</span></td><td><span class="chip chip-none">高</span></td><td>里程碑连续延期；单科上线质量不达标</td><td>死守「英语单科打透」再扩；第 0 层模板外采/合作</td></tr>
+          <tr><td>R12</td><td><b>上游模型变动</b>：价格、政策、API 稳定性</td><td><span class="chip chip-second">中</span></td><td><span class="chip chip-est">中</span></td><td>供应商涨价/限流/合规调整</td><td>双供应商适配（已有 doubao/qwen 适配器基础）+ 本地小模型兜底</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout bad" style="margin-top:16px">
+      <b>最大风险点（04 §10 编者判断）：</b>不是 R2（打不过大厂），也不是 R4（成本），而是 <b>R1 + R8 的组合</b>——内容质量不过关且没有效果证据。因为这两件事会同时摧毁「家长信任」和「口碑传播」，而我们的获客完全依赖家长端报告与口碑（P1-10）。<b>大厂可以靠流量扛过一次翻车，我们扛不过一次。</b>
+    </div>
+  </section>
+
+  <!-- ==================== 来源 ==================== -->
+  <section class="card" id="sources">
+    <div class="sec-kicker">10 · Sources</div>
+    <h2>来源清单（45 条，带 URL 与可信度）</h2>
+    <p class="sec-sub">04 报告附录 A（40 条）与 05 报告 §7（20 条）中本页实际引用到的部分；另加 01 报告的 5 条标准来源。URL 按原报告逐字复制，未做补全或推测。</p>
+
+    <div class="filter" id="srcFilter">
+      <button type="button" class="on" data-filter="all">全部 <span id="srcCount">45</span></button>
+      <button type="button" data-filter="04">04 竞品报告（26）</button>
+      <button type="button" data-filter="05">05 测评报告（14）</button>
+      <button type="button" data-filter="std">标准来源（5）</button>
+      <span class="tiny muted" style="align-self:center">点击筛选；URL 可复制到浏览器核对。</span>
+    </div>
+
+    <div class="tbl-wrap" style="border:0;margin-top:4px">
+      <table class="src-tbl">
+        <thead><tr><th style="width:4%">#</th><th style="width:27%">标题</th><th style="width:15%">机构 · 时间</th><th style="width:9%">可信度</th><th style="width:45%">URL</th></tr></thead>
+        <tbody id="srcBody">
+          <tr data-src="04"><td>1</td><td>How Khan Academy Is Building a Better AI Tutor: Our Most Recent Learnings</td><td>Khan Academy Blog · 2026-05-06</td><td><span class="chip chip-ok">✅ 一手</span></td><td class="u">https://blog.khanacademy.org/how-khan-academy-is-building-a-better-ai-tutor-our-most-recent-learnings/</td></tr>
+          <tr data-src="04"><td>2</td><td>Khanmigo pricing（教师免费 / $4 月 / $44 年 / 学区议价）</td><td>Khanmigo 官网 · 2026-11 访问</td><td><span class="chip chip-ok">✅ 官方</span></td><td class="u">https://www.khanmigo.ai/pricing</td></tr>
+          <tr data-src="04"><td>3</td><td>Synthesis Tutor（$29/月、$119/年、Pro $239、Live $480、3.5 万家庭）</td><td>Synthesis 官网 · 2026-11 访问</td><td><span class="chip chip-ok">✅ 官方</span></td><td class="u">https://www.synthesis.com/tutor</td></tr>
+          <tr data-src="04"><td>4</td><td>Alpha vs Sora vs Primer：学费、模型、谁能入学（含官网逐条核对 2026-09-22）</td><td>NIJIN GLOBAL ACADEMY · 2026-10-04</td><td><span class="chip chip-ok">✅ 二手核对</span></td><td class="u">https://nijinglobal.academy/en/alpha-school-vs-sora-vs-primer/</td></tr>
+          <tr data-src="04"><td>5</td><td>Duolingo Beats Q3 Revenue Consensus（2026Q3 数据）</td><td>Yonhap Infomax · 2026-11-04</td><td><span class="chip chip-ok">✅ 一手</span></td><td class="u">https://en.infomaxai.com/news/articleView.html?idxno=146820</td></tr>
+          <tr data-src="04"><td>6</td><td>多邻国转向 AI 普惠战略：Lily 下放至 Super，2026 盈利预期下调</td><td>SmartHey · 2026-03-02</td><td><span class="chip chip-ok">✅ 一手</span></td><td class="u">https://smarthey.com/detail/193165701339.html</td></tr>
+          <tr data-src="04"><td>7</td><td>IXL Learning — Company info（全美 1/3 学生、190 国、80+ 语言、佛州全州采用）</td><td>IXL 官网 · 2026-11 访问</td><td><span class="chip chip-ok">✅ 官方</span></td><td class="u">https://www.ixl.com/company</td></tr>
+          <tr data-src="04"><td>8</td><td>Maryland Approves Amira as a Universal Screener</td><td>Amira Learning · 2026</td><td><span class="chip chip-ok">✅ 官方</span></td><td class="u">https://www.amiralearning.com/newsroom/maryland-approves-amira-as-a-universal-screener</td></tr>
+          <tr data-src="04"><td>9</td><td>Students Who Create Can't Be Fooled: PBL in the Age of AI（PISA 2025 + KIA RCT + 三条标准）</td><td>PBLWorks · 2026-11-01</td><td><span class="chip chip-ok">✅ 一手</span></td><td class="u">https://www.pblworks.org/blog/students-who-create-cant-be-fooled-pbl-age-ai</td></tr>
+          <tr data-src="04"><td>10</td><td>Generative AI and student learning: What the PISA data reveal（−20 分 / +13 分）</td><td>OECD Education and Skills Today · 2026-10-13</td><td><span class="chip chip-ok">✅ 一手</span></td><td class="u">https://oecdedutoday.com/generative-ai-and-student-learning-what-the-pisa-data-reveal/</td></tr>
+          <tr data-src="04"><td>11</td><td>《「人工智能+教育」行动计划》全文（教科信〔2026〕1 号，阜康市政府网转载）</td><td>教育部等五部门 · 2026-04-02</td><td><span class="chip chip-ok">✅ 全文</span></td><td class="u">https://www.fk.gov.cn/c/fkrmzf/bmwjjyj/456083.jhtml</td></tr>
+          <tr data-src="04"><td>12</td><td>学而思发布新品学习机：P/S/T、双核、1600 万分钟</td><td>央广网 · 2025-05-08</td><td><span class="chip chip-ok">✅ 一手</span></td><td class="u">https://tech.cnr.cn/techph/20250508/t20250508_527162551.shtml</td></tr>
+          <tr data-src="04"><td>13</td><td>作业帮学习机 P50 发布 上线 AI 超级老师</td><td>央广网/新华网 · 2025-07-16</td><td><span class="chip chip-ok">✅ 一手</span></td><td class="u">https://tech.cnr.cn/techgd/20250716/t20250716_527266258.shtml</td></tr>
+          <tr data-src="04"><td>14</td><td>科大讯飞 AI 学习机 T90 系列发布（5 万所学校、83 示范区、−64% 时间）</td><td>科大讯飞智慧教育 · 2026-02-28</td><td><span class="chip chip-owned">⚠️ 厂商自述</span></td><td class="u">https://edu.iflytek.com/about-us/news/company-news/2665</td></tr>
+          <tr data-src="04"><td>15</td><td>IDC：2025 年 Q2 中国学习平板出货量 154 万台（+44.6%）</td><td>IT之家 / IDC · 2025-09-04</td><td><span class="chip chip-ok">✅ 一手</span></td><td class="u">https://m.ithome.com/html/0880315.htm</td></tr>
+          <tr data-src="04"><td>16</td><td>IDC：2026Q2 学习平板 103 万台（+36.6%），H1 220 万台（+37.2%）</td><td>uSMART（引 IDC）· 2026-08-08</td><td><span class="chip chip-ok">✅ 一手</span></td><td class="u">https://hk.usmartglobal.com/zh-cn/news-detail/7094124516795859088</td></tr>
+          <tr data-src="04"><td>17</td><td>【季报】26Q1 学习平板线上 85 万台（−8%）；作业帮 31.6% / 学而思 24.6% / 讯飞 13.5%；2–3K 占 50.3%</td><td>奥维睿沃 AVC Revo（搜狐转载）· 2026-04-21</td><td><span class="chip chip-ok">✅ 一手</span></td><td class="u">https://m.sohu.com/a/1012474037_339916</td></tr>
+          <tr data-src="04"><td>18</td><td>松鼠 Ai 樊星：从「答题工具」到「AI 老师」（4300 万用户、200 亿条行为数据）</td><td>环球网/中国网（网易转载）· 2026-10-13</td><td><span class="chip chip-ok">✅ 一手</span></td><td class="u">https://www.163.com/dy/article/L957M4LF0514R9OJ.html</td></tr>
+          <tr data-src="04"><td>19</td><td>松鼠 Ai 推进港股上市筹备（招商证券保荐、中信证券全球协调、153 项专利）</td><td>投资界 pedaily · 2026-11-02</td><td><span class="chip chip-ok">✅ 一手</span></td><td class="u">https://news.pedaily.cn/20261102/142142.shtml</td></tr>
+          <tr data-src="04"><td>20</td><td>2026 世界数字教育大会：洋葱学园展示 AI 智能学伴（六智能体、1.3 亿学生/400 万教师）</td><td>光明社教育家 · 2026-05-16</td><td><span class="chip chip-ok">✅ 一手</span></td><td class="u">https://jyj.gmw.cn/2026-05/16/content_38770309.htm</td></tr>
+          <tr data-src="04"><td>21</td><td>高途 2026 年 Q2 收入 16.7 亿元（+20.2%）、「Scale with AI」</td><td>21 世纪经济报道 · 2026-09-04</td><td><span class="chip chip-ok">✅ 一手</span></td><td class="u">https://m.21jingji.com/article/20260904/herald/4cbf159a1fe2ff7c7d39bb196ddf917c_zaker.html</td></tr>
+          <tr data-src="04"><td>22</td><td>字节重回 AI 教育顶流：豆包爱学月活破 2000 万（QuestMobile 2026-09）</td><td>36 氪（c114 转载）· 2026-11</td><td><span class="chip chip-ok">✅ 一手</span></td><td class="u">http://www.c114.net.cn/industry/139556.html</td></tr>
+          <tr data-src="04"><td>23</td><td>AI 应用行业月报：原生 AI 全面领跑（夸克 1.6 亿 MAU；豆包 6.9 亿 MAU 月狐口径）</td><td>月狐数据 MoonFox · 2026-04-23</td><td><span class="chip chip-ok">✅ 一手</span></td><td class="u">https://www.moonfox.cn/insight/article/2028</td></tr>
+          <tr data-src="04"><td>24</td><td>AI-powered Alpha Schools expands to 50 campuses（仅标题级，正文未抓取）</td><td>Axios · 2026-08-02</td><td><span class="chip chip-second">🔶 标题级</span></td><td class="u">https://www.axios.com/2026/08/02/alpha-schools-ai-expansion-50-campuses</td></tr>
+          <tr data-src="04"><td>25</td><td>Advancing Artificial Intelligence Education for American Youth（行政令，正文未完整抓取）</td><td>The White House · 2025-04</td><td><span class="chip chip-second">🔶 标题级</span></td><td class="u">https://www.whitehouse.gov/presidential-actions/2025/04/advancing-artificial-intelligence-education-for-american-youth/</td></tr>
+          <tr data-src="04"><td>26</td><td>EdTech Can Work. Decision Makers Have to Check the Evidence First.</td><td>Khan Academy Blog · 2026-10-20</td><td><span class="chip chip-ok">✅ 一手</span></td><td class="u">https://blog.khanacademy.org/edtech-can-work-decision-makers-have-to-check-the-evidence-first/</td></tr>
+
+          <tr data-src="05"><td>27</td><td>How is the DET scored?（IRT、自适应、8 分项）</td><td>Duolingo English Test Blog · 2025-10-13</td><td><span class="chip chip-ok">✅ 官方</span></td><td class="u">https://blog.englishtest.duolingo.com/how-is-the-duolingo-english-test-scored/</td></tr>
+          <tr data-src="05"><td>28</td><td>Introducing new and updated DET Subscores（单项与整合分的算术关系）</td><td>Duolingo English Test Blog · 2024-08-29</td><td><span class="chip chip-ok">✅ 官方</span></td><td class="u">https://blog.englishtest.duolingo.com/det-subscores/</td></tr>
+          <tr data-src="05"><td>29</td><td>Use pronunciation assessment（音素级、PronScore 公式、NBestPhonemes）</td><td>Microsoft Learn · 2026 访问</td><td><span class="chip chip-ok">✅ 官方</span></td><td class="u">https://learn.microsoft.com/en-us/azure/ai-services/speech-service/how-to-pronunciation-assessment</td></tr>
+          <tr data-src="05"><td>30</td><td>How Speechace scoring works（scripted / spontaneous 双模式）</td><td>SpeechAce API Docs · 2026 访问</td><td><span class="chip chip-ok">✅ 官方</span></td><td class="u">https://api-docs.speechace.com/getting-started/how-speechace-scoring-works.md</td></tr>
+          <tr data-src="05"><td>31</td><td>Scoring rubrics（IELTS / CEFR / PTE / TOEIC 对照表）</td><td>SpeechAce API Docs · 2026 访问</td><td><span class="chip chip-ok">✅ 官方</span></td><td class="u">https://api-docs.speechace.com/interpreting-results/scoring-rubrics.md</td></tr>
+          <tr data-src="05"><td>32</td><td>语音评测常见问题 FAQ（题型与评分维度、11 类异常检测、dp_message）</td><td>科大讯飞开放平台 · 2026 访问</td><td><span class="chip chip-ok">✅ 官方</span></td><td class="u">https://www.xfyun.cn/doc/voiceservice/ise/ise_faq.html</td></tr>
+          <tr data-src="05"><td>33</td><td>科大讯飞 E听说正式入驻国家中小学智慧教育平台（38000 校/2846 万用户/67 亿次评测/中高考同源）</td><td>科大讯飞智慧教育 · 2026-09-04</td><td><span class="chip chip-ok">✅ 官方</span></td><td class="u">https://edu.iflytek.com/about-us/news/company-news/2879.html</td></tr>
+          <tr data-src="05"><td>34</td><td>2026 年初中学业水平考试英语听说计算机考试问题解答（100=60+40、四题型）</td><td>北京教育考试院 · 2025-12-10</td><td><span class="chip chip-ok">✅ 官方</span></td><td class="u">https://bjksb.bjeea.cn/html/zkzz/faq/2025/1210/87740.html</td></tr>
+          <tr data-src="05"><td>35</td><td>Amira Assessment &amp; Progress Monitoring（NCII：$8/$20、4 分钟、IRT/Lexile/百分位）</td><td>NCII（美国国家强化干预中心）· 2026 访问</td><td><span class="chip chip-ok">✅ 官方</span></td><td class="u">https://charts.intensiveintervention.org/progressmonitoring/tool/?id=b2bb72b4d4b4597c</td></tr>
+          <tr data-src="05"><td>36</td><td>KET/PET 是什么？2026 年剑桥通用五级考试全指南（130 国 2800 考点、无统一价、区间非等值）</td><td>新东方 · 2026-09-23</td><td><span class="chip chip-ok">✅ 一手</span></td><td class="u">https://mtoutiao.xdf.cn/pte/202609/15405330.html</td></tr>
+          <tr data-src="05"><td>37</td><td>流利说-优选套餐（线上版）¥1099/半年、¥1996/年、CSE 对标、A1–C2 八级</td><td>第三方课程销售页（睿选优课）· 2026 访问</td><td><span class="chip chip-second">🔶 第三方</span></td><td class="u">https://keycourse.com/product/productDetail/625</td></tr>
+          <tr data-src="05"><td>38</td><td>Duolingo vs TOEFL Price — Why $65 vs $245?</td><td>WitPrep · 2026</td><td><span class="chip chip-second">🔶 第三方</span></td><td class="u">https://witprep.com/duolingo-vs-toefl-price</td></tr>
+          <tr data-src="05"><td>39</td><td>AI Language Startup Speak Hits Unicorn Status After Raising $78M Series C</td><td>Crunchbase News · 2024-12-10</td><td><span class="chip chip-ok">✅ 一手</span></td><td class="u">https://news.crunchbase.com/ai/language-learning-startup-unicorn-speak/</td></tr>
+          <tr data-src="05"><td>40</td><td>i-Ready Diagnostic Scores by Grade (2026–27): Placement Level &amp; Percentile</td><td>Think Academy US · 2026</td><td><span class="chip chip-second">🔶 标题级</span></td><td class="u">https://www.thethinkacademy.com/blog/i-ready-diagnostic-scores-by-grade-find-your-placement-level-and-know-what-to-do-next/</td></tr>
+
+          <tr data-src="std"><td>41</td><td>义务教育英语课程标准（2022年版）官方 PDF（分级目标 / 一·二·三级）</td><td>教育部 · 2022</td><td><span class="chip chip-ok">✅ 官方</span></td><td class="u">https://www.gov.cn/zhengce/zhengceku/2022-04/21/P020231110625865933831.pdf</td></tr>
+          <tr data-src="std"><td>42</td><td>中国英语能力等级量表（GF 0018–2018）全文（CSE 1–9 级描述语）</td><td>教育部/国家语委（高校转载）· 2018</td><td><span class="chip chip-ok">✅ 官方</span></td><td class="u">https://www.cque.edu.cn/wyx/info/1255/5680.htm</td></tr>
+          <tr data-src="std"><td>43</td><td>雅思、普思考试与 CSE 对接研究结果（CSE 4↔雅思 4.5、CSE 5↔5.5）</td><td>NEEA + British Council · 2019</td><td><span class="chip chip-ok">✅ 官方</span></td><td class="u">https://www.neea.edu.cn/html1/report/19011/4167-1.htm</td></tr>
+          <tr data-src="std"><td>44</td><td>CEFR Companion Volume（A1–C2 描述语）</td><td>Council of Europe · 2020</td><td><span class="chip chip-ok">✅ 官方</span></td><td class="u">https://rm.coe.int/common-european-framework-reference-languages-volume-companion/16809ea0d4</td></tr>
+          <tr data-src="std"><td>45</td><td>IELTS 与其他考试 / CEFR / 剑桥量表对照入口（CEFR 具体区间正文未逐字核到）</td><td>IELTS Partners · 2026</td><td><span class="chip chip-second">🔶 入口已核</span></td><td class="u">https://ielts.org/organisations/ielts-for-organisations/compare-ielts</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout warn small" style="margin-top:14px">
+      <b>未验证事项（诚实清单，来自 04 附录 C / 05 §7 尾注）：</b>Khanmigo 2026 年最新注册/付费用户数（未核实）；Alpha School 的独立第三方效果研究（只有自述 MAP）；火花思维 / 洪恩 / 叫叫 / 伴鱼 / 网易有道（子曰）/ Kimi·智谱的 2025–2026 用户与收入数据（未查到）；Ello 的 $15M A 轮（融资聚合站口径）；2026 年中国学习平板<b>全渠道全年</b>数据；本项目自身单位成本（需工程实测）；生成式 AI 备案对教育类应用的具体要求；DET 官方标价与官方 CEFR 对照原文；ELSA 具体价格；i-Ready 官方技术文档。<b>以上均未使用估计值替代，正文中标 ❌ 或 🔶。</b>
+    </div>
+  </section>
+
+  <!-- ==================== 页脚 ==================== -->
+  <footer class="footer" id="footer">
+    <h3>数据说明与证据分级</h3>
+    <p>本页是《04_竞品报告_v1》与《05_英语测评竞品报告_v1》的可视化重排，<b>不新增任何原始数据</b>。所有数字可回查到上方 45 条来源；报告中标 🔶/❌ 的事项，本页同样保留标记，不升级为确定事实。本页所有「0–4 分」「0–100 坐标」均为<b>定性判断</b>，不是测量结果，不得对外引用为评测结论。</p>
+    <div class="cols">
+      <div>
+        <p><b>三级图例（对应报告的证据分级）：</b></p>
+        <div class="legend3">
+          <span><b>① 确定 · ✅ 一手 / 官方</b>：已核原文或官方发布（含第三方逐条核对官网）。</span>
+          <span><b>② 厂商口径 · ⚠️ 厂商自述</b>：未经第三方验证（如讯飞 −64% 时间 / 3.1 倍学会率、Alpha MAP 前 1–2%）。</span>
+          <span><b>③ 待验证 · 🔶 第三方 / ❌ 未查到</b>：🔶 = 二手报道、第三方销售页或标题级核实（如 DET $65、流利说 ¥1996、Alpha Anywhere 暂停报名）；❌ = 本轮未取得公开数据，<b>不编造</b>（如 Duolingo Super 标价、Alpha Anywhere 定价）。</span>
+        </div>
+        <p style="margin-top:10px"><b>折算口径：</b>美元→人民币按 ≈7.1 折算，均为<b>估算</b>，仅用于横向比较，不代表官方定价或报价。</p>
+      </div>
+      <div>
+        <p><b>数据截止：</b>2026-11-10（与两份原报告一致）。<br /><b>本页生成：</b>2026-11-10。<br /><b>图表：</b>5 张（内联 SVG / 纯 CSS 手写，零外部依赖，可离线打开）。<br /><b>打印：</b>右上角按钮或 Ctrl/Cmd + P，交互控件会自动隐藏。</p>
+        <p style="margin-top:10px">原报告：<code>docs/research/04_竞品报告_v1.md</code>（29 家竞品矩阵，40 条来源）、<code>docs/research/05_英语测评竞品报告_v1.md</code>（19 行测评对比，20 条来源）、标准来源参考 <code>docs/research/01_英语中文_资料汇编.md</code>。</p>
+        <p style="margin-top:10px"><b>使用边界：</b>内部研究材料，不构成对外宣传或投资建议；引用请带来源编号与本页「定性判断/估算」标注。</p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  function onReady(fn) {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', fn);
+    } else {
+      fn();
+    }
+  }
+
+  onReady(function () {
+    try {
+      document.body.setAttribute('data-js-ready', '1');
+
+      /* ---------- 打印：先展开所有 details，再调起打印 ---------- */
+      function openAllDetails() {
+        var ds = document.querySelectorAll('details');
+        for (var i = 0; i < ds.length; i++) {
+          ds[i].open = true;
+        }
+      }
+      var printBtn = document.getElementById('printBtn');
+      if (printBtn) {
+        printBtn.addEventListener('click', function () {
+          openAllDetails();
+          window.setTimeout(function () {
+            window.print();
+          }, 60);
+        });
+      }
+      if (window.matchMedia) {
+        window.addEventListener('beforeprint', openAllDetails);
+      }
+
+      /* ---------- 图 2：悬停高亮整行 + 整列 ---------- */
+      var hmTable = document.querySelector('table.hm');
+      if (hmTable) {
+        var allCells = hmTable.querySelectorAll('td.hm-cell');
+        function clearHl() {
+          for (var i = 0; i < allCells.length; i++) {
+            allCells[i].classList.remove('hl');
+          }
+        }
+        function highlight(cell) {
+          if (!cell || !cell.getAttribute) { return; }
+          var r = cell.getAttribute('data-r');
+          var c = cell.getAttribute('data-c');
+          if (!r || !c) { return; }
+          clearHl();
+          for (var i = 0; i < allCells.length; i++) {
+            var el = allCells[i];
+            if (el.getAttribute('data-r') === r || el.getAttribute('data-c') === c) {
+              el.classList.add('hl');
+            }
+          }
+        }
+        hmTable.addEventListener('mouseover', function (e) {
+          var t = e.target;
+          var cell = t && t.closest ? t.closest('td.hm-cell') : null;
+          if (cell) { highlight(cell); }
+        });
+        hmTable.addEventListener('mouseleave', clearHl);
+      }
+
+      /* ---------- 导航高亮（可降级） ---------- */
+      var navLinks = document.querySelectorAll('.topnav a[href^="#"]');
+      var linkMap = {};
+      for (var k = 0; k < navLinks.length; k++) {
+        var href = navLinks[k].getAttribute('href');
+        if (href && href.length > 1) {
+          linkMap[href.slice(1)] = navLinks[k];
+        }
+      }
+      function setActive(id) {
+        for (var key in linkMap) {
+          if (Object.prototype.hasOwnProperty.call(linkMap, key)) {
+            linkMap[key].classList.toggle('active', key === id);
+          }
+        }
+      }
+      if ('IntersectionObserver' in window) {
+        var sections = document.querySelectorAll('header[id], section[id]');
+        var obs = new IntersectionObserver(function (entries) {
+          for (var i = 0; i < entries.length; i++) {
+            if (entries[i].isIntersecting) {
+              setActive(entries[i].target.id);
+              break;
+            }
+          }
+        }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+        for (var s = 0; s < sections.length; s++) {
+          obs.observe(sections[s]);
+        }
+      }
+
+      /* ---------- 来源筛选 ---------- */
+      var filterBar = document.getElementById('srcFilter');
+      var srcBody = document.getElementById('srcBody');
+      if (filterBar && srcBody) {
+        var rows = srcBody.querySelectorAll('tr');
+        var countEl = document.getElementById('srcCount');
+        var total = rows.length;
+        filterBar.addEventListener('click', function (e) {
+          var btn = e.target && e.target.closest ? e.target.closest('button[data-filter]') : null;
+          if (!btn) { return; }
+          var want = btn.getAttribute('data-filter');
+          var buttons = filterBar.querySelectorAll('button[data-filter]');
+          for (var b = 0; b < buttons.length; b++) {
+            buttons[b].classList.toggle('on', buttons[b] === btn);
+          }
+          var shown = 0;
+          for (var i = 0; i < rows.length; i++) {
+            var ok = (want === 'all') || (rows[i].getAttribute('data-src') === want);
+            rows[i].hidden = !ok;
+            if (ok) { shown++; }
+          }
+          if (countEl) { countEl.textContent = String(shown); }
+        });
+        if (countEl) { countEl.textContent = String(total); }
+      }
+    } catch (err) {
+      /* 静态页面不应因交互脚本失败而不可读 */
+      if (window.console && window.console.warn) {
+        window.console.warn('report interactive init skipped:', err && err.message);
+      }
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

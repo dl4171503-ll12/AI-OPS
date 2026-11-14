@@ -1,0 +1,589 @@
+{
+  "level": "advanced",
+  "cefr": "B2",
+  "grade": "雅思初阶段 5.0 – 5.5",
+  "items": {
+    "vocab": [
+      {
+        "id": "a-v1",
+        "tier": 1,
+        "sentence": "The report ___ a sharp rise in the number of electric cars.",
+        "clue": "made known something that was not known before",
+        "options": [
+          "revealed",
+          "predicted",
+          "denied"
+        ],
+        "answer": "revealed",
+        "focus": "动词 语义辨析"
+      },
+      {
+        "id": "a-v2",
+        "tier": 1,
+        "sentence": "Many residents ___ about the noise from the new airport.",
+        "clue": "said that they were unhappy about something",
+        "options": [
+          "asked",
+          "complained",
+          "forgot"
+        ],
+        "answer": "complained",
+        "focus": "动词 + about 语义辨析"
+      },
+      {
+        "id": "a-v3",
+        "tier": 1,
+        "sentence": "The new rules are intended to ___ the number of accidents at work.",
+        "clue": "to make an amount smaller",
+        "options": [
+          "measure",
+          "record",
+          "reduce"
+        ],
+        "answer": "reduce",
+        "focus": "动词 语义辨析"
+      },
+      {
+        "id": "a-v4",
+        "tier": 1,
+        "sentence": "The doctor advised him to ___ smoking if he wanted to feel better.",
+        "clue": "to stop doing something",
+        "options": [
+          "quit",
+          "enjoy",
+          "continue"
+        ],
+        "answer": "quit",
+        "focus": "动词 语义辨析"
+      },
+      {
+        "id": "a-v5",
+        "tier": 2,
+        "sentence": "The manager's decision was ___ by the whole team, who thought it was unfair.",
+        "clue": "said publicly that something is bad or wrong",
+        "options": [
+          "praised",
+          "criticised",
+          "ignored"
+        ],
+        "answer": "criticised",
+        "focus": "动词 语义辨析（被动）"
+      },
+      {
+        "id": "a-v6",
+        "tier": 2,
+        "sentence": "The company has promised to ___ all travel costs for employees.",
+        "clue": "to pay for something so that someone else does not have to",
+        "options": [
+          "record",
+          "compare",
+          "cover"
+        ],
+        "answer": "cover",
+        "focus": "一词多义 cover"
+      },
+      {
+        "id": "a-v7",
+        "tier": 2,
+        "sentence": "The results of the survey ___ the view that young people read less than before.",
+        "clue": "to show that an idea is probably true",
+        "options": [
+          "support",
+          "challenge",
+          "replace"
+        ],
+        "answer": "support",
+        "focus": "动词 语义辨析（support a view）"
+      },
+      {
+        "id": "a-v8",
+        "tier": 2,
+        "sentence": "The council's decision to close the market was met with ___ from local traders.",
+        "clue": "strong disagreement",
+        "options": [
+          "support",
+          "opposition",
+          "surprise"
+        ],
+        "answer": "opposition",
+        "focus": "抽象名词 语义辨析"
+      },
+      {
+        "id": "a-v9",
+        "tier": 3,
+        "sentence": "Although the two accounts of the event differ, they are not ___.",
+        "clue": "so different that they cannot both be true",
+        "options": [
+          "reliable",
+          "detailed",
+          "incompatible"
+        ],
+        "answer": "incompatible",
+        "focus": "学术形容词辨析"
+      },
+      {
+        "id": "a-v10",
+        "tier": 3,
+        "sentence": "The author argues that economic growth should not be pursued at the ___ of the environment.",
+        "clue": "the cost or loss of something else",
+        "options": [
+          "expense",
+          "speed",
+          "scale"
+        ],
+        "answer": "expense",
+        "focus": "固定短语 at the expense of"
+      },
+      {
+        "id": "a-v11",
+        "tier": 3,
+        "sentence": "The survey ___ that most employees would prefer to work from home two days a week.",
+        "clue": "to suggest something without saying it directly",
+        "options": [
+          "denies",
+          "indicates",
+          "proves"
+        ],
+        "answer": "indicates",
+        "focus": "学术动词 语义辨析"
+      },
+      {
+        "id": "a-v12",
+        "tier": 3,
+        "sentence": "The new safety measures had only a ___ effect on the number of accidents.",
+        "clue": "very small; not important",
+        "options": [
+          "positive",
+          "sudden",
+          "marginal"
+        ],
+        "answer": "marginal",
+        "focus": "近义词辨析（marginal）"
+      }
+    ],
+    "grammar": [
+      {
+        "id": "a-g1",
+        "tier": 1,
+        "sentence": "By the time we arrived, the film ___.",
+        "options": [
+          "had already started",
+          "has already started",
+          "already starts"
+        ],
+        "answer": "had already started",
+        "focus": "过去完成时"
+      },
+      {
+        "id": "a-g2",
+        "tier": 1,
+        "sentence": "The scientist ___ discovery changed medicine is retiring this year.",
+        "options": [
+          "who",
+          "whose",
+          "which"
+        ],
+        "answer": "whose",
+        "focus": "定语从句关系代词"
+      },
+      {
+        "id": "a-g3",
+        "tier": 1,
+        "sentence": "If you ___ the instructions carefully, you will not make mistakes.",
+        "options": [
+          "will follow",
+          "followed",
+          "follow"
+        ],
+        "answer": "follow",
+        "focus": "条件句 主将从现"
+      },
+      {
+        "id": "a-g4",
+        "tier": 2,
+        "sentence": "The new bridge ___ by the end of next year.",
+        "options": [
+          "will have been built",
+          "will build",
+          "is building"
+        ],
+        "answer": "will have been built",
+        "focus": "将来完成时被动语态"
+      },
+      {
+        "id": "a-g5",
+        "tier": 2,
+        "sentence": "___ the bad weather, the outdoor concert attracted a large crowd.",
+        "options": [
+          "Although",
+          "Despite",
+          "However"
+        ],
+        "answer": "Despite",
+        "focus": "让步介词"
+      },
+      {
+        "id": "a-g6",
+        "tier": 2,
+        "sentence": "The company is considering ___ its factory to a cheaper region.",
+        "options": [
+          "move",
+          "to move",
+          "moving"
+        ],
+        "answer": "moving",
+        "focus": "非谓语 动名词作宾语"
+      },
+      {
+        "id": "a-g7",
+        "tier": 3,
+        "sentence": "If the committee ___ the proposal earlier, the project would not be so far behind schedule.",
+        "options": [
+          "had approved",
+          "approves",
+          "has approved"
+        ],
+        "answer": "had approved",
+        "focus": "虚拟语气 与过去事实相反（if + had done）"
+      },
+      {
+        "id": "a-g8",
+        "tier": 3,
+        "sentence": "The more carefully you plan, ___ likely you are to make mistakes.",
+        "options": [
+          "the fewer",
+          "the less",
+          "less"
+        ],
+        "answer": "the less",
+        "focus": "the more ... the less 比较结构"
+      },
+      {
+        "id": "a-g9",
+        "tier": 3,
+        "sentence": "___ more carefully, the accident could have been avoided.",
+        "options": [
+          "He had driven",
+          "If he drives",
+          "Had he driven"
+        ],
+        "answer": "Had he driven",
+        "focus": "省略 if 的倒装虚拟语气"
+      }
+    ],
+    "listening": [
+      {
+        "id": "a-l1",
+        "tier": 1,
+        "script": "Woman: I'm thinking of joining the evening photography course.\nMan: Isn't it quite expensive?\nWoman: It is, but they offer a discount for students, and I can pay in three parts.\nMan: In that case, it sounds worth trying. Just don't expect to become an expert in six weeks.",
+        "questions": [
+          {
+            "q": "What does the man question about the course?",
+            "options": [
+              "Its price",
+              "Its length",
+              "Its location"
+            ],
+            "answer": "Its price"
+          },
+          {
+            "q": "What does the man suggest about the course?",
+            "options": [
+              "It will make her an expert quickly",
+              "It is worth trying",
+              "It is too difficult"
+            ],
+            "answer": "It is worth trying"
+          }
+        ]
+      },
+      {
+        "id": "a-l2",
+        "tier": 1,
+        "script": "This is a message for passengers travelling on the 7:40 service to Bristol. Due to engineering work, the train will leave from platform 6 instead of platform 2. There will also be a delay of about fifteen minutes. We apologise for the inconvenience and advise passengers to check the screens before boarding.",
+        "questions": [
+          {
+            "q": "Which platform will the train leave from?",
+            "options": [
+              "Platform 2",
+              "Platform 7",
+              "Platform 6"
+            ],
+            "answer": "Platform 6"
+          },
+          {
+            "q": "How long is the delay expected to be?",
+            "options": [
+              "About fifteen minutes",
+              "About five minutes",
+              "About forty minutes"
+            ],
+            "answer": "About fifteen minutes"
+          }
+        ]
+      },
+      {
+        "id": "a-l3",
+        "tier": 2,
+        "script": "Many students believe that studying for a long time without a break is the best way to prepare for exams. Research on attention, however, suggests that short breaks every forty minutes improve concentration and reduce tiredness. The students who took regular breaks in one recent study remembered more of what they had read than those who worked for three hours without stopping.",
+        "questions": [
+          {
+            "q": "What does the research suggest about short breaks?",
+            "options": [
+              "They waste valuable time",
+              "They improve concentration",
+              "They make exams easier"
+            ],
+            "answer": "They improve concentration"
+          },
+          {
+            "q": "What did the students who took regular breaks do?",
+            "options": [
+              "They finished sooner",
+              "They read more books",
+              "They remembered more"
+            ],
+            "answer": "They remembered more"
+          }
+        ]
+      },
+      {
+        "id": "a-l4",
+        "tier": 2,
+        "script": "The community garden is looking for volunteers to help on Saturday mornings. You do not need any gardening experience, as training will be given, but you should be able to lift bags of soil. Volunteers receive free vegetables during the summer. Last year, the garden produced more than two hundred kilos of food for local families.",
+        "questions": [
+          {
+            "q": "What is not required of volunteers?",
+            "options": [
+              "Gardening experience",
+              "Lifting bags of soil",
+              "Attending on Saturdays"
+            ],
+            "answer": "Gardening experience"
+          },
+          {
+            "q": "What benefit do volunteers receive?",
+            "options": [
+              "A small payment",
+              "Free vegetables",
+              "Training certificates"
+            ],
+            "answer": "Free vegetables"
+          }
+        ]
+      },
+      {
+        "id": "a-l5",
+        "tier": 3,
+        "script": "People often praise remote working for the freedom it gives employees. That freedom is real, but it has costs. Colleagues who rarely meet may find it harder to trust one another, and new staff can feel isolated. Some companies now ask teams to come into the office two days a week — not because they mistrust their employees, but because they want to protect informal conversations that produce new ideas.",
+        "questions": [
+          {
+            "q": "What is the speaker's attitude towards remote working?",
+            "options": [
+              "Completely opposed",
+              "Uninterested",
+              "Supportive but aware of problems"
+            ],
+            "answer": "Supportive but aware of problems"
+          },
+          {
+            "q": "Why do some companies want staff in the office two days a week?",
+            "options": [
+              "To encourage informal exchange of ideas",
+              "To check that they are working",
+              "To reduce the cost of offices"
+            ],
+            "answer": "To encourage informal exchange of ideas"
+          }
+        ]
+      },
+      {
+        "id": "a-l6",
+        "tier": 3,
+        "script": "City planners once treated parks as decoration. Today, many see them as essential infrastructure. During heatwaves, trees can lower street temperatures by several degrees, and green spaces help rainwater drain away instead of flooding roads. The difficulty is money: parks cost a lot to maintain and produce no direct income. As a result, some councils are now working with private companies to share the cost.",
+        "questions": [
+          {
+            "q": "According to the speaker, what was the old attitude to parks?",
+            "options": [
+              "They were unnecessary",
+              "They were mainly decoration",
+              "They were too expensive"
+            ],
+            "answer": "They were mainly decoration"
+          },
+          {
+            "q": "What problem with parks does the speaker mention?",
+            "options": [
+              "They attract too many visitors",
+              "They cannot be built in cities",
+              "They are expensive to maintain but earn no income"
+            ],
+            "answer": "They are expensive to maintain but earn no income"
+          }
+        ]
+      }
+    ],
+    "reading": [
+      {
+        "id": "a-r1",
+        "tier": 2,
+        "source": "Wikipedia, “Remote work”（CC BY-SA，改编）",
+        "passage": "Remote work means doing paid work outside a company's office, usually from home and usually with the help of the internet. Although the idea is not new, it became far more common during the COVID-19 pandemic, when millions of employees were asked to stay at home. Many of them found that they saved time and money on travelling, and some employers discovered that they could reduce the cost of their offices.\n\nYet the shift has not been entirely positive. Employees who live alone sometimes report feeling isolated, while others find it difficult to stop working in the evening, because the line between home and office has disappeared. Managers, meanwhile, worry that new members of staff learn less quickly when they cannot listen to more experienced colleagues.\n\nMost companies have therefore settled on a mixed arrangement, with staff working in the office for part of the week and at home for the rest. Supporters of this approach argue that it keeps the flexibility of remote work while protecting the informal contact that helps teams solve problems together. Critics, however, point out that such arrangements often benefit office workers far more than people who work in shops, hospitals or factories.",
+        "questions": [
+          {
+            "q": "What did some employers discover during the pandemic?",
+            "options": [
+              "They could reduce office costs",
+              "Employees worked fewer hours",
+              "Customers preferred remote service"
+            ],
+            "answer": "They could reduce office costs"
+          },
+          {
+            "q": "Why might new staff learn less quickly when working remotely?",
+            "options": [
+              "They are given easier tasks",
+              "They have less access to experienced colleagues",
+              "They cannot use the internet"
+            ],
+            "answer": "They have less access to experienced colleagues"
+          },
+          {
+            "q": "In the passage, the phrase “settled on” is closest in meaning to ___.",
+            "options": [
+              "delayed",
+              "refused",
+              "chosen"
+            ],
+            "answer": "chosen"
+          },
+          {
+            "q": "Which of the following best describes the writer's attitude?",
+            "options": [
+              "Remote work has benefits and drawbacks, and mixed arrangements are now common",
+              "Remote work has no disadvantages",
+              "All companies should return to the office"
+            ],
+            "answer": "Remote work has benefits and drawbacks, and mixed arrangements are now common"
+          }
+        ]
+      },
+      {
+        "id": "a-r2",
+        "tier": 3,
+        "source": "Wikipedia, “Circular economy”（CC BY-SA，改编）",
+        "passage": "For most of the last century, the world's economy worked in a straight line. Companies took raw materials, made products, and sold them. When the products broke or went out of fashion, they were thrown away. This is often called the “take-make-dispose” model, and it assumes that resources are unlimited.\n\nThe circular economy offers a different picture. In a circular system, materials are kept in use for as long as possible. Products are designed so that they can be repaired, shared or taken apart, and when they finally fail, their parts become raw materials for something else. Supporters claim that this approach could cut waste dramatically and reduce the demand for new resources. In some industries the idea is already working: several car makers now remanufacture engines, and some clothing companies collect old garments to make new fibres.\n\nYet the circular economy has critics too. They argue that efficiency gains can be cancelled out by what economists call the rebound effect: when products become cheaper to make, people simply buy more of them, so total consumption may not fall at all. Others point out that recycling a material is rarely lossless. For these reasons, even enthusiastic supporters admit that circular design must be combined with limits on how much we consume.",
+        "questions": [
+          {
+            "q": "According to the passage, what happens to products in a circular system when they finally fail?",
+            "options": [
+              "They are thrown away like other waste",
+              "Their parts become raw materials for something else",
+              "They are sold at a lower price"
+            ],
+            "answer": "Their parts become raw materials for something else"
+          },
+          {
+            "q": "Why might the circular economy fail to reduce total consumption?",
+            "options": [
+              "Because recycling is banned in some countries",
+              "Because materials cannot be reused at all",
+              "Because cheaper products may lead people to buy more"
+            ],
+            "answer": "Because cheaper products may lead people to buy more"
+          },
+          {
+            "q": "In the passage, the word “lossless” means ___.",
+            "options": [
+              "without losing material or quality",
+              "without any cost at all",
+              "without using energy"
+            ],
+            "answer": "without losing material or quality"
+          },
+          {
+            "q": "What is the writer's attitude towards the circular economy?",
+            "options": [
+              "Completely negative",
+              "Cautiously supportive",
+              "Uninterested"
+            ],
+            "answer": "Cautiously supportive"
+          }
+        ]
+      }
+    ],
+    "speaking": [
+      {
+        "id": "a-s1",
+        "tier": 1,
+        "prompt": "Describe a skill you would like to learn. Say what it is, why you want to learn it, and how you would learn it.",
+        "minWords": 55,
+        "targets": [
+          "skill",
+          "because",
+          "learn"
+        ]
+      },
+      {
+        "id": "a-s2",
+        "tier": 2,
+        "prompt": "Talk about a time when you had to change your plans because of something unexpected. Say what happened, how you dealt with it, and what you learned.",
+        "minWords": 60,
+        "targets": [
+          "change",
+          "because",
+          "learned"
+        ]
+      },
+      {
+        "id": "a-s3",
+        "tier": 2,
+        "prompt": "Describe a person who has influenced you. Say who the person is, how they influenced you, and why you respect them.",
+        "minWords": 60,
+        "targets": [
+          "influence",
+          "because",
+          "respect"
+        ]
+      },
+      {
+        "id": "a-s4",
+        "tier": 3,
+        "prompt": "Some people believe that university education should be free for everyone, while others think students should pay. What is your view? Give reasons from your own experience.",
+        "minWords": 75,
+        "targets": [
+          "university",
+          "education",
+          "because"
+        ]
+      }
+    ],
+    "writing": [
+      {
+        "id": "a-w1",
+        "tier": 1,
+        "prompt": "Write an email to a colleague explaining that you will be late for a meeting and why. Say when you expect to arrive and what you will do if you miss the start. (70+ words)",
+        "minWords": 70
+      },
+      {
+        "id": "a-w2",
+        "tier": 1,
+        "prompt": "Your local council is planning to build a new sports centre. Write a letter to the council saying whether you support the plan and giving one reason. (100+ words)",
+        "minWords": 100
+      },
+      {
+        "id": "a-w3",
+        "tier": 2,
+        "prompt": "Some people think that employees should be allowed to work from home. Do you think this is a good idea? Give your opinion and two reasons. (120+ words)",
+        "minWords": 120
+      },
+      {
+        "id": "a-w4",
+        "tier": 3,
+        "prompt": "In many countries, people are living longer than before. Some say this is a great success; others worry about the cost of caring for older people. Discuss both views and give your own opinion. (140+ words)",
+        "minWords": 140
+      }
+    ]
+  }
+}

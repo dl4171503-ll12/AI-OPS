@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#EEF8FF"/>
+      <stop offset="100%" stop-color="#F8FCFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="400" fill="url(#sky)"/>
+  <text x="320" y="42" text-anchor="middle" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#1F4E3A">&#30524;&#29699;&#35757;&#32451; &#183; &#19978;&#19979;&#36828;&#30496;</text>
+  <text x="320" y="68" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#5A7A6A">&#22836;&#20445;&#25345;&#27491;&#30452;&#65292;&#30524;&#29699;&#32531;&#32531;&#19978;&#26395;&#65292;&#20877;&#32531;&#32531;&#19979;&#26395;&#65292;&#21508;&#20572; 2 &#31186;</text>
+  <g transform="translate(320,110)">
+    <circle r="40" fill="#CFEFD9" stroke="#3D9B6E" stroke-width="3"/>
+    <text text-anchor="middle" y="8" font-size="26" fill="#2B6B4A">&#8593;</text>
+    <text text-anchor="middle" y="62" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#2B6B4A">&#19978;</text>
+  </g>
+  <g transform="translate(320,220)">
+    <ellipse cx="0" cy="0" rx="78" ry="88" fill="#FFE6C8" stroke="#E2B48A" stroke-width="2"/>
+    <ellipse cx="-28" cy="-10" rx="18" ry="12" fill="#fff" stroke="#5A4A3A" stroke-width="2"/>
+    <ellipse cx="28" cy="-10" rx="18" ry="12" fill="#fff" stroke="#5A4A3A" stroke-width="2"/>
+    <circle cx="-28" cy="-14" r="5" fill="#2A2A2A"/>
+    <circle cx="28" cy="-14" r="5" fill="#2A2A2A"/>
+    <path d="M-16 28 Q0 38 16 28" fill="none" stroke="#C47A5A" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(320,330)">
+    <circle r="40" fill="#CFEFD9" stroke="#3D9B6E" stroke-width="3"/>
+    <text text-anchor="middle" y="8" font-size="26" fill="#2B6B4A">&#8595;</text>
+    <text text-anchor="middle" y="62" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#2B6B4A">&#19979;</text>
+  </g>
+  <path d="M320 150 V170" stroke="#3D9B6E" stroke-width="3" stroke-dasharray="5 5"/>
+  <path d="M320 268 V290" stroke="#3D9B6E" stroke-width="3" stroke-dasharray="5 5"/>
+</svg>

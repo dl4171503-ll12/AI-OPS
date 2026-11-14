@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>课程路径 · AI 一人学校</title>
+<link rel="stylesheet" href="/css/site.css" />
+</head>
+<body>
+<div class="top"><div class="topin">
+  <div class="brand">AI 一人学校</div>
+  <div class="nav"><a href="/">首页</a><a href="/learn.html" class="on">课程</a><a href="/assessment.html">测评</a></div>
+  <div class="stats" id="stats"></div>
+</div></div>
+
+<div class="wrap">
+  <h1 style="font-size:22px;margin:8px 0 4px" id="pageTitle">课程路径</h1>
+  <p class="hint" id="pageSub">每个单元 5 章，每章 5 节；一节约 2–3 分钟。完成上一节才能解锁下一节。1 个单元 ≈ 50 分钟，正好一天 1 小时精学。</p>
+  <div id="units"></div>
+</div>
+
+<script src="/js/store.js"></script>
+<script>
+const $ = (s) => document.querySelector(s);
+function readJSON(k){try{return JSON.parse(localStorage.getItem(k)||'null')}catch{return null}}
+
+async function main(){
+  const cur = await (await fetch('/data/curriculum.json')).json();
+  const s = Store.state();
+  const plan = readJSON('ops-en-plan:v1');
+  const hist = readJSON('ops-en-exam-history:v1') || [];
+  const hasAssess = Array.isArray(hist) && hist.length > 0;
+  $('#stats').innerHTML = `<span class="s">🔥 ${s.streak}</span><span class="s">⚡ ${s.xp}</span><span class="s">📚 ${s.todayUnits}/3</span>`;
+  if (!hasAssess) {
+    $('#pageTitle').textContent = '先完成测评，再解锁课程';
+    $('#pageSub').textContent = '课程会按你的蓝思定级与测评结果安排。';
+  } else if (plan) {
+    $('#pageTitle').textContent = '课程路径 · ' + (plan.levelLabel || '已按测评安排');
+  }
+  const planLevel = Store.planLevel();
+
+  $('#units').innerHTML = cur.units.map(u => {
+    const unlocked = Store.unitUnlocked(s, u.unit);
+    const done = Store.unitProgress(s, u.unit);
+    const unitDone = Store.unitDone(s, u.unit);
+    const chapters = u.chapters.map(ch => {
+      const chLocked = !unlocked || !Store.chapterUnlocked(s, u.unit, ch.id);
+      const prog = Store.chapterProgress(s, u.unit, ch.id);
+      const nodes = ch.lessons.map(l => {
+        const d = Store.lessonDone(s, u.unit, ch.id, l.id);
+        const can = Store.lessonUnlocked(s, u.unit, ch.id, l.id);
+        const isCur = can && !d;
+        const cls = d ? 'done' : isCur ? 'cur' : 'locked';
+        const href = d || can ? `/lesson.html?u=${u.unit}&c=${ch.id}&l=${l.id}` : '#';
+        return `<a class="node ${cls}" href="${href}" ${can || d ? '' : 'onclick="return false"'}>
+          <span class="dot">${d ? '✓' : can ? l.id : '🔒'}</span>
+          <span class="t">${l.title.replace('第 ' + l.id + ' 节 · ', '')}</span></a>`;
+      }).join('');
+      return `<div class="chapter">
+        <h3>第 ${ch.id} 章 · ${ch.title}<span class="cmeta">${prog}/5 已学</span></h3>
+        <div class="nodes">${nodes}</div>
+      </div>`;
+    }).join('');
+    const status = unitDone ? '<span class="badge g">已完成</span>' : unlocked ? '<span class="badge b">进行中</span>' : '<span class="badge">未解锁</span>';
+    const tip = !unlocked ? (planLevel ? '<p class="hint">完成前一单元后解锁（或完成测评按级别解锁）。</p>' : '<p class="hint">先完成测评，老师会从适合你的单元开始。</p>') : '';
+    return `<div class="unit ${unlocked ? '' : 'locked'}" id="unit-${u.unit}">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+        <h2>${u.unit}. ${u.name} <span class="hint">${u.lex}</span></h2>${status}
+      </div>
+      <div class="meta">5 章 × 5 节 = 25 小节 · 已完成 ${done}/25</div>
+      <div class="pbar"><i style="width:${Math.round(done/25*100)}%"></i></div>
+      ${tip}
+      ${unlocked ? chapters : ''}
+    </div>`;
+  }).join('');
+}
+main();
+</script>
+</body>
+</html>

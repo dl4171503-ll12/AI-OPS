@@ -4,13 +4,20 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --host 127.0.0.1 --port 919 --strictPort",
+    "dev": "vite --host 127.0.0.1 --port 918 --strictPort",
     "build": "vite build",
-    "preview": "vite preview --host 127.0.0.1 --port 920 --strictPort"
+    "preview": "vite preview --host 127.0.0.1 --port 920 --strictPort",
+    "dev:guardian": "vite --config vite.guardian.config.ts",
+    "build:guardian": "vite build --config vite.guardian.config.ts",
+    "preview:guardian": "vite preview --config vite.guardian.config.ts",
+    "test:english": "node scripts/english-assessment.test.mjs"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.103.1",
+    "edge-tts-universal": "^1.4.0",
     "katex": "^0.16.22",
     "lucide-react": "^0.576.0",
+    "lunar-javascript": "1.7.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-markdown": "^10.1.0",

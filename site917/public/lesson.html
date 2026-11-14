@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>上课 · AI 一人学校</title>
+<link rel="stylesheet" href="/css/site.css" />
+</head>
+<body>
+<div class="lessonwrap">
+  <div class="ltop">
+    <a href="/learn.html" class="btn ghost sm" style="box-shadow:none;border-width:2px">✕</a>
+    <div class="pbar"><i id="bar"></i></div>
+    <div class="hearts" id="hearts">❤️❤️❤️❤️❤️</div>
+  </div>
+  <div class="hint" id="crumb" style="margin-bottom:8px"></div>
+  <div class="qcard">
+    <div id="qbody"></div>
+    <div class="fb" id="fb"></div>
+  </div>
+</div>
+<div class="foot"><div class="inner">
+  <span class="hint" id="xpLine"></span>
+  <button class="btn" id="nextBtn">继续</button>
+</div></div>
+<div class="toast" id="toast"></div>
+
+<script src="/js/store.js"></script>
+<script>
+const $ = (s) => document.querySelector(s);
+const qs = new URLSearchParams(location.search);
+const U = Number(qs.get('u') || 1), C = Number(qs.get('c') || 1), L = Number(qs.get('l') || 1);
+let curriculum = null, lesson = null, unit = null, questions = [], idx = 0, hearts = 5, xp = 0, correct = 0, answered = false, lastCorrect = false;
+
+function toast(m){const el=$('#toast');el.textContent=m;el.className='toast show';clearTimeout(window.__t);window.__t=setTimeout(()=>el.className='toast',1500)}
+function shuffle(a){const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b}
+
+let audioEl = null;
+async function playTTS(text){
+  try{
+    const r = await fetch('/api/school-tts',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({text,lang:'en',voice_id:'English_Graceful_Lady',model:'speech-02-hd',speed:0.95})});
+    if(!r.ok) throw new Error('tts');
+    const blob = await r.blob();
+    if(audioEl) audioEl.pause();
+    audioEl = new Audio(URL.createObjectURL(blob)); audioEl.play().catch(()=>{});
+  }catch{
+    try{ const u=new SpeechSynthesisUtterance(text); u.lang='en-US'; speechSynthesis.speak(u); }catch{}
+  }
+}
+
+function buildQuestions(){
+  const pools = curriculum.pools[unit.level];
+  const seq = lesson.skills && lesson.skills.length ? lesson.skills : ['vocab','grammar','listening','reading','dictation','speaking'];
+  const out = [];
+  const cursor = {};
+  for (const skill of seq){
+    const pool = pools[skill] || pools.vocab;
+    if(!pool || !pool.length) continue;
+    cursor[skill] = (cursor[skill] || 0) % pool.length;
+    const item = pool[cursor[skill]++];
+    out.push({ type: skill, item });
+  }
+  return out;
+}
+
+function render(){
+  if (idx >= questions.length) return finish();
+  answered = false; lastCorrect = false;
+  const q = questions[idx];
+  $('#bar').style.width = Math.round(idx / questions.length * 100) + '%';
+  $('#hearts').textContent = '❤️'.repeat(Math.max(0,hearts)) + '🖤'.repeat(Math.max(0,5-hearts));
+  $('#xpLine').textContent = `⚡ ${xp} XP`;
+  $('#crumb').textContent = `${unit.name} · 第 ${C} 章 · 第 ${L} 节`;
+  $('#fb').className = 'fb';
+  const body = $('#qbody');
+
+  if (q.type === 'vocab') {
+    body.innerHTML = `<h2>选出正确的单词：${esc(q.item.clue || '')}</h2><div id="opts"></div>`;
+    renderOptions(shuffle(q.item.options), q.item.answer);
+  } else if (q.type === 'grammar') {
+    body.innerHTML = `<h2>选词填空：${esc(q.item.q || '')}</h2><div id="opts"></div>`;
+    renderOptions(shuffle(q.item.options), q.item.answer);
+  } else if (q.type === 'listening') {
+    body.innerHTML = `<div class="row"><button class="btn ghost sm" id="playBtn">🔊 播放录音（可重复）</button></div>
+      <h2>听录音，回答问题：${esc(q.item.q || '')}</h2><div id="opts"></div>`;
+    $('#playBtn').onclick = () => playTTS(q.item.script || q.item.q);
+    renderOptions(shuffle(q.item.options), q.item.answer);
+  } else if (q.type === 'reading') {
+    body.innerHTML = `<div class="passage">${esc((q.item.passage || '').slice(0, 320))}…</div>
+      <h2>${esc(q.item.q || '')}</h2><div id="opts"></div>`;
+    renderOptions(shuffle(q.item.options), q.item.answer);
+  } else if (q.type === 'dictation') {
+    body.innerHTML = `<div class="row"><button class="btn ghost sm" id="playBtn">🔊 播放句子（可重复）</button></div>
+      <h2>听写：把听到的句子写下来</h2><input class="write" id="input" placeholder="写下你听到的句子…" autocomplete="off"/>`;
+    $('#playBtn').onclick = () => playTTS(q.item.answer);
+    $('#input').focus();
+  } else if (q.type === 'speaking') {
+    body.innerHTML = `<h2>口语：${esc(q.item.prompt || '')}</h2>
+      <div class="row"><button class="btn ghost sm" id="playBtn">🔊 听示范</button>
+      <button class="btn blue sm" id="sayBtn">🎤 我已朗读/作答</button></div>
+      <p class="hint">大声读出来或说出来，再点“我已朗读/作答”。</p>`;
+    $('#playBtn').onclick = () => playTTS((q.item.prompt || '').replace(/^Read the sentence aloud:\s*“?/i, '').replace(/”?$/, ''));
+    $('#sayBtn').onclick = () => { if(!answered) { correct++; xp += 10; showFb(true, '很棒！继续下一题。'); } };
+  } else if (q.type === 'writing') {
+    body.innerHTML = `<h2>写作：${esc(q.item.prompt || '')}</h2>
+      <textarea class="write" id="input" rows="6" placeholder="用英文写在这里…"></textarea>
+      <p class="hint" id="wc">至少写 ${Math.min(10, q.item.minWords || 10)} 个词</p>`;
+    $('#input').oninput = () => {
+      const n = ($('#input').value.trim().match(/[A-Za-z']+/g) || []).length;
+      $('#wc').textContent = `${n} 词` + (n < 10 ? `（至少 10 词）` : '');
+    };
+  }
+  $('#nextBtn').textContent = '继续';
+  $('#nextBtn').onclick = () => {
+    if (q.type === 'dictation') {
+      if (answered) return next();
+      const v = ($('#input')?.value || '').trim();
+      if (!v) { toast('先写一句再继续'); return; }
+      const ok = norm(v) === norm(q.item.answer);
+      if (ok) { correct++; xp += 10; showFb(true, '完全正确！'); }
+      else { hearts--; showFb(false, `正确答案：${esc(q.item.answer)}`); }
+      return;
+    }
+    if (q.type === 'writing') {
+      if (answered) return next();
+      const n = (($('#input')?.value || '').trim().match(/[A-Za-z']+/g) || []).length;
+      if (n < 10) { toast('再多写一点（至少 10 词）'); return; }
+      correct++; xp += 10; showFb(true, '写完了！继续下一题。');
+      return;
+    }
+    if (q.type === 'speaking') {
+      if (!answered) { toast('先点“我已朗读/作答”'); return; }
+      return next();
+    }
+    if (!answered) { toast('先选一个答案'); return; }
+    next();
+  };
+}
+
+function renderOptions(options, answer){
+  const box = $('#opts'); if(!box) return;
+  box.innerHTML = '';
+  options.forEach(o => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'opt'; b.textContent = o;
+    b.onclick = () => {
+      if (answered) return;
+      [...box.children].forEach(x => x.classList.remove('sel'));
+      b.classList.add('sel');
+      if (o === answer) { b.classList.add('right'); correct++; xp += 10; showFb(true, '太棒了！'); }
+      else { b.classList.add('wrong'); hearts--; [...box.children].forEach(x => { if (x.textContent === answer) x.classList.add('right'); }); showFb(false, `正确答案：${esc(answer)}`); }
+    };
+    box.appendChild(b);
+  });
+}
+
+function showFb(ok, text){
+  answered = true;
+  const fb = $('#fb'); fb.className = 'fb show ' + (ok ? 'ok' : 'no'); fb.innerHTML = text;
+  $('#hearts').textContent = '❤️'.repeat(Math.max(0,hearts)) + '🖤'.repeat(Math.max(0,5-hearts));
+  $('#nextBtn').textContent = idx === questions.length - 1 ? '完成本节' : '继续';
+}
+
+function next(){ if (hearts <= 0) return finish(); idx++; render(); }
+
+function finish(){
+  const total = questions.length;
+  const res = Store.completeLesson(U, C, L, correct, total);
+  const passed = hearts > 0;
+  $('#bar').style.width = '100%';
+  $('#qbody').innerHTML = `<div class="done-card">
+    <div class="big">${passed ? '🎉' : '💪'}</div>
+    <h2>${passed ? '完成本节！' : '心用完了'}</h2>
+    <p class="hint">答对 ${correct}/${total} · 获得 ${res.xp} XP${res.chapterDone ? ' · 本章完成 ✅' : ''}${res.unitDone ? ' · 本单元完成 🏆' : ''}</p>
+    <p class="hint">今日完成单元：${Store.state().todayUnits} / 3（至少 1 个才算打卡）</p>
+    <div class="row" style="justify-content:center">
+      ${nextHref() ? `<a class="btn" id="again" href="${nextHref()}">继续下一节</a>` : ''}
+      <a class="btn ghost" href="/learn.html">返回课程</a>
+      <a class="btn ghost" href="/">回首页</a>
+    </div></div>`;
+  $('#fb').className = 'fb';
+  $('#nextBtn').style.display = 'none';
+}
+
+function nextHref(){
+  if (L < 5) return `/lesson.html?u=${U}&c=${C}&l=${L+1}`;
+  if (C < 5) return `/lesson.html?u=${U}&c=${C+1}&l=1`;
+  if (U < 5) return `/lesson.html?u=${U+1}&c=1&l=1`;
+  return '';
+}
+
+function esc(s){return String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function norm(s){return String(s||'').toLowerCase().replace(/[^a-z0-9' ]/g,' ').split(/\s+/).filter(Boolean).join(' ')}
+
+// 供自动化测试使用：按正确答案答题并推进（不影响学生界面）
+window.__lessonDebug = {
+  state: () => ({ idx, hearts, correct, xp, total: questions.length, q: questions[idx] }),
+  answerCorrect: () => {
+    const q = questions[idx];
+    if (!q) return false;
+    if (q.type === 'speaking') { $('#sayBtn')?.click(); return true; }
+    if (q.type === 'dictation') { const el = $('#input'); if (el) { el.value = q.item.answer; el.dispatchEvent(new Event('input', { bubbles: true })); } $('#nextBtn').click(); return true; }
+    if (q.type === 'writing') { const el = $('#input'); if (el) { el.value = 'I like learning English because it is fun and useful for me every day.'; el.dispatchEvent(new Event('input', { bubbles: true })); } $('#nextBtn').click(); return true; }
+    const want = q.item.answer;
+    const btn = [...document.querySelectorAll('#opts .opt')].find((b) => b.textContent === want);
+    if (btn) { btn.click(); return true; }
+    return false;
+  },
+  finish,
+};
+
+async function main(){
+  curriculum = await (await fetch('/data/curriculum.json')).json();
+  unit = curriculum.units.find(u => u.unit === U);
+  if (!unit) { location.href = '/learn.html'; return; }
+  const chapter = unit.chapters.find(c => c.id === C);
+  lesson = chapter && chapter.lessons.find(l => l.id === L);
+  if (!lesson) { location.href = '/learn.html'; return; }
+  if (!Store.lessonUnlocked(Store.state(), U, C, L)) { location.href = '/learn.html'; return; }
+  questions = buildQuestions();
+  if (!questions.length) { location.href = '/learn.html'; return; }
+  render();
+}
+main();
+</script>
+</body>
+</html>

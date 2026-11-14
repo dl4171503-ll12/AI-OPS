@@ -1,0 +1,61 @@
+{
+  "scenarios": [
+    {
+      "name": "弱学生",
+      "mode": "weak",
+      "answers": 12,
+      "seenItems": [
+        "listening:en-listen-b3",
+        "listening:en-listen-b2",
+        "listening:en-listen-b1",
+        "speaking:en-speak-b3",
+        "speaking:en-speak-b2",
+        "speaking:en-speak-b1",
+        "reading:en-read-b3",
+        "reading:en-read-b2",
+        "reading:en-read-b1",
+        "writing:en-write-b3",
+        "writing:en-write-b2",
+        "writing:en-write-b1"
+      ],
+      "stored": {
+        "overall": "beginner",
+        "ready": false,
+        "administered": false,
+        "items": 12
+      },
+      "bodyPreview": "OPS / ENGLISH PLACEMENT REPORT\n\n英语起点：初级 · A1（Pre-A1 起步）\n\n8 年级 · 四档定位以四项中最低一项为准（保守口径）\n\n能听懂并说出身边事物的简单词句，能读配图短句，能写 1–2 个简单句。\n\n四项技能\n听说·听 · 到达 初级\n0 / 100\n\n小学 1–3 年级 · 已考 3 题\n\n口语·说 · 到达 初级\n63 / 100\n\n小学 1–3 年级 · 已考 3 题\n\n读写·读 · 到达 初级\n0 / 100\n\n小学 1–3 年级 · 已考 3 题\n\n读写·写 · 到达 初级\n61 / 100\n\n小学 1–3 年级 · 已考 3 题\n\n口语\n\n63\n\n听说\n\n32\n\n读写\n\n31\n\n雅思起步判断\n\n本次未进入雅思预备档，未启动雅思四单项判定。雅思预备判定未启动：需先完成雅思风格的四单项任务。\n\n下一步\n口语：每天 3 分钟「先说后写」，"
+    },
+    {
+      "name": "强学生",
+      "mode": "strong",
+      "answers": 12,
+      "seenItems": [
+        "listening:en-listen-b3",
+        "listening:en-listen-b4",
+        "speaking:en-speak-b3",
+        "speaking:en-speak-b4",
+        "reading:en-read-b3",
+        "reading:en-read-b4",
+        "writing:en-write-b3",
+        "writing:en-write-b4",
+        "listening:en-ielts-listen",
+        "reading:en-ielts-read",
+        "writing:en-ielts-write",
+        "speaking:en-ielts-speak"
+      ],
+      "stored": {
+        "overall": "advanced",
+        "ready": true,
+        "administered": true,
+        "items": 12
+      },
+      "bodyPreview": "OPS / ENGLISH PLACEMENT REPORT\n\n英语起点：高级 · B2\n\n8 年级 · 四档定位以四项中最低一项为准（保守口径）\n\n能听懂学术/半学术讲座要点，能就抽象话题连续表达 60 秒以上，能读 250 词论述文并识别立场，能写 150 词以上论证段落。\n\n四项技能\n听说·听 · 到达 高级\n100 / 100\n\n雅思初阶段 · 已考 3 题\n\n口语·说 · 到达 高级\n81 / 100\n\n雅思初阶段 · 已考 3 题\n\n读写·读 · 到达 高级\n100 / 100\n\n雅思初阶段 · 已考 3 题\n\n读写·写 · 到达 高级\n92 / 100\n\n雅思初阶段 · 已考 3 题\n\n口语\n\n81\n\n听说\n\n91\n\n读写\n\n96\n\n雅思起步判断\n\nlistening\n\n100\n\nreading\n\n100\n\nwriting\n\n95\n\nspeaking\n\n81\n\n已具备开始真题"
+    }
+  ],
+  "screenshots": [
+    "D:\\Desktop\\app-cjxeruyihxxd\\ai-school\\docs\\research\\e2e\\scenario-weak-report.png",
+    "D:\\Desktop\\app-cjxeruyihxxd\\ai-school\\docs\\research\\e2e\\scenario-strong-report.png"
+  ],
+  "errors": []
+}

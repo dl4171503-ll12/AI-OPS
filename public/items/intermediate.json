@@ -1,0 +1,586 @@
+{
+  "level": "intermediate",
+  "cefr": "A2",
+  "grade": "小学 4–6 年级",
+  "items": {
+    "vocab": [
+      {
+        "id": "i-v1",
+        "tier": 1,
+        "sentence": "I was very ___ last night, so I went to bed early.",
+        "options": [
+          "angry",
+          "hungry",
+          "tired"
+        ],
+        "answer": "tired",
+        "clue": "很累、很想睡觉的感觉",
+        "focus": "感受形容词词义"
+      },
+      {
+        "id": "i-v2",
+        "tier": 1,
+        "sentence": "Don't forget to ___ the door when you leave.",
+        "options": [
+          "lock",
+          "clean",
+          "paint"
+        ],
+        "answer": "lock",
+        "clue": "用钥匙把门关好，别人从外面打不开",
+        "focus": "日常动词词义"
+      },
+      {
+        "id": "i-v3",
+        "tier": 1,
+        "sentence": "My brother is always ___. He makes everyone laugh.",
+        "options": [
+          "careful",
+          "cheerful",
+          "serious"
+        ],
+        "answer": "cheerful",
+        "clue": "总是高高兴兴、笑着的样子",
+        "focus": "性格形容词词义"
+      },
+      {
+        "id": "i-v4",
+        "tier": 1,
+        "sentence": "We should ___ our hands before we eat.",
+        "options": [
+          "cook",
+          "grow",
+          "wash"
+        ],
+        "answer": "wash",
+        "clue": "用水和肥皂把脏东西弄掉",
+        "focus": "日常动作动词词义"
+      },
+      {
+        "id": "i-v5",
+        "tier": 2,
+        "sentence": "The film was so ___ that I fell asleep.",
+        "options": [
+          "boring",
+          "exciting",
+          "scary"
+        ],
+        "answer": "boring",
+        "clue": "很没意思，让人想睡觉",
+        "focus": "感受形容词词义"
+      },
+      {
+        "id": "i-v6",
+        "tier": 2,
+        "sentence": "It was raining hard, so we decided to ___ at home.",
+        "options": [
+          "leave",
+          "stay",
+          "run"
+        ],
+        "answer": "stay",
+        "clue": "下雨天不出门，留在家里",
+        "focus": "动词词义"
+      },
+      {
+        "id": "i-v7",
+        "tier": 2,
+        "sentence": "He missed the bus, ___ he was late for school.",
+        "options": [
+          "because",
+          "but",
+          "so"
+        ],
+        "answer": "so",
+        "clue": "前面是原因、后面是结果，意思是'所以'",
+        "focus": "因果连接词词义"
+      },
+      {
+        "id": "i-v8",
+        "tier": 2,
+        "sentence": "The train is much ___ than the bus.",
+        "options": [
+          "faster",
+          "taller",
+          "older"
+        ],
+        "answer": "faster",
+        "clue": "速度方面比别的更快，比较级",
+        "focus": "比较级词义"
+      },
+      {
+        "id": "i-v9",
+        "tier": 3,
+        "sentence": "Can I ___ your pen? I will give it back after class.",
+        "options": [
+          "lend",
+          "borrow",
+          "buy"
+        ],
+        "answer": "borrow",
+        "clue": "从别人那里借来用一用，用完要还回去",
+        "focus": "近义词辨析 borrow/lend"
+      },
+      {
+        "id": "i-v10",
+        "tier": 3,
+        "sentence": "My father is a very good ___. He cooks in a big hotel.",
+        "options": [
+          "waiter",
+          "manager",
+          "cook"
+        ],
+        "answer": "cook",
+        "clue": "在厨房里做菜给别人吃的职业",
+        "focus": "一词多义 cook（动词/人）"
+      },
+      {
+        "id": "i-v11",
+        "tier": 3,
+        "sentence": "I can't hear you. Please speak ___.",
+        "options": [
+          "louder",
+          "longer",
+          "earlier"
+        ],
+        "answer": "louder",
+        "clue": "声音再大一些，音量方面更响",
+        "focus": "比较级词义"
+      },
+      {
+        "id": "i-v12",
+        "tier": 3,
+        "sentence": "I don't like lemons. They are too ___.",
+        "options": [
+          "sweet",
+          "sour",
+          "salty"
+        ],
+        "answer": "sour",
+        "clue": "柠檬那种让嘴巴发酸的味道",
+        "focus": "味道词义"
+      }
+    ],
+    "grammar": [
+      {
+        "id": "i-g1",
+        "tier": 1,
+        "sentence": "I ___ to the park yesterday.",
+        "options": [
+          "go",
+          "going",
+          "went"
+        ],
+        "answer": "went",
+        "focus": "一般过去时"
+      },
+      {
+        "id": "i-g2",
+        "tier": 1,
+        "sentence": "She usually ___ up at six.",
+        "options": [
+          "gets",
+          "get",
+          "got"
+        ],
+        "answer": "gets",
+        "focus": "一般现在时三单"
+      },
+      {
+        "id": "i-g3",
+        "tier": 1,
+        "sentence": "There ___ a lot of people at the party last night.",
+        "options": [
+          "was",
+          "were",
+          "are"
+        ],
+        "answer": "were",
+        "focus": "there be 过去时"
+      },
+      {
+        "id": "i-g4",
+        "tier": 2,
+        "sentence": "He ___ his homework when I called him.",
+        "options": [
+          "were doing",
+          "is doing",
+          "was doing"
+        ],
+        "answer": "was doing",
+        "focus": "过去进行时（时态+主谓一致）"
+      },
+      {
+        "id": "i-g5",
+        "tier": 2,
+        "sentence": "I have ___ this film three times.",
+        "options": [
+          "seen",
+          "saw",
+          "see"
+        ],
+        "answer": "seen",
+        "focus": "现在完成时"
+      },
+      {
+        "id": "i-g6",
+        "tier": 2,
+        "sentence": "My city is ___ than my old town.",
+        "options": [
+          "big",
+          "bigger",
+          "biggest"
+        ],
+        "answer": "bigger",
+        "focus": "比较级"
+      },
+      {
+        "id": "i-g7",
+        "tier": 3,
+        "sentence": "The book ___ by a young writer last year.",
+        "options": [
+          "wrote",
+          "is writing",
+          "was written"
+        ],
+        "answer": "was written",
+        "focus": "一般过去时被动语态"
+      },
+      {
+        "id": "i-g8",
+        "tier": 3,
+        "sentence": "She said she ___ tired and wanted to rest.",
+        "options": [
+          "was",
+          "is",
+          "were"
+        ],
+        "answer": "was",
+        "focus": "间接引语时态呼应"
+      },
+      {
+        "id": "i-g9",
+        "tier": 3,
+        "sentence": "The film was not as interesting ___ the book.",
+        "options": [
+          "than",
+          "as",
+          "like"
+        ],
+        "answer": "as",
+        "focus": "as...as 比较结构"
+      }
+    ],
+    "listening": [
+      {
+        "id": "i-l1",
+        "tier": 1,
+        "script": "Hello, I'm Jack. I'm twelve years old. I have a big family. There are four people in my family: my parents, my little brother and me.",
+        "questions": [
+          {
+            "q": "How old is Jack?",
+            "options": [
+              "Ten",
+              "Eleven",
+              "Twelve"
+            ],
+            "answer": "Twelve"
+          },
+          {
+            "q": "How many people are in Jack's family?",
+            "options": [
+              "Four",
+              "Three",
+              "Five"
+            ],
+            "answer": "Four"
+          }
+        ]
+      },
+      {
+        "id": "i-l2",
+        "tier": 1,
+        "script": "Hi, my name is Emma. I like music and I play the piano. I practise every day after school. I want to be a music teacher one day.",
+        "questions": [
+          {
+            "q": "What does Emma play?",
+            "options": [
+              "The guitar",
+              "The piano",
+              "The violin"
+            ],
+            "answer": "The piano"
+          },
+          {
+            "q": "What does Emma want to be?",
+            "options": [
+              "A singer",
+              "A doctor",
+              "A music teacher"
+            ],
+            "answer": "A music teacher"
+          }
+        ]
+      },
+      {
+        "id": "i-l3",
+        "tier": 2,
+        "script": "Last Saturday, Sam went to the shops with his mother. He bought a new T-shirt and a pair of shoes. In the afternoon, it started to rain, so they went home and watched a film.",
+        "questions": [
+          {
+            "q": "What did Sam buy?",
+            "options": [
+              "A T-shirt and shoes",
+              "A hat and a coat",
+              "A book and a pen"
+            ],
+            "answer": "A T-shirt and shoes"
+          },
+          {
+            "q": "Why did Sam and his mother go home?",
+            "options": [
+              "They were tired.",
+              "It started to rain.",
+              "The shops were closed."
+            ],
+            "answer": "It started to rain."
+          }
+        ]
+      },
+      {
+        "id": "i-l4",
+        "tier": 2,
+        "script": "Hi, I'm Nina. I usually go to school by bike, but yesterday my bike had a flat tyre, so I took the bus. The bus was crowded, but it was faster than walking.",
+        "questions": [
+          {
+            "q": "How does Nina usually go to school?",
+            "options": [
+              "By bus",
+              "On foot",
+              "By bike"
+            ],
+            "answer": "By bike"
+          },
+          {
+            "q": "What was the problem yesterday?",
+            "options": [
+              "Her bike had a flat tyre.",
+              "She woke up late.",
+              "The bus didn't come."
+            ],
+            "answer": "Her bike had a flat tyre."
+          }
+        ]
+      },
+      {
+        "id": "i-l5",
+        "tier": 3,
+        "script": "Good morning, everyone. The school trip is next Friday. We will leave at eight in the morning and come back at about five in the afternoon. Please bring some water, a hat and a sandwich. Do not bring any sweets, because we want to keep the park clean.",
+        "questions": [
+          {
+            "q": "When will the students come back?",
+            "options": [
+              "At eight in the morning",
+              "At about five in the afternoon",
+              "At about nine in the evening"
+            ],
+            "answer": "At about five in the afternoon"
+          },
+          {
+            "q": "Why should students not bring sweets?",
+            "options": [
+              "The teacher doesn't like them.",
+              "There is no time to eat them.",
+              "They want to keep the park clean."
+            ],
+            "answer": "They want to keep the park clean."
+          }
+        ]
+      },
+      {
+        "id": "i-l6",
+        "tier": 3,
+        "script": "Hi, I'm Leo. My best friend Mark and I are in the same class, but we have different hobbies. I enjoy reading history books, while Mark prefers playing chess. On Sundays we meet at the library and study together.",
+        "questions": [
+          {
+            "q": "What does Mark prefer doing?",
+            "options": [
+              "Playing chess",
+              "Reading history books",
+              "Watching films"
+            ],
+            "answer": "Playing chess"
+          },
+          {
+            "q": "Where do Leo and Mark meet on Sundays?",
+            "options": [
+              "At the park",
+              "At the library",
+              "At Mark's house"
+            ],
+            "answer": "At the library"
+          }
+        ]
+      }
+    ],
+    "reading": [
+      {
+        "id": "i-r1",
+        "tier": 2,
+        "source": "Aesop, Fables（《北风与太阳》，公有领域，改编）",
+        "passage": "The North Wind and the Sun were arguing about who was stronger. 'I am much stronger than you,' said the North Wind. 'Look at those travellers on the road. I can make them take off their coats.' The North Wind blew as hard as he could, but the travellers only pulled their coats more tightly around them. Then the Sun began to shine. The travellers felt warm, and soon they took off their coats. The Sun smiled and said, 'Gentleness works better than force.'",
+        "questions": [
+          {
+            "q": "What were the North Wind and the Sun arguing about?",
+            "options": [
+              "Who was warmer",
+              "Who was older",
+              "Who was stronger"
+            ],
+            "answer": "Who was stronger"
+          },
+          {
+            "q": "Why did the travellers take off their coats at the end?",
+            "options": [
+              "They felt too warm.",
+              "They wanted to swim.",
+              "The wind was very strong."
+            ],
+            "answer": "They felt too warm."
+          },
+          {
+            "q": "In the story, 'gentleness' means ___.",
+            "options": [
+              "being very loud",
+              "being kind and calm",
+              "being very fast"
+            ],
+            "answer": "being kind and calm"
+          },
+          {
+            "q": "What does the story tell us?",
+            "options": [
+              "The wind is always stronger.",
+              "Travellers should wear coats.",
+              "Kindness can work better than force."
+            ],
+            "answer": "Kindness can work better than force."
+          }
+        ]
+      },
+      {
+        "id": "i-r2",
+        "tier": 3,
+        "source": "Aesop, Fables（《狐狸与葡萄》，公有领域，改编）",
+        "passage": "One hot afternoon, a hungry fox was walking through a garden. He saw some beautiful grapes hanging high on a vine. 'Those grapes look sweet and juicy,' he said. 'I must have them.' The fox jumped up again and again, but the grapes were too high for him. At last he was tired and his legs hurt. As he walked away, he said, 'I am sure those grapes are sour anyway. I do not want them.'",
+        "questions": [
+          {
+            "q": "What did the fox want?",
+            "options": [
+              "To eat the grapes",
+              "To pick flowers",
+              "To find water"
+            ],
+            "answer": "To eat the grapes"
+          },
+          {
+            "q": "Why did the fox say the grapes were sour?",
+            "options": [
+              "He did not like fruit.",
+              "He could not reach them.",
+              "The grapes were too small."
+            ],
+            "answer": "He could not reach them."
+          },
+          {
+            "q": "In the story, 'sour' means ___.",
+            "options": [
+              "very big",
+              "very hot",
+              "not sweet"
+            ],
+            "answer": "not sweet"
+          },
+          {
+            "q": "What lesson can we learn from the story?",
+            "options": [
+              "People sometimes pretend not to want what they cannot get.",
+              "Foxes like gardens.",
+              "Grapes are bad for you."
+            ],
+            "answer": "People sometimes pretend not to want what they cannot get."
+          }
+        ]
+      }
+    ],
+    "speaking": [
+      {
+        "id": "i-s1",
+        "tier": 1,
+        "prompt": "Introduce yourself. Say your name, your age and one thing you like doing.",
+        "minWords": 15,
+        "targets": [
+          "name",
+          "age",
+          "hobby"
+        ]
+      },
+      {
+        "id": "i-s2",
+        "tier": 1,
+        "prompt": "Say what you usually do after school in three sentences.",
+        "minWords": 15,
+        "targets": [
+          "after school",
+          "usually"
+        ]
+      },
+      {
+        "id": "i-s3",
+        "tier": 2,
+        "prompt": "Talk about your last weekend. Use the past tense and say what you did and how you felt.",
+        "minWords": 30,
+        "targets": [
+          "past tense",
+          "feelings"
+        ]
+      },
+      {
+        "id": "i-s4",
+        "tier": 3,
+        "prompt": "Compare two places you know well (for example, your town and a big city). Use 'bigger', 'more interesting' and 'but' in three sentences.",
+        "minWords": 35,
+        "targets": [
+          "comparatives",
+          "connectors"
+        ]
+      }
+    ],
+    "writing": [
+      {
+        "id": "i-w1",
+        "tier": 1,
+        "prompt": "Write three sentences about your daily routine. Use 'usually' and a time word.",
+        "minWords": 20
+      },
+      {
+        "id": "i-w2",
+        "tier": 1,
+        "prompt": "Write three sentences about a friend: what he or she looks like and what you do together.",
+        "minWords": 20
+      },
+      {
+        "id": "i-w3",
+        "tier": 2,
+        "prompt": "Write a short message (about 40 words) to invite your friend to a birthday party. Say when and where it is.",
+        "minWords": 40
+      },
+      {
+        "id": "i-w4",
+        "tier": 3,
+        "prompt": "Write about last weekend in five sentences. Use the past tense and the connectors 'first', 'then' and 'because'.",
+        "minWords": 50
+      }
+    ]
+  }
+}

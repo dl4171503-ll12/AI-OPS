@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFF7EE"/>
+      <stop offset="100%" stop-color="#FFFCF8"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="400" fill="url(#sky)"/>
+  <text x="320" y="42" text-anchor="middle" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#1F4E3A">&#30524;&#29699;&#35757;&#32451; &#183; &#26377;&#24847;&#35782;&#30462;&#30524;</text>
+  <text x="320" y="68" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#5A7A6A">&#36731;&#36731;&#38381;&#30524; 2 &#31186; &#8594; &#30524;&#24320; 2 &#31186;&#65292;&#36830;&#32493;&#20570; 20 &#27425;&#65292;&#28201;&#28070;&#30524;&#29699;</text>
+  <g transform="translate(180,220)">
+    <ellipse cx="0" cy="0" rx="70" ry="80" fill="#FFE6C8" stroke="#E2B48A" stroke-width="2"/>
+    <path d="M-32 -8 Q-16 -22 0 -8 Q16 -22 32 -8" fill="none" stroke="#5A4A3A" stroke-width="4" stroke-linecap="round"/>
+    <path d="M-32 -8 Q-16 6 0 -8 Q16 6 32 -8" fill="none" stroke="#5A4A3A" stroke-width="4" stroke-linecap="round"/>
+    <text text-anchor="middle" y="100" font-family="Microsoft YaHei, sans-serif" font-size="15" fill="#6A5A40">&#38381;&#30524;</text>
+  </g>
+  <text x="320" y="220" text-anchor="middle" font-size="28" fill="#C47A5A">&#8594;</text>
+  <g transform="translate(460,220)">
+    <ellipse cx="0" cy="0" rx="70" ry="80" fill="#FFE6C8" stroke="#E2B48A" stroke-width="2"/>
+    <ellipse cx="-22" cy="-6" rx="16" ry="11" fill="#fff" stroke="#5A4A3A" stroke-width="2"/>
+    <ellipse cx="22" cy="-6" rx="16" ry="11" fill="#fff" stroke="#5A4A3A" stroke-width="2"/>
+    <circle cx="-22" cy="-6" r="5" fill="#2A2A2A"/>
+    <circle cx="22" cy="-6" r="5" fill="#2A2A2A"/>
+    <path d="M-14 28 Q0 38 14 28" fill="none" stroke="#C47A5A" stroke-width="3" stroke-linecap="round"/>
+    <text text-anchor="middle" y="100" font-family="Microsoft YaHei, sans-serif" font-size="15" fill="#6A5A40">&#30524;&#24320;</text>
+  </g>
+  <text x="320" y="360" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="14" fill="#4A6A5A">&#19981;&#35201;&#29992;&#21147;&#25512;&#30524; &#183; &#36731;&#36731;&#30462;&#23601;&#22909;</text>
+</svg>

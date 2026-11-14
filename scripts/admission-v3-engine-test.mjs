@@ -1,0 +1,23 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import { Module } from 'node:module';
+import ts from 'typescript';
+const filename=path.resolve('src/lib/admission.ts'),m=new Module(filename);m.paths=Module._nodeModulePaths(path.dirname(filename));m._compile(ts.transpileModule(fs.readFileSync(filename,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText,filename);
+const {admissionTasks,dimensionScores,nextTaskIndex,adjustAdmissionPlan,validAnswer}=m.exports;
+let count=0;const check=(v,label)=>{assert.ok(v,label);count++;console.log('PASS',label);};
+for(let year=1;year<=12;year++){const t=admissionTasks(year);check(t.length===40&&new Set(t.map(x=>x.id)).size===40&&t.every(x=>x.dimension&&x.baselineSeconds),'年级 '+year+'：40项唯一题目及八维标签');}
+const tasks=admissionTasks(3),answers={};const answer=(t,value=t.expected||t.options[0],durationMs=30000)=>({value,reasoning:'对照题目验证条件',durationMs,savedAt:new Date().toISOString(),confidence:'sure',revisions:[]});
+check(dimensionScores(tasks,{}).every(x=>x.score===null),'缺证据维度不显示零分');
+answers[tasks[2].id]=answer(tasks[2]);check(nextTaskIndex(tasks,answers)===0,'后题已有数据不能跳过前题');
+check(!validAnswer(tasks[0],{...answer(tasks[0]),skipped:true}),'旧版跳过记录不算完成');
+check(!validAnswer(tasks[0],{...answer(tasks[0]),reasoning:'短'}),'无有效依据不能完成');
+check(!validAnswer(tasks[0],answer(tasks[0],'伪造选项')),'选择题答案必须是有效选项');
+for(const t of tasks)answers[t.id]=answer(t);
+check(nextTaskIndex(tasks,answers)===-1,'完整40题才结束');
+check(dimensionScores(tasks,answers).every(x=>x.score===100),'八维等权满分聚合');
+const space=tasks.filter(t=>t.dimension==='space');answers[space[0].id]=answer(space[0],space[0].options.find(x=>x!==space[0].expected));answers[space[1].id]=answer(space[1],space[1].options.find(x=>x!==space[1].expected));check(dimensionScores(tasks,answers).find(x=>x.id==='space').score===60,'空间五题错两题得60分');
+const math=tasks.filter(t=>t.subject==='math'),wrong={};math.slice(0,2).forEach(t=>wrong[t.id]=answer(t,t.options?t.options.find(x=>x!==t.expected):'999'));check(adjustAdmissionPlan(tasks,wrong,math[1],[]).reason.includes('40%'),'低正确率触发基础补练');
+const fast={};math.slice(0,3).forEach(t=>fast[t.id]=answer(t));check(adjustAdmissionPlan(tasks,fast,math[2],[]).reason.includes('80%'),'充分证据且快速正确时提升挑战');
+const slow={[tasks[0].id]:answer(tasks[0],tasks[0].options[0],300000)};check(adjustAdmissionPlan(tasks,slow,tasks[0],[]).reason.includes('两倍'),'耗时超参考值触发复核而非能力定性');
+console.log(JSON.stringify({checks:count}));

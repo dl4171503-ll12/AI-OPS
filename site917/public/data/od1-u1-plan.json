@@ -1,0 +1,41 @@
+{
+  "book": "Oxford Discover 2e Level 1",
+  "unit": 1,
+  "title": "Families and Friends",
+  "bigQuestion": "Who are your family and friends?",
+  "pages": "Student Book pp. 7–15（Big Question p7；读前 p9；阅读 pp.10–12；语法 p13；词汇/听力 p14；写作 p15）",
+  "objectives": [
+    "认读家庭词汇：mother, father, brother, sister, grandmother, grandfather, family, friend, uncle, aunt, cousin, parents, son, daughter",
+    "用 verb be 说简单句：I'm / He's / She's / My family is / Friends are",
+    "能连续说 3–5 句介绍自己和家人",
+    "能写 3 句介绍家人"
+  ],
+  "vocab": ["mother", "father", "brother", "sister", "grandmother", "grandfather", "family", "friend", "uncle", "aunt", "cousin", "parents", "son", "daughter"],
+  "grammar": "Verb Be: I'm / He's / She's / My family is / Friends are",
+  "lessonFlow": [
+    "Warm-up（p7）：family big or small / friend's name",
+    "Words（p14）：uncle, aunt, cousin, parents, son, daughter",
+    "Reading（pp.10–12）：Kim 的家庭 + friends",
+    "Grammar（p13）：verb be 例句 + 填空",
+    "Listening（p14）：家庭成员听力",
+    "Speaking（p13）：介绍自己与家人",
+    "Spelling（p14）：拼写 cousin",
+    "Writing（p15）：写 3 句家人"
+  ],
+  "tasks": [
+    { "id": 1, "type": "speaking", "prompt": "Is your family big or small? What is your friend's name? Tell me in English. (Book p7)" },
+    { "id": 2, "type": "speaking", "prompt": "Who lives with you? Use: parents, brother, sister, grandmother, grandfather. (Book p14)" },
+    { "id": 3, "type": "reading", "passage": "Kim is six years old. Her family is small. She lives with her mother. Friends play together. They share things.", "question": "Is Kim's family big or small?", "expected": "small" },
+    { "id": 4, "type": "grammar", "prompt": "I ___ six years old.", "expected": "am" },
+    { "id": 5, "type": "grammar", "prompt": "Friends ___ important.", "expected": "are" },
+    { "id": 6, "type": "listening", "script": "This is my aunt. She has two sons and a daughter.", "question": "How many sons does she have?", "expected": "two" },
+    { "id": 7, "type": "speaking", "prompt": "Introduce yourself: I'm ... I'm ... years old. My family is ... . (Book p13)" },
+    { "id": 8, "type": "dictation", "script": "cousin", "prompt": "Listen and write the word.", "expected": "cousin" },
+    { "id": 9, "type": "writing", "prompt": "Write 3 sentences about your family. Use: I'm… My family is… I have… (Book p15)" }
+  ],
+  "assessment": {
+    "passPct": 60,
+    "skills": ["speaking", "reading", "grammar", "listening", "spelling", "writing"],
+    "note": "课堂表现计入真实学习记录；60% 以上达标。"
+  }
+}

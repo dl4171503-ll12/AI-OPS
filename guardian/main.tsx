@@ -1,0 +1,1 @@
+import React from 'react';import ReactDOM from 'react-dom/client';import GuardianApp from './GuardianApp';import '../src/index.css';import './style.css';ReactDOM.createRoot(document.getElementById('root')!).render(<React.StrictMode><GuardianApp/></React.StrictMode>);

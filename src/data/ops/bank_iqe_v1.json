@@ -1,0 +1,1242 @@
+[
+  {
+    "qid": "IE-01",
+    "section": "IE",
+    "dimension": "I-A",
+    "type": "scale",
+    "stem": "小组讨论，你通常是哪一挂的？",
+    "options": [
+      {
+        "key": "A",
+        "text": "想清楚了才开口",
+        "score": 3
+      },
+      {
+        "key": "B",
+        "text": "边听边想，差不多就说",
+        "score": 1
+      },
+      {
+        "key": "C",
+        "text": "想到啥说啥，越说越清",
+        "score": 0
+      },
+      {
+        "key": "D",
+        "text": "看情况，有时憋有时抢",
+        "score": 2
+      }
+    ],
+    "reverse": false,
+    "aside": "先在心里过一遍再说。"
+  },
+  {
+    "qid": "IE-02",
+    "section": "IE",
+    "dimension": "I-A",
+    "type": "scale",
+    "stem": "午休自由活动，你更想去哪？",
+    "options": [
+      {
+        "key": "A",
+        "text": "角落看书或做手工",
+        "score": 3
+      },
+      {
+        "key": "B",
+        "text": "找两三个熟人待着",
+        "score": 2
+      },
+      {
+        "key": "C",
+        "text": "往人多的地方凑",
+        "score": 0
+      },
+      {
+        "key": "D",
+        "text": "先晃一圈再决定",
+        "score": 1
+      }
+    ],
+    "reverse": false,
+    "aside": "你有自己的小天地。"
+  },
+  {
+    "qid": "IE-03",
+    "section": "IE",
+    "dimension": "I-B",
+    "type": "scale",
+    "stem": "刚进新班级，门口好多人，你？",
+    "options": [
+      {
+        "key": "A",
+        "text": "先站边上看规则气氛",
+        "score": 3
+      },
+      {
+        "key": "B",
+        "text": "跟旁边同学轻轻打个招呼",
+        "score": 2
+      },
+      {
+        "key": "C",
+        "text": "直接冲进去自我介绍",
+        "score": 0
+      },
+      {
+        "key": "D",
+        "text": "等老师喊再动",
+        "score": 1
+      }
+    ],
+    "reverse": false,
+    "aside": "你在摸清这片水。"
+  },
+  {
+    "qid": "IE-04",
+    "section": "IE",
+    "dimension": "I-B",
+    "type": "scale",
+    "stem": "陌生同学热情跟你搭话，你？",
+    "options": [
+      {
+        "key": "A",
+        "text": "心里暖，嘴上慢半拍",
+        "score": 3
+      },
+      {
+        "key": "B",
+        "text": "马上热络地接上",
+        "score": 0
+      },
+      {
+        "key": "C",
+        "text": "点头笑，话不多",
+        "score": 1
+      },
+      {
+        "key": "D",
+        "text": "有点愣，过会儿才回",
+        "score": 2
+      }
+    ],
+    "reverse": false,
+    "aside": "慢一点也没关系。"
+  },
+  {
+    "qid": "IE-05",
+    "section": "IE",
+    "dimension": "I-C",
+    "type": "scale",
+    "stem": "联欢会结束好吵，你更想？",
+    "options": [
+      {
+        "key": "A",
+        "text": "找安静处待一会儿",
+        "score": 3
+      },
+      {
+        "key": "B",
+        "text": "继续跟大家聊",
+        "score": 0
+      },
+      {
+        "key": "C",
+        "text": "帮忙收拾再走",
+        "score": 1
+      },
+      {
+        "key": "D",
+        "text": "戴耳机走回去",
+        "score": 2
+      }
+    ],
+    "reverse": false,
+    "aside": "热闹过后需要充电。"
+  },
+  {
+    "qid": "IE-06",
+    "section": "IE",
+    "dimension": "I-C",
+    "type": "scale",
+    "stem": "你在书桌解难题，旁边有人说话，你？",
+    "options": [
+      {
+        "key": "A",
+        "text": "请对方小声或换地方",
+        "score": 3
+      },
+      {
+        "key": "B",
+        "text": "硬扛着继续算",
+        "score": 1
+      },
+      {
+        "key": "C",
+        "text": "干脆停下来一起聊",
+        "score": 0
+      },
+      {
+        "key": "D",
+        "text": "戴上耳机隔开",
+        "score": 2
+      }
+    ],
+    "reverse": false,
+    "aside": "安静对你很重要。"
+  },
+  {
+    "qid": "IE-07",
+    "section": "IE",
+    "dimension": "E-A",
+    "type": "scale",
+    "stem": "游园会人很多，你更像？",
+    "options": [
+      {
+        "key": "A",
+        "text": "主动找人聊天认识",
+        "score": 3
+      },
+      {
+        "key": "B",
+        "text": "跟熟人黏在一起",
+        "score": 1
+      },
+      {
+        "key": "C",
+        "text": "默默看摊位",
+        "score": 0
+      },
+      {
+        "key": "D",
+        "text": "等人先来找你",
+        "score": 2
+      }
+    ],
+    "reverse": false,
+    "aside": "你挺会打开场子。"
+  },
+  {
+    "qid": "IE-08",
+    "section": "IE",
+    "dimension": "E-A",
+    "type": "scale",
+    "stem": "脑子里冒出好玩点子，你？",
+    "options": [
+      {
+        "key": "A",
+        "text": "马上找人分享讨论",
+        "score": 3
+      },
+      {
+        "key": "B",
+        "text": "先记本子里再说",
+        "score": 1
+      },
+      {
+        "key": "C",
+        "text": "自己琢磨完再讲",
+        "score": 0
+      },
+      {
+        "key": "D",
+        "text": "发到班级群里",
+        "score": 2
+      }
+    ],
+    "reverse": false,
+    "aside": "想法坐不住。"
+  },
+  {
+    "qid": "IE-09",
+    "section": "IE",
+    "dimension": "E-B",
+    "type": "scale",
+    "stem": "班级要办小活动，你常是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "站出来张罗分工",
+        "score": 3
+      },
+      {
+        "key": "B",
+        "text": "有人喊才帮忙",
+        "score": 1
+      },
+      {
+        "key": "C",
+        "text": "负责一块具体事",
+        "score": 2
+      },
+      {
+        "key": "D",
+        "text": "更想当观众",
+        "score": 0
+      }
+    ],
+    "reverse": false,
+    "aside": "你身上有带动感。"
+  },
+  {
+    "qid": "IE-10",
+    "section": "IE",
+    "dimension": "E-B",
+    "type": "scale",
+    "stem": "小组作业卡壳气氛沉，你？",
+    "options": [
+      {
+        "key": "A",
+        "text": "说点话把气氛拉起来",
+        "score": 3
+      },
+      {
+        "key": "B",
+        "text": "自己闷头先做出一段",
+        "score": 1
+      },
+      {
+        "key": "C",
+        "text": "提议先休息五分钟",
+        "score": 2
+      },
+      {
+        "key": "D",
+        "text": "等组长发话",
+        "score": 0
+      }
+    ],
+    "reverse": false,
+    "aside": "你愿意把火挑起来。"
+  },
+  {
+    "qid": "IE-11",
+    "section": "IE",
+    "dimension": "E-C",
+    "type": "scale",
+    "stem": "被问观点还没想全，你？",
+    "options": [
+      {
+        "key": "A",
+        "text": "边说边理清楚",
+        "score": 3
+      },
+      {
+        "key": "B",
+        "text": "说「让我想想」再答",
+        "score": 1
+      },
+      {
+        "key": "C",
+        "text": "先甩半截话丢给别人",
+        "score": 2
+      },
+      {
+        "key": "D",
+        "text": "干脆先不答",
+        "score": 0
+      }
+    ],
+    "reverse": false,
+    "aside": "嘴在帮你想。"
+  },
+  {
+    "qid": "IE-12",
+    "section": "IE",
+    "dimension": "E-C",
+    "type": "scale",
+    "stem": "数学题卡住了，你更想？",
+    "options": [
+      {
+        "key": "A",
+        "text": "找人口头对一对思路",
+        "score": 3
+      },
+      {
+        "key": "B",
+        "text": "自己在纸上反复推",
+        "score": 1
+      },
+      {
+        "key": "C",
+        "text": "先放一放明天再看",
+        "score": 0
+      },
+      {
+        "key": "D",
+        "text": "看例题再模仿",
+        "score": 2
+      }
+    ],
+    "reverse": false,
+    "aside": "说出来会更顺。"
+  },
+  {
+    "qid": "IQ-01",
+    "section": "IQ",
+    "dimension": "LOGIC",
+    "type": "choice",
+    "stem": "数列 2、4、8、16，下一空你怎么填？",
+    "options": [
+      {
+        "key": "A",
+        "text": "填 32，翻倍接着走",
+        "score": 3
+      },
+      {
+        "key": "B",
+        "text": "填 24，加得越来越多",
+        "score": 2
+      },
+      {
+        "key": "C",
+        "text": "填 18，差不多就行",
+        "score": 1
+      },
+      {
+        "key": "D",
+        "text": "随便填一个试试",
+        "score": 0
+      }
+    ],
+    "reverse": false,
+    "aside": "你在找里面的规矩。"
+  },
+  {
+    "qid": "IQ-02",
+    "section": "IQ",
+    "dimension": "LOGIC",
+    "type": "choice",
+    "stem": "「所有苹果是水果，有水果是红的」能断定有红苹果吗？",
+    "options": [
+      {
+        "key": "A",
+        "text": "不一定，信息不够",
+        "score": 3
+      },
+      {
+        "key": "B",
+        "text": "一定能，都连上了",
+        "score": 0
+      },
+      {
+        "key": "C",
+        "text": "一定不能",
+        "score": 1
+      },
+      {
+        "key": "D",
+        "text": "跟颜色没关系",
+        "score": 2
+      }
+    ],
+    "reverse": false,
+    "aside": "你把条件拆开看了。"
+  },
+  {
+    "qid": "IQ-05",
+    "section": "IQ",
+    "dimension": "LANG",
+    "type": "choice",
+    "stem": "「春风又绿江南岸」，这「绿」更像在干嘛？",
+    "options": [
+      {
+        "key": "A",
+        "text": "把岸吹绿了",
+        "score": 3
+      },
+      {
+        "key": "B",
+        "text": "只是颜色名字",
+        "score": 0
+      },
+      {
+        "key": "C",
+        "text": "在学风的声音",
+        "score": 1
+      },
+      {
+        "key": "D",
+        "text": "在数有几片叶",
+        "score": 2
+      }
+    ],
+    "reverse": false,
+    "aside": "你听出了用字的巧。"
+  },
+  {
+    "qid": "IQ-06",
+    "section": "IQ",
+    "dimension": "LANG",
+    "type": "choice",
+    "stem": "下面哪组意思更靠近？",
+    "options": [
+      {
+        "key": "A",
+        "text": "平静—安宁",
+        "score": 3
+      },
+      {
+        "key": "B",
+        "text": "迅速—迟缓",
+        "score": 0
+      },
+      {
+        "key": "C",
+        "text": "增加—减少",
+        "score": 1
+      },
+      {
+        "key": "D",
+        "text": "明亮—昏暗",
+        "score": 2
+      }
+    ],
+    "reverse": false,
+    "aside": "词语在你这儿站队了。"
+  },
+  {
+    "qid": "IQ-09",
+    "section": "IQ",
+    "dimension": "SPACE",
+    "type": "choice",
+    "stem": "从上往下看正方体，轮廓更像？",
+    "options": [
+      {
+        "key": "A",
+        "text": "正方形",
+        "score": 3
+      },
+      {
+        "key": "B",
+        "text": "三角形",
+        "score": 0
+      },
+      {
+        "key": "C",
+        "text": "五边形",
+        "score": 1
+      },
+      {
+        "key": "D",
+        "text": "圆形",
+        "score": 2
+      }
+    ],
+    "reverse": false,
+    "aside": "你在脑子里转动物体。"
+  },
+  {
+    "qid": "IQ-10",
+    "section": "IQ",
+    "dimension": "SPACE",
+    "type": "choice",
+    "stem": "地图北在上，你面朝南，左手那边是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "东",
+        "score": 3
+      },
+      {
+        "key": "B",
+        "text": "西",
+        "score": 1
+      },
+      {
+        "key": "C",
+        "text": "南",
+        "score": 0
+      },
+      {
+        "key": "D",
+        "text": "北",
+        "score": 2
+      }
+    ],
+    "reverse": false,
+    "aside": "方向在你手里转过弯。"
+  },
+  {
+    "qid": "IQ-13",
+    "section": "IQ",
+    "dimension": "MUSIC",
+    "type": "scale",
+    "stem": "广播里换了一首歌，你？",
+    "options": [
+      {
+        "key": "A",
+        "text": "马上听出换了",
+        "score": 3
+      },
+      {
+        "key": "B",
+        "text": "过一会儿才发觉",
+        "score": 2
+      },
+      {
+        "key": "C",
+        "text": "有人提醒才知",
+        "score": 1
+      },
+      {
+        "key": "D",
+        "text": "基本没注意",
+        "score": 0
+      }
+    ],
+    "reverse": false,
+    "aside": "耳朵挺灵敏。"
+  },
+  {
+    "qid": "IQ-14",
+    "section": "IQ",
+    "dimension": "MUSIC",
+    "type": "scale",
+    "stem": "同学哼两段相近节奏，你？",
+    "options": [
+      {
+        "key": "A",
+        "text": "能听出哪儿不一样",
+        "score": 3
+      },
+      {
+        "key": "B",
+        "text": "感觉差不多",
+        "score": 0
+      },
+      {
+        "key": "C",
+        "text": "要拍子慢点才比",
+        "score": 2
+      },
+      {
+        "key": "D",
+        "text": "完全分不清",
+        "score": 1
+      }
+    ],
+    "reverse": false,
+    "aside": "节奏对你说话。"
+  },
+  {
+    "qid": "IQ-17",
+    "section": "IQ",
+    "dimension": "KINESTHETIC",
+    "type": "scale",
+    "stem": "体育课新学跳绳花样，你？",
+    "options": [
+      {
+        "key": "A",
+        "text": "上手很快，边做边会",
+        "score": 3
+      },
+      {
+        "key": "B",
+        "text": "要看几遍再试",
+        "score": 2
+      },
+      {
+        "key": "C",
+        "text": "更愿先听讲解",
+        "score": 1
+      },
+      {
+        "key": "D",
+        "text": "宁愿做别的项目",
+        "score": 0
+      }
+    ],
+    "reverse": false,
+    "aside": "身体记得住动作。"
+  },
+  {
+    "qid": "IQ-18",
+    "section": "IQ",
+    "dimension": "KINESTHETIC",
+    "type": "scale",
+    "stem": "科学课讲结构，你更想？",
+    "options": [
+      {
+        "key": "A",
+        "text": "动手拼搭或实验",
+        "score": 3
+      },
+      {
+        "key": "B",
+        "text": "听老师讲清楚",
+        "score": 1
+      },
+      {
+        "key": "C",
+        "text": "看图和视频",
+        "score": 2
+      },
+      {
+        "key": "D",
+        "text": "记笔记为主",
+        "score": 0
+      }
+    ],
+    "reverse": false,
+    "aside": "手一忙就懂了。"
+  },
+  {
+    "qid": "IQ-21",
+    "section": "IQ",
+    "dimension": "INTERPERSONAL",
+    "type": "scale",
+    "stem": "同桌忽然不说话了，你？",
+    "options": [
+      {
+        "key": "A",
+        "text": "察觉情绪，轻轻问一句",
+        "score": 3
+      },
+      {
+        "key": "B",
+        "text": "当没看见继续写",
+        "score": 0
+      },
+      {
+        "key": "C",
+        "text": "拉别人一起哄",
+        "score": 1
+      },
+      {
+        "key": "D",
+        "text": "过后再私下说",
+        "score": 2
+      }
+    ],
+    "reverse": false,
+    "aside": "你留意到人的天气。"
+  },
+  {
+    "qid": "IQ-22",
+    "section": "IQ",
+    "dimension": "INTERPERSONAL",
+    "type": "scale",
+    "stem": "小组两人吵分工，你常？",
+    "options": [
+      {
+        "key": "A",
+        "text": "提出双方都能接的办法",
+        "score": 3
+      },
+      {
+        "key": "B",
+        "text": "站队支持一方",
+        "score": 1
+      },
+      {
+        "key": "C",
+        "text": "躲开别掺和",
+        "score": 0
+      },
+      {
+        "key": "D",
+        "text": "喊老师来裁",
+        "score": 2
+      }
+    ],
+    "reverse": false,
+    "aside": "你在找中间那条路。"
+  },
+  {
+    "qid": "IQ-25",
+    "section": "IQ",
+    "dimension": "INTRAPERSONAL",
+    "type": "scale",
+    "stem": "连续赶作业很累，你？",
+    "options": [
+      {
+        "key": "A",
+        "text": "知道该歇或求助",
+        "score": 3
+      },
+      {
+        "key": "B",
+        "text": "硬撑到做完",
+        "score": 1
+      },
+      {
+        "key": "C",
+        "text": "刷短视频逃避",
+        "score": 0
+      },
+      {
+        "key": "D",
+        "text": "随便糊弄交差",
+        "score": 2
+      }
+    ],
+    "reverse": false,
+    "aside": "你听得见自己的信号。"
+  },
+  {
+    "qid": "IQ-26",
+    "section": "IQ",
+    "dimension": "INTRAPERSONAL",
+    "type": "scale",
+    "stem": "要不要报名兴趣班，你？",
+    "options": [
+      {
+        "key": "A",
+        "text": "对照自己目标再定",
+        "score": 3
+      },
+      {
+        "key": "B",
+        "text": "看朋友报不报",
+        "score": 1
+      },
+      {
+        "key": "C",
+        "text": "家长说了算",
+        "score": 2
+      },
+      {
+        "key": "D",
+        "text": "跟风看看热闹",
+        "score": 0
+      }
+    ],
+    "reverse": false,
+    "aside": "你会跟自己商量。"
+  },
+  {
+    "qid": "IQ-29",
+    "section": "IQ",
+    "dimension": "NATURAL",
+    "type": "scale",
+    "stem": "放学路上，你更容易？",
+    "options": [
+      {
+        "key": "A",
+        "text": "留意树叶鸟虫天气",
+        "score": 3
+      },
+      {
+        "key": "B",
+        "text": "赶路想作业",
+        "score": 1
+      },
+      {
+        "key": "C",
+        "text": "盯着店铺橱窗",
+        "score": 2
+      },
+      {
+        "key": "D",
+        "text": "戴耳机沉浸",
+        "score": 0
+      }
+    ],
+    "reverse": false,
+    "aside": "外面的世界在跟你打招呼。"
+  },
+  {
+    "qid": "IQ-30",
+    "section": "IQ",
+    "dimension": "NATURAL",
+    "type": "scale",
+    "stem": "公园里几片落叶，你？",
+    "options": [
+      {
+        "key": "A",
+        "text": "想分辨大概是哪种树",
+        "score": 3
+      },
+      {
+        "key": "B",
+        "text": "随手踢开",
+        "score": 0
+      },
+      {
+        "key": "C",
+        "text": "捡起来玩形状",
+        "score": 2
+      },
+      {
+        "key": "D",
+        "text": "拍张照发群",
+        "score": 1
+      }
+    ],
+    "reverse": false,
+    "aside": "你对自然有好奇心。"
+  },
+  {
+    "qid": "TD-01",
+    "section": "TENDENCY",
+    "dimension": "ALTRUISM",
+    "type": "choice",
+    "stem": "走廊里同学滑倒坐着，周围人少，你？",
+    "options": [
+      {
+        "key": "A",
+        "text": "上前扶起并叫人",
+        "score": 3
+      },
+      {
+        "key": "B",
+        "text": "先问要不要帮忙",
+        "score": 2
+      },
+      {
+        "key": "C",
+        "text": "远远看一眼就走",
+        "score": 1
+      },
+      {
+        "key": "D",
+        "text": "低头继续赶路",
+        "score": 0
+      }
+    ],
+    "reverse": false,
+    "aside": "你停下来了。"
+  },
+  {
+    "qid": "TD-02",
+    "section": "TENDENCY",
+    "dimension": "ALTRUISM",
+    "type": "choice",
+    "stem": "小组缺材料，你手头刚好有多余，你？",
+    "options": [
+      {
+        "key": "A",
+        "text": "主动协调大家补齐",
+        "score": 3
+      },
+      {
+        "key": "B",
+        "text": "分一点给缺的人",
+        "score": 2
+      },
+      {
+        "key": "C",
+        "text": "提醒一句自己不管",
+        "score": 1
+      },
+      {
+        "key": "D",
+        "text": "只顾自己那份",
+        "score": 0
+      }
+    ],
+    "reverse": false,
+    "aside": "你把东西往外推了推。"
+  },
+  {
+    "qid": "TD-04",
+    "section": "TENDENCY",
+    "dimension": "FAIRNESS",
+    "type": "choice",
+    "stem": "有人插到你队伍前面，你？",
+    "options": [
+      {
+        "key": "A",
+        "text": "请他到队尾并说明",
+        "score": 3
+      },
+      {
+        "key": "B",
+        "text": "礼貌提醒按顺序",
+        "score": 2
+      },
+      {
+        "key": "C",
+        "text": "小声抱怨不说破",
+        "score": 1
+      },
+      {
+        "key": "D",
+        "text": "随他去",
+        "score": 0
+      }
+    ],
+    "reverse": false,
+    "aside": "顺序对你很要紧。"
+  },
+  {
+    "qid": "TD-05",
+    "section": "TENDENCY",
+    "dimension": "FAIRNESS",
+    "type": "choice",
+    "stem": "批改时发现自己多算了分，你？",
+    "options": [
+      {
+        "key": "A",
+        "text": "马上告诉老师更正",
+        "score": 3
+      },
+      {
+        "key": "B",
+        "text": "找机会悄悄说明",
+        "score": 2
+      },
+      {
+        "key": "C",
+        "text": "纠结但不行动",
+        "score": 1
+      },
+      {
+        "key": "D",
+        "text": "假装不知道",
+        "score": 0
+      }
+    ],
+    "reverse": false,
+    "aside": "你把尺又量了一遍。"
+  },
+  {
+    "qid": "TD-07",
+    "section": "TENDENCY",
+    "dimension": "HONESTY",
+    "type": "choice",
+    "stem": "作业没写完被问「做完了吗」，你？",
+    "options": [
+      {
+        "key": "A",
+        "text": "如实说进度和计划",
+        "score": 3
+      },
+      {
+        "key": "B",
+        "text": "说还差一点",
+        "score": 2
+      },
+      {
+        "key": "C",
+        "text": "含糊带过",
+        "score": 1
+      },
+      {
+        "key": "D",
+        "text": "说做完了",
+        "score": 0
+      }
+    ],
+    "reverse": false,
+    "aside": "你把真相放桌上了。"
+  },
+  {
+    "qid": "TD-08",
+    "section": "TENDENCY",
+    "dimension": "HONESTY",
+    "type": "choice",
+    "stem": "捡到同学文具在空教室，你？",
+    "options": [
+      {
+        "key": "A",
+        "text": "尽快找到失主归还",
+        "score": 3
+      },
+      {
+        "key": "B",
+        "text": "放到失物处",
+        "score": 2
+      },
+      {
+        "key": "C",
+        "text": "先留下再说",
+        "score": 1
+      },
+      {
+        "key": "D",
+        "text": "放进自己书包",
+        "score": 0
+      }
+    ],
+    "reverse": false,
+    "aside": "东西有主。"
+  },
+  {
+    "qid": "TD-10",
+    "section": "TENDENCY",
+    "dimension": "EMPATHY",
+    "type": "choice",
+    "stem": "好友比赛失利很失落，你？",
+    "options": [
+      {
+        "key": "A",
+        "text": "认真听并一起想下一步",
+        "score": 3
+      },
+      {
+        "key": "B",
+        "text": "陪他讲讲感受",
+        "score": 2
+      },
+      {
+        "key": "C",
+        "text": "说「没什么大不了」",
+        "score": 1
+      },
+      {
+        "key": "D",
+        "text": "赶紧换话题",
+        "score": 0
+      }
+    ],
+    "reverse": false,
+    "aside": "你坐到他旁边了。"
+  },
+  {
+    "qid": "TD-11",
+    "section": "TENDENCY",
+    "dimension": "EMPATHY",
+    "type": "choice",
+    "stem": "看见同学被嘲笑，你？",
+    "options": [
+      {
+        "key": "A",
+        "text": "当场婉转制止并支持",
+        "score": 3
+      },
+      {
+        "key": "B",
+        "text": "事后私下安慰",
+        "score": 2
+      },
+      {
+        "key": "C",
+        "text": "心里不舒服但不行动",
+        "score": 1
+      },
+      {
+        "key": "D",
+        "text": "当作没看见",
+        "score": 0
+      }
+    ],
+    "reverse": false,
+    "aside": "你站到了他那边。"
+  },
+  {
+    "qid": "TD-13",
+    "section": "TENDENCY",
+    "dimension": "RESPONSIBILITY",
+    "type": "choice",
+    "stem": "值日那天你想多玩一会，你？",
+    "options": [
+      {
+        "key": "A",
+        "text": "认真做完再检查",
+        "score": 3
+      },
+      {
+        "key": "B",
+        "text": "尽快做完再玩",
+        "score": 2
+      },
+      {
+        "key": "C",
+        "text": "拜托别人却不确认",
+        "score": 1
+      },
+      {
+        "key": "D",
+        "text": "直接溜走",
+        "score": 0
+      }
+    ],
+    "reverse": false,
+    "aside": "扫帚还在等你。"
+  },
+  {
+    "qid": "TD-14",
+    "section": "TENDENCY",
+    "dimension": "RESPONSIBILITY",
+    "type": "choice",
+    "stem": "你负责的小组部分延期了，你？",
+    "options": [
+      {
+        "key": "A",
+        "text": "加班补齐并说明",
+        "score": 3
+      },
+      {
+        "key": "B",
+        "text": "提前告知并给补救方案",
+        "score": 2
+      },
+      {
+        "key": "C",
+        "text": "找理由推脱",
+        "score": 1
+      },
+      {
+        "key": "D",
+        "text": "不提等别人发现",
+        "score": 0
+      }
+    ],
+    "reverse": false,
+    "aside": "你把锅扛起来了。"
+  },
+  {
+    "qid": "TD-16",
+    "section": "TENDENCY",
+    "dimension": "AGGRESSION",
+    "type": "choice",
+    "stem": "有人无意撞到你，你？",
+    "options": [
+      {
+        "key": "A",
+        "text": "立刻大声指责",
+        "score": 3
+      },
+      {
+        "key": "B",
+        "text": "推回去理论",
+        "score": 2
+      },
+      {
+        "key": "C",
+        "text": "提醒对方注意",
+        "score": 1
+      },
+      {
+        "key": "D",
+        "text": "先确认没事再平和说",
+        "score": 0
+      }
+    ],
+    "reverse": false,
+    "aside": "冲劲来得很快。"
+  },
+  {
+    "qid": "TD-17",
+    "section": "TENDENCY",
+    "dimension": "AGGRESSION",
+    "type": "choice",
+    "stem": "争论时对方语气很冲，你？",
+    "options": [
+      {
+        "key": "A",
+        "text": "用更冲的话压回去",
+        "score": 3
+      },
+      {
+        "key": "B",
+        "text": "提高音量坚持己见",
+        "score": 2
+      },
+      {
+        "key": "C",
+        "text": "摔门离开",
+        "score": 1
+      },
+      {
+        "key": "D",
+        "text": "先降调把话说清",
+        "score": 0
+      }
+    ],
+    "reverse": false,
+    "aside": "声音容易抬高。"
+  }
+]

@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AI 一人学校 · 学习主页</title>
+<link rel="stylesheet" href="/css/site.css" />
+</head>
+<body>
+<div class="top"><div class="topin">
+  <div class="brand">AI 一人学校</div>
+  <div class="nav"><a href="/" class="on">首页</a><a href="/learn.html">课程</a><a href="/tutor.html">AI 老师</a><a href="/assessment.html">测评</a></div>
+  <div class="stats" id="stats"></div>
+</div></div>
+
+<div class="wrap">
+  <div class="hero">
+    <h1 id="heroTitle">今天也来学一点吧</h1>
+    <p id="heroSub">完成测评后，老师会按你的蓝思定级和雅思目标安排课程；每天至少完成 1 个单元才算打卡。</p>
+    <div class="row">
+      <a class="btn" id="heroBtn" href="/learn.html">开始学习</a>
+      <a class="btn blue" href="/tutor.html">👩‍🏫 AI 老师上课</a>
+      <a class="btn ghost" href="/tutor.html?book=od1&unit=1&lesson=1">正式课 · OD1 Unit 1</a>
+      <a class="btn ghost" href="/assessment.html" id="assessBtn">重新测评</a>
+    </div>
+  </div>
+
+  <div class="statrow">
+    <div class="stat"><div class="n" id="streakN">0</div><div class="l">🔥 连续打卡（天）</div></div>
+    <div class="stat"><div class="n" id="todayN">0 / 1</div><div class="l">今日完成单元（建议 3）</div></div>
+    <div class="stat"><div class="n" id="xpN">0</div><div class="l">⚡ 总经验 XP</div></div>
+  </div>
+
+  <div class="card" style="margin-top:14px">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+      <div><b>今天怎么学（60 分钟）</b> <span class="hint">精学 60 分钟 + 碎片时间</span></div>
+      <span class="badge b" id="todayMinuteBadge">约 60 分钟</span>
+    </div>
+    <table style="width:100%;border-collapse:collapse;font-size:12.5px;margin-top:10px" id="dailyPlan"></table>
+    <div style="margin-top:10px"><b style="font-size:13px">碎片时间（做完点一下）</b></div>
+    <div id="fragmentList" style="margin-top:6px"></div>
+    <p class="hint" style="margin:8px 0 0">碎片听力跟着教材走：本单元音频 / ORT 4–6 级故事；能听懂 60–70% 最合适；同一段听 3 次（起床→路上→睡前），不用 VOA 时事新闻。</p>
+    <p class="hint" style="margin:8px 0 0">1 个单元 = 25 小节 ≈ 50 分钟，加上复盘正好 1 小时；周末再冲 3 个单元。</p>
+  </div>
+
+  <div class="card" style="margin-top:14px">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+      <div><b>今日目标</b> <span class="hint" id="goalHint"></span></div>
+      <span class="badge" id="goalBadge">未打卡</span>
+    </div>
+    <div class="pbar" style="margin-top:10px;height:14px"><i id="goalBar" style="width:0%"></i></div>
+    <p class="hint" style="margin:8px 0 0">硬性要求：每天至少完成 <b>1 个单元</b>（1 单元 = 5 章 × 5 节 = 25 小节）；最好完成 <b>3 个单元</b>。没完成 1 个单元，今天的连胜不算。</p>
+  </div>
+
+  <div class="card" style="margin-top:14px" id="planCard">
+    <b>学习安排</b>
+    <p class="hint" id="planText" style="margin:8px 0 0">完成测评后，老师会按报告安排课程。</p>
+  </div>
+
+  <div class="card" style="margin-top:14px" id="bookCard">
+    <b>教材与路线</b>
+    <p class="hint" id="bookText" style="margin:8px 0 8px">完成测评后，按测评级别自动选择教材路线（A 少儿综合 / B 剑桥考试 / C 青少年思辨）。</p>
+    <div class="row" id="routeRow"></div>
+  </div>
+
+  <div class="card" style="margin-top:14px" id="textbookCard">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+      <div><b>纸质教材进度</b> <span class="hint" id="tbHint">Oxford Discover 2 · 1 个教材 Unit = 本站 1 章（5 小节）</span></div>
+      <span class="badge w" id="tbBadge">Unit 1 / 12</span>
+    </div>
+    <div class="pbar" style="margin-top:10px"><i id="tbBar" style="width:0%"></i></div>
+    <div class="row" style="margin-top:8px">
+      <button class="btn sm" id="tbNext">完成本单元 +1</button>
+      <button class="btn sm ghost" id="tbReset">重置进度</button>
+    </div>
+  </div>
+
+  <h2 style="font-size:17px;margin:22px 0 0">我的课程</h2>
+  <div id="unitList"></div>
+</div>
+
+<script src="/js/store.js"></script>
+<script>
+const $ = (s) => document.querySelector(s);
+const fmtL = (v) => v < 0 ? 'BR' + Math.abs(Math.round(v)) + 'L' : Math.round(v || 0) + 'L';
+function readJSON(k){try{return JSON.parse(localStorage.getItem(k)||'null')}catch{return null}}
+
+async function main(){
+  const cur = await (await fetch('/data/curriculum.json')).json();
+  let tb = null;
+  try { tb = await (await fetch('/data/textbooks.json')).json(); } catch {}
+  const s = Store.state();
+  const plan = readJSON('ops-en-plan:v1');
+  const hist = readJSON('ops-en-exam-history:v1') || [];
+  const hasAssess = Array.isArray(hist) && hist.length > 0;
+
+  // 顶部统计
+  $('#stats').innerHTML = `<span class="s">🔥 ${s.streak}</span><span class="s">⚡ ${s.xp}</span><span class="s">📚 ${s.todayUnits}/3</span>`;
+
+  // 今日目标
+  $('#streakN').textContent = s.streak;
+  $('#todayN').textContent = `${Math.min(s.todayUnits,3)} / 1`;
+  $('#xpN').textContent = s.xp;
+  const pct = Math.min(100, Math.round(s.todayUnits / 3 * 100));
+  $('#goalBar').style.width = pct + '%';
+  const met = s.todayUnits >= 1;
+  $('#goalBadge').className = 'badge ' + (met ? 'g' : 'w');
+  $('#goalBadge').textContent = met ? '✅ 今日已打卡' : '未打卡';
+  $('#goalHint').textContent = met ? `已完成 ${s.todayUnits} 个单元，目标 3 个` : '再完成 1 个单元就能保住连胜';
+
+  // 测评状态 / 继续学习
+  const next = Store.firstIncomplete(cur);
+  if (hasAssess) {
+    const lvl = plan && plan.lexLevel ? plan.lexLevel : null;
+    $('#heroTitle').textContent = '继续今天的课程';
+    $('#heroSub').textContent = lvl ? `${lvl.id} ${lvl.name} · 蓝思 ${fmtL(lvl.lex)} · 推荐阅读 ${lvl.range}` : '老师已经按你的测评结果排好课，接着上次的进度继续。';
+    $('#heroBtn').textContent = next ? '继续学习' : '查看课程';
+    $('#heroBtn').setAttribute('href', next ? `/lesson.html?u=${next.unit}&c=${next.chapter}&l=${next.lesson}` : '/learn.html');
+    $('#assessBtn').textContent = '重新测评';
+  } else {
+    $('#heroTitle').textContent = '先完成测评，再开始学习';
+    $('#heroSub').textContent = '完成一次 15–20 分钟的测评，老师会按你的蓝思定级和雅思目标安排课程；完成后会自动进入这个主页。';
+    $('#heroBtn').textContent = '开始测评';
+    $('#heroBtn').setAttribute('href', '/assessment.html');
+    $('#assessBtn').style.display = 'none';
+  }
+
+  // 学习安排
+  if (plan) {
+    const lv = plan.lexLevel || {};
+    $('#planText').innerHTML = `${plan.teacherNote ? '👩‍🏫 ' + plan.teacherNote + '<br>' : ''}
+      ${lv.id ? `当前级别：<b>${lv.id} ${lv.name}</b>（${lv.band} · 对应${lv.grade}）· 推荐阅读 ${lv.range}<br>` : ''}
+      ${plan.books ? '推荐书单：' + plan.books + '<br>' : ''}
+      今日安排：${next ? next.unit + ' 单元 · ' + next.chapter + ' 章 · 第 ' + next.lesson + ' 节' : '本级别课程已完成'}`;
+  } else {
+    $('#planText').textContent = '完成测评后，老师会根据你的报告（蓝思定级 + 雅思四项目标）填写这里。';
+  }
+
+  // 单元列表
+  $('#unitList').innerHTML = cur.units.map(u => {
+    const done = Store.unitProgress(s, u.unit);
+    const unlocked = Store.unitUnlocked(s, u.unit);
+    const pctU = Math.round(done / 25 * 100);
+    const isNext = next && next.unit === u.unit;
+    const status = Store.unitDone(s, u.unit) ? '<span class="badge g">已完成</span>' : unlocked ? (isNext ? '<span class="badge b">进行中</span>' : '<span class="badge w">可学习</span>') : '<span class="badge">未解锁</span>';
+    return `<div class="unit ${unlocked ? '' : 'locked'}">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+        <h2>${u.unit}. ${u.name} <span class="hint">${u.lex}</span></h2>${status}
+      </div>
+      <div class="meta">5 章 × 5 节 = 25 小节 · 已完成 ${done}/25</div>
+      <div class="pbar"><i style="width:${pctU}%"></i></div>
+      <div class="row" style="margin-top:8px">
+        ${unlocked ? `<a class="btn sm" href="/learn.html#unit-${u.unit}">进入单元</a>` : '<span class="hint">完成上一单元后解锁（或完成测评按级别解锁）</span>'}
+      </div>
+    </div>`;
+  }).join('');
+
+  // 今日 60 分钟安排 + 碎片清单
+  const blocks = [['热身：昨日错题 + 听写 3 句', '5 分钟'], ['主教材单元课（2–3 小节）', '30 分钟'], ['口语跟读 + 录音', '10 分钟'], ['写作 / 语法小练', '10 分钟'], ['听写 + 小测', '5 分钟']];
+  $('#dailyPlan').innerHTML = blocks.map(([t, m]) => `<tr><td style="padding:6px 4px;border-bottom:1px solid #eee">${t}</td><td style="padding:6px 4px;border-bottom:1px solid #eee;text-align:right;color:#777">${m}</td></tr>`).join('');
+  const FRAG = [['morning', '起床后 10 分钟：听本单元教材音频 / 同级别分级读物（故事优先）'], ['commute', '路上 10–15 分钟：同一段音频泛听（能懂 60–70% 即可，不查词）'], ['evening', '晚饭后 5–10 分钟：口语小问答'], ['bed', '睡前 10 分钟：同一段音频再听一遍 + 今天错词']];
+  const dayKey = 'ops917-fragments:' + Store.DAY();
+  let fragDone = {};
+  try { fragDone = JSON.parse(localStorage.getItem(dayKey) || '{}'); } catch {}
+  $('#fragmentList').innerHTML = FRAG.map(([k, t]) => `<label style="display:flex;gap:8px;align-items:center;font-size:13px;padding:6px 0"><input type="checkbox" data-k="${k}" ${fragDone[k] ? 'checked' : ''}> ${t}</label>`).join('');
+  [...document.querySelectorAll('#fragmentList input')].forEach((cb) => {
+    cb.onchange = () => {
+      let d = {}; try { d = JSON.parse(localStorage.getItem(dayKey) || '{}'); } catch {}
+      d[cb.dataset.k] = cb.checked;
+      localStorage.setItem(dayKey, JSON.stringify(d));
+    };
+  });
+
+  // 纸质教材进度（家长/孩子手动勾 Unit）
+  const TB_KEY = 'ops917-textbook:v1';
+  let tbProgress = { book: 'Oxford Discover 2', unit: 1, total: 12 };
+  try { Object.assign(tbProgress, JSON.parse(localStorage.getItem(TB_KEY) || '{}')); } catch {}
+  function renderTB(){
+    const u = Math.min(tbProgress.total, Math.max(1, tbProgress.unit));
+    $('#tbBadge').textContent = `Unit ${u} / ${tbProgress.total}`;
+    $('#tbBar').style.width = Math.round((u - 1) / tbProgress.total * 100) + '%';
+    $('#tbHint').textContent = `${tbProgress.book} · 1 个教材 Unit = 本站 1 章（5 小节）；已学到 Unit ${u}`;
+    localStorage.setItem(TB_KEY, JSON.stringify(tbProgress));
+  }
+  renderTB();
+  $('#tbNext').onclick = () => { tbProgress.unit = Math.min(tbProgress.total, tbProgress.unit + 1); renderTB(); };
+  $('#tbReset').onclick = () => { tbProgress.unit = 1; renderTB(); };
+
+  // 教材与路线（按测评级别自动选择，可手动切换）
+  function levelFromLex(v){
+    if (v == null) return null;
+    if (v <= 399) return 'L1';
+    if (v <= 699) return 'L2';
+    if (v <= 999) return 'L3';
+    if (v <= 1299) return 'L4';
+    return 'L5';
+  }
+  let lvl = plan && plan.lexLevel ? plan.lexLevel.id : null;
+  if (!lvl) lvl = levelFromLex(plan && plan.lex);
+  if (!lvl && Array.isArray(hist) && hist.length) lvl = levelFromLex(hist[0].lex);
+  if (tb) {
+    const saved = localStorage.getItem('ops917-route');
+    const def = (tb.selection || []).find((x) => x.level === lvl);
+    const routeId = saved || (def ? def.route : tb.defaultRoute);
+    const route = tb.routes[routeId];
+    const books = (route && route.books && (route.books[lvl] || route.books.L2)) || [];
+    $('#bookText').innerHTML = lvl
+      ? `当前定级：<b>${lvl}</b> · 推荐路线：<b>${route.name}</b>（${route.spine}）<br>主教材 / 阅读：${books.join('；') || '—'}<br><span class="hint">教材只做大纲（单元主题/词汇/语法），课文与音频请购买正版，不复制。</span>`
+      : `还没有测评定级：完成后会自动选择路线。<br>${route ? '默认路线：' + route.name + '（' + route.spine + '）' : ''}`;
+    $('#routeRow').innerHTML = Object.entries(tb.routes).map(([id, r]) =>
+      `<button class="btn sm ${id === routeId ? '' : 'ghost'}" data-route="${id}">${id} · ${r.name}</button>`).join('');
+    [...$('#routeRow').children].forEach((b) => {
+      b.onclick = () => { localStorage.setItem('ops917-route', b.dataset.route); location.reload(); };
+    });
+  }
+}
+main();
+</script>
+</body>
+</html>

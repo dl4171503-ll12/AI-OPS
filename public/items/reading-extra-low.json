@@ -1,0 +1,676 @@
+{
+  "passages": [
+    {
+      "id": "x-low-200-1",
+      "lex": 200,
+      "level": "beginner",
+      "tier": 1,
+      "source": "Aesop, Fables（《乌鸦喝水》，公有领域，改编）",
+      "illus": "🐦 💧 🏺",
+      "zh": {
+        "summary": "一只乌鸦在找水喝，找到装着一点水的罐子，却够不到里面的水。它一颗一颗地往罐子里丢小石子，水升上来，它终于喝到了水。",
+        "q": [
+          "乌鸦想要什么？",
+          "乌鸦为什么往罐子里丢石子？",
+          "故事里的 an idea 是什么意思？",
+          "这个故事主要讲了什么？"
+        ]
+      },
+      "passage": "A crow is very thirsty. He looks for water. He finds a tall jar. There is a little water in it. The crow cannot reach the water. He has an idea. He drops small stones into the jar. The water comes up. The crow drinks and is happy.",
+      "questions": [
+        {
+          "q": "What does the crow want?",
+          "options": [
+            "Water",
+            "Food",
+            "A tree"
+          ],
+          "answer": "Water"
+        },
+        {
+          "q": "Why does the crow drop stones into the jar?",
+          "options": [
+            "To make a house",
+            "To make the water come up",
+            "To play a game"
+          ],
+          "answer": "To make the water come up"
+        },
+        {
+          "q": "In the story, 'an idea' means ___.",
+          "options": [
+            "a big jar",
+            "a kind of stone",
+            "a thought or plan in the head"
+          ],
+          "answer": "a thought or plan in the head"
+        },
+        {
+          "q": "What is the story mainly about?",
+          "options": [
+            "A clever bird getting water",
+            "A bird making a nest",
+            "A jar full of stones"
+          ],
+          "answer": "A clever bird getting water"
+        }
+      ]
+    },
+    {
+      "id": "x-low-230-1",
+      "lex": 230,
+      "level": "beginner",
+      "tier": 1,
+      "source": "传统民间童话《小红母鸡》（The Little Red Hen，公有领域，改编）",
+      "illus": "🐔 🌾 🍞",
+      "zh": {
+        "summary": "小红母鸡找到种子，想自己做面包，就请狗、猫和鸭子帮忙，它们都说“不”。面包做好后动物们想吃，母鸡却说自己只和小鸡一起吃。",
+        "q": [
+          "小红母鸡想做什么？",
+          "母鸡为什么不分面包给那些动物？",
+          "故事里的 alone 是什么意思？",
+          "这个故事主要讲了什么？"
+        ]
+      },
+      "passage": "A little red hen finds some seeds. She wants to make bread. She asks the dog, the cat and the duck for help. They all say no. The hen plants the seeds and waters them. She makes the bread alone. 'Who will help me eat it?' she asks. 'We will!' say the dog, the cat and the duck. 'No,' says the hen. 'I will eat it with my chicks.'",
+      "questions": [
+        {
+          "q": "What does the little red hen want to make?",
+          "options": [
+            "A nest",
+            "Bread",
+            "A cake"
+          ],
+          "answer": "Bread"
+        },
+        {
+          "q": "Why does the hen not share the bread?",
+          "options": [
+            "She is not hungry.",
+            "The animals are too small.",
+            "The animals did not help her."
+          ],
+          "answer": "The animals did not help her."
+        },
+        {
+          "q": "In the story, 'alone' means ___.",
+          "options": [
+            "with no one else helping",
+            "with many friends",
+            "very quickly"
+          ],
+          "answer": "with no one else helping"
+        },
+        {
+          "q": "What is the story mainly about?",
+          "options": [
+            "A dog and a cat who like bread",
+            "A hen who works by herself and then eats by herself",
+            "A hen who makes bread for everyone"
+          ],
+          "answer": "A hen who works by herself and then eats by herself"
+        }
+      ]
+    },
+    {
+      "id": "x-low-250-1",
+      "lex": 250,
+      "level": "beginner",
+      "tier": 1,
+      "source": "Aesop, Fables（《龟兔赛跑》，公有领域，改编）",
+      "illus": "🐢 🐇 🏁",
+      "zh": {
+        "summary": "兔子笑乌龟慢，乌龟就提出赛跑；兔子觉得自己时间还多，在路边躺下休息，乌龟却一直慢慢地走，一下也没有停。等兔子起来时，乌龟已经快到终点了。",
+        "q": [
+          "赛跑时兔子做了什么？",
+          "乌龟为什么赢了比赛？",
+          "故事里的 a nap 是什么意思？",
+          "这个故事告诉我们什么道理？"
+        ]
+      },
+      "passage": "A hare laughs at a tortoise. 'You are so slow!' he says. The tortoise says, 'Let us have a race.' The race starts. The hare runs very fast. Soon he is far ahead. He thinks, 'I have time. I will take a nap.' The tortoise keeps walking slowly. He does not stop. When the hare wakes up, the tortoise is near the finish line. The tortoise wins the race.",
+      "questions": [
+        {
+          "q": "What does the hare do during the race?",
+          "options": [
+            "He runs to the end.",
+            "He helps the tortoise.",
+            "He takes a nap."
+          ],
+          "answer": "He takes a nap."
+        },
+        {
+          "q": "Why does the tortoise win the race?",
+          "options": [
+            "He keeps walking and never stops.",
+            "He runs faster than the hare.",
+            "The hare cannot find the way."
+          ],
+          "answer": "He keeps walking and never stops."
+        },
+        {
+          "q": "In the story, 'a nap' means ___.",
+          "options": [
+            "a big meal",
+            "a short sleep",
+            "a long run"
+          ],
+          "answer": "a short sleep"
+        },
+        {
+          "q": "What does the story teach us?",
+          "options": [
+            "Hares are always lazy.",
+            "Slow animals cannot win.",
+            "Keep trying, even if you are slow."
+          ],
+          "answer": "Keep trying, even if you are slow."
+        }
+      ]
+    },
+    {
+      "id": "x-low-300-1",
+      "lex": 300,
+      "level": "beginner",
+      "tier": 1,
+      "source": "Aesop, Fables（《狼来了》，公有领域，改编）",
+      "illus": "🧒 🐺 🐑",
+      "zh": {
+        "summary": "山上的男孩两次大喊“狼来了”，骗村民们拿着棍子上山，大家发现根本没有狼，很生气。第三次真的有狼来了，男孩再喊救命，却没有人来，狼吃掉了羊。",
+        "q": [
+          "男孩的工作是什么？",
+          "第三天村民为什么没有来？",
+          "故事里的 bored 是什么意思？",
+          "这个故事告诉我们什么？"
+        ]
+      },
+      "passage": "A shepherd boy looks after sheep on a hill. He is bored. He shouts, 'Wolf! Wolf! A wolf is here!' The villagers run up the hill with sticks. But there is no wolf. The boy laughs. The next day he does it again. The villagers are angry. On the third day, a real wolf comes. The boy shouts for help, but nobody comes. The wolf eats the sheep.",
+      "questions": [
+        {
+          "q": "What is the boy's job?",
+          "options": [
+            "To look after sheep",
+            "To sell sticks",
+            "To watch the village gate"
+          ],
+          "answer": "To look after sheep"
+        },
+        {
+          "q": "Why do the villagers not come on the third day?",
+          "options": [
+            "They are too far away.",
+            "They do not believe the boy.",
+            "They are afraid of the wolf."
+          ],
+          "answer": "They do not believe the boy."
+        },
+        {
+          "q": "In the story, 'bored' means ___.",
+          "options": [
+            "feeling afraid",
+            "feeling hungry",
+            "not knowing what to do and feeling unhappy"
+          ],
+          "answer": "not knowing what to do and feeling unhappy"
+        },
+        {
+          "q": "What does the story teach us?",
+          "options": [
+            "People may not believe someone who tells lies.",
+            "Sheep must stay on the hill.",
+            "Wolves are afraid of sticks."
+          ],
+          "answer": "People may not believe someone who tells lies."
+        }
+      ]
+    },
+    {
+      "id": "x-low-350-1",
+      "lex": 350,
+      "level": "beginner",
+      "tier": 2,
+      "source": "传统民间童话《三只小猪》（The Three Little Pigs，公有领域，改编）",
+      "illus": "🐷 🧱 🌾",
+      "zh": {
+        "summary": "三只小猪离开家盖房子，前两只用稻草和木头，很快就盖好去玩了，第三只很努力地用砖盖房。大灰狼把前两座房子弄倒，两只小猪逃到砖房，狼弄不倒砖房，只好走了。",
+        "q": [
+          "第三只小猪用什么盖房子？",
+          "两只小猪为什么跑到砖房去？",
+          "故事里的 bricks 是什么？",
+          "这个故事告诉我们什么？"
+        ]
+      },
+      "passage": "Three little pigs leave home to build their own houses. The first pig builds a house of straw. The second pig builds a house of wood. They finish quickly and play all day. The third pig works hard and builds a house of bricks. Soon a big bad wolf comes. He blows the straw house down. He blows the wooden house down too. The two pigs run to the brick house. The wolf cannot blow it down, so he goes away.",
+      "questions": [
+        {
+          "q": "What does the third pig build his house with?",
+          "options": [
+            "Straw",
+            "Bricks",
+            "Wood"
+          ],
+          "answer": "Bricks"
+        },
+        {
+          "q": "Why do the two pigs run to the brick house?",
+          "options": [
+            "They want to play inside.",
+            "They are hungry.",
+            "Their own houses are broken."
+          ],
+          "answer": "Their own houses are broken."
+        },
+        {
+          "q": "In the story, 'bricks' are ___.",
+          "options": [
+            "hard blocks used for building",
+            "pieces of wood",
+            "soft dry plants"
+          ],
+          "answer": "hard blocks used for building"
+        },
+        {
+          "q": "What does the story teach us?",
+          "options": [
+            "Straw is the best material.",
+            "Hard work makes things strong.",
+            "Pigs cannot build houses."
+          ],
+          "answer": "Hard work makes things strong."
+        }
+      ]
+    },
+    {
+      "id": "x-low-400-1",
+      "lex": 400,
+      "level": "beginner",
+      "tier": 2,
+      "source": "Aesop, Fables（《蚂蚁与鸽子》，公有领域，改编）",
+      "illus": "🐜 🕊️ 🍃",
+      "zh": {
+        "summary": "小蚂蚁到河边喝水被水冲走，大声呼救，树上的鸽子丢下一片叶子，让它爬回岸边。几天后猎人想用网抓鸽子，蚂蚁咬了他的脚，猎人一叫就丢了网，鸽子飞走了。",
+        "q": [
+          "鸽子把什么丢进水里？",
+          "蚂蚁为什么咬猎人的脚？",
+          "故事里的 the bank 是什么意思？",
+          "这个故事告诉我们什么？"
+        ]
+      },
+      "passage": "A little ant goes to the river to drink. The water carries her away. She shouts for help. A dove sitting in a tree hears her. She picks a leaf and drops it into the water. The ant climbs onto the leaf and reaches the bank. She is safe. A few days later, a hunter comes. He wants to catch the dove with a net. The ant bites his foot. The hunter shouts and drops the net. The dove flies away. The ant has helped her friend.",
+      "questions": [
+        {
+          "q": "What does the dove drop into the water?",
+          "options": [
+            "A stick",
+            "A stone",
+            "A leaf"
+          ],
+          "answer": "A leaf"
+        },
+        {
+          "q": "Why does the ant bite the hunter's foot?",
+          "options": [
+            "To help the dove get away.",
+            "Because she is hungry.",
+            "Because the hunter is her friend."
+          ],
+          "answer": "To help the dove get away."
+        },
+        {
+          "q": "In the story, 'the bank' means ___.",
+          "options": [
+            "a place that keeps money",
+            "the land at the side of a river",
+            "a big tree"
+          ],
+          "answer": "the land at the side of a river"
+        },
+        {
+          "q": "What does the story teach us?",
+          "options": [
+            "Ants are afraid of water.",
+            "Hunters are bad people.",
+            "If you help others, they may help you later."
+          ],
+          "answer": "If you help others, they may help you later."
+        }
+      ]
+    },
+    {
+      "id": "x-low-450-1",
+      "lex": 450,
+      "level": "intermediate",
+      "tier": 2,
+      "source": "Hans Christian Andersen, Fairy Tales（《丑小鸭》，公有领域，改编）",
+      "illus": "🦢 🌱 💧",
+      "zh": {
+        "summary": "又大又灰的小鸭在农场被大家笑丑，伤心地离开，一个人住在池塘边，过了一个又冷又长的冬天。春天来了，它在水里看到一只美丽的白鸟，原来它自己就是一只天鹅。",
+        "q": [
+          "春天小鸭在水里看到了什么？",
+          "小鸭为什么离开农场？",
+          "故事里的 lonely 是什么意思？",
+          "这个故事主要讲了什么？"
+        ]
+      },
+      "passage": "A little duckling is born in a farmyard. He is big and grey, and the other animals laugh at him. 'You are so ugly,' they say. The duckling is sad. He leaves the farm and lives alone by a pond. All winter he feels cold and lonely. Then spring comes. He looks into the water and sees a beautiful white bird. It is a swan, and it is him! The other swans swim to him and say, 'Welcome, brother.' The ugly duckling is not sad any more.",
+      "questions": [
+        {
+          "q": "What does the duckling see in the water in spring?",
+          "options": [
+            "A beautiful white swan",
+            "A big grey duck",
+            "A small yellow bird"
+          ],
+          "answer": "A beautiful white swan"
+        },
+        {
+          "q": "Why does the duckling leave the farm?",
+          "options": [
+            "He wants to find food.",
+            "The other animals laugh at him.",
+            "He likes cold weather."
+          ],
+          "answer": "The other animals laugh at him."
+        },
+        {
+          "q": "In the story, 'lonely' means ___.",
+          "options": [
+            "very loud",
+            "very hungry",
+            "sad because you are alone"
+          ],
+          "answer": "sad because you are alone"
+        },
+        {
+          "q": "What is the story mainly about?",
+          "options": [
+            "A bird who finds out that he is beautiful",
+            "A duck who lives on a farm",
+            "A swan who likes winter"
+          ],
+          "answer": "A bird who finds out that he is beautiful"
+        }
+      ]
+    },
+    {
+      "id": "x-low-500-1",
+      "lex": 500,
+      "level": "intermediate",
+      "tier": 2,
+      "source": "传统民间童话《小红帽》（Little Red Riding Hood，公有领域，改编）",
+      "illus": "👧 🧺 🐺",
+      "zh": {
+        "summary": "小红帽带着一篮食物去森林里的外婆家，妈妈让她不要离开小路，她却把要去的地方告诉了路上遇到的狼。狼抢先跑到外婆家，穿上外婆的衣服躺在床上，最后有人跑进来救了她。",
+        "q": [
+          "外婆住在哪里？",
+          "狼为什么抢先跑过去？",
+          "故事里的 a woodcutter 是做什么的人？",
+          "这个故事想告诉孩子什么？"
+        ]
+      },
+      "passage": "Little Red Riding Hood takes a basket of food to her grandmother, who lives in the forest. Her mother says, 'Do not leave the path.' In the forest she meets a wolf. He asks where she is going. She tells him. The wolf runs ahead to the grandmother's house and eats the grandmother. Then he puts on her clothes and waits in her bed. When the girl arrives, she says, 'What big eyes you have, Grandmother!' The wolf jumps up, but a woodcutter runs in and saves the girl.",
+      "questions": [
+        {
+          "q": "Where does the grandmother live?",
+          "options": [
+            "In the village",
+            "In the forest",
+            "By the river"
+          ],
+          "answer": "In the forest"
+        },
+        {
+          "q": "Why does the wolf run ahead?",
+          "options": [
+            "He wants to help the girl.",
+            "He is afraid of the forest.",
+            "He wants to get to the house first."
+          ],
+          "answer": "He wants to get to the house first."
+        },
+        {
+          "q": "In the story, 'a woodcutter' is a person who ___.",
+          "options": [
+            "cuts wood in the forest",
+            "cooks food for the village",
+            "looks after sheep"
+          ],
+          "answer": "cuts wood in the forest"
+        },
+        {
+          "q": "What does the story teach children?",
+          "options": [
+            "Baskets are too heavy for girls.",
+            "Do not talk to strangers on the way.",
+            "Grandmothers live in the forest."
+          ],
+          "answer": "Do not talk to strangers on the way."
+        }
+      ]
+    },
+    {
+      "id": "x-low-550-1",
+      "lex": 550,
+      "level": "intermediate",
+      "tier": 2,
+      "source": "Aesop, Fables（《城市老鼠与乡下老鼠》，公有领域，改编）",
+      "illus": "🐭 🏙️ 🌾",
+      "zh": {
+        "summary": "乡下老鼠请城里来的表弟吃豆子和面包，表弟觉得不够好，请它进城去吃。城里的房子里有蛋糕、奶酪和水果，可它们刚要吃，一只猫从门后跳出来，两只老鼠只好躲进洞里等了很久。",
+        "q": [
+          "乡下老鼠给表弟吃什么？",
+          "两只老鼠为什么躲进洞里？",
+          "故事里 plain 的食物是什么意思？",
+          "乡下老鼠最后怎样想？"
+        ]
+      },
+      "passage": "A country mouse invites his cousin from the city to dinner. The country mouse gives him beans and bread. 'This is too plain,' says the city mouse. 'Come to my house. The food there is much better.' The two mice go to the city. In a big house they find cakes, cheese and fruit on a table. But just as they begin to eat, a cat jumps out from behind a door. The mice run and hide in a hole. They wait for a long time. At last the country mouse says, 'Your food is good, but I would rather eat beans in peace.'",
+      "questions": [
+        {
+          "q": "What does the country mouse give his cousin?",
+          "options": [
+            "Cakes and cheese",
+            "Fruit and milk",
+            "Beans and bread"
+          ],
+          "answer": "Beans and bread"
+        },
+        {
+          "q": "Why do the mice hide in a hole?",
+          "options": [
+            "A cat comes out.",
+            "The food is gone.",
+            "The house is cold."
+          ],
+          "answer": "A cat comes out."
+        },
+        {
+          "q": "In the story, 'plain' food means food that is ___.",
+          "options": [
+            "very sweet",
+            "simple, without much taste",
+            "very expensive"
+          ],
+          "answer": "simple, without much taste"
+        },
+        {
+          "q": "What does the country mouse decide at the end?",
+          "options": [
+            "He wants to live in the city.",
+            "He wants to fight the cat.",
+            "He likes simple food in a safe place."
+          ],
+          "answer": "He likes simple food in a safe place."
+        }
+      ]
+    },
+    {
+      "id": "x-low-600-1",
+      "lex": 600,
+      "level": "intermediate",
+      "tier": 3,
+      "source": "Simple English Wikipedia（CC BY-SA 3.0）'Hibernation' 条目，适配改写",
+      "illus": "🐻 ❄️ 🐿️",
+      "zh": {
+        "summary": "有些动物整个冬天都在睡觉，这叫冬眠；它们冬天前吃得很多、身体变胖，睡着时慢慢用掉这些脂肪，熊会在地下或山洞里做窝，松鼠藏坚果，一些鸟则飞到更暖和的地方。",
+        "q": [
+          "熊冬天在哪里睡觉？",
+          "动物为什么在冬天到来前吃很多？",
+          "短文里的 hibernation 是什么？",
+          "这篇短文主要讲了什么？"
+        ]
+      },
+      "passage": "Some animals sleep through the winter. This long sleep is called hibernation. Before winter comes, these animals eat a lot and become fat. Their bodies use this fat slowly while they sleep. A bear makes a den, a warm safe place under the ground or in a cave, and sleeps there. Its heart beats slowly and its body temperature goes down. Other animals do not sleep all winter. Squirrels collect nuts and hide them in many places. In winter they wake up now and then, find the nuts and eat them. Some birds cannot find food in the cold, so they fly to warmer places. This is called migration.",
+      "questions": [
+        {
+          "q": "Where does a bear sleep in winter?",
+          "options": [
+            "In a den",
+            "Under a tree",
+            "In a river"
+          ],
+          "answer": "In a den"
+        },
+        {
+          "q": "Why do some animals eat a lot before winter?",
+          "options": [
+            "They want to grow bigger.",
+            "Their bodies use the fat while they sleep.",
+            "Food is cheaper in autumn."
+          ],
+          "answer": "Their bodies use the fat while they sleep."
+        },
+        {
+          "q": "In the passage, 'hibernation' is ___.",
+          "options": [
+            "a kind of nut",
+            "a warm cave",
+            "a long winter sleep"
+          ],
+          "answer": "a long winter sleep"
+        },
+        {
+          "q": "What is the passage mainly about?",
+          "options": [
+            "How different animals get through the winter",
+            "Why bears live in caves",
+            "How birds learn to fly"
+          ],
+          "answer": "How different animals get through the winter"
+        }
+      ]
+    },
+    {
+      "id": "x-low-650-1",
+      "lex": 650,
+      "level": "intermediate",
+      "tier": 3,
+      "source": "Simple English Wikipedia（CC BY-SA 3.0）'Season' 条目，适配改写",
+      "illus": "🌸 ☀️ 🍂 ❄️",
+      "zh": {
+        "summary": "很多地方有春、夏、秋、冬四个季节：春天变暖，植物生长；夏天最热，白天很长；秋天变凉，树叶落下，农民收获果实；冬天最冷，有的地方地上全是雪，一些动物整个冬天睡觉。季节是因为地球绕着太阳转、不同地方得到的光和热不一样。",
+        "q": [
+          "哪个季节树叶会从树上落下？",
+          "有些动物为什么整个冬天都在睡觉？",
+          "短文里 snow lies all over the ground 是什么意思？",
+          "这篇短文主要讲了什么？"
+        ]
+      },
+      "passage": "Many places on Earth have four seasons: spring, summer, autumn and winter. In spring the weather gets warmer. Plants begin to grow, and many animals have their babies. Summer is the hottest season. The days are long, and there is a lot of sunshine. In autumn the days become shorter and the air gets cooler. Leaves change colour and fall from the trees, and farmers pick fruit and vegetables. Winter is the coldest season. In some places snow lies all over the ground, and water in ponds turns to ice. Some animals sleep through the winter. Why do seasons happen? The Earth goes around the Sun, and different parts of the Earth get different amounts of light and heat.",
+      "questions": [
+        {
+          "q": "In which season do leaves fall from the trees?",
+          "options": [
+            "Spring",
+            "Autumn",
+            "Winter"
+          ],
+          "answer": "Autumn"
+        },
+        {
+          "q": "Why do some animals sleep through the winter?",
+          "options": [
+            "They like the snow.",
+            "They are too old to walk.",
+            "The weather is very cold."
+          ],
+          "answer": "The weather is very cold."
+        },
+        {
+          "q": "In the passage, 'snow lies all over the ground' means snow ___.",
+          "options": [
+            "covers the ground",
+            "cleans the ground",
+            "makes the ground warm"
+          ],
+          "answer": "covers the ground"
+        },
+        {
+          "q": "What is the passage mainly about?",
+          "options": [
+            "How farmers work in autumn",
+            "The four seasons and how they are different",
+            "Why people like summer"
+          ],
+          "answer": "The four seasons and how they are different"
+        }
+      ]
+    },
+    {
+      "id": "x-low-700-1",
+      "lex": 700,
+      "level": "intermediate",
+      "tier": 3,
+      "source": "Simple English Wikipedia（CC BY-SA 3.0）'Plant' 条目，适配改写",
+      "illus": "🌱 🌞 💧",
+      "zh": {
+        "summary": "大多数植物从种子开始生长，种子需要水、温度和光；先长出一条往土里钻的根，再冒出绿芽、长成带叶子的茎，叶子用阳光制造食物，根从土里吸水和别的物质，并把植物固定在土里。植物长大后开花，花又结出种子。",
+        "q": [
+          "最早往土里长的是什么？",
+          "植物为什么需要阳光充足的地方？",
+          "短文里的 minerals 是什么？",
+          "这篇短文主要讲了什么？"
+        ]
+      },
+      "passage": "Most plants start life as seeds. A seed needs three things to grow: water, warmth and light. When you put a seed in wet soil and keep it warm, a small root grows down into the soil. Then a tiny green shoot comes up above the ground. The shoot grows into a stem with leaves. The leaves catch sunlight and make food for the plant. This is why plants need a sunny place. The roots take in water and minerals from the soil, and they also hold the plant in the ground. When the plant is fully grown, it makes flowers. The flowers make seeds, and the seeds fall to the ground or are carried by the wind. Then new plants can grow, and the story begins again.",
+      "questions": [
+        {
+          "q": "What grows down into the soil first?",
+          "options": [
+            "A leaf",
+            "A flower",
+            "A root"
+          ],
+          "answer": "A root"
+        },
+        {
+          "q": "Why do plants need a sunny place?",
+          "options": [
+            "Their leaves need light to make food.",
+            "Sunlight makes the flowers colourful.",
+            "They like the warm colour of the sun."
+          ],
+          "answer": "Their leaves need light to make food."
+        },
+        {
+          "q": "In the passage, 'minerals' are ___.",
+          "options": [
+            "small animals in the soil",
+            "useful things in the soil that plants take in",
+            "tiny new seeds"
+          ],
+          "answer": "useful things in the soil that plants take in"
+        },
+        {
+          "q": "What is the passage mainly about?",
+          "options": [
+            "Why flowers are beautiful",
+            "How to plant a tree in a garden",
+            "How a plant grows from a seed"
+          ],
+          "answer": "How a plant grows from a seed"
+        }
+      ]
+    }
+  ]
+}

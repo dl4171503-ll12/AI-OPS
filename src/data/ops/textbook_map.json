@@ -1,0 +1,211 @@
+[
+  {
+    "subject": "YW",
+    "version": "TongBian",
+    "versionName": "统编版",
+    "stage": "primary",
+    "grades": [1, 2, 3, 4, 5, 6],
+    "usageProvinces": ["全国"],
+    "officialEntry": "https://basic.smartedu.cn/",
+    "verified": true,
+    "note": "国家统编语文；基线版本"
+  },
+  {
+    "subject": "YW",
+    "version": "TongBian",
+    "versionName": "统编版",
+    "stage": "junior",
+    "grades": [7, 8, 9],
+    "usageProvinces": ["全国"],
+    "officialEntry": "https://basic.smartedu.cn/",
+    "verified": true,
+    "note": "国家统编语文初中"
+  },
+  {
+    "subject": "SX",
+    "version": "RJ",
+    "versionName": "人教版",
+    "stage": "primary",
+    "grades": [1, 2, 3, 4, 5, 6],
+    "usageProvinces": ["多省"],
+    "officialEntry": "https://jc.pep.com.cn/",
+    "verified": true,
+    "note": "数学基线人教版"
+  },
+  {
+    "subject": "SX",
+    "version": "RJ",
+    "versionName": "人教版",
+    "stage": "junior",
+    "grades": [7, 8, 9],
+    "usageProvinces": ["多省"],
+    "officialEntry": "https://jc.pep.com.cn/",
+    "verified": true,
+    "note": ""
+  },
+  {
+    "subject": "SX",
+    "version": "BSD",
+    "versionName": "北师大版",
+    "stage": "primary",
+    "grades": [1, 2, 3, 4, 5, 6],
+    "usageProvinces": ["多省"],
+    "officialEntry": "https://basic.smartedu.cn/",
+    "verified": true,
+    "note": ""
+  },
+  {
+    "subject": "SX",
+    "version": "BSD",
+    "versionName": "北师大版",
+    "stage": "junior",
+    "grades": [7, 8, 9],
+    "usageProvinces": ["多省"],
+    "officialEntry": "https://basic.smartedu.cn/",
+    "verified": true,
+    "note": ""
+  },
+  {
+    "subject": "SX",
+    "version": "SJ",
+    "versionName": "苏教版",
+    "stage": "primary",
+    "grades": [1, 2, 3, 4, 5, 6],
+    "usageProvinces": ["江苏等"],
+    "officialEntry": "https://basic.smartedu.cn/",
+    "verified": true,
+    "note": ""
+  },
+  {
+    "subject": "SX",
+    "version": "QD",
+    "versionName": "青岛版",
+    "stage": "primary",
+    "grades": [1, 2, 3, 4, 5, 6],
+    "usageProvinces": ["山东等"],
+    "officialEntry": "https://basic.smartedu.cn/",
+    "verified": true,
+    "note": ""
+  },
+  {
+    "subject": "SX",
+    "version": "XS",
+    "versionName": "西师大版",
+    "stage": "primary",
+    "grades": [1, 2, 3, 4, 5, 6],
+    "usageProvinces": ["西部多省"],
+    "officialEntry": "https://basic.smartedu.cn/",
+    "verified": false,
+    "note": "〖待核实〗省级选用目录以当地公布为准"
+  },
+  {
+    "subject": "SX",
+    "version": "HJ",
+    "versionName": "华师大版",
+    "stage": "junior",
+    "grades": [7, 8, 9],
+    "usageProvinces": ["多省"],
+    "officialEntry": "https://basic.smartedu.cn/",
+    "verified": true,
+    "note": ""
+  },
+  {
+    "subject": "YY",
+    "version": "PEP",
+    "versionName": "人教版(PEP)",
+    "stage": "primary",
+    "grades": [3, 4, 5, 6],
+    "usageProvinces": ["多省"],
+    "officialEntry": "https://jc.pep.com.cn/",
+    "verified": true,
+    "note": "英语基线 PEP；三年级起点"
+  },
+  {
+    "subject": "YY",
+    "version": "PEP",
+    "versionName": "人教版",
+    "stage": "junior",
+    "grades": [7, 8, 9],
+    "usageProvinces": ["多省"],
+    "officialEntry": "https://jc.pep.com.cn/",
+    "verified": true,
+    "note": ""
+  },
+  {
+    "subject": "YY",
+    "version": "WY",
+    "versionName": "外研版",
+    "stage": "primary",
+    "grades": [3, 4, 5, 6],
+    "usageProvinces": ["多省"],
+    "officialEntry": "https://basic.smartedu.cn/",
+    "verified": true,
+    "note": ""
+  },
+  {
+    "subject": "YY",
+    "version": "YL",
+    "versionName": "译林版",
+    "stage": "primary",
+    "grades": [3, 4, 5, 6],
+    "usageProvinces": ["江苏等"],
+    "officialEntry": "https://basic.smartedu.cn/",
+    "verified": true,
+    "note": ""
+  },
+  {
+    "subject": "YY",
+    "version": "BSD",
+    "versionName": "北师大版",
+    "stage": "primary",
+    "grades": [3, 4, 5, 6],
+    "usageProvinces": ["多省"],
+    "officialEntry": "https://basic.smartedu.cn/",
+    "verified": true,
+    "note": ""
+  },
+  {
+    "subject": "YY",
+    "version": "WY",
+    "versionName": "外研版",
+    "stage": "junior",
+    "grades": [7, 8, 9],
+    "usageProvinces": ["多省"],
+    "officialEntry": "https://basic.smartedu.cn/",
+    "verified": true,
+    "note": ""
+  },
+  {
+    "subject": "KX",
+    "version": "RJ",
+    "versionName": "人教版",
+    "stage": "primary",
+    "grades": [1, 2, 3, 4, 5, 6],
+    "usageProvinces": ["多省"],
+    "officialEntry": "https://basic.smartedu.cn/",
+    "verified": true,
+    "note": ""
+  },
+  {
+    "subject": "YS",
+    "version": "RM",
+    "versionName": "人美版",
+    "stage": "primary",
+    "grades": [1, 2, 3, 4, 5, 6],
+    "usageProvinces": ["多省"],
+    "officialEntry": "https://basic.smartedu.cn/",
+    "verified": false,
+    "note": "〖待核实〗艺术·美术主流版本"
+  },
+  {
+    "subject": "TY",
+    "version": "RJ",
+    "versionName": "人教版",
+    "stage": "primary",
+    "grades": [1, 2, 3, 4, 5, 6],
+    "usageProvinces": ["多省"],
+    "officialEntry": "https://basic.smartedu.cn/",
+    "verified": true,
+    "note": "体育与健康数字演示资源见国家平台"
+  }
+]

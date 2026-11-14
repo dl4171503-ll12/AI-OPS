@@ -1,0 +1,364 @@
+{
+  "passages": [
+    {
+      "id": "x-high-750-1",
+      "lex": 750,
+      "level": "ielts-prep",
+      "tier": 1,
+      "source": "Wikipedia, “Community garden”（CC BY-SA，改编）",
+      "passage": "A community garden is a piece of land that local people use to grow vegetables, fruit and flowers. Some gardens are on empty land beside a road. Others are on the roof of a building. People who live nearby can rent a small part of the garden and grow their own food.\n\nThese gardens are popular in many cities. They give people a chance to spend time outside and to meet their neighbours. Children can learn where food comes from. Some gardens also give part of their vegetables to food banks, which give free food to people who need it.\n\nA community garden needs hard work. Someone must collect the rent, buy tools and plan the work for the year. In most gardens, the members do this together, and they meet once a month to talk about problems. The meetings are important, because a garden only works when everyone helps.",
+      "questions": [
+        {
+          "q": "Who can rent a small part of a community garden?",
+          "options": ["People who live nearby", "Only professional farmers", "Only children"],
+          "answer": "People who live nearby"
+        },
+        {
+          "q": "Why do some gardens give part of their vegetables to food banks?",
+          "options": ["To sell them at a high price", "To help people who do not have enough food", "To make the garden smaller"],
+          "answer": "To help people who do not have enough food"
+        },
+        {
+          "q": "In the passage, the word “rent” is closest in meaning to ___.",
+          "options": ["to give something away for free", "to repair something", "to pay money to use something"],
+          "answer": "to pay money to use something"
+        },
+        {
+          "q": "What is the passage mainly about?",
+          "options": ["What community gardens are and how they work", "How to cook vegetables from a garden", "Why cities should close their parks"],
+          "answer": "What community gardens are and how they work"
+        }
+      ]
+    },
+    {
+      "id": "x-high-750-2",
+      "lex": 750,
+      "level": "ielts-prep",
+      "tier": 1,
+      "source": "Wikipedia, “Honey bee”（CC BY-SA，改编）",
+      "passage": "Bees do much more than make honey. They also move pollen from one flower to another, and this helps plants make fruit and seeds. Scientists say that a large part of the food we grow depends on the work of bees and other insects.\n\nFor a long time, people thought that bees could only be kept in the countryside. Now more and more people keep bees on the roofs of buildings in the city. Bees can find flowers in parks and gardens, and city flowers often have fewer harmful chemicals than farm flowers. City bees may even make more honey than country bees.\n\nBeekeeping is not always easy. A person who wants to keep bees must learn how to look after them, and some people are afraid of bees. For this reason, beekeepers often talk to their neighbours before they put a hive on the roof.",
+      "questions": [
+        {
+          "q": "What do bees do besides making honey?",
+          "options": ["They build houses for birds", "They move pollen between flowers", "They keep farm animals clean"],
+          "answer": "They move pollen between flowers"
+        },
+        {
+          "q": "Why might city bees make more honey than country bees?",
+          "options": ["Because cities are warmer at night", "Because city flowers are more beautiful", "Because city flowers may contain fewer harmful chemicals"],
+          "answer": "Because city flowers may contain fewer harmful chemicals"
+        },
+        {
+          "q": "The word “hive” in the passage means ___.",
+          "options": ["a box or place where bees live", "a person who keeps animals", "a type of flower"],
+          "answer": "a box or place where bees live"
+        },
+        {
+          "q": "What is the writer's main point?",
+          "options": ["Bees are only useful for honey", "Bees are important, and more people are keeping them in cities", "Keeping bees is dangerous and should be stopped"],
+          "answer": "Bees are important, and more people are keeping them in cities"
+        }
+      ]
+    },
+    {
+      "id": "x-high-850-1",
+      "lex": 850,
+      "level": "ielts-prep",
+      "tier": 2,
+      "source": "Wikipedia, “Plastic pollution”（CC BY-SA，改编）",
+      "passage": "Plastic is cheap and strong, and it has changed the way we live. Bags, bottles and food packages are made of it, and most of these things are used only once. When people throw them away, they often end up in rivers and oceans.\n\nPlastic does not rot like food or paper. Sunlight breaks it into very small pieces, but these pieces stay in the water for many years. Fish and sea birds sometimes eat them by mistake, and some animals get caught in larger pieces of plastic. The plastic can also travel long distances, so a bottle dropped in one country may reach a beach in another.\n\nGovernments and companies have started to act. Some cities have stopped shops from giving free plastic bags, and some companies now sell drinks in bottles that can be returned and reused. These changes help, but experts say that the most important step is to make less plastic in the first place.",
+      "questions": [
+        {
+          "q": "What happens to plastic when it is left in the sun?",
+          "options": ["It turns into food", "It becomes paper", "It breaks into very small pieces"],
+          "answer": "It breaks into very small pieces"
+        },
+        {
+          "q": "Why is plastic pollution a problem in more than one country?",
+          "options": ["Because plastic can travel long distances in water", "Because every country makes the same bottles", "Because fish carry plastic to other countries"],
+          "answer": "Because plastic can travel long distances in water"
+        },
+        {
+          "q": "In the passage, the word “rot” is closest in meaning to ___.",
+          "options": ["to be sold quickly", "to break down naturally over time", "to become hard like stone"],
+          "answer": "to break down naturally over time"
+        },
+        {
+          "q": "What does the writer want readers to understand?",
+          "options": ["Plastic is too expensive to use", "Only governments can stop pollution", "Cutting down plastic use matters most, although reuse and recycling also help"],
+          "answer": "Cutting down plastic use matters most, although reuse and recycling also help"
+        }
+      ]
+    },
+    {
+      "id": "x-high-950-1",
+      "lex": 950,
+      "level": "ielts-prep",
+      "tier": 2,
+      "source": "Wikipedia, “Museum”（CC BY-SA，改编）",
+      "passage": "Many people think of a museum as a quiet building full of old objects behind glass. In fact, the best museums are busy places of learning. Visitors can touch copies of ancient tools, listen to stories from people who lived through history, or take part in experiments in a science room. These activities help people understand ideas that a label on a wall can never explain.\n\nResearchers who study how people learn in museums have found something surprising. Visitors usually forget most of the facts they read. They do remember objects that made them feel something, such as a heavy sword, a beautifully painted bowl, or a machine that suddenly worked. Such memories can last for years.\n\nFor teachers, this means that a museum visit should not be a race through every room. It is better to spend time on a few objects and to ask questions than to see everything quickly. What students bring home is not a list of dates, but a picture in their minds of how people lived and thought.",
+      "questions": [
+        {
+          "q": "What can visitors do in the best museums, according to the passage?",
+          "options": ["Touch copies of ancient tools and join activities", "Read every label in silence alone", "Buy old objects to take home"],
+          "answer": "Touch copies of ancient tools and join activities"
+        },
+        {
+          "q": "Why do visitors remember objects that made them feel something?",
+          "options": ["Because such objects are always the most expensive", "Because strong feelings help keep the experience in the memory", "Because labels are not allowed near them"],
+          "answer": "Because strong feelings help keep the experience in the memory"
+        },
+        {
+          "q": "In the passage, the word “race” is closest in meaning to ___.",
+          "options": ["a competition to run fast", "a type of old object", "a hurried attempt to see everything"],
+          "answer": "a hurried attempt to see everything"
+        },
+        {
+          "q": "What is the main idea of the passage?",
+          "options": ["Museums can be powerful places for learning", "Museums should only show science", "Students should not visit museums"],
+          "answer": "Museums can be powerful places for learning"
+        }
+      ]
+    },
+    {
+      "id": "x-high-950-2",
+      "lex": 950,
+      "level": "advanced",
+      "tier": 1,
+      "source": "Wikipedia, “Public transport”（CC BY-SA，改编）",
+      "passage": "Public transport is any system that carries many people at once: buses, trains, trams and underground railways. A single bus can hold more than fifty passengers, which means that one bus can replace dozens of cars on a busy road. For this reason, cities that invest in good public transport often have less traffic and cleaner air.\n\nHowever, good public transport is expensive. Trains must be built and repaired, and staff must be paid. Fares cover only part of the cost, so the rest must come from taxes. This is why some people ask whether it is fair for everyone to pay for a service that only some people use.\n\nSupporters answer that public transport helps everyone, even those who never travel on it. If buses and trains take cars off the road, drivers save time, and hospitals spend less money on illnesses caused by dirty air. Seen in this way, public transport is not simply a service for passengers; it is an investment in the whole city.",
+      "questions": [
+        {
+          "q": "What happens in cities that invest in good public transport?",
+          "options": ["More people buy cars", "There is less traffic and cleaner air", "Underground railways become free"],
+          "answer": "There is less traffic and cleaner air"
+        },
+        {
+          "q": "Why do supporters say public transport helps people who never use it?",
+          "options": ["Because it makes fares cheaper for everyone", "Because it creates jobs in hospitals", "Because fewer cars mean less pollution and less time lost in traffic"],
+          "answer": "Because fewer cars mean less pollution and less time lost in traffic"
+        },
+        {
+          "q": "In the passage, the word “fares” refers to ___.",
+          "options": ["the money passengers pay to travel", "the main roads in a city", "the people who drive buses"],
+          "answer": "the money passengers pay to travel"
+        },
+        {
+          "q": "What is the writer's attitude towards public transport?",
+          "options": ["It is a waste of public money", "It benefits the whole city, not only passengers", "It should be free for everyone"],
+          "answer": "It benefits the whole city, not only passengers"
+        }
+      ]
+    },
+    {
+      "id": "x-high-1050-1",
+      "lex": 1050,
+      "level": "advanced",
+      "tier": 1,
+      "source": "Wikipedia, “Space exploration”（CC BY-SA，改编）",
+      "passage": "For most of history, the sky was something people could only look at. That changed in the twentieth century. In 1957, a small satellite called Sputnik became the first human-made object to orbit the Earth, and only twelve years later people walked on the Moon. Since then, spacecraft have visited every planet in our solar system, and telescopes in space have looked back towards the beginning of the universe.\n\nSpace travel is extremely expensive, and some people argue that the money would be better spent on problems closer to home, such as health care and clean water. Others point out that space research has given us everyday technologies, from better water filters to satellite navigation. They also argue that studying other planets helps us understand the climate of our own.\n\nPerhaps the strongest argument for space exploration is less practical. Looking at the Earth from far away changes the way people think about it. Many astronauts have described seeing the planet as a small, fragile ball. This experience has led some of them to work for peace and for the protection of the environment.",
+      "questions": [
+        {
+          "q": "What happened in 1957?",
+          "options": ["People walked on the Moon", "Telescopes were sent into space", "The first human-made satellite began to orbit the Earth"],
+          "answer": "The first human-made satellite began to orbit the Earth"
+        },
+        {
+          "q": "Why might astronauts work to protect the environment after their journeys?",
+          "options": ["Seeing Earth from space made them realise how small and fragile it is", "They are paid to do so by space agencies", "They want to return to space soon"],
+          "answer": "Seeing Earth from space made them realise how small and fragile it is"
+        },
+        {
+          "q": "In the passage, the word “fragile” is closest in meaning to ___.",
+          "options": ["very large and hot", "easily damaged or broken", "completely empty"],
+          "answer": "easily damaged or broken"
+        },
+        {
+          "q": "What is the passage mainly about?",
+          "options": ["The history of one satellite", "How to become an astronaut", "The costs and value of space exploration"],
+          "answer": "The costs and value of space exploration"
+        }
+      ]
+    },
+    {
+      "id": "x-high-1150-1",
+      "lex": 1150,
+      "level": "advanced",
+      "tier": 2,
+      "source": "Wikipedia, “Artificial intelligence”（CC BY-SA，改编）",
+      "passage": "Every new technology changes the kind of work people do, and artificial intelligence is no different. Computers can already write simple reports, answer customers' questions and sort huge amounts of data, work that used to take people many hours. Some jobs will certainly disappear, especially those that involve repeating the same steps again and again.\n\nHistory suggests, however, that such changes rarely happen as quickly as people fear. When machines took over farm work, millions of people moved into factories; later, when factories became more efficient, many workers found jobs in offices and shops. Each change caused real hardship for some families, but the number of jobs did not simply fall to zero.\n\nThe more useful question may be not how many jobs will remain, but which skills will be valued. Tasks that require judgement, creativity and the ability to work with other people are harder for machines to copy. Education systems that teach facts alone may therefore prepare students badly. Those that encourage curiosity, communication and problem-solving are more likely to help young people in a world where the tools they use are changing all the time.",
+      "questions": [
+        {
+          "q": "According to the passage, which jobs are most likely to disappear?",
+          "options": ["Jobs that involve repeating the same steps", "Jobs that need creativity", "Jobs that involve working with people"],
+          "answer": "Jobs that involve repeating the same steps"
+        },
+        {
+          "q": "What does the history of farm work and factories suggest?",
+          "options": ["New technology always destroys more jobs than it creates", "Workers often find new kinds of work when old jobs change", "Machines cannot change the way people work"],
+          "answer": "Workers often find new kinds of work when old jobs change"
+        },
+        {
+          "q": "In the passage, the word “judgement” is closest in meaning to ___.",
+          "options": ["the habit of copying others", "the ability to work very fast", "the ability to make sensible decisions"],
+          "answer": "the ability to make sensible decisions"
+        },
+        {
+          "q": "What is the writer's view about education?",
+          "options": ["It should focus on skills such as curiosity and problem-solving", "It should teach only facts", "It should stop teaching about technology"],
+          "answer": "It should focus on skills such as curiosity and problem-solving"
+        }
+      ]
+    },
+    {
+      "id": "x-high-1150-2",
+      "lex": 1150,
+      "level": "advanced",
+      "tier": 2,
+      "source": "Wikipedia, “Screen time”（CC BY-SA，改编）",
+      "passage": "Many teenagers go to bed with their phones and wake up with them as well. At first, this seems harmless: a few messages, a video or two, and then sleep. In fact, researchers who study sleep have found that using a phone late at night can make it harder to fall asleep and can make sleep shorter. The light from a screen tells the brain that it is still daytime, and exciting content keeps the mind busy.\n\nThere is also a social side to the problem. Messages arrive all night, and young people often feel that they must answer quickly, even when they are tired. This can turn rest into another kind of work. Many teenagers say that they would like to use their phones less at night but do not want to be the first in their group to stop.\n\nSome schools and families are trying simple solutions. They charge phones in the kitchen, set a time after which the phone stays downstairs, or agree that group chats go quiet at night. The aim is not to win a battle against technology, but to protect a few hours in which the mind can rest.",
+      "questions": [
+        {
+          "q": "What does the light from a screen do, according to researchers?",
+          "options": ["It makes people hungry", "It tells the brain that it is still daytime", "It makes the phone battery hot"],
+          "answer": "It tells the brain that it is still daytime"
+        },
+        {
+          "q": "Why might teenagers continue using phones at night even when they are tired?",
+          "options": ["Because they prefer sleeping in the morning", "Because their parents encourage them", "Because they do not want to be the first in their group to stop"],
+          "answer": "Because they do not want to be the first in their group to stop"
+        },
+        {
+          "q": "In the passage, the word “harmless” is closest in meaning to ___.",
+          "options": ["not causing damage or problems", "always dangerous", "very expensive"],
+          "answer": "not causing damage or problems"
+        },
+        {
+          "q": "What is the passage mainly about?",
+          "options": ["How to buy a good phone", "Why late-night phone use affects teenagers' sleep and what families can do", "Why teenagers should never use social media"],
+          "answer": "Why late-night phone use affects teenagers' sleep and what families can do"
+        }
+      ]
+    },
+    {
+      "id": "x-high-1250-1",
+      "lex": 1250,
+      "level": "advanced",
+      "tier": 2,
+      "source": "Wikipedia, “Language acquisition”（CC BY-SA，改编）",
+      "passage": "Anyone who has tried to learn a foreign language knows the strange gap between understanding a rule and being able to use it. A student can explain perfectly when to use the past tense and still say the wrong form in a conversation. Teachers have argued for decades about the reason for this gap and about what should be done in the classroom.\n\nOne group believes that grammar should be taught directly, step by step, so that learners build a clear system that they can rely on later. Another group argues that learners acquire language best when they meet many understandable messages, much as children do, and that grammar lessons are of limited value. Many researchers now take a position between these extremes: some focused attention on form helps, but only when it is connected to real use.\n\nWhat seems beyond doubt is the importance of time and practice. Learners who read and listen widely, and who are not afraid of making mistakes, generally make faster progress than those who wait until they know every rule. In other words, confidence matters as much as knowledge, and it is built by using the language, not by studying it forever.",
+      "questions": [
+        {
+          "q": "What is the “strange gap” described at the beginning of the passage?",
+          "options": ["The difference between two languages", "The time it takes to learn a language", "The difference between knowing a rule and using it correctly"],
+          "answer": "The difference between knowing a rule and using it correctly"
+        },
+        {
+          "q": "Why does the writer mention children?",
+          "options": ["To suggest that learners can benefit from meeting many understandable messages", "To show that adults cannot learn languages", "To recommend that children study more grammar"],
+          "answer": "To suggest that learners can benefit from meeting many understandable messages"
+        },
+        {
+          "q": "In the passage, the word “acquire” is closest in meaning to ___.",
+          "options": ["to forget something", "to gain or learn something", "to explain something to others"],
+          "answer": "to gain or learn something"
+        },
+        {
+          "q": "What does the writer conclude?",
+          "options": ["Grammar rules should never be taught", "Only young children can learn languages", "Practice and confidence matter as much as knowledge of rules"],
+          "answer": "Practice and confidence matter as much as knowledge of rules"
+        }
+      ]
+    },
+    {
+      "id": "x-high-1350-1",
+      "lex": 1350,
+      "level": "advanced",
+      "tier": 3,
+      "source": "Wikipedia, “Social media”（CC BY-SA，改编）",
+      "passage": "Social media platforms are designed to keep people looking. Their engineers have learned that a new message, a “like” or a short video gives the brain a small reward, and that unclear or upsetting content often holds attention longer than calm and sensible material. The result is a system that is extremely good at what it was built to do, and it is exactly this success that worries critics.\n\nSome of the concern is easy to understand: spending hours online takes time away from sleep, exercise and face-to-face conversation. But a more subtle worry is that the platforms shape what people believe without them noticing. If a person sees mostly posts that agree with their opinions, they may gradually become more certain that everyone thinks as they do, and less willing to consider other views.\n\nDefenders of social media reply that the same tools allow people to organise, learn and find others like themselves. Rather than blaming the technology, they argue that we should teach people to use it deliberately. That means choosing what they follow, noticing when they are being pulled into an argument, and deciding when to put the phone down. Whether individuals can win such a contest against companies that study human attention for a living remains an open question.",
+      "questions": [
+        {
+          "q": "What holds attention longer, according to the passage?",
+          "options": ["Unclear or upsetting content", "Calm and sensible material", "Short messages that are well written"],
+          "answer": "Unclear or upsetting content"
+        },
+        {
+          "q": "Why might a person become less willing to consider other views?",
+          "options": ["Because they are afraid of new technology", "Because they mostly see posts that agree with their own opinions", "Because they have stopped using the internet"],
+          "answer": "Because they mostly see posts that agree with their own opinions"
+        },
+        {
+          "q": "In the passage, the word “deliberately” is closest in meaning to ___.",
+          "options": ["quickly and without thinking", "only when it is easy", "in a careful and planned way"],
+          "answer": "in a careful and planned way"
+        },
+        {
+          "q": "What is the writer's position?",
+          "options": ["The platforms have real effects, and it is unclear whether individuals can control them", "Social media has no effect on people's beliefs", "Everyone should delete their accounts immediately"],
+          "answer": "The platforms have real effects, and it is unclear whether individuals can control them"
+        }
+      ]
+    },
+    {
+      "id": "x-high-1350-2",
+      "lex": 1350,
+      "level": "advanced",
+      "tier": 3,
+      "source": "Wikipedia, “Volunteering”（CC BY-SA，改编）",
+      "passage": "Volunteering is work that people do without being paid, usually to help others or to improve the place where they live. It ranges from serving meals in a shelter to teaching a child to read, from planting trees to running a sports club. To an observer, it can look like a gift: time and effort given freely, with nothing expected in return.\n\nThe reality is more complicated, because volunteers usually gain as much as they give. Studies of volunteering repeatedly find that regular volunteers report lower levels of loneliness and greater satisfaction with their lives. Some of this may be self-selection — people who are already cheerful may be more likely to volunteer — but the effect appears in experiments too, especially when the work involves meeting people face to face.\n\nThere are difficulties as well. Organisations may rely on volunteers to do work that should really be done by paid staff, and volunteers can feel unsupported or unsure whether their effort matters. The most successful organisations treat volunteers as colleagues rather than as free labour, providing clear tasks, training and honest feedback. The difference between a volunteer who returns for years and one who never comes back is often not enthusiasm. It is how useful they were made to feel on the first day.",
+      "questions": [
+        {
+          "q": "What do studies of volunteering repeatedly find?",
+          "options": ["Volunteers earn less money than other people", "Regular volunteers report lower loneliness and greater satisfaction", "Volunteers usually become tired and unhappy"],
+          "answer": "Regular volunteers report lower loneliness and greater satisfaction"
+        },
+        {
+          "q": "Why does the writer mention self-selection?",
+          "options": ["To show that cheerful people are better workers", "To argue that volunteering should be paid", "To admit that the benefits may partly come from the kind of people who choose to volunteer"],
+          "answer": "To admit that the benefits may partly come from the kind of people who choose to volunteer"
+        },
+        {
+          "q": "In the passage, the phrase “free labour” is used to describe ___.",
+          "options": ["volunteers treated as if they were cheap staff", "workers who are paid well", "people who are learning a job"],
+          "answer": "volunteers treated as if they were cheap staff"
+        },
+        {
+          "q": "What is the writer's main point?",
+          "options": ["Volunteering is a waste of time", "Volunteering benefits both sides, and good organisations make volunteers feel valued", "Only paid work is useful to society"],
+          "answer": "Volunteering benefits both sides, and good organisations make volunteers feel valued"
+        }
+      ]
+    },
+    {
+      "id": "x-high-1450-1",
+      "lex": 1450,
+      "level": "advanced",
+      "tier": 3,
+      "source": "Wikipedia, “Extreme weather”（CC BY-SA，改编）",
+      "passage": "The phrase “extreme weather” covers events such as heatwaves, heavy rainfall, droughts and very powerful storms. Such events have always existed, but a growing body of research suggests that a warmer atmosphere changes both their frequency and their strength. Warm air can hold more water, so when rain finally falls it may fall harder; hotter and drier seasons, meanwhile, leave forests and farmland ready to burn.\n\nAttributing any single storm to climate change is difficult, and scientists are usually careful to say that a particular event “was made more likely” rather than that it “was caused” by warming. Nevertheless, statistical work that compares thousands of simulations with and without human influence has become increasingly confident. For some heatwaves, researchers now describe the effect as unmistakable.\n\nThe practical question is how cities and farmers should respond. Dams, early-warning systems and trees that shade streets can all reduce damage, and insurance schemes can spread the cost of rebuilding. Yet such measures are expensive, and poorer countries and communities usually have the least money to pay for them. This is one reason why international discussions about climate often turn into arguments about fairness, even when the scientific questions are no longer especially disputed.",
+      "questions": [
+        {
+          "q": "Why can a warmer atmosphere lead to heavier rain?",
+          "options": ["Because warm air makes clouds darker", "Because storms move more slowly", "Because warm air can hold more water"],
+          "answer": "Because warm air can hold more water"
+        },
+        {
+          "q": "Why are scientists careful to say an event “was made more likely”?",
+          "options": ["Because a single event cannot be shown to have been caused only by climate change", "Because they do not believe in statistics", "Because insurance companies ask them to"],
+          "answer": "Because a single event cannot be shown to have been caused only by climate change"
+        },
+        {
+          "q": "In the passage, the word “attributing” is closest in meaning to ___.",
+          "options": ["comparing two events", "saying what the cause of something is", "predicting something in the future"],
+          "answer": "saying what the cause of something is"
+        },
+        {
+          "q": "What is the passage mainly about?",
+          "options": ["How to build stronger dams", "Why weather forecasts are often wrong", "How a warmer climate affects extreme weather, and why fairness matters in responding"],
+          "answer": "How a warmer climate affects extreme weather, and why fairness matters in responding"
+        }
+      ]
+    }
+  ]
+}

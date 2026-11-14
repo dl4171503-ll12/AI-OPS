@@ -7,3 +7,12 @@ dist
 .env
 .env.*
 !.env.example
+
+# Private encrypted OPS archives and isolated browser QA
+.ops-data/
+.ops-browser/
+
+dist-guardian/
+
+# Research PDFs are large binary downloads; keep the markdown reports in git
+docs/research/pdfs/

@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { toast } from 'sonner';
 import { Card, PrimaryButton, Shell } from '@/components/ui';
+import { AvatarView } from '@/components/AvatarPicker';
 import { moderateSocialText } from '@/lib/moderation';
 import { useSchoolStore } from '@/store/school';
+import { SCENES } from '@/lib/scenes';
 
 export default function SocialPlazaPage() {
   const student = useSchoolStore((s) => s.student)!;
@@ -29,7 +31,7 @@ export default function SocialPlazaPage() {
       id: `f-${c}`,
       name: `同学-${c.slice(0, 3)}`,
       schoolId: `SCH-${c}`,
-      avatar: '🧒',
+      avatar: '/avatars/avatar-tpl-01.png',
     });
     setCode('');
     toast.success('已添加好友学校');
@@ -80,7 +82,7 @@ export default function SocialPlazaPage() {
   };
 
   return (
-    <Shell title="校际社交广场">
+    <Shell title="校际社交广场" sceneSrc={SCENES.social}>
       <Card className="mb-4">
         <div className="font-bold">我的邀请码：{student.inviteCode}</div>
         <p className="text-xs text-campus-ink/60 mt-1">所有消息经过儿童安全审核。禁止泄露个人信息。</p>
@@ -104,7 +106,7 @@ export default function SocialPlazaPage() {
             <ul className="space-y-2">
               {friends.map((f) => (
                 <li key={f.id} className="flex items-center gap-2 rounded-xl bg-campus-cream/70 px-3 py-2">
-                  <span className="text-2xl">{f.avatar}</span>
+                  <AvatarView src={f.avatar} size={40} className="rounded-xl shrink-0" />
                   <div>
                     <div className="font-bold text-sm">{f.name}</div>
                     <div className="text-xs text-campus-ink/60">{f.schoolId}</div>

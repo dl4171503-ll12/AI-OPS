@@ -5,15 +5,25 @@ export const SUBJECT_KB: Record<SubjectId, string> = {
   math: `小学/初中数学知识树（节选）：
 数与运算→分数小数→比与比例；图形与几何→周长面积体积；统计与概率；代数入门（方程不等式）。
 出题要求：步骤清晰，可用 LaTeX（$...$）。`,
-  chinese: `语文学科知识树（节选）：
-识字写字、词语积累、阅读理解（记叙/说明/诗歌）、作文表达、古诗文常识。
-讲解要求：先整体再局部，鼓励口头表达。`,
+  chinese: `语文老师兼授语/史/地：
+【语文】识字写字、词语、阅读（记叙/说明/诗歌）、作文、古诗文。
+【历史】朝代与近现代主线、人物事件、史料证据与因果。
+【地理】地图、气候地形、中国与世界区域、人地关系。
+讲解：先整体再局部；史地用语文阅读方法读材料。`,
   english: `英语学科知识树（节选）：
 字母语音、核心词汇、基础语法（时态/句型）、听说读写微技能、主题阅读。
 讲解要求：中英对照，例句生活化。`,
-  science: `科学：物质、生命、地球与宇宙、实验方法。`,
+  science: `科学老师兼授科/物/化/生，强调虚拟实验室动手：
+【科学】物质、生命、地球与宇宙、探究方法。
+【物理】声光力热电、测量与电路/光学实验。
+【化学】物质变化、气体制取检验、酸碱、守恒与速率直觉。
+【生物】显微、细胞、光合呼吸、生态与酶。
+临时开实验室：先提出观察问题，学生确认后再开门禁；时间到自动关闭，再追问「实验中发现了什么」。课后也可开放约 30 分钟自由实验。`,
   art: `艺术：色彩、造型、名画欣赏、创意表达。`,
   pe: `体育：运动安全、基础体能、项目规则、名将故事。`,
+  ai: `AI 技术课（小智老师）：
+按学生自评水平分层：①会做图片→提示词与改图；②掌握 coding 技术→用 AI 写/改代码；③初步出卷→出题指令与核验；④零基础→AI 是什么与怎么提问。
+强调：负责任使用、不抄袭、不泄露隐私；每次给一个可练小任务。`,
 };
 
 export const MATH_ASSESSMENT_BANK = [
@@ -35,12 +45,8 @@ export function normalizeAnswer(s: string): string {
   return s.replace(/\s+/g, '').replace(/／/g, '/').toLowerCase();
 }
 
-export const INTEREST_ROOMS = [
-  { id: 'sports', name: '体育兴趣室', emoji: '🏅', blurb: '运动科普与名将故事', key: 'sports' as const },
-  { id: 'art', name: '美术创意室', emoji: '🖌️', blurb: '色彩、名画与创意点子', key: 'art' as const },
-  { id: 'music', name: '音乐室', emoji: '🎵', blurb: '乐器入门与节奏游戏', key: 'music' as const },
-  { id: 'coding', name: '编程室', emoji: '💻', blurb: 'Scratch 趣味挑战', key: 'coding' as const },
-];
+/** @deprecated 请用 interest-rooms.ts 的 INTEREST_ROOMS */
+export { INTEREST_ROOMS } from './interest-rooms';
 
 export const DECOR_SHOP = [
   { id: '花坛', cost: 30, emoji: '🌸' },

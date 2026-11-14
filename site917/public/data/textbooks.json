@@ -1,0 +1,54 @@
+{
+  "updatedAt": "2026-11-11",
+  "defaultRoute": "A",
+  "routes": {
+    "A": {
+      "name": "少儿综合线",
+      "desc": "探究式主题 + 四技能均衡，适合小学阶段打综合基础；配套音频/视频/练习册齐全。",
+      "spine": "Oxford Discover（OUP）",
+      "books": {
+        "L1": ["Oxford Discover 1", "Oxford Reading Tree 3–5 级（分级读物）"],
+        "L2": ["Oxford Discover 2", "Oxford Reading Tree 4–6 级（分级读物）"],
+        "L3": ["Oxford Discover 3", "Oxford Reading Tree 6–8 级（分级读物）"],
+        "L4": ["Oxford Discover 4", "国家地理 Readers L3"],
+        "L5": ["Oxford Discover 5", "国家地理 Readers L4"]
+      }
+    },
+    "B": {
+      "name": "剑桥考试线",
+      "desc": "与剑桥少儿/五级考试一一对应，备考效率高；适合有 KET/PET 目标的学生。",
+      "spine": "Kid's Box / Power Up → Prepare（Cambridge）",
+      "books": {
+        "L1": ["Kid's Box 2", "Fun for Starters"],
+        "L2": ["Power Up 3", "Fun for Movers"],
+        "L3": ["Prepare 3（A2 Key 方向）", "Fun for Flyers"],
+        "L4": ["Prepare 4–5（B1 Preliminary 方向）"],
+        "L5": ["Prepare 6（B2 First 方向）", "剑桥雅思真题（入门）"]
+      }
+    },
+    "C": {
+      "name": "青少年思辨线",
+      "desc": "思辨 + 学术写作，衔接雅思；对基础和老师投入要求更高，适合初中以上。",
+      "spine": "Think（Cambridge）",
+      "books": {
+        "L1": ["Think Starter"],
+        "L2": ["Think 1"],
+        "L3": ["Think 2"],
+        "L4": ["Think 3–4", "Great Writing 2"],
+        "L5": ["Think 5", "Great Writing 3", "21st Century Communication"]
+      }
+    }
+  },
+  "selection": [
+    { "level": "L1", "route": "A" },
+    { "level": "L2", "route": "A" },
+    { "level": "L3", "route": "B" },
+    { "level": "L4", "route": "C" },
+    { "level": "L5", "route": "C" }
+  ],
+  "unitMapping": {
+    "note": "以主教材 1 个 Unit 对应本站 1 个 Chapter（5 小节）；Unit 主题作为章节主题，词汇/语法点按教材大纲填写，课文与音频不复制。",
+    "perChapter": 5,
+    "weekly": "每周 3 次课 + 1 个单元测；12 周完成 4–5 个 Unit（视教材进度）"
+  }
+}

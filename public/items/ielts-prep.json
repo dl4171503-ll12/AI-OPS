@@ -1,0 +1,589 @@
+{
+  "level": "ielts-prep",
+  "cefr": "B1",
+  "grade": "初一 – 初三",
+  "items": {
+    "vocab": [
+      {
+        "id": "p-v1",
+        "tier": 1,
+        "sentence": "The new policy will ___ affect small businesses.",
+        "clue": "in a direct way; with nothing or nobody in between",
+        "options": [
+          "carefully",
+          "directly",
+          "rarely"
+        ],
+        "answer": "directly",
+        "focus": "副词 语义辨析"
+      },
+      {
+        "id": "p-v2",
+        "tier": 1,
+        "sentence": "She was very ___ after the long journey, so she went to bed early.",
+        "clue": "needing rest or sleep",
+        "options": [
+          "hungry",
+          "thirsty",
+          "tired"
+        ],
+        "answer": "tired",
+        "focus": "形容词 语义辨析"
+      },
+      {
+        "id": "p-v3",
+        "tier": 1,
+        "sentence": "Please ___ the door when you leave.",
+        "clue": "to shut something",
+        "options": [
+          "close",
+          "open",
+          "paint"
+        ],
+        "answer": "close",
+        "focus": "动词 语义辨析"
+      },
+      {
+        "id": "p-v4",
+        "tier": 1,
+        "sentence": "We need to ___ a decision before Friday.",
+        "clue": "to reach a decision after thinking about the choices",
+        "options": [
+          "change",
+          "make",
+          "avoid"
+        ],
+        "answer": "make",
+        "focus": "动词 词义辨析"
+      },
+      {
+        "id": "p-v5",
+        "tier": 2,
+        "sentence": "The museum is ___ to the public from Tuesday to Sunday.",
+        "clue": "available so that people can go in and look round",
+        "options": [
+          "closed",
+          "free",
+          "open"
+        ],
+        "answer": "open",
+        "focus": "形容词 语义辨析"
+      },
+      {
+        "id": "p-v6",
+        "tier": 2,
+        "sentence": "He explained the rule ___ so that everyone understood.",
+        "clue": "in a way that is easy to understand",
+        "options": [
+          "clearly",
+          "angrily",
+          "slowly"
+        ],
+        "answer": "clearly",
+        "focus": "副词 语义辨析"
+      },
+      {
+        "id": "p-v7",
+        "tier": 2,
+        "sentence": "Our school has decided to ___ a new club for students who enjoy photography.",
+        "clue": "to start something that did not exist before",
+        "options": [
+          "cancel",
+          "create",
+          "attend"
+        ],
+        "answer": "create",
+        "focus": "动词 词义辨析"
+      },
+      {
+        "id": "p-v8",
+        "tier": 2,
+        "sentence": "The film was so ___ that half the audience fell asleep.",
+        "clue": "not interesting; making you feel tired",
+        "options": [
+          "exciting",
+          "funny",
+          "boring"
+        ],
+        "answer": "boring",
+        "focus": "形容词 语义辨析"
+      },
+      {
+        "id": "p-v9",
+        "tier": 3,
+        "sentence": "Although the instructions were ___, some students still made mistakes.",
+        "clue": "easy to understand and not complicated",
+        "options": [
+          "straightforward",
+          "expensive",
+          "optional"
+        ],
+        "answer": "straightforward",
+        "focus": "近义词辨析（B1+ 形容词）"
+      },
+      {
+        "id": "p-v10",
+        "tier": 3,
+        "sentence": "Please ___ that all the windows are closed before you leave.",
+        "clue": "to make certain that something is done",
+        "options": [
+          "imagine",
+          "ensure",
+          "suggest"
+        ],
+        "answer": "ensure",
+        "focus": "动词 词义辨析"
+      },
+      {
+        "id": "p-v11",
+        "tier": 3,
+        "sentence": "The museum is free, but visitors are asked to make a small ___ to help pay for repairs.",
+        "clue": "money that you give to help an organisation",
+        "options": [
+          "payment",
+          "refund",
+          "donation"
+        ],
+        "answer": "donation",
+        "focus": "名词 语义辨析"
+      },
+      {
+        "id": "p-v12",
+        "tier": 3,
+        "sentence": "The school made an ___ with a local company to provide new computers.",
+        "clue": "a plan that two people or groups have agreed on",
+        "options": [
+          "arrangement",
+          "argument",
+          "advertisement"
+        ],
+        "answer": "arrangement",
+        "focus": "名词 词义辨析"
+      }
+    ],
+    "grammar": [
+      {
+        "id": "p-g1",
+        "tier": 1,
+        "sentence": "My brother ___ his homework when I got home.",
+        "options": [
+          "does",
+          "was doing",
+          "has done"
+        ],
+        "answer": "was doing",
+        "focus": "过去进行时"
+      },
+      {
+        "id": "p-g2",
+        "tier": 1,
+        "sentence": "The classroom ___ every morning before lessons start.",
+        "options": [
+          "cleans",
+          "is cleaning",
+          "is cleaned"
+        ],
+        "answer": "is cleaned",
+        "focus": "被动语态"
+      },
+      {
+        "id": "p-g3",
+        "tier": 1,
+        "sentence": "I will call you ___ I arrive at the station.",
+        "options": [
+          "when",
+          "what",
+          "which"
+        ],
+        "answer": "when",
+        "focus": "时间状语从句"
+      },
+      {
+        "id": "p-g4",
+        "tier": 2,
+        "sentence": "If it ___ tomorrow, we will stay at home.",
+        "options": [
+          "will rain",
+          "rains",
+          "rained"
+        ],
+        "answer": "rains",
+        "focus": "条件句 主将从现"
+      },
+      {
+        "id": "p-g5",
+        "tier": 2,
+        "sentence": "The book ___ by a famous writer in 1950.",
+        "options": [
+          "wrote",
+          "is written",
+          "was written"
+        ],
+        "answer": "was written",
+        "focus": "被动语态 + 过去时间"
+      },
+      {
+        "id": "p-g6",
+        "tier": 2,
+        "sentence": "She is the student ___ won the first prize.",
+        "options": [
+          "who",
+          "which",
+          "whom"
+        ],
+        "answer": "who",
+        "focus": "定语从句关系代词"
+      },
+      {
+        "id": "p-g7",
+        "tier": 3,
+        "sentence": "If I ___ more time, I would join the club.",
+        "options": [
+          "have",
+          "had",
+          "will have"
+        ],
+        "answer": "had",
+        "focus": "虚拟语气"
+      },
+      {
+        "id": "p-g8",
+        "tier": 3,
+        "sentence": "___ the heavy rain, the football match went ahead.",
+        "options": [
+          "Although",
+          "Because",
+          "Despite"
+        ],
+        "answer": "Despite",
+        "focus": "让步介词"
+      },
+      {
+        "id": "p-g9",
+        "tier": 3,
+        "sentence": "The teacher asked us ___ late for class again.",
+        "options": [
+          "not to be",
+          "not being",
+          "don't be"
+        ],
+        "answer": "not to be",
+        "focus": "非谓语 不定式的否定"
+      }
+    ],
+    "listening": [
+      {
+        "id": "p-l1",
+        "tier": 1,
+        "script": "Good morning, everyone. This is a reminder that the school library will close at four o'clock today because the electricity will be checked. Please return any books you have borrowed before three thirty. The library will open again at eight tomorrow morning. Thank you.",
+        "questions": [
+          {
+            "q": "When will the library close today?",
+            "options": [
+              "At 3:30 p.m.",
+              "At 4 p.m.",
+              "At 8 a.m."
+            ],
+            "answer": "At 4 p.m."
+          },
+          {
+            "q": "Why will the library close early?",
+            "options": [
+              "Because of a staff meeting",
+              "Because of a public holiday",
+              "Because of an electricity check"
+            ],
+            "answer": "Because of an electricity check"
+          }
+        ]
+      },
+      {
+        "id": "p-l2",
+        "tier": 1,
+        "script": "Woman: Hi, Tom. Are you coming to the swimming club on Thursday?\nMan: I'd love to, but I have a dentist's appointment at four.\nWoman: No problem — the club starts at six this week.\nMan: Great, I'll be there. Can you bring my goggles?",
+        "questions": [
+          {
+            "q": "What time does the swimming club start this week?",
+            "options": [
+              "At six",
+              "At four",
+              "At five"
+            ],
+            "answer": "At six"
+          },
+          {
+            "q": "What does the man ask the woman to bring?",
+            "options": [
+              "His towel",
+              "His goggles",
+              "His membership card"
+            ],
+            "answer": "His goggles"
+          }
+        ]
+      },
+      {
+        "id": "p-l3",
+        "tier": 2,
+        "script": "Students going on the science museum trip on Friday should meet at the main gate at eight fifteen. The coach leaves at eight thirty, and we cannot wait for latecomers. Please bring a packed lunch and wear comfortable shoes. Photography is not allowed inside the museum, so leave your cameras at home.",
+        "questions": [
+          {
+            "q": "Where should students meet on Friday?",
+            "options": [
+              "At the science museum",
+              "At the train station",
+              "At the main gate"
+            ],
+            "answer": "At the main gate"
+          },
+          {
+            "q": "What are students told not to bring?",
+            "options": [
+              "A camera",
+              "A packed lunch",
+              "Comfortable shoes"
+            ],
+            "answer": "A camera"
+          }
+        ]
+      },
+      {
+        "id": "p-l4",
+        "tier": 2,
+        "script": "Hello, this is Maria from the community centre. I'm calling about your art class on Saturday. Unfortunately, the teacher is ill, so the class is moved to Sunday at ten o'clock in the same room. If you cannot come on Sunday, please call us before Friday and we will give you a free ticket for another class.",
+        "questions": [
+          {
+            "q": "Why has the art class been moved?",
+            "options": [
+              "The room is being repaired",
+              "The teacher is ill",
+              "The centre is closing"
+            ],
+            "answer": "The teacher is ill"
+          },
+          {
+            "q": "What will people get if they cannot attend on Sunday?",
+            "options": [
+              "Their money back",
+              "A different teacher",
+              "A free ticket for another class"
+            ],
+            "answer": "A free ticket for another class"
+          }
+        ]
+      },
+      {
+        "id": "p-l5",
+        "tier": 3,
+        "script": "Most people believe that learning a language is easier for children than for adults. However, research suggests the picture is more complicated. Adults often learn grammar rules faster, while children usually develop better pronunciation. In the end, the amount of practice matters more than age, so anyone who practises every day can make progress.",
+        "questions": [
+          {
+            "q": "What does the speaker say about adults?",
+            "options": [
+              "They usually learn grammar rules faster",
+              "They always have better pronunciation",
+              "They find practice unnecessary"
+            ],
+            "answer": "They usually learn grammar rules faster"
+          },
+          {
+            "q": "What is the speaker's main point?",
+            "options": [
+              "Age is the most important factor",
+              "Practice is more important than age",
+              "Children cannot learn grammar"
+            ],
+            "answer": "Practice is more important than age"
+          }
+        ]
+      },
+      {
+        "id": "p-l6",
+        "tier": 3,
+        "script": "The city council has announced that the number 12 bus will no longer go through Green Street from next Monday. Instead, it will stop on Mill Road, about five minutes' walk from the old stop. The change is temporary while the bridge on Green Street is repaired. The council says passengers should allow extra time for their journeys during this period.",
+        "questions": [
+          {
+            "q": "Why is the bus route changing?",
+            "options": [
+              "A new supermarket is opening",
+              "Fewer people are using the bus",
+              "A bridge is being repaired"
+            ],
+            "answer": "A bridge is being repaired"
+          },
+          {
+            "q": "What will passengers on the number 12 probably have to do from next Monday?",
+            "options": [
+              "Walk further to reach the bus",
+              "Pay a higher ticket price",
+              "Change to a train"
+            ],
+            "answer": "Walk further to reach the bus"
+          }
+        ]
+      }
+    ],
+    "reading": [
+      {
+        "id": "p-r1",
+        "tier": 1,
+        "source": "Simple English Wikipedia, “Sleep”（CC BY-SA，改编）",
+        "passage": "Everyone knows that sleep is important, but until recently scientists had little idea what happens while we are asleep. We now know that the body uses this time to repair itself. The brain also sorts through the day's experiences, keeping what seems useful and letting go of what does not. This is one reason why students who sleep well after studying remember more than those who stay up late.\n\nSleep happens in cycles of about ninety minutes. In the deepest part of each cycle, the body slows down and breathing becomes regular. In another stage, called REM sleep, the eyes move quickly under closed lids and dreaming is common. Most adults need between seven and nine hours a night, though the exact amount varies from person to person.\n\nMany teenagers go to bed late and get up early for school, so they often sleep less than they need. Experts say that going to bed at the same time every night, and keeping phones out of the bedroom, can make a real difference.",
+        "questions": [
+          {
+            "q": "According to the passage, what does the brain do during sleep?",
+            "options": [
+              "It repairs the body's muscles",
+              "It sorts through the day's experiences",
+              "It stops working completely"
+            ],
+            "answer": "It sorts through the day's experiences"
+          },
+          {
+            "q": "Why do students who sleep well after studying remember more?",
+            "options": [
+              "Because they study for longer hours",
+              "Because they wake up earlier",
+              "Because sleep helps the brain keep useful information"
+            ],
+            "answer": "Because sleep helps the brain keep useful information"
+          },
+          {
+            "q": "The phrase “letting go of” in the passage is closest in meaning to ___.",
+            "options": [
+              "forgetting",
+              "remembering",
+              "repeating"
+            ],
+            "answer": "forgetting"
+          },
+          {
+            "q": "What is the passage mainly about?",
+            "options": [
+              "How to become a scientist",
+              "Why sleep matters and how to sleep better",
+              "Why teenagers dislike school"
+            ],
+            "answer": "Why sleep matters and how to sleep better"
+          }
+        ]
+      },
+      {
+        "id": "p-r2",
+        "tier": 3,
+        "source": "Simple English Wikipedia, “Recycling”（CC BY-SA，改编）",
+        "passage": "Recycling means collecting used materials and turning them into new products. It has become a normal part of life in many countries, and for good reasons. Making new paper from old paper uses less energy than cutting down trees and starting again. Aluminium cans can be melted and reused many times, and a recycled can may be back on a shelf in a few months. Glass, too, can be recycled again and again without losing quality.\n\nHowever, recycling is not as simple as it looks. Materials must first be sorted, and if a single wrong item is put into a bin, a whole load may be too dirty to sell. Plastic is especially difficult: bottles and food containers are made from different types of plastic, and most of them can only be recycled once or twice.\n\nFor this reason, many experts argue that recycling should be the third choice, not the first. The best option is to avoid making waste at all; the next is to reuse what we already have. Recycling remains important, but it cannot solve the problem of waste by itself.",
+        "questions": [
+          {
+            "q": "Why is plastic difficult to recycle, according to the passage?",
+            "options": [
+              "It cannot be melted",
+              "It is too heavy to collect",
+              "Bottles and containers use different types of plastic"
+            ],
+            "answer": "Bottles and containers use different types of plastic"
+          },
+          {
+            "q": "What can be inferred about putting one wrong item into a recycling bin?",
+            "options": [
+              "It may make a whole load impossible to sell",
+              "It has no effect at all",
+              "It makes the bin lighter"
+            ],
+            "answer": "It may make a whole load impossible to sell"
+          },
+          {
+            "q": "In the passage, calling recycling “the third choice” means it is ___.",
+            "options": [
+              "the most expensive of three options",
+              "the least preferred of three options",
+              "the only sensible option"
+            ],
+            "answer": "the least preferred of three options"
+          },
+          {
+            "q": "What is the writer's main point?",
+            "options": [
+              "Recycling is unnecessary",
+              "Glass should not be recycled",
+              "Recycling helps, but reducing waste is better"
+            ],
+            "answer": "Recycling helps, but reducing waste is better"
+          }
+        ]
+      }
+    ],
+    "speaking": [
+      {
+        "id": "p-s1",
+        "tier": 1,
+        "prompt": "Describe a subject you find difficult. Say what it is, why it is difficult, and what you do about it.",
+        "minWords": 45,
+        "targets": [
+          "subject",
+          "difficult",
+          "because"
+        ]
+      },
+      {
+        "id": "p-s2",
+        "tier": 2,
+        "prompt": "Talk about a place in your town that visitors should see. Say where it is, what people can do there, and why you like it.",
+        "minWords": 50,
+        "targets": [
+          "place",
+          "because",
+          "like"
+        ]
+      },
+      {
+        "id": "p-s3",
+        "tier": 2,
+        "prompt": "Describe a time when you helped someone. Say who you helped, what you did, and how you felt afterwards.",
+        "minWords": 50,
+        "targets": [
+          "help",
+          "felt",
+          "because"
+        ]
+      },
+      {
+        "id": "p-s4",
+        "tier": 3,
+        "prompt": "Some students prefer studying alone, while others prefer studying in groups. Which do you prefer? Give reasons from your own experience.",
+        "minWords": 60,
+        "targets": [
+          "prefer",
+          "because",
+          "study"
+        ]
+      }
+    ],
+    "writing": [
+      {
+        "id": "p-w1",
+        "tier": 1,
+        "prompt": "Some people think children should start learning a second language at primary school. Do you agree? Give your opinion and at least one reason. (80+ words)",
+        "minWords": 80
+      },
+      {
+        "id": "p-w2",
+        "tier": 1,
+        "prompt": "Write an email to a friend inviting him or her to your birthday party. Say when and where it will be, and what your friend should bring. (60+ words)",
+        "minWords": 60
+      },
+      {
+        "id": "p-w3",
+        "tier": 2,
+        "prompt": "Your school is thinking about stopping the sale of fizzy drinks. Do you think this is a good idea? Give your opinion and two reasons. (100+ words)",
+        "minWords": 100
+      },
+      {
+        "id": "p-w4",
+        "tier": 3,
+        "prompt": "Some people say that students should do homework every day; others say homework should be limited. Discuss both views and give your own opinion. (120+ words)",
+        "minWords": 120
+      }
+    ]
+  }
+}

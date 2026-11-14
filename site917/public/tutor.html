@@ -1,0 +1,1012 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AI 老师课堂 · AI 一人学校</title>
+<link rel="stylesheet" href="/css/site.css" />
+<style>
+  #supervisorChips{display:none!important}
+  .tutorwrap{max-width:820px;margin:0 auto;padding:16px 16px 120px}
+  .teacher-top{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+  .avatar{width:52px;height:52px;border-radius:50%;background:#e8f7ff;display:flex;align-items:center;justify-content:center;font-size:26px}
+  .chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
+  .chip{background:#f1f5f9;border-radius:999px;padding:4px 10px;font-size:11.5px;color:#475569}
+  .chat{background:#fff;border:2px solid var(--line);border-radius:20px;padding:16px;min-height:320px;max-height:58vh;overflow:auto}
+  .msg{display:flex;gap:8px;margin:10px 0;align-items:flex-start}
+  .msg .b{max-width:78%;padding:11px 14px;border-radius:16px;font-size:14px;line-height:1.65}
+  .msg.t .b{background:#f1f5f9;color:#1f2937;border-top-left-radius:4px}
+  .msg.s{flex-direction:row-reverse}
+  .msg.s .b{background:#eaffd9;color:#1f3d00;border-top-right-radius:4px}
+  .msg .who{font-size:11px;color:#94a3b8;margin-bottom:3px}
+  .say{background:none;border:0;cursor:pointer;font-size:14px;color:#64748b}
+  .composer{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:2px solid var(--line);padding:10px 14px;display:flex;justify-content:center}
+  .composer .in{max-width:820px;width:100%;display:flex;gap:8px}
+  .composer input{flex:1;border:2px solid var(--line);border-radius:14px;padding:12px;font:inherit;font-size:15px;outline:none}
+  .composer input:focus{border-color:var(--blue)}
+  .done-note{background:#fff6d6;border:1px solid #ffe49b;border-radius:12px;padding:10px 12px;font-size:12.5px;color:#8a6100;margin-top:10px}
+  /* 监督记录导出：未完成整节课时必须是灰色且不可点 */
+  #exportSupBtn:disabled{background:#e5e7eb!important;color:#9ca3af!important;border:2px solid #e5e7eb!important;box-shadow:none!important;cursor:not-allowed;opacity:1}
+  #exportSupBtn:disabled:hover{background:#e5e7eb!important}
+</style>
+</head>
+<body>
+<div class="top"><div class="topin">
+  <div class="brand">AI 一人学校</div>
+  <div class="nav"><a href="/">首页</a><a href="/learn.html">课程</a><a href="/tutor.html" class="on">AI 老师</a><a href="/assessment.html">测评</a></div>
+  <div class="stats" id="stats"></div>
+</div></div>
+
+<div class="tutorwrap">
+  <div class="teacher-top">
+    <div class="avatar">👩‍🏫</div>
+    <div>
+      <b style="font-size:16px">英语老师</b>
+      <div class="chips" id="chips"></div>
+      <div class="chips" id="lessonNav" style="margin-top:6px"></div>
+      <div class="chips" id="supervisorChips" style="display:none"></div>
+    </div>
+  </div>
+
+  <div class="row" style="margin:6px 0 10px">
+    <button class="btn ghost sm" id="micTestBtn">🎤 测试麦克风</button>
+    <span class="hint" id="micState"></span>
+    <label class="hint" style="display:flex;gap:6px;align-items:center;margin-left:auto">练习量
+      <select id="paceSel" style="border:1px solid #e2e8f0;border-radius:10px;padding:5px 8px;font:inherit;font-size:12px">
+        <option value="less">少一点</option>
+        <option value="std">标准</option>
+        <option value="more">多一点</option>
+      </select>
+    </label>
+    <label class="hint" style="display:flex;gap:6px;align-items:center">老师语速
+      <select id="speedSel" style="border:1px solid #e2e8f0;border-radius:10px;padding:5px 8px;font:inherit;font-size:12px">
+        <option value="slow">偏慢</option>
+        <option value="normal">正常</option>
+        <option value="fast">偏快</option>
+      </select>
+    </label>
+  </div>
+  <div class="hint" id="micHelp" style="display:none;background:#fff6d6;border:1px solid #ffe49b;border-radius:12px;padding:10px 12px;color:#8a6100;margin-bottom:10px"></div>
+  <div class="hint" id="resumeBox" style="display:none;background:#e8f7ff;border:1px solid #b6e3ff;border-radius:12px;padding:10px 12px;color:#0b6a9b;margin-bottom:10px"></div>
+
+  <div class="chat" id="chat">
+    <div class="msg t"><div><div class="who">Teacher</div><div class="b">Hi! I'm your English teacher. Tap "Start" and we'll speak English together — answer with your voice when you can. 听不懂就点「🤔 听不懂」，我会说得更慢更简单。</div></div></div>
+  </div>
+
+  <div class="row" style="margin-top:10px">
+    <button class="btn" id="startBtn">开始上课</button>
+    <button class="btn ghost" id="endBtn" style="display:none">结束并给反馈</button>
+    <button class="btn ghost sm" id="exportSupBtn" disabled title="学完本节课后才能导出学习记录">导出学习记录</button>
+    <span class="hint" id="progressHint"></span>
+  </div>
+</div>
+
+<div class="composer"><div class="in">
+  <button class="btn blue" id="micBtn" title="说英文" disabled>🎤 说</button>
+  <input id="answer" placeholder="也可以打字…（说比写更重要）" autocomplete="off" disabled />
+  <button class="btn ghost" id="giveUpBtn" disabled>🤔 听不懂</button>
+  <button class="btn ghost" id="undoBtn" disabled title="撤回上一条回答">↩️ 撤回</button>
+  <button class="btn" id="sendBtn" disabled>发送</button>
+</div></div>
+<div class="hint" style="position:fixed;bottom:72px;right:18px;display:flex;gap:8px;align-items:center;background:#fff;border:1px solid #e2e8f0;border-radius:999px;padding:6px 12px">
+  <label style="display:flex;gap:6px;align-items:center;font-size:12px"><input type="checkbox" id="autoSpeak" checked> 老师自动朗读</label>
+</div>
+<div class="hint" id="voiceStatus" style="position:fixed;bottom:68px;left:0;right:0;text-align:center;pointer-events:none"></div>
+
+<!-- 课前人机验证（外观接近浏览器自带的反爬校验，不是软件内弹窗） -->
+<div id="humanGate" style="display:none;position:fixed;inset:0;background:rgba(15,23,42,.18);z-index:90;align-items:flex-end;justify-content:flex-end;padding:24px">
+  <div style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.18);padding:14px 16px;width:300px;font-family:system-ui;color:#0f172a">
+    <div style="display:flex;align-items:center;gap:10px">
+      <input type="checkbox" id="humanBox" style="width:20px;height:20px;cursor:pointer">
+      <div>
+        <div style="font-size:14px;font-weight:600">Verify you are human</div>
+        <div style="font-size:11px;color:#64748b">安全验证 · 请勾选以继续</div>
+      </div>
+    </div>
+    <div id="humanStatus" style="font-size:11px;color:#64748b;margin-top:8px;min-height:14px"></div>
+    <div style="font-size:10px;color:#94a3b8;margin-top:8px;border-top:1px solid #f1f5f9;padding-top:6px">Protected by browser check</div>
+  </div>
+</div>
+
+<script src="/js/store.js"></script>
+<script>
+const $ = (s) => document.querySelector(s);
+function readJSON(k){try{return JSON.parse(localStorage.getItem(k)||'null')}catch{return null}}
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function norm(s){return String(s||'').toLowerCase().replace(/[^a-z0-9' ]/g,' ').split(/\s+/).filter(Boolean).join(' ')}
+
+const qs = new URLSearchParams(location.search);
+const BOOK = qs.get('book') || '';
+const UNIT = Number(qs.get('unit') || 1);
+const LESSON = Number(qs.get('lesson') || 1);
+let od1 = null;
+let unitPlan = null;
+function pace(){ return localStorage.getItem('ops917-pace') || 'std'; }
+
+let curriculum=null, lesson=null, questions=[], idx=0, correct=0, history=[], awaitingRetry=false;
+let autoSpeak = true;
+let undoStack = [];
+let turnToken = 0;
+let sessionWrongs = [];
+let restoring = false;
+const SKEY = 'ops917-session:v1';
+const SUP_KEY = 'ops917-supervisor:v1';
+const ADAPT_KEY = 'ops917-adaptation:v1';
+const FEEDBACK_KEY = 'ops917-supervisor-feedback:v1';
+let lastCheat = { type: '', at: 0 };
+let questionShownAt = Date.now();
+let humanVerified = false;
+let lessonCompleted = false;
+let phase = 'teach';
+let quizWrong = [];
+let quizScore = -1;
+let remediationDone = false;
+let lessonPassed = false;
+let teachQuestions = [];
+let lessonStartAt = Date.now();
+let supervisorDecision = 'continue';
+let supervisorReason = '';
+const MIN_MINUTES = Number(localStorage.getItem('ops917-min-minutes') || 15);
+const COMPLETED_KEY = 'ops917-lesson-completed:v1';
+function elapsedSec(){ return Math.round((Date.now() - lessonStartAt) / 1000); }
+function lessonKey(){ return `${BOOK}:${UNIT}:${LESSON}`; }
+function isLessonCompletedSaved(){
+  try{
+    const d = JSON.parse(localStorage.getItem(COMPLETED_KEY) || '{}');
+    const rec = d[lessonKey()];
+    if (!rec || rec.done !== true) return false;
+    return Number(rec.idx) >= Number(rec.total) && Number(rec.total) > 0;
+  }catch{ return false; }
+}
+function markLessonCompleted(){
+  lessonCompleted = true;
+  try{
+    const d = JSON.parse(localStorage.getItem(COMPLETED_KEY) || '{}');
+    d[lessonKey()] = { done: true, idx: questions.length, total: questions.length, at: new Date().toISOString() };
+    localStorage.setItem(COMPLETED_KEY, JSON.stringify(d));
+  }catch{}
+  const btn = $('#exportSupBtn');
+  if(btn){ btn.disabled = false; btn.title = '导出本节课学习记录'; }
+}
+
+// 掌握度：学会的内容不再重复；反复学会的直接跳到未学部分
+const TASK_KEY = 'ops917-task-mastery:v1';
+const LESSON_HISTORY = 'ops917-lesson-history:v1';
+function taskSig(q){ return `${BOOK}:${UNIT}:${LESSON}:${q.type}:${String(q.item.answer || q.item.q || q.item.prompt || '').slice(0,60)}`; }
+function tmLoad(){ try{ return JSON.parse(localStorage.getItem(TASK_KEY) || '{}'); }catch{ return {}; } }
+function taskMastered(q){
+  const r = tmLoad()[taskSig(q)];
+  if(!r) return false;
+  return r.streak >= 2 || (r.seen >= 3 && r.correct / Math.max(1, r.seen) >= 0.8);
+}
+function recordTask(q, correct){
+  const all = tmLoad();
+  const k = taskSig(q);
+  const r = all[k] || { seen: 0, correct: 0, wrong: 0, streak: 0 };
+  r.seen++;
+  if(correct){ r.correct++; r.streak++; } else { r.wrong++; r.streak = 0; }
+  all[k] = r;
+  try{ localStorage.setItem(TASK_KEY, JSON.stringify(all)); }catch{}
+}
+function lessonHistory(){ try{ return JSON.parse(localStorage.getItem(LESSON_HISTORY) || '[]'); }catch{ return []; } }
+function markLessonDone(pct){
+  const h = lessonHistory();
+  h.push({ key: lessonKey(), pct, at: new Date().toISOString() });
+  try{ localStorage.setItem(LESSON_HISTORY, JSON.stringify(h.slice(-200))); }catch{}
+}
+function lessonMastered(){
+  return lessonHistory().filter(x => x.key === lessonKey() && Number(x.pct) >= 85).length >= 2;
+}
+function jumpToNextLesson(){
+  let next;
+  if(LESSON < 4) next = `?book=od1&unit=${UNIT}&lesson=${LESSON+1}`;
+  else if(UNIT < 18) next = `?book=od1&unit=${UNIT+1}&lesson=1`;
+  else next = '/tutor.html';
+  showStatus('这节内容已经掌握，进入下一节…');
+  setTimeout(() => { location.href = '/tutor.html' + next; }, 1200);
+}
+window.__mastery = { taskMastered, recordTask, lessonMastered, jumpToNextLesson, markLessonDone };
+window.__masteryMarkAll = () => { questions.forEach(q => { const all = tmLoad(); all[taskSig(q)] = { seen: 2, correct: 2, wrong: 0, streak: 2 }; try{ localStorage.setItem(TASK_KEY, JSON.stringify(all)); }catch{} }); };
+
+function supLoad(){ try{ return JSON.parse(localStorage.getItem(SUP_KEY) || '{}'); }catch{ return {}; } }
+function supSave(s){ try{ localStorage.setItem(SUP_KEY, JSON.stringify(s)); }catch{} }
+function supervisorEvent(type, detail){
+  const s = supLoad();
+  s.events = s.events || [];
+  s.events.push({ at: new Date().toISOString(), type, detail: detail || {} });
+  if (s.events.length > 300) s.events.splice(0, s.events.length - 300);
+  supSave(s);
+  lastCheat = { type, at: Date.now() };
+  window.__supervisor = s;
+}
+window.__supervisorEvents = () => supLoad();
+function renderSupervisorChip(){
+  const el=$('#supervisorChips'); if(!el) return;
+  const label = supervisorDecision === 'continue' ? '监督：进行中' : supervisorDecision === 'end' ? '监督：可以结束' : supervisorDecision === 'lower' ? '监督：降难度' : '监督：提高挑战';
+  el.innerHTML=`<span class="chip" style="background:#eef2ff;color:#3730a3">${label}${supervisorReason?' · '+supervisorReason.slice(0,16):''}</span>`;
+}
+async function supervisorCheck(){
+  if(!questions.length) return;
+  try{
+    const flags=(supLoad().events||[]).slice(-5).map(e=>e.type).join(',');
+    const r=await fetch('/api/school-supervise',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({state:{idx,total:questions.length,elapsedSec:elapsedSec(),minSec:MIN_MINUTES*60,correct,flags,lesson:lesson&&lesson.title},profile:profile()})});
+    const d=await r.json();
+    if(r.ok&&d.ok){ supervisorDecision=d.decision||'continue'; supervisorReason=d.reason||''; renderSupervisorChip(); }
+  }catch{}
+}
+window.__supervisorCheck = supervisorCheck;
+window.__supervisorState = () => ({ decision: supervisorDecision, reason: supervisorReason, elapsedSec: elapsedSec(), minSec: MIN_MINUTES*60 });
+function exportSupervision(){
+  const allDone = lessonCompleted && questions.length > 0 && idx >= questions.length;
+  if(!allDone){
+    window.__exportBlocked = true;
+    showMicHelp('学完整节课、完成全部学习内容后才能导出学习记录。');
+    return;
+  }
+  window.__exportBlocked = false;
+  const data = {
+    exportedAt: new Date().toISOString(),
+    supervisor: supLoad(),
+    adaptation: (()=>{ try{ return JSON.parse(localStorage.getItem(ADAPT_KEY)||'null'); }catch{ return null; } })(),
+    feedback: (()=>{ try{ return JSON.parse(localStorage.getItem(FEEDBACK_KEY)||'null'); }catch{ return null; } })(),
+    mastery: (()=>{ try{ return JSON.parse(localStorage.getItem('ops917-mastery:v1')||'null'); }catch{ return null; } })(),
+  };
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'ops-supervisor-' + new Date().toISOString().slice(0,10) + '.json';
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 3000);
+  showStatus('学习记录已导出');
+}
+// 课前人机验证：外观接近浏览器反爬校验
+function gateThenStart(){
+  const gate = $('#humanGate');
+  if(!gate) { start(); return; }
+  gate.style.display = 'flex';
+  $('#humanBox').checked = false;
+  $('#humanStatus').textContent = '';
+  $('#humanBox').onchange = () => {
+    if(!$('#humanBox').checked) return;
+    $('#humanStatus').textContent = '正在验证…';
+    setTimeout(() => {
+      gate.style.display = 'none';
+      humanVerified = true;
+      supervisorEvent('human-verified', {});
+      start();
+    }, 900);
+  };
+}
+window.__gateThenStart = gateThenStart;
+window.__supervisorEvent = supervisorEvent;
+window.__exportSupervision = exportSupervision;
+function saveSession(){
+  if(restoring || !questions.length) return;
+  try{
+    localStorage.setItem(SKEY, JSON.stringify({
+      at: Date.now(), book: BOOK, unit: UNIT, lesson: LESSON, title: lesson && lesson.title,
+      lessonMeta: lesson ? { title: lesson.title, focus: lesson.focus, context: lesson.context || '', pages: lesson.pages || '' } : null,
+      idx, correct, awaitingRetry, wrongs: sessionWrongs,
+      phase, quizWrong, quizScore, remediationDone,
+      history: history.slice(-40),
+      questions: questions.map(q => ({ type: q.type, item: q.item }))
+    }));
+  }catch{}
+}
+function loadSaved(){ try{ return JSON.parse(localStorage.getItem(SKEY) || 'null'); }catch{ return null; } }
+function friendlyVoiceError(status, d){
+  const raw = JSON.stringify(d || {});
+  if(status === 402 || /insufficient[ _]balance|1008/i.test(raw)) return '语音服务额度不足，先用打字回答；家长充值后自动恢复。';
+  if(status === 501) return '语音服务未配置，先用打字回答。';
+  return '没听清，再说一次或直接打字。';
+}
+function speakBrowser(text, rate){
+  try{
+    window.__ttsFallbackTried = true;
+    if(!window.speechSynthesis || !window.SpeechSynthesisUtterance) return false;
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-US'; u.rate = rate || 0.95;
+    const vs = speechSynthesis.getVoices() || [];
+    const v = vs.find(x => /en-US/i.test(x.lang)) || vs.find(x => /^en/i.test(x.lang));
+    if(v) u.voice = v;
+    speechSynthesis.cancel(); speechSynthesis.speak(u);
+    window.__ttsFallbackUsed = true;
+    return true;
+  }catch{ return false; }
+}
+function browserASR(timeout){
+  return new Promise((resolve) => {
+    const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if(!SR){ resolve(null); return; }
+    let done = false;
+    const fin = (v) => { if(!done){ done = true; resolve(v); } };
+    const r = new SR(); r.lang = 'en-US'; r.interimResults = false; r.maxAlternatives = 1;
+    r.onresult = (e) => fin((e.results[0] && e.results[0][0] && e.results[0][0].transcript) || null);
+    r.onerror = () => fin(null);
+    r.onend = () => fin(null);
+    try{ r.start(); }catch{ fin(null); }
+    setTimeout(() => { try{ r.stop(); }catch{} fin(null); }, timeout || 8000);
+  });
+}
+function edgeHint(){
+  const ua = navigator.userAgent;
+  if(/Edg\//.test(ua)) return '当前是 Edge，语音识别应由浏览器直接完成。';
+  if(/Chrome\//.test(ua)) return 'Chrome 的网页识别依赖境外服务，常常失败；请用 Edge 浏览器打开本页（语音识别走微软服务）。';
+  return '';
+}
+function pushUndo(text){
+  undoStack.push({ chatCount: $('#chat').children.length, idx, correct, awaitingRetry, historyLen: history.length, text });
+  if(undoStack.length > 20) undoStack.shift();
+  $('#undoBtn').disabled = false;
+}
+function undo(){
+  const f = undoStack.pop();
+  if(!f){ return; }
+  turnToken++;                       // 让还在路上的老师回复作废
+  audioEpoch++;                      // 让还在朗读/待朗读的语音作废
+  window.__ttsCancelled = (window.__ttsCancelled || 0) + 1;
+  try{ if(currentAudio){ currentAudio.pause(); currentAudio = null; } }catch{}
+  try{ if(window.speechSynthesis) speechSynthesis.cancel(); }catch{}
+  const chat = $('#chat');
+  while(chat.children.length > f.chatCount) chat.removeChild(chat.lastChild);
+  history.length = f.historyLen;
+  idx = f.idx; correct = f.correct; awaitingRetry = f.awaitingRetry;
+  $('#answer').value = f.text || '';
+  $('#undoBtn').disabled = undoStack.length === 0;
+  $('#progressHint').textContent = `已撤回，可以重新说/重新发（第 ${idx+1}/${questions.length} 题）`;
+  voiceStatus('已撤回上一条');
+  saveSession();
+}
+window.__tutor = { get state(){ return { idx, correct, total: questions.length, types: questions.map(q=>q.type), lesson: lesson && lesson.title }; } };
+
+function addMsg(role, text){
+  const d=document.createElement('div');
+  d.className='msg '+(role==='teacher'?'t':'s');
+  d.innerHTML=`<div><div class="who">${role==='teacher'?'Teacher':'You'}</div><div class="b">${esc(text)}</div>${role==='teacher'?'<button class="say" title="听老师读">🔊</button>':''}</div>`;
+  if(role==='teacher') d.querySelector('.say').onclick=()=>playTTS(text);
+  $('#chat').appendChild(d);
+  $('#chat').scrollTop=$('#chat').scrollHeight;
+  history.push({role,content:text});
+  if(role==='teacher' && autoSpeak && !restoring) playTTS(text);
+  if(!restoring) saveSession();
+}
+
+function englishOnly(text){
+  return String(text||'').replace(/[\u4e00-\u9fa5]/g,' ').replace(/\s+/g,' ').trim();
+}
+
+let currentAudio = null;
+let audioEpoch = 0;
+function ttsSpeed(){
+  const v = localStorage.getItem('ops917-tts-speed') || 'normal';
+  return v === 'slow' ? 0.75 : v === 'fast' ? 1.15 : 0.95;
+}
+window.__ttsSpeed = ttsSpeed;
+async function playTTS(text){
+  const clean = englishOnly(text);
+  if(!clean) return;
+  const epoch = audioEpoch;
+  window.__ttsCalls = (window.__ttsCalls || 0) + 1;
+  const speed = ttsSpeed();
+  window.__lastTtsSpeed = speed;
+  try{ if(currentAudio){ try{ currentAudio.pause(); }catch{} currentAudio = null; } }catch{}
+  try{
+    const r=await fetch('/api/school-tts',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:clean,engine:'edge',voice:'en-US-AriaNeural',lang:'en',speed})});
+    if(epoch!==audioEpoch) return;
+    if(!r.ok){ speakBrowser(clean, speed); return; }
+    const blob=await r.blob();
+    if(epoch!==audioEpoch) return;
+    currentAudio = new Audio(URL.createObjectURL(blob));
+    (window.__ttsLog = window.__ttsLog || []).push(clean);
+    window.__lastTtsText = clean;
+    currentAudio.play().catch(()=>{});
+  }catch{ if(epoch===audioEpoch) speakBrowser(clean, speed); }
+}
+
+function profile(){
+  if (BOOK === 'od1') {
+    return { grade: '小学三年级', level: 'L1（OD1）', lex: 300, ielts: { listen: 2.5, speak: 3, read: 2.5, write: 2.5 }, weakest: '口语表达' };
+  }
+  const plan=readJSON('ops-en-plan:v1')||{};
+  const hist=readJSON('ops-en-exam-history:v1')||[];
+  const last=Array.isArray(hist)&&hist.length?hist[0]:{};
+  return {
+    grade:plan.grade||'',
+    level:plan.lexLevel?plan.lexLevel.id:(last.cefr?'':'—'),
+    lex:plan.lex||last.lex||'',
+    ielts:plan.curriculum?plan.curriculum.targets:{listen:last.listen,speak:last.speak,read:last.read,write:last.write},
+    weakest:plan.focus&&plan.focus[0]?plan.focus[0].skill:(last.listen?'听力':'—'),
+  };
+}
+
+function qOf(item,type){
+  if(type==='vocab') return `Choose the correct word: ${item.clue||''}`;
+  if(type==='grammar') return `Fill in the blank: ${item.q||''}`;
+  if(type==='listening') return `Listen: "${item.script||''}" Now answer: ${item.q||''}`;
+  if(type==='reading') return `Read: "${(item.passage||'').slice(0,240)}" Then answer: ${item.q||''}`;
+  if(type==='dictation') return 'Listen and write the word.';
+  if(type==='speaking') return item.prompt||'Answer in English.';
+  return item.prompt||'Write a few sentences in English.';
+}
+function expectedOf(item,type){
+  if(['vocab','grammar','listening','reading'].includes(type)) return item.answer;
+  if(type==='dictation') return item.answer;
+  return '';
+}
+
+async function teacher(mode, extra={}){
+  if(!lesson){ lesson = { title: '英语课', focus: 'speaking', context: '', pages: '' }; }
+  const body={mode,profile:profile(),lesson:{title:lesson.title,focus:lesson.focus,question:qOf(questions[idx].item,questions[idx].type),context:lesson.context||'',pages:lesson.pages||''},history:history.slice(-8),...extra};
+  const ad = readJSON(ADAPT_KEY);
+  const baseSup = supervisorDecision !== 'continue' ? supervisorDecision : (ad && ad.last ? ad.last.action : '');
+  body.supervision = baseSup;
+  body.suspicious = (Date.now() - lastCheat.at) < 60000 ? lastCheat.type : '';
+  if(extra && extra.supervision) body.supervision = extra.supervision;
+  window.__lastTutorBody = body;
+  try{
+    const r=await fetch('/api/school-tutor',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(body)});
+    const d=await r.json();
+    if(r.ok&&d.ok&&d.reply){return d.reply}
+  }catch{}
+  if(mode==='start') return `Hello! Today we practise "${lesson.title}". First question: ${qOf(questions[0].item,questions[0].type)}`;
+  if(mode==='feedback') return `Great work today! You got ${correct}/${questions.length}. ${correct>=questions.length-1?'Next time we will try something a little harder.':'We will practise the tricky ones again tomorrow.'}`;
+  if(extra.retry) return 'Good try! Let us move on to the next question.';
+  return extra.fallback||'Let us try the next one.';
+}
+
+function renderChips(){
+  const p=profile();
+  $('#chips').innerHTML=[p.level&&p.level!=='—'?`${p.level}`:'', p.lex?`蓝思 ${p.lex}L`:'', p.weakest?`重点补 ${p.weakest}`:'']
+    .filter(Boolean).map(x=>`<span class="chip">${esc(x)}</span>`).join('');
+  $('#stats').innerHTML=`<span class="s">⚡ ${Store.state().xp}</span><span class="s">🔥 ${Store.state().streak}</span>`;
+}
+
+function buildGenericPlan(u, lessonId){
+  const words = (u.vocab || []).slice();
+  const listen = (u.listenVocab || []).slice();
+  const owned = lessonId <= 2 ? words.slice((lessonId-1)*4, lessonId*4) : listen.slice((lessonId-3)*4, (lessonId-2)*4);
+  const v = owned.length ? owned : words.slice(0, 4);
+  const tasks = [
+    { type: 'speaking', prompt: `Today's words: ${v.join(', ')}. Say one sentence with each word.`, core: true },
+    ...v.map(w => ({ type: 'dictation', script: w, expected: w, core: true })),
+    { type: 'speaking', prompt: `Use "${v[0] || 'family'}" and "${v[1] || v[0] || 'friend'}" in one sentence.`, core: true },
+    { type: 'writing', prompt: `Write 2 sentences with: ${v.slice(0,2).join(', ')}.`, core: true },
+  ];
+  return { id: lessonId, title: `Lesson ${lessonId} · ${u.title}`, objectives: [`练习 ${v.join(', ')}`], pages: '', tasks };
+}
+
+async function startOd1(){
+  if(BOOK==='od1' && lessonMastered()){ jumpToNextLesson(); return; }
+  const data = await (await fetch('/data/od1-units.json')).json();
+  const u = data.units.find(x => x.unit === UNIT) || data.units[0];
+  od1 = u;
+  unitPlan = null;
+  try { unitPlan = await (await fetch(`/data/od1-unit${UNIT}-plan.json`)).json(); } catch {}
+  if(!unitPlan && UNIT === 1){
+    try { unitPlan = await (await fetch('/data/od1-unit1-plan.json')).json(); } catch {}
+  }
+  if(!unitPlan || !unitPlan.lessons){
+    unitPlan = { lessons: [1,2,3,4].map(id => buildGenericPlan(u, id)) };
+  }
+  const lp = unitPlan && unitPlan.lessons ? (unitPlan.lessons.find(x => x.id === LESSON) || unitPlan.lessons[0]) : null;
+  const v = u.vocab || [];
+  lesson = lp
+    ? { title: `OD1 U${UNIT} · ${lp.title}（${u.title}）`, focus: 'speaking + practice', context: lp.pages || unitPlan.pages || '', pages: lp.pages || '' }
+    : { title: `OD1 Unit ${u.unit} · ${u.title}`, focus: 'speaking + grammar', context: '', pages: '' };
+
+  let tasks = lp && lp.tasks ? lp.tasks.slice() : [];
+  const p = pace();
+  if (p === 'less') tasks = tasks.filter(t => t.core).slice(0, 8);
+  else if (p === 'std') tasks = tasks.filter(t => t.core || t.core === undefined);
+  // more: all tasks
+  questions = tasks.map(t => {
+    if (t.type === 'listening') return { type: 'listening', item: { script: t.script, q: t.question, answer: t.expected || '' } };
+    if (t.type === 'grammar') return { type: 'grammar', item: { q: t.prompt, answer: t.expected || '' } };
+    if (t.type === 'dictation') return { type: 'dictation', item: { answer: t.expected || t.script } };
+    if (t.type === 'reading') return { type: 'reading', item: { passage: t.passage, q: t.question, answer: t.expected || '' } };
+    if (t.type === 'writing') return { type: 'writing', item: { prompt: t.prompt } };
+    return { type: 'speaking', item: { prompt: t.prompt } };
+  });
+  questionShownAt = Date.now();
+  if (!questions.length) {
+    questions = [
+      { type: 'speaking', item: { prompt: `Introduce your family. Use these words: ${v.slice(0,4).join(', ')}.` } },
+      { type: 'grammar', item: { q: 'I ___ six years old.', answer: 'am' } },
+      { type: 'dictation', item: { answer: 'mother' } },
+    ];
+  }
+  // 掌握度过滤：已经学会的题不再重复；全部掌握则跳到下一节
+  const beforeFilter = questions.length;
+  questions = questions.filter(q => !taskMastered(q));
+  if(!questions.length){ jumpToNextLesson(); return; }
+  if(questions.length < beforeFilter){
+    showStatus(`已跳过 ${beforeFilter - questions.length} 道已掌握的题`);
+  }
+  teachQuestions = questions.slice();
+  phase = 'teach'; quizWrong = []; quizScore = -1; remediationDone = false; lessonPassed = false;
+  idx = 0; correct = 0; history = []; awaitingRetry = false;
+  undoStack = []; $('#undoBtn').disabled = true; turnToken++;
+  $('#startBtn').style.display = 'none'; lessonStartAt=Date.now(); lessonCompleted=false; $('#exportSupBtn').disabled=true;
+  $('#answer').disabled = false; $('#sendBtn').disabled = false; $('#micBtn').disabled = false; $('#giveUpBtn').disabled = false;
+  renderLessonNav(lp);
+  const reply = await teacher('start', { context: `Book pages: ${lesson.pages}; Lesson: ${lp ? lp.title : u.title}; Today's goals: ${lp && lp.objectives ? lp.objectives.join('; ') : ''}` });
+  addMsg('teacher', reply);
+  $('#progressHint').textContent = `第 1/${questions.length} 题 · 用英文回答（可说 🎤）`;
+}
+
+function renderLessonNav(lp){
+  const nav = $('#lessonNav'); if(!nav) return;
+  const ids = (unitPlan && unitPlan.lessons ? unitPlan.lessons.map(l => l.id) : [1,2,3,4]);
+  const done = readJSON('ops917-od1-u1-lessons:v1') || {};
+  nav.innerHTML = ids.map(id => `<a class="chip" style="cursor:pointer;${id===LESSON?'background:#58cc02;color:#fff':''}" href="/tutor.html?book=od1&unit=${UNIT}&lesson=${id}">Lesson ${id}${done[id]?' ✓':''}</a>`).join('')
+    + `<span class="chip">${lp ? lp.objectives.length + ' 个目标' : ''}</span>`;
+}
+
+
+async function start(){
+  if(qs.get('review')==='1') return startReview();
+  if (BOOK === 'od1') return startOd1();
+  curriculum=curriculum||await (await fetch('/data/curriculum.json')).json();
+  const next=Store.firstIncomplete(curriculum);
+  if(!next){ addMsg('teacher','All lessons are done! Great job. You can take the assessment again or tell me what you want to practise.'); return; }
+  const unit=curriculum.units.find(u=>u.unit===next.unit);
+  const ch=unit.chapters.find(c=>c.id===next.chapter);
+  lesson=ch.lessons.find(l=>l.id===next.lesson);
+  lesson.focus=(lesson.skills||[]).join('/');
+  const pools=curriculum.pools[unit.level];
+  // 输出优先：先口语/写作，再听力/阅读/词汇语法/听写
+  const order=['speaking','writing','listening','reading','vocab','grammar','dictation'];
+  const skills=(lesson.skills||[]).slice();
+  const seq=[];
+  for(const t of order){ if(skills.includes(t)&&seq.length<5) seq.push(t); }
+  for(const t of skills){ if(seq.length<5&&!seq.includes(t)) seq.push(t); }
+  const cur={};
+  questions=seq.map(type=>{const pool=pools[type]||pools.vocab;cur[type]=(cur[type]||0)%pool.length;return {type,item:pool[cur[type]++]};});
+  idx=0;correct=0;history=[];awaitingRetry=false;
+  undoStack=[];$('#undoBtn').disabled=true;turnToken++;
+  $('#startBtn').style.display='none';lessonStartAt=Date.now();lessonCompleted=false;$('#exportSupBtn').disabled=true;
+  $('#answer').disabled=false;$('#sendBtn').disabled=false;$('#micBtn').disabled=false;$('#giveUpBtn').disabled=false;
+  const reply=await teacher('start');
+  addMsg('teacher',reply);
+  $('#progressHint').textContent=`第 1/${questions.length} 题 · 用英文回答（可说 🎤）`;
+}
+
+function showResume(){
+  const s = loadSaved();
+  if(!s || s.book!==BOOK || s.unit!==UNIT || s.lesson!==LESSON) return;
+  if(!s.questions || !s.questions.length || s.idx <= 0) return;
+  const box = $('#resumeBox'); if(!box) return;
+  box.style.display = 'block';
+  box.innerHTML = `上次学到第 ${s.idx+1}/${s.questions.length} 题（${s.title || ''}）。` +
+    `<button class="btn sm" id="resumeBtn" style="margin-left:8px">继续上次课程</button>` +
+    `<button class="btn sm ghost" id="restartBtn" style="margin-left:6px">重新开始</button>`;
+  $('#resumeBtn').onclick = () => resumeSaved(s);
+  $('#restartBtn').onclick = () => { try{ localStorage.removeItem(SKEY); }catch{} box.style.display='none'; showStatus('已清除上次记录，点「开始上课」重新开始'); };
+}
+function showStatus(t){ const el=$('#progressHint'); if(el) el.textContent=t; }
+async function resumeSaved(s){
+  restoring = true;
+  lesson = s.lessonMeta || s.lesson || { title: s.title || '英语课', focus: 'speaking', context: '', pages: '' };
+  if(BOOK==='od1'){
+    try{ unitPlan = await (await fetch('/data/od1-unit1-plan.json')).json(); }catch{}
+  }
+  questions = s.questions; idx = s.idx; correct = s.correct; awaitingRetry = !!s.awaitingRetry;
+  phase = s.phase || 'teach'; quizWrong = s.quizWrong || []; quizScore = s.quizScore || 0; remediationDone = !!s.remediationDone;
+  sessionWrongs = s.wrongs || [];
+  history = [];
+  const chat = $('#chat'); chat.innerHTML = '';
+  for(const m of (s.history || [])) addMsg(m.role === 'teacher' ? 'teacher' : 'student', m.content);
+  restoring = false;
+  $('#resumeBox').style.display = 'none';
+  $('#startBtn').style.display = 'none'; lessonStartAt=Date.now(); lessonCompleted=false; $('#exportSupBtn').disabled=true;
+  $('#answer').disabled = false; $('#sendBtn').disabled = false; $('#micBtn').disabled = false; $('#giveUpBtn').disabled = false;
+  showStatus(`已恢复：第 ${idx+1}/${questions.length} 题`);
+  saveSession();
+  // 恢复历史时只朗读最新一条老师消息，避免批量朗读旧消息
+  const lastTeacher = [...history].reverse().find(m => m.role === 'teacher');
+  if(lastTeacher && autoSpeak) playTTS(lastTeacher.content);
+}
+window.__resumeInfo = () => loadSaved();
+window.__forceFinish = () => finish(true);
+window.__session = () => ({ idx, correct, wrongs: sessionWrongs.slice(), total: questions.length });
+window.__friendlyVoiceError = friendlyVoiceError;
+window.__browserASR = () => browserASR();
+
+function advance(token){
+  idx++;
+  if(idx>=questions.length){
+    if(phase==='teach'){
+      if(elapsedSec() < MIN_MINUTES*60 && questions.length>0){ extendLesson(); return; }
+      startStageQuiz();
+      return;
+    }
+    if(phase==='quiz'){ evaluateQuiz(); return; }
+    if(phase==='remediation'){ finalizeQuizResult(); return; }
+    teacher('feedback',{correct,total:questions.length}).then(fb=>{ if(token!==turnToken) return; addMsg('teacher',fb);finish(true);});
+    return;
+  } else {
+    // 老师的回复里已经问了下一题，这里不再额外加一条消息（避免两条同时念）
+    $('#progressHint').textContent = phase==='quiz' ? `小测验 ${idx+1}/${questions.length}` : phase==='remediation' ? `订正 ${idx+1}/${questions.length}` : `第 ${idx+1}/${questions.length} 题`;
+    questionShownAt = Date.now();
+  }
+  saveSession();
+  supervisorCheck();
+}
+
+// 阶段小测：教学内容结束后，从本课重点出 3 题
+function startStageQuiz(){
+  phase = 'quiz'; quizWrong = []; remediationDone = false; quizScore = 0;
+  const source = (teachQuestions && teachQuestions.length ? teachQuestions : questions).slice();
+  const byType = {};
+  for(const q of source){ (byType[q.type] = byType[q.type] || []).push(q); }
+  const order = ['grammar', 'dictation', 'reading', 'listening', 'speaking', 'writing'];
+  const pick = [];
+  for(const t of order){ if(byType[t] && byType[t].length && pick.length < 3) pick.push(byType[t][0]); }
+  for(const q of source){ if(pick.length >= 3) break; if(!pick.includes(q)) pick.push(q); }
+  questions = pick.length ? pick : source.slice(0, 3);
+  idx = 0; correct = 0; awaitingRetry = false;
+  addMsg('teacher', 'Now a short stage quiz. Three questions about today\'s lesson. Let\'s see what you remember!');
+  showStatus(`阶段小测：${questions.length} 题`);
+  questionShownAt = Date.now();
+  saveSession();
+}
+function evaluateQuiz(){
+  quizScore = questions.length ? correct / questions.length : 1;
+  if(quizScore >= 0.8){ finalizeLesson(true); return; }
+  if(!remediationDone){ startRemediation(); return; }
+  finalizeLesson(false);
+}
+async function startRemediation(){
+  remediationDone = true;
+  const wrongs = quizWrong.slice(0, 5);
+  if(!wrongs.length){ finalizeLesson(true); return; }
+  phase = 'remediation';
+  questions = wrongs.map(w => ({ type: w.type, item: w.item }));
+  idx = 0; correct = 0; awaitingRetry = false;
+  showStatus(`错题讲解 + 订正：${questions.length} 题`);
+  try{
+    const reply = await teacher('explain', { wrongs: wrongs.map(w => ({ q: qOf(w.item, w.type), answer: w.answer })) });
+    addMsg('teacher', reply);
+  }catch{}
+  questionShownAt = Date.now();
+  saveSession();
+}
+function finalizeQuizResult(){
+  const rate = questions.length ? correct / questions.length : 1;
+  if(rate >= 0.8) quizScore = Math.max(quizScore, rate);
+  finalizeLesson(rate >= 0.8);
+}
+function finalizeLesson(passed){
+  lessonPassed = !!passed;
+  finish(true, lessonPassed);
+}
+window.__quizState = () => ({ phase, quizScore, wrong: quizWrong.length, idx, total: questions.length, passed: lessonPassed });
+window.__startQuizForTest = () => { startStageQuiz(); };
+window.__quizQuestions = () => questions.map(q => ({ type: q.type, q: qOf(q.item, q.type), answer: q.item.answer || '' }));
+
+function extendLesson(){
+  const weak=Array.from(new Set(sessionWrongs));
+  const w=weak[0]||'family';
+  questions.push({type:'dictation',item:{answer:w}});
+  questions.push({type:'speaking',item:{prompt:`Make a sentence with "${w}".`}});
+  const left=Math.max(1,Math.ceil((MIN_MINUTES*60-elapsedSec())/60));
+  showStatus(`还差约 ${left} 分钟，继续练习 2 题`);
+  addMsg('teacher', `We still have about ${left} minutes. Let's practise two more tasks: listen and write the word "${w}", then make a sentence with it.`);
+  questionShownAt=Date.now();
+  supervisorDecision='continue'; renderSupervisorChip();
+  saveSession();
+}
+
+async function send(){
+  if(!questions.length||idx>=questions.length) return;
+  const text=($('#answer').value||'').trim();
+  if(!text){return}
+  const token = ++turnToken;
+  pushUndo(text);
+  addMsg('student',text);
+  $('#answer').value='';
+  const q=questions[idx];
+  const expected=expectedOf(q.item,q.type);
+  const nextItem=questions[idx+1];
+  const nextQuestion=nextItem?qOf(nextItem.item,nextItem.type):'';
+
+  // 纠正后重说一遍
+  if(awaitingRetry){
+    awaitingRetry=false;
+    recordTask(questions[idx], true);
+    const reply=await teacher('reply',{studentText:text,expected,retry:true,nextQuestion,
+      fallback:'Good try! Let us move on.'});
+    if(token!==turnToken) return;
+    addMsg('teacher',reply);
+    advance(token);
+    return;
+  }
+
+  let right=false;
+  if(expected){
+    if(['vocab','grammar','listening','reading'].includes(q.type)) right=(text===expected);
+    else right=norm(text)===norm(expected);
+  } else {
+    right=true; // 开放输出题：鼓励表达，不判错
+  }
+  if(right) correct++;
+  recordTask(q, right);
+  if(!right && expected) sessionWrongs.push(expected);
+  if(phase==='quiz' && !right) quizWrong.push({ type: q.type, item: q.item, answer: expected });
+  if(right && expected && (Date.now() - questionShownAt) < 1200) supervisorEvent('fast-correct', { ms: Date.now() - questionShownAt, type: q.type });
+  saveSession();
+  const verdict=right?'right':'wrong';
+  const reply=await teacher('reply',{studentText:text,expected,verdict,nextQuestion,
+    fallback:right?'Great! Let us try the next one.':`Almost! Say it like this: ${expected||'try again in a full sentence'}`});
+  if(token!==turnToken) return;
+  addMsg('teacher',reply);
+  if(!right&&expected){
+    if(phase!=='teach'){ advance(token); return; }
+    awaitingRetry=true;
+    $('#progressHint').textContent='跟着老师再说一遍（点 🎤 或打字）';
+    return;
+  }
+  advance(token);
+}
+
+let rec=null, chunks=[];
+let micStream=null;
+function micHint(err){
+  const name=(err&&err.name)||'';
+  if(!window.isSecureContext) return '当前页面不是安全环境：请用 http://127.0.0.1:917/ 打开（不要用 file:// 或局域网 IP）。';
+  if(name==='NotAllowedError'||name==='SecurityError') return '麦克风被浏览器拦截了：点地址栏左侧的 🔒/⚙️ → 网站设置 → 麦克风 → 允许，然后刷新页面。';
+  if(name==='NotFoundError'||name==='DevicesNotFoundError') return '电脑没有检测到麦克风：请插上耳机/麦克风；或到 Windows 设置 → 隐私和安全性 → 麦克风，确认浏览器被允许。';
+  if(name==='NotReadableError'||name==='TrackStartError') return '麦克风被其他程序占用（会议/录音软件）：关掉它们再试。';
+  return '麦克风暂时不可用：可以直接打字回答，或让家长检查设备后重试。';
+}
+function showMicHelp(text){
+  const el=$('#micHelp'); if(!el) return;
+  el.style.display='block'; el.textContent=text;
+  const st=$('#micState'); if(st) st.textContent='麦克风未就绪';
+}
+function abToB64(ab){const bytes=new Uint8Array(ab);let bin='';const chunk=0x8000;for(let i=0;i<bytes.length;i+=chunk)bin+=String.fromCharCode.apply(null,bytes.subarray(i,i+chunk));return btoa(bin)}
+async function blobToWav16k(blob){
+  const arr=await blob.arrayBuffer();
+  const AC=window.AudioContext||window.webkitAudioContext;
+  const ctx=new AC(); const audio=await ctx.decodeAudioData(arr.slice(0)); await ctx.close();
+  const src=audio.getChannelData(0), sr=16000;
+  const len=Math.max(1,Math.round(audio.duration*sr));
+  const out=new Float32Array(len);
+  for(let i=0;i<len;i++){const pos=i*audio.sampleRate/sr,i0=Math.floor(pos),i1=Math.min(i0+1,src.length-1);
+    const t=pos-i0;out[i]=src[i0]*(1-t)+src[i1]*t}
+  const ab=new ArrayBuffer(44+len*2),dv=new DataView(ab);
+  const w=(o,s)=>{for(let i=0;i<s.length;i++)dv.setUint8(o+i,s.charCodeAt(i))};
+  w(0,'RIFF');dv.setUint32(4,36+len*2,true);w(8,'WAVE');w(12,'fmt ');
+  dv.setUint32(16,16,true);dv.setUint16(20,1,true);dv.setUint16(22,1,true);
+  dv.setUint32(24,sr,true);dv.setUint32(28,sr*2,true);dv.setUint16(32,2,true);dv.setUint16(34,16,true);
+  w(36,'data');dv.setUint32(40,len*2,true);
+  for(let i=0;i<len;i++){const s=Math.max(-1,Math.min(1,out[i]));dv.setInt16(44+i*2,s<0?s*0x8000:s*0x7FFF,true)}
+  return ab;
+}
+window.__blobToWav16k = blobToWav16k;
+function voiceStatus(t){$('#voiceStatus').textContent=t||'';setTimeout(()=>{if($('#voiceStatus').textContent===t)$('#voiceStatus').textContent=''},4000)}
+window.__micHint = micHint;
+window.__micState = updateMicState;
+
+async function updateMicState(){
+  const st=$('#micState'); if(!st) return;
+  if(!window.isSecureContext){ st.textContent='需要 http://127.0.0.1:917 打开'; return; }
+  if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia){ st.textContent='浏览器不支持录音'; return; }
+  try{
+    const p=navigator.permissions&&navigator.permissions.query?await navigator.permissions.query({name:'microphone'}):null;
+    if(p){ st.textContent='麦克风权限：'+(p.state==='granted'?'已允许':p.state==='denied'?'被拒绝':'未授权（点🎤会弹出询问）'); }
+    else st.textContent='麦克风：点 🎤 测试';
+  }catch{ st.textContent='麦克风：点 🎤 测试'; }
+}
+async function testMic(){
+  const st=$('#micState');
+  try{
+    if(micStream){ micStream.getTracks().forEach(t=>t.stop()); micStream=null; }
+    micStream=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true}});
+    const tracks=micStream.getAudioTracks();
+    if(!tracks.length){ showMicHelp('检测到麦克风但没有音轨，请换一个输入设备。'); return; }
+    const label=tracks[0].label||'默认麦克风';
+    const ctx=new AudioContext(); const src=ctx.createMediaStreamSource(micStream);
+    const an=ctx.createAnalyser(); an.fftSize=512; src.connect(an);
+    const buf=new Uint8Array(an.frequencyBinCount); let peak=0;
+    const t0=Date.now();
+    while(Date.now()-t0<2500){ an.getByteFrequencyData(buf); for(const v of buf) peak=Math.max(peak,v); await new Promise(r=>setTimeout(r,60)); }
+    try{await ctx.close()}catch{}
+    tracks.forEach(t=>t.stop()); micStream=null;
+    if(peak>10){ st.textContent=`麦克风正常：${label}（有声音输入）`; $('#micHelp').style.display='none'; }
+    else st.textContent=`已连接：${label}，但没听到声音，请对着麦克风说句话再测`;
+  }catch(e){ showMicHelp(micHint(e)); }
+}
+
+async function toggleRec(){
+  if(rec&&rec.state==='recording'){rec.stop();return}
+  try{
+    const stream=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true}});
+    if(!stream.getAudioTracks().length){ showMicHelp('检测到麦克风但没有音轨，请换一个输入设备。'); return; }
+    chunks=[];rec=new MediaRecorder(stream);
+    rec.ondataavailable=e=>{if(e.data.size)chunks.push(e.data)};
+    rec.onstop=async()=>{
+      stream.getTracks().forEach(t=>t.stop());
+      $('#micBtn').textContent='🎤';voiceStatus('正在听…');
+      try{
+        const raw=new Blob(chunks,{type:chunks[0]?.type||'audio/webm'});
+        let wav=null;
+        try{ wav = await blobToWav16k(raw); }catch(e){ wav = null; }
+        const payload = wav ? {audioBase64:abToB64(wav),mime:'audio/wav',language:'en'}
+                            : {audioBase64:abToB64(await raw.arrayBuffer()),mime:raw.type||'audio/webm',language:'en'};
+        const r=await fetch('/api/school-asr',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+        let d={}; try{ d=await r.json(); }catch{}
+        if(r.ok&&d.ok&&d.text){ $('#answer').value=d.text; voiceStatus('听到：'+d.text); send(); }
+        else if(r.status===501) voiceStatus('语音识别暂不可用，请先打字回答');
+        else {
+          voiceStatus('本地识别失败，尝试浏览器识别…');
+          const t=await browserASR();
+          if(t){ $('#answer').value=t; voiceStatus('听到：'+t); send(); }
+          else voiceStatus((edgeHint()||'识别失败')+' 也可以直接打字回答。');
+        }
+      }catch(e){
+        const t=await browserASR();
+        if(t){ $('#answer').value=t; voiceStatus('听到：'+t); send(); }
+        else voiceStatus((edgeHint()||'录音/识别失败')+' 也可以直接打字回答。');
+      }
+    };
+    rec.start();$('#micBtn').textContent='⏹';voiceStatus('录音中…说完点 ⏹');
+  }catch(e){ showMicHelp(micHint(e)); }
+}
+
+async function finish(quiet, passed){
+  $('#answer').disabled=true;$('#sendBtn').disabled=true;$('#micBtn').disabled=true;$('#giveUpBtn').disabled=true;$('#undoBtn').disabled=true;$('#endBtn').style.display='none';
+  markLessonCompleted();
+  const pct = quizScore >= 0 ? Math.round(quizScore * 100) : Math.round(correct/Math.max(1,questions.length)*100);
+  markLessonDone(pct);
+  const lessonPct = pct;
+  const weak = Array.from(new Set(sessionWrongs));
+  // 自适应：与上一节课比较，退步则敲打老师降难度，进步则提高难度
+  let prevPct = null;
+  try{
+    const prevM = JSON.parse(localStorage.getItem('ops917-mastery:v1') || '{"lessons":{}}');
+    const pe = (prevM.lessons || {})[`${UNIT}-${LESSON}`];
+    if (pe && pe.pct != null) prevPct = Number(pe.pct);
+  }catch{}
+  let action = '';
+  if (prevPct != null && pct < prevPct - 10) action = 'lower';
+  else if (prevPct != null && pct > prevPct + 10) action = 'raise';
+  if (action) {
+    const ad = { last: { action, pct, prev: prevPct, lesson: lesson.title, at: new Date().toISOString() }, history: [] };
+    try{ const old = JSON.parse(localStorage.getItem(ADAPT_KEY) || 'null'); if (old && old.history) ad.history = old.history; }catch{}
+    ad.history.push(ad.last);
+    try{ localStorage.setItem(ADAPT_KEY, JSON.stringify(ad)); }catch{}
+    try{
+      const fb = JSON.parse(localStorage.getItem(FEEDBACK_KEY) || '[]');
+      fb.push({ ...ad.last, weak, flags: (supLoad().events || []).slice(-10) });
+      localStorage.setItem(FEEDBACK_KEY, JSON.stringify(fb));
+    }catch{}
+    supervisorEvent('knock-teacher', { action, pct, prev: prevPct });
+  }
+  try{ localStorage.setItem('ops917-tutor-session',JSON.stringify({at:new Date().toISOString(),lesson:lesson.title,correct,total:questions.length,pct})); }catch{}
+  if(BOOK==='od1'){ try{ localStorage.setItem('ops917-od1-done:'+UNIT,JSON.stringify({at:new Date().toISOString(),pct,correct,total:questions.length})); }catch{} }
+  if(BOOK==='od1'){
+    try{
+      let done = JSON.parse(localStorage.getItem('ops917-od1-u1-lessons:v1') || '{}');
+      done[LESSON] = { pct, correct, total: questions.length, at: new Date().toISOString() };
+      localStorage.setItem('ops917-od1-u1-lessons:v1', JSON.stringify(done));
+    }catch{}
+  }
+  // 自适应：记下薄弱词与每课表现
+  try{
+    let m = JSON.parse(localStorage.getItem('ops917-mastery:v1') || '{"words":{},"lessons":{}}');
+    for(const w of weak) m.words[w] = (m.words[w] || 0) + 1;
+    m.lessons[`${UNIT}-${LESSON}`] = { pct, weak, at: new Date().toISOString() };
+    localStorage.setItem('ops917-mastery:v1', JSON.stringify(m));
+  }catch{}
+  try{ localStorage.removeItem(SKEY); }catch{}
+  try{ await fetch('/api/school-progress',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({lesson:{title:lesson.title,focus:lesson.focus,pct,correct,total:questions.length,weak},student:{level:profile().level,lex:profile().lex}})}); }catch{}
+  let adaptive='';
+  if(pct>=90){ localStorage.setItem('ops917-pace','more'); adaptive='表现很好：已提高练习量，可以加速下一课。'; }
+  else if(pct<50){ localStorage.setItem('ops917-pace','less'); adaptive='这节偏难：已降低练习量，下节先复习错词。'; }
+  if(weak.length) adaptive += ' 需要多练：' + weak.slice(0,6).join(', ') + '。';
+  let supNote='';
+  
+  
+  supervisorEvent('lesson-finished',{pct,prev:prevPct,action});
+  humanVerified=false;
+  $('#progressHint').textContent=`完成：答对 ${correct}/${questions.length}` + (adaptive ? ' · ' + adaptive : '') + supNote;
+  if(!quiet) addMsg('teacher','That is all for today. You did a great job speaking English! Tap "Start" for another lesson.');
+  $('#startBtn').style.display='inline-block';
+  if(weak.length && !document.getElementById('reviewBtn')){
+    const r=document.createElement('a'); r.id='reviewBtn'; r.className='btn'; r.style.marginLeft='8px';
+    r.href=`/tutor.html?book=od1&unit=${UNIT}&review=1`; r.textContent='复习薄弱词 ('+weak.length+')';
+    $('#startBtn').after(r);
+  }
+  if(BOOK==='od1' && unitPlan && unitPlan.lessons){
+    const next=unitPlan.lessons.find(l=>l.id===LESSON+1);
+    if(next){
+      const a=document.createElement('a'); a.id='nextLessonBtn'; a.className='btn'; a.style.marginLeft='8px';
+      a.href=`/tutor.html?book=od1&unit=${UNIT}&lesson=${next.id}`;
+      a.textContent=(lessonPassed?'进入下一课 · Lesson ':'下一节 Lesson ')+next.id;
+      $('#startBtn').after(a);
+      if(lessonPassed) setTimeout(()=>{ location.href=a.href; }, 3500);
+    } else if(UNIT < 18 && lessonPassed){
+      const a=document.createElement('a'); a.id='nextLessonBtn'; a.className='btn'; a.style.marginLeft='8px';
+      a.href=`/tutor.html?book=od1&unit=${UNIT+1}&lesson=1`;
+      a.textContent='进入 Unit '+(UNIT+1);
+      $('#startBtn').after(a);
+      setTimeout(()=>{ location.href=a.href; }, 3500);
+    }
+  }
+}
+
+async function startReview(){
+  const m = readJSON('ops917-mastery:v1') || { words: {} };
+  const words = Object.keys(m.words || {});
+  let picked = words.slice(0, 6);
+  if(!picked.length) picked = ['mother','father','sister','brother','family','friend'];
+  lesson = { title: '薄弱词复习', focus: 'review', context: '', pages: '' };
+  questions = picked.map(w => ({ type: 'dictation', item: { answer: w } }))
+    .concat(picked.slice(0, 2).map(w => ({ type: 'speaking', item: { prompt: `Make a sentence with "${w}".` } })))
+    .concat([{ type: 'writing', item: { prompt: `Write 3 sentences using: ${picked.slice(0,3).join(', ')}.` } }]);
+  idx = 0; correct = 0; history = []; awaitingRetry = false;
+  undoStack = []; $('#undoBtn').disabled = true; turnToken++;
+  $('#resumeBox').style.display = 'none';
+  $('#startBtn').style.display = 'none'; lessonStartAt=Date.now(); lessonCompleted=false; $('#exportSupBtn').disabled=true;
+  $('#answer').disabled = false; $('#sendBtn').disabled = false; $('#micBtn').disabled = false; $('#giveUpBtn').disabled = false;
+  addMsg('teacher', `Let's review the words you found hard: ${picked.join(', ')}. Listen and write each word, then make sentences.`);
+  $('#progressHint').textContent = `复习：第 1/${questions.length} 题`;
+}
+
+$('#startBtn').onclick=gateThenStart;
+$('#exportSupBtn').onclick=exportSupervision;
+// 反作弊：粘贴/整段插入/输入法组合不拦截，只记录；长粘贴直接拦截
+const answerEl=$('#answer');
+answerEl.addEventListener('compositionstart',()=>{answerEl.__composing=true;});
+answerEl.addEventListener('compositionend',()=>{answerEl.__composing=false;});
+answerEl.addEventListener('paste',(e)=>{
+  const t=((e.clipboardData||window.clipboardData).getData('text')||'');
+  supervisorEvent('paste',{len:t.length});
+  if(t.length>20){
+    e.preventDefault();
+    showMicHelp('请自己口述或自己打字。');
+  }
+});
+let lastLen=0,lastAt=0;
+answerEl.addEventListener('input',(e)=>{
+  if(answerEl.__composing) return;
+  const now=Date.now(), len=e.target.value.length;
+  if(len-lastLen>20 && now-lastAt<200){ supervisorEvent('bulk-insert',{jump:len-lastLen,ms:now-lastAt}); showStatus('请用自己的话回答'); }
+  lastLen=len; lastAt=now;
+});
+$('#endBtn').onclick=()=>{ showMicHelp('课程由老师根据学习内容与时长决定结束，学生不能提前结束。'); };
+$('#sendBtn').onclick=send;
+$('#micBtn').onclick=toggleRec;
+$('#undoBtn').onclick=undo;
+document.addEventListener('keydown',(e)=>{ if((e.ctrlKey||e.metaKey)&&e.key==='z'&&!e.shiftKey){ e.preventDefault(); undo(); } });
+$('#micTestBtn').onclick=testMic;
+updateMicState();
+const ps=$('#paceSel');
+if(ps){ ps.value=pace(); ps.onchange=()=>{ localStorage.setItem('ops917-pace', ps.value); location.reload(); }; }
+const sp=$('#speedSel');
+if(sp){
+  sp.value = localStorage.getItem('ops917-tts-speed') || 'normal';
+  sp.onchange = () => { localStorage.setItem('ops917-tts-speed', sp.value); voiceStatus('老师语速：' + sp.options[sp.selectedIndex].text); };
+}
+$('#autoSpeak').onchange=(e)=>{autoSpeak=e.target.checked;};
+$('#giveUpBtn').onclick=async()=>{
+  if(!questions.length||idx>=questions.length) return;
+  addMsg('student','🤔 听不懂');
+  const q=questions[idx];const expected=expectedOf(q.item,q.type);
+  const reply=await teacher('reply',{studentText:'I do not understand. Please say it again more slowly and more simply.',expected,verdict:'unclear',
+    fallback:'Okay, slowly: ' + qOf(q.item,q.type)});
+  addMsg('teacher',reply);
+};
+$('#answer').addEventListener('keydown',(e)=>{if(e.key==='Enter')send()});
+renderChips();
+showResume();
+renderSupervisorChip();
+if(isLessonCompletedSaved()){
+  lessonCompleted = true;
+  const b = $('#exportSupBtn'); if(b){ b.disabled = false; b.title = '导出本节课监督记录'; }
+}
+</script>
+</body>
+</html>
